@@ -395,6 +395,27 @@ sum(
 <h2>標準偏差(標本分散の平方根)</h2>
 <p><span class="math inline">\(s=\sqrt{\frac
 {\displaystyle\sum^{n}_{i=1}(x_i-\overline{x})^2} {n}}\)</span></p>
+<pre class="r"><code>sqrt(
+  var(daa01)*(length(daa01)-1)/length(daa01)
+  )</code></pre>
+<pre><code>## [1] 0.9682458</code></pre>
+<p>or</p>
+<pre class="r"><code>sd(daa01)*
+  sqrt(
+  (length(daa01)-1)/length(daa01)
+)</code></pre>
+<pre><code>## [1] 0.9682458</code></pre>
+</div>
+<div id="変動係数" class="section level2">
+<h2>変動係数</h2>
+<p><span class="math inline">\(C.V.=\frac {s}
+{\overline{x}}\)</span></p>
+<pre class="r"><code>sd(daa01)*
+  sqrt(
+  (length(daa01)-1)/length(daa01)
+)/
+  mean(daa01)</code></pre>
+<pre><code>## [1] 0.2278225</code></pre>
 </div>
 
 

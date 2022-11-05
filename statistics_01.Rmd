@@ -42,3 +42,30 @@ var(daa01)*(length(daa01)-1)/length(daa01)
 ## 標準偏差(標本分散の平方根)
 
 $s=\sqrt{\frac {\displaystyle\sum^{n}_{i=1}(x_i-\overline{x})^2} {n}}$
+
+```{r}
+sqrt(
+  var(daa01)*(length(daa01)-1)/length(daa01)
+  )
+```
+
+or
+
+```{r}
+sd(daa01)*
+  sqrt(
+  (length(daa01)-1)/length(daa01)
+)
+```
+
+## 変動係数
+
+$C.V.=\frac {s} {\overline{x}}$
+
+```{r}
+sd(daa01)*
+  sqrt(
+  (length(daa01)-1)/length(daa01)
+)/
+  mean(daa01)
+```

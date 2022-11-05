@@ -33,3 +33,30 @@ or
 ## 標準偏差(標本分散の平方根)
 
 $s=\sqrt{\frac {\displaystyle\sum^{n}\_{i=1}(x\_i-\overline{x})^2} {n}}$
+
+    sqrt(
+      var(daa01)*(length(daa01)-1)/length(daa01)
+      )
+
+    ## [1] 0.9682458
+
+or
+
+    sd(daa01)*
+      sqrt(
+      (length(daa01)-1)/length(daa01)
+    )
+
+    ## [1] 0.9682458
+
+## 変動係数
+
+$C.V.=\frac {s} {\overline{x}}$
+
+    sd(daa01)*
+      sqrt(
+      (length(daa01)-1)/length(daa01)
+    )/
+      mean(daa01)
+
+    ## [1] 0.2278225
