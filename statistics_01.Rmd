@@ -69,3 +69,16 @@ sd(daa01)*
 )/
   mean(daa01)
 ```
+
+## 相関係数
+
+$r=\frac {\displaystyle\sum^{n}_{i=1}(x_i-\overline{x}) (y_i-\overline{y})} {\sqrt{ {\displaystyle\sum^{n}_{i=1}(x_i-\overline{x})^2}} \sqrt{ {\displaystyle\sum^{n}_{i=1}(y_i-\overline{y})^2}}}$
+
+```{r}
+daa02<-c(7,8,3,5,4,3,8,6)
+cor(daa01,daa02,method="pearson")
+```
+
+```{r}
+plot(daa01,daa02)
+```

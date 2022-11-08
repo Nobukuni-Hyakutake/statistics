@@ -60,3 +60,16 @@ $C.V.=\frac {s} {\overline{x}}$
       mean(daa01)
 
     ## [1] 0.2278225
+
+## 相関係数
+
+$r=\frac {\displaystyle\sum^{n}\_{i=1}(x\_i-\overline{x}) (y\_i-\overline{y})} {\sqrt{ {\displaystyle\sum^{n}\_{i=1}(x\_i-\overline{x})^2}} \sqrt{ {\displaystyle\sum^{n}\_{i=1}(y\_i-\overline{y})^2}}}$
+
+    daa02<-c(7,8,3,5,4,3,8,6)
+    cor(daa01,daa02,method="pearson")
+
+    ## [1] 0.8666667
+
+    plot(daa01,daa02)
+
+![](statistics_01_files/figure-markdown_strict/unnamed-chunk-8-1.png)
