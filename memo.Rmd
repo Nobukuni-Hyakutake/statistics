@@ -1,0 +1,5 @@
+## How to write mathematics
+
+[Markdownに数式を挿入する方法](https://b1san-blog.com/post/vscode/vscode-md-math/)
+
+[LaTeX/Mathematics](https://en.wikibooks.org/wiki/LaTeX/Mathematics)

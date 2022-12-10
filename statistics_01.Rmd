@@ -7,10 +7,6 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-[Markdownに数式を挿入する方法](https://b1san-blog.com/post/vscode/vscode-md-math/)
-
-[list of TeX functions](https://katex.org/docs/supported.html)
-
 ## 偏差平方和
 
 $\displaystyle\sum^{n}_{i=1}(x_i-\overline{x})^2$

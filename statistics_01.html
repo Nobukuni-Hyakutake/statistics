@@ -297,23 +297,17 @@ overflow-y: auto;
 border: 1px solid #ddd;
 border-radius: 4px;
 }
-.tabset-dropdown > .nav-tabs > li.active:before {
-content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+content: "\e259";
 font-family: 'Glyphicons Halflings';
 display: inline-block;
 padding: 10px;
 border-right: 1px solid #ddd;
 }
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-content: "";
-border: none;
-}
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-content: "";
+content: "\e258";
 font-family: 'Glyphicons Halflings';
-display: inline-block;
-padding: 10px;
-border-right: 1px solid #ddd;
+border: none;
 }
 .tabset-dropdown > .nav-tabs > li.active {
 display: block;
@@ -359,9 +353,6 @@ display: none;
 </div>
 
 
-<p><a href="https://b1san-blog.com/post/vscode/vscode-md-math/">Markdownに数式を挿入する方法</a></p>
-<p><a href="https://katex.org/docs/supported.html">list of TeX
-functions</a></p>
 <div id="偏差平方和" class="section level2">
 <h2>偏差平方和</h2>
 <p><span class="math inline">\(\displaystyle\sum^{n}_{i=1}(x_i-\overline{x})^2\)</span></p>
