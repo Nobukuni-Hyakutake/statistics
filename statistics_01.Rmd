@@ -5,6 +5,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+# 東京大学出版会　統計学入門 からピックアップして作っていく
 ```
 
 ## 偏差平方和
