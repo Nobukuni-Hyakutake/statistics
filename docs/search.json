@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "blog",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\nR言語\n\n\nPython\n\n\n\n\n\n\n\n\n\n\n\nJan 23, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJan 20, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\nR言語\n\n\nPython\n\n\n\n\n\n\n\n\n\n\n\nJan 23, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nStandard deviation\n\n\n\n\n\n\n\nSTATISTICS\n\n\n\n\n\n\n\n\n\n\n\nJan 23, 2023\n\n\nNobukuni Hyakutake\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJan 20, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -123,7 +123,7 @@
     "href": "memo.html",
     "title": "blog",
     "section": "",
-    "text": "_quarto.yamlに下記の通り設定する\nRender to docs"
+    "text": "栗原の入門統計学から作った統計ノートで作った\n今後は東京大学出版会　統計学入門 からピックアップして作っていくか？その方が詳しいので。\n\n\n\n\n_quarto.yamlに下記の通り設定する\nRender to docs\n\n\n\nhttps://www.r-bloggers.com/2023/01/combining-r-and-python-with-reticulate-and-quarto/\n\n\n\n投稿の仕方の参考になりそう。\nhttps://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/\n\n\n\nMarkdownに数式を挿入する方法\nLaTeX/Mathematics\n\n\n\nlibrary(rmarkdown)\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"html_document\")\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"md_document\")"
   },
   {
     "objectID": "memo.html#combining-r-and-python-with-reticulate-and-quarto",
@@ -131,5 +131,54 @@
     "title": "blog",
     "section": "Combining R and Python with {reticulate} and Quarto",
     "text": "Combining R and Python with {reticulate} and Quarto\nhttps://www.r-bloggers.com/2023/01/combining-r-and-python-with-reticulate-and-quarto/"
+  },
+  {
+    "objectID": "posts/standard_deviation/index.html",
+    "href": "posts/standard_deviation/index.html",
+    "title": "Standard deviation",
+    "section": "",
+    "text": "# 栗原の入門統計学から作った統計ノートで作った\n# 今後は東京大学出版会　統計学入門 からピックアップして作っていくか？その方が詳しいので。"
+  },
+  {
+    "objectID": "posts/standard_deviation/index.html#偏差平方和",
+    "href": "posts/standard_deviation/index.html#偏差平方和",
+    "title": "Standard deviation",
+    "section": "偏差平方和",
+    "text": "偏差平方和\n\\(\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2\\)\n\ndaa01<-c(5,6,3,4,3,4,5,4)\nsum(\n  (daa01-mean(daa01))^2\n  )\n\n[1] 7.5"
+  },
+  {
+    "objectID": "posts/standard_deviation/index.html#分散-標本分散",
+    "href": "posts/standard_deviation/index.html#分散-標本分散",
+    "title": "Standard deviation",
+    "section": "分散 (標本分散)",
+    "text": "分散 (標本分散)\n\\(s^2=\\frac {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2} {n}\\)\n\nsum(\n  (daa01-mean(daa01))^2\n  )/\n  length(daa01)\n\n[1] 0.9375\n\n\nor\n\nvar(daa01)*(length(daa01)-1)/length(daa01)\n\n[1] 0.9375"
+  },
+  {
+    "objectID": "posts/standard_deviation/index.html#標準偏差標本分散の平方根",
+    "href": "posts/standard_deviation/index.html#標準偏差標本分散の平方根",
+    "title": "Standard deviation",
+    "section": "標準偏差(標本分散の平方根)",
+    "text": "標準偏差(標本分散の平方根)\n\\(s=\\sqrt{\\frac {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2} {n}}\\)\n\nsqrt(\n  var(daa01)*(length(daa01)-1)/length(daa01)\n  )\n\n[1] 0.9682458\n\n\nor\n\nsd(daa01)*\n  sqrt(\n  (length(daa01)-1)/length(daa01)\n)\n\n[1] 0.9682458"
+  },
+  {
+    "objectID": "posts/standard_deviation/index.html#変動係数",
+    "href": "posts/standard_deviation/index.html#変動係数",
+    "title": "Standard deviation",
+    "section": "変動係数",
+    "text": "変動係数\n\\(C.V.=\\frac {s} {\\overline{x}}\\)\n\nsd(daa01)*\n  sqrt(\n  (length(daa01)-1)/length(daa01)\n)/\n  mean(daa01)\n\n[1] 0.2278225"
+  },
+  {
+    "objectID": "posts/standard_deviation/index.html#相関係数",
+    "href": "posts/standard_deviation/index.html#相関係数",
+    "title": "Standard deviation",
+    "section": "相関係数",
+    "text": "相関係数\n\\(r=\\frac {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x}) (y_i-\\overline{y})} {\\sqrt{ {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2}} \\sqrt{ {\\displaystyle\\sum^{n}_{i=1}(y_i-\\overline{y})^2}}}\\)\n\ndaa02<-c(7,8,3,5,4,3,8,6)\ncor(daa01,daa02,method=\"pearson\")\n\n[1] 0.8666667\n\n\n\nplot(daa01,daa02)"
+  },
+  {
+    "objectID": "memo.html#a-quarto-tip-a-day",
+    "href": "memo.html#a-quarto-tip-a-day",
+    "title": "blog",
+    "section": "A Quarto tip a day",
+    "text": "A Quarto tip a day\n投稿の仕方の参考になりそう。\nhttps://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/"
   }
 ]

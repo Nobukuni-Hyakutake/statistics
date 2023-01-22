@@ -1,13 +1,12 @@
 ---
-title: "Statistics"
-output: html_document
+title: "Standard deviation"
+author: "Nobukuni Hyakutake"
+date: "2023-01-23"
+categories: [STATISTICS]
+image: "sd.png"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-# 栗原の入門統計学から作った統計ノートで作った
-# 今後は東京大学出版会　統計学入門 からピックアップして作っていくか？その方が詳しいので。
-```
+![](sd.png)
 
 ## 偏差平方和
 

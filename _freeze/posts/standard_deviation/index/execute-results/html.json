@@ -1,0 +1,16 @@
+{
+  "hash": "f80a63109c03b31bc5f8c90343846f63",
+  "result": {
+    "markdown": "---\ntitle: \"Standard deviation\"\nauthor: \"Nobukuni Hyakutake\"\ndate: \"2023-01-23\"\ncategories: [STATISTICS]\nimage: \"sd.png\"\n---\n\n\n![](sd.png)\n\n## 偏差平方和\n\n$\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2$\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndaa01<-c(5,6,3,4,3,4,5,4)\nsum(\n  (daa01-mean(daa01))^2\n  )\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 7.5\n```\n:::\n:::\n\n\n## 分散 (標本分散)\n\n$s^2=\\frac {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2} {n}$\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsum(\n  (daa01-mean(daa01))^2\n  )/\n  length(daa01)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 0.9375\n```\n:::\n:::\n\n\nor\n\n\n::: {.cell}\n\n```{.r .cell-code}\nvar(daa01)*(length(daa01)-1)/length(daa01)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 0.9375\n```\n:::\n:::\n\n\n## 標準偏差(標本分散の平方根)\n\n$s=\\sqrt{\\frac {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2} {n}}$\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsqrt(\n  var(daa01)*(length(daa01)-1)/length(daa01)\n  )\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 0.9682458\n```\n:::\n:::\n\n\nor\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsd(daa01)*\n  sqrt(\n  (length(daa01)-1)/length(daa01)\n)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 0.9682458\n```\n:::\n:::\n\n\n## 変動係数\n\n$C.V.=\\frac {s} {\\overline{x}}$\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsd(daa01)*\n  sqrt(\n  (length(daa01)-1)/length(daa01)\n)/\n  mean(daa01)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 0.2278225\n```\n:::\n:::\n\n\n## 相関係数\n\n$r=\\frac {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x}) (y_i-\\overline{y})} {\\sqrt{ {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2}} \\sqrt{ {\\displaystyle\\sum^{n}_{i=1}(y_i-\\overline{y})^2}}}$\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndaa02<-c(7,8,3,5,4,3,8,6)\ncor(daa01,daa02,method=\"pearson\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 0.8666667\n```\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nplot(daa01,daa02)\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-8-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
