@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "blog",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nJan 23, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJan 20, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\nR言語\n\n\nPython\n\n\n\n\n\n\n\n\n\n\n\nJan 23, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJan 20, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -96,5 +96,40 @@
     "title": "About",
     "section": "",
     "text": "About this blog"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#r-1",
+    "href": "posts/post-with-code/index.html#r-1",
+    "title": "Post With Code",
+    "section": "R-1",
+    "text": "R-1\n\nlibrary(reticulate)\na<-runif(3)\na<-round(a,2)\nprint(a)\n\n[1] 1.00 0.00 0.19\n\nb<-\"Hello, \""
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#python",
+    "href": "posts/post-with-code/index.html#python",
+    "title": "Post With Code",
+    "section": "Python",
+    "text": "Python\n\nc=\"World!\"\nd=r.b+c\nprint(d)\n\nHello, World!\n\ne=12"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#r-2",
+    "href": "posts/post-with-code/index.html#r-2",
+    "title": "Post With Code",
+    "section": "R-2",
+    "text": "R-2\n\nf<-py$e/3\nprint(f)\n\n[1] 4"
+  },
+  {
+    "objectID": "memo.html",
+    "href": "memo.html",
+    "title": "blog",
+    "section": "",
+    "text": "_quarto.yamlに下記の通り設定する\nRender to docs"
+  },
+  {
+    "objectID": "memo.html#combining-r-and-python-with-reticulate-and-quarto",
+    "href": "memo.html#combining-r-and-python-with-reticulate-and-quarto",
+    "title": "blog",
+    "section": "Combining R and Python with {reticulate} and Quarto",
+    "text": "Combining R and Python with {reticulate} and Quarto\nhttps://www.r-bloggers.com/2023/01/combining-r-and-python-with-reticulate-and-quarto/"
   }
 ]

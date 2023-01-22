@@ -2,8 +2,33 @@
 title: "Post With Code"
 author: "Harlow Malloc"
 date: "2023-01-23"
-categories: [news, code, analysis]
+categories: [news, code, analysis, R言語, Python]
 image: "image.jpg"
 ---
 
 This is a post with executable code.
+
+## R-1
+
+```{r}
+library(reticulate)
+a<-runif(3)
+a<-round(a,2)
+print(a)
+b<-"Hello, "
+```
+## Python
+
+```{python}
+c="World!"
+d=r.b+c
+print(d)
+e=12
+```
+
+## R-2
+
+```{r}
+f<-py$e/3
+print(f)
+```
