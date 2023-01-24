@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "blog",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\nR言語\n\n\nPython\n\n\n\n\n\n\n\n\n\n\n\nJan 23, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nStandard deviation\n\n\n\n\n\n\n\nSTATISTICS\n\n\n\n\n\n\n\n\n\n\n\nJan 23, 2023\n\n\nNobukuni Hyakutake\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJan 20, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\nReading Time\n\n\n\n\n\n\n\n\n\n2023-01-25\n\n\nPost With Code\n\n\nnews,code,analysis,R,Python\n\n\n0 min\n\n\n\n\n\n\n\n2023-01-23\n\n\nStandard deviation\n\n\nSTATISTICS\n\n\n0 min\n\n\n\n\n\n\n\n2023-01-20\n\n\nWelcome To My Blog\n\n\nnews\n\n\n0 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -102,7 +102,7 @@
     "href": "posts/post-with-code/index.html#r-1",
     "title": "Post With Code",
     "section": "R-1",
-    "text": "R-1\n\nlibrary(reticulate)\na<-runif(3)\na<-round(a,2)\nprint(a)\n\n[1] 1.00 0.00 0.19\n\nb<-\"Hello, \""
+    "text": "R-1\n\nlibrary(reticulate)\na<-runif(3)\na<-round(a,2)\nprint(a)\n\n[1] 0.15 0.38 0.04\n\nb<-\"Hello, \""
   },
   {
     "objectID": "posts/post-with-code/index.html#python",

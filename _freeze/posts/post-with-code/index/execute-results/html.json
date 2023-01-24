@@ -1,7 +1,7 @@
 {
-  "hash": "ce84e3ccac3fef85b8d3a83ef18908f3",
+  "hash": "6fa164dbe4eb8f72090efae2ebbe6e9b",
   "result": {
-    "markdown": "---\ntitle: \"Post With Code\"\nauthor: \"Harlow Malloc\"\ndate: \"2023-01-23\"\ncategories: [news, code, analysis, R言語, Python]\nimage: \"image.jpg\"\n---\n\n\nThis is a post with executable code.\n\n## R-1\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(reticulate)\na<-runif(3)\na<-round(a,2)\nprint(a)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 1.00 0.00 0.19\n```\n:::\n\n```{.r .cell-code}\nb<-\"Hello, \"\n```\n:::\n\n## Python\n\n\n::: {.cell}\n\n```{.python .cell-code}\nc=\"World!\"\nd=r.b+c\nprint(d)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\nHello, World!\n```\n:::\n\n```{.python .cell-code}\ne=12\n```\n:::\n\n\n## R-2\n\n\n::: {.cell}\n\n```{.r .cell-code}\nf<-py$e/3\nprint(f)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 4\n```\n:::\n:::",
+    "markdown": "---\ntitle: \"Post With Code\"\nauthor: \"Nobukuni Hyakutake\"\ndate: \"2023-01-25\"\ndate-format: \"iso\"\ncategories: [news, code, analysis, R, Python]\nimage: \"image.jpg\"\n---\n\n\nThis is a post with executable code.\n\n## R-1\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(reticulate)\na<-runif(3)\na<-round(a,2)\nprint(a)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 0.15 0.38 0.04\n```\n:::\n\n```{.r .cell-code}\nb<-\"Hello, \"\n```\n:::\n\n## Python\n\n\n::: {.cell}\n\n```{.python .cell-code}\nc=\"World!\"\nd=r.b+c\nprint(d)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\nHello, World!\n```\n:::\n\n```{.python .cell-code}\ne=12\n```\n:::\n\n\n## R-2\n\n\n::: {.cell}\n\n```{.r .cell-code}\nf<-py$e/3\nprint(f)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 4\n```\n:::\n:::",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

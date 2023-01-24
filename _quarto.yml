@@ -3,12 +3,16 @@ project:
   output-dir: docs
 website:
   title: "blog"
+  site-url: https://nobukuni-hyakutake.github.io/statistics/
   favicon: images/math.png
+  description: "A sample blog"
   navbar:
     right:
       - about.qmd
       - icon: github
         href: https://github.com/Nobukuni-Hyakutake/statistics
+      - icon: rss
+        href: index.xml
 format:
   html:
     theme: cosmo

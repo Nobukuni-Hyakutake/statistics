@@ -1,8 +1,9 @@
 ---
 title: "Post With Code"
-author: "Harlow Malloc"
-date: "2023-01-23"
-categories: [news, code, analysis, R言語, Python]
+author: "Nobukuni Hyakutake"
+date: "2023-01-25"
+date-format: "iso"
+categories: [news, code, analysis, R, Python]
 image: "image.jpg"
 ---
 
