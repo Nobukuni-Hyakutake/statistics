@@ -44,6 +44,6 @@ R.version.string
 ## Python version
 
 ```{python}
-import sys
-print("Python version "+sys.version)
+import platform
+"Python version "+platform.python_version()
 ```

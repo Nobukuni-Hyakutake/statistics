@@ -29,7 +29,7 @@
 <span id="cb1-3">a<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">round</span>(a,<span class="dv" style="color: #AD0000;">2</span>)</span>
 <span id="cb1-4"><span class="fu" style="color: #4758AB;">print</span>(a)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.11 0.65 0.59</code></pre>
+<pre><code>[1] 0.89 0.11 0.12</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">b<span class="ot" style="color: #003B4F;">&lt;-</span><span class="st" style="color: #20794D;">"Hello, "</span></span></code></pre></div>
 </div>
@@ -69,10 +69,10 @@
 <section id="python-version" class="level2">
 <h2 class="anchored" data-anchor-id="python-version">Python version</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="im" style="color: #00769E;">import</span> sys</span>
-<span id="cb11-2"><span class="bu" style="color: null;">print</span>(<span class="st" style="color: #20794D;">"Python version "</span><span class="op" style="color: #5E5E5E;">+</span>sys.version)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="im" style="color: #00769E;">import</span> platform</span>
+<span id="cb11-2"><span class="co" style="color: #5E5E5E;">"Python version "</span><span class="op" style="color: #5E5E5E;">+</span>platform.python_version()</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Python version 3.10.7 (v3.10.7:6cc6b13308, Sep  5 2022, 14:02:52) [Clang 13.0.0 (clang-1300.0.29.30)]</code></pre>
+<pre><code>'Python version 3.10.7'</code></pre>
 </div>
 </div>
 

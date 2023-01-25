@@ -102,7 +102,7 @@
     "href": "posts/post-with-code/index.html#r-1",
     "title": "Post With Code",
     "section": "R-1",
-    "text": "R-1\n\nlibrary(reticulate)\na<-runif(3)\na<-round(a,2)\nprint(a)\n\n[1] 0.11 0.65 0.59\n\nb<-\"Hello, \""
+    "text": "R-1\n\nlibrary(reticulate)\na<-runif(3)\na<-round(a,2)\nprint(a)\n\n[1] 0.89 0.11 0.12\n\nb<-\"Hello, \""
   },
   {
     "objectID": "posts/post-with-code/index.html#python",
@@ -193,6 +193,6 @@
     "href": "posts/post-with-code/index.html#python-version",
     "title": "Post With Code",
     "section": "Python version",
-    "text": "Python version\n\nimport sys\nprint(\"Python version \"+sys.version)\n\nPython version 3.10.7 (v3.10.7:6cc6b13308, Sep  5 2022, 14:02:52) [Clang 13.0.0 (clang-1300.0.29.30)]"
+    "text": "Python version\n\nimport platform\n\"Python version \"+platform.python_version()\n\n'Python version 3.10.7'"
   }
 ]
