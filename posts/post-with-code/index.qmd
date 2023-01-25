@@ -21,10 +21,11 @@ b<-"Hello, "
 ## Python
 
 ```{python}
+import numpy as np
 c="World!"
 d=r.b+c
 print(d)
-e=12
+e=np.sin(1.5)*12
 ```
 
 ## R-2
@@ -32,4 +33,17 @@ e=12
 ```{r}
 f<-py$e/3
 print(f)
+```
+
+## R version
+
+```{r}
+R.version.string
+```
+
+## Python version
+
+```{python}
+import sys
+print("Python version "+sys.version)
 ```

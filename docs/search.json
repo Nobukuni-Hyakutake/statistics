@@ -102,21 +102,21 @@
     "href": "posts/post-with-code/index.html#r-1",
     "title": "Post With Code",
     "section": "R-1",
-    "text": "R-1\n\nlibrary(reticulate)\na<-runif(3)\na<-round(a,2)\nprint(a)\n\n[1] 0.15 0.38 0.04\n\nb<-\"Hello, \""
+    "text": "R-1\n\nlibrary(reticulate)\na<-runif(3)\na<-round(a,2)\nprint(a)\n\n[1] 0.11 0.65 0.59\n\nb<-\"Hello, \""
   },
   {
     "objectID": "posts/post-with-code/index.html#python",
     "href": "posts/post-with-code/index.html#python",
     "title": "Post With Code",
     "section": "Python",
-    "text": "Python\n\nc=\"World!\"\nd=r.b+c\nprint(d)\n\nHello, World!\n\ne=12"
+    "text": "Python\n\nimport numpy as np\nc=\"World!\"\nd=r.b+c\nprint(d)\n\nHello, World!\n\ne=np.sin(1.5)*12"
   },
   {
     "objectID": "posts/post-with-code/index.html#r-2",
     "href": "posts/post-with-code/index.html#r-2",
     "title": "Post With Code",
     "section": "R-2",
-    "text": "R-2\n\nf<-py$e/3\nprint(f)\n\n[1] 4"
+    "text": "R-2\n\nf<-py$e/3\nprint(f)\n\n[1] 3.98998"
   },
   {
     "objectID": "memo.html",
@@ -180,5 +180,19 @@
     "title": "blog",
     "section": "A Quarto tip a day",
     "text": "A Quarto tip a day\n投稿の仕方の参考になりそう。\nhttps://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#r-version",
+    "href": "posts/post-with-code/index.html#r-version",
+    "title": "Post With Code",
+    "section": "R version",
+    "text": "R version\n\nR.version.string\n\n[1] \"R version 4.2.2 (2022-10-31)\""
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#python-version",
+    "href": "posts/post-with-code/index.html#python-version",
+    "title": "Post With Code",
+    "section": "Python version",
+    "text": "Python version\n\nimport sys\nprint(\"Python version \"+sys.version)\n\nPython version 3.10.7 (v3.10.7:6cc6b13308, Sep  5 2022, 14:02:52) [Clang 13.0.0 (clang-1300.0.29.30)]"
   }
 ]
