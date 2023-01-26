@@ -1,6 +1,6 @@
 ---
-title: "Welcome To My Blog"
-author: "Tristan O'Malley"
+title: "ようこそ"
+author: "Nobukuni Hyakutake"
 date: "2023-01-20"
 categories: [news]
 ---

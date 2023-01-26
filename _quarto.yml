@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: docs
 website:
-  title: "blog"
+  title: "統計学の勉強ノート"
   site-url: https://nobukuni-hyakutake.github.io/statistics/
   favicon: images/math.png
   description: "A sample blog"

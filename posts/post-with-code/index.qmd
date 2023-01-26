@@ -1,5 +1,5 @@
 ---
-title: "Post With Code"
+title: "コード入りの投稿サンプル"
 author: "Nobukuni Hyakutake"
 date: "2023-01-25"
 date-format: "iso"

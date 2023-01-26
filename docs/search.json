@@ -2,21 +2,21 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "blog",
+    "title": "Top",
     "section": "",
-    "text": "Hello, World!\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\nReading Time\n\n\n\n\n\n\n\n\n\n2023-01-25\n\n\nPost With Code\n\n\nnews,code,analysis,R,Python\n\n\n0 min\n\n\n\n\n\n\n\n2023-01-23\n\n\nStandard deviation\n\n\nSTATISTICS\n\n\n0 min\n\n\n\n\n\n\n\n2023-01-20\n\n\nWelcome To My Blog\n\n\nnews\n\n\n0 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Hello, World!\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\nReading Time\n\n\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n0 min\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n0 min\n\n\n\n\n\n\n\n2023-01-23\n\n\nStandard deviation\n\n\nSTATISTICS\n\n\n0 min\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n0 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
     "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "title": "コード入りの投稿サンプル",
     "section": "",
     "text": "This is a post with executable code."
   },
   {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "title": "ようこそ",
     "section": "",
     "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   },
@@ -100,21 +100,21 @@
   {
     "objectID": "posts/post-with-code/index.html#r-1",
     "href": "posts/post-with-code/index.html#r-1",
-    "title": "Post With Code",
+    "title": "コード入りの投稿サンプル",
     "section": "R-1",
-    "text": "R-1\n\nlibrary(reticulate)\na<-runif(3)\na<-round(a,2)\nprint(a)\n\n[1] 0.03 0.41 0.08\n\nb<-\"Hello, \""
+    "text": "R-1\n\nlibrary(reticulate)\na<-runif(3)\na<-round(a,2)\nprint(a)\n\n[1] 0.89 0.10 0.61\n\nb<-\"Hello, \""
   },
   {
     "objectID": "posts/post-with-code/index.html#python",
     "href": "posts/post-with-code/index.html#python",
-    "title": "Post With Code",
+    "title": "コード入りの投稿サンプル",
     "section": "Python",
     "text": "Python\n\nimport numpy as np\nc=\"World!\"\nd=r.b+c\nprint(d)\n\nHello, World!\n\ne=np.sin(1.5)*12"
   },
   {
     "objectID": "posts/post-with-code/index.html#r-2",
     "href": "posts/post-with-code/index.html#r-2",
-    "title": "Post With Code",
+    "title": "コード入りの投稿サンプル",
     "section": "R-2",
     "text": "R-2\n\nf<-py$e/3\nprint(f)\n\n[1] 3.98998"
   },
@@ -123,7 +123,7 @@
     "href": "memo.html",
     "title": "blog",
     "section": "",
-    "text": "栗原の入門統計学から作った統計ノートで作った\n今後は東京大学出版会　統計学入門 からピックアップして作っていくか？その方が詳しいので。\n\n\n\n\n_quarto.yamlに下記の通り設定する\nRender to docs\n\n\n\nhttps://www.r-bloggers.com/2023/01/combining-r-and-python-with-reticulate-and-quarto/\n\n\n\n投稿の仕方の参考になりそう。\nhttps://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/\n\n\n\nMarkdownに数式を挿入する方法\nLaTeX/Mathematics\n\n\n\nlibrary(rmarkdown)\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"html_document\")\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"md_document\")"
+    "text": "栗原の入門統計学から作った統計ノートで作った\n今後は東京大学出版会　統計学入門 からピックアップして作っていくか？その方が詳しいので。\n\n\n\n\n_quarto.yamlに下記の通り設定する\nRender to docs\n\n\n\nhttps://www.r-bloggers.com/2023/01/combining-r-and-python-with-reticulate-and-quarto/\n\n\n\n投稿の仕方の参考になりそう。\nhttps://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/\n\n\n\nMarkdownに数式を挿入する方法\nLaTeX/Mathematics\n\n\n\nlibrary(rmarkdown)\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"html_document\")\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"md_document\")\n\n\n\n下記に記載(Private repository)\nhttps://github.com/Nobukuni-Hyakutake/hon/blob/main/quarto/memo.md"
   },
   {
     "objectID": "memo.html#combining-r-and-python-with-reticulate-and-quarto",
@@ -184,14 +184,70 @@
   {
     "objectID": "posts/post-with-code/index.html#r-version",
     "href": "posts/post-with-code/index.html#r-version",
-    "title": "Post With Code",
+    "title": "コード入りの投稿サンプル",
     "section": "R version",
     "text": "R version\n\nR.version.string\n\n[1] \"R version 4.2.2 (2022-10-31)\""
   },
   {
     "objectID": "posts/post-with-code/index.html#python-version",
     "href": "posts/post-with-code/index.html#python-version",
-    "title": "Post With Code",
+    "title": "コード入りの投稿サンプル",
+    "section": "Python version",
+    "text": "Python version\n\nimport platform\n\"Python version \"+platform.python_version()\n\n'Python version 3.10.7'"
+  },
+  {
+    "objectID": "posts/calculator/index.html",
+    "href": "posts/calculator/index.html",
+    "title": "Pythonを電卓として使う",
+    "section": "",
+    "text": "1+1\n\n2"
+  },
+  {
+    "objectID": "posts/calculator/index.html#引き算",
+    "href": "posts/calculator/index.html#引き算",
+    "title": "Pythonを電卓として使う",
+    "section": "引き算",
+    "text": "引き算\n\n8-5\n\n3"
+  },
+  {
+    "objectID": "posts/calculator/index.html#掛け算",
+    "href": "posts/calculator/index.html#掛け算",
+    "title": "Pythonを電卓として使う",
+    "section": "掛け算",
+    "text": "掛け算\n\n8*7\n\n56"
+  },
+  {
+    "objectID": "posts/calculator/index.html#割り算",
+    "href": "posts/calculator/index.html#割り算",
+    "title": "Pythonを電卓として使う",
+    "section": "割り算",
+    "text": "割り算\n\n12/6\n\n2.0"
+  },
+  {
+    "objectID": "posts/calculator/index.html#割り算の剰余",
+    "href": "posts/calculator/index.html#割り算の剰余",
+    "title": "Pythonを電卓として使う",
+    "section": "割り算の剰余",
+    "text": "割り算の剰余\n\n23%7\n\n2"
+  },
+  {
+    "objectID": "posts/calculator/index.html#冪",
+    "href": "posts/calculator/index.html#冪",
+    "title": "Pythonを電卓として使う",
+    "section": "冪",
+    "text": "冪\n\n2**3\n\n8"
+  },
+  {
+    "objectID": "posts/calculator/index.html#三角関数",
+    "href": "posts/calculator/index.html#三角関数",
+    "title": "Pythonを電卓として使う",
+    "section": "三角関数",
+    "text": "三角関数\n\nsin\n\nimport numpy as np\nnp.sin(0.2)\n\n0.19866933079506122\n\n\n\n\ncos\n\nnp.cos(0.2)\n\n0.9800665778412416\n\n\n\n\ntan\n\nnp.tan(0.2)\n\n0.20271003550867248"
+  },
+  {
+    "objectID": "posts/calculator/index.html#python-version",
+    "href": "posts/calculator/index.html#python-version",
+    "title": "Pythonを電卓として使う",
     "section": "Python version",
     "text": "Python version\n\nimport platform\n\"Python version \"+platform.python_version()\n\n'Python version 3.10.7'"
   }

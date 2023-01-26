@@ -1,0 +1,72 @@
+---
+title: "Pythonを電卓として使う"
+author: "Nobukuni Hyakutake"
+date: "2023-01-27"
+date-format: "iso"
+categories: [Python]
+image: "calc.jpeg"
+---
+
+## 足し算
+
+```{python}
+1+1
+```
+
+## 引き算
+
+```{python}
+8-5
+```
+
+## 掛け算
+
+```{python}
+8*7
+```
+
+## 割り算
+
+```{python}
+12/6
+```
+
+## 割り算の剰余
+
+```{python}
+23%7
+```
+
+## 冪
+
+```{python}
+2**3
+```
+
+## 三角関数
+
+### sin
+
+```{python}
+import numpy as np
+np.sin(0.2)
+```
+
+### cos
+
+```{python}
+np.cos(0.2)
+```
+
+### tan
+
+```{python}
+np.tan(0.2)
+```
+
+## Python version
+
+```{python}
+import platform
+"Python version "+platform.python_version()
+```

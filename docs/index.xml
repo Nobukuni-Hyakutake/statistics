@@ -5,14 +5,127 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>blog</title>
+<title>統計学の勉強ノート</title>
 <link>https://nobukuni-hyakutake.github.io/statistics/index.html</link>
 <atom:link href="https://nobukuni-hyakutake.github.io/statistics/index.xml" rel="self" type="application/rss+xml"/>
 <description>A sample blog</description>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Tue, 24 Jan 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 26 Jan 2023 15:00:00 GMT</lastBuildDate>
 <item>
-  <title>Post With Code</title>
+  <title>Pythonを電卓として使う</title>
+  <dc:creator>Nobukuni Hyakutake</dc:creator>
+  <link>https://nobukuni-hyakutake.github.io/statistics/posts/calculator/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="足し算" class="level2">
+<h2 class="anchored" data-anchor-id="足し算">足し算</h2>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="dv" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">+</span><span class="dv" style="color: #AD0000;">1</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>2</code></pre>
+</div>
+</div>
+</section>
+<section id="引き算" class="level2">
+<h2 class="anchored" data-anchor-id="引き算">引き算</h2>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="dv" style="color: #AD0000;">8</span><span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">5</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>3</code></pre>
+</div>
+</div>
+</section>
+<section id="掛け算" class="level2">
+<h2 class="anchored" data-anchor-id="掛け算">掛け算</h2>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="dv" style="color: #AD0000;">8</span><span class="op" style="color: #5E5E5E;">*</span><span class="dv" style="color: #AD0000;">7</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>56</code></pre>
+</div>
+</div>
+</section>
+<section id="割り算" class="level2">
+<h2 class="anchored" data-anchor-id="割り算">割り算</h2>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="dv" style="color: #AD0000;">12</span><span class="op" style="color: #5E5E5E;">/</span><span class="dv" style="color: #AD0000;">6</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>2.0</code></pre>
+</div>
+</div>
+</section>
+<section id="割り算の剰余" class="level2">
+<h2 class="anchored" data-anchor-id="割り算の剰余">割り算の剰余</h2>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="dv" style="color: #AD0000;">23</span><span class="op" style="color: #5E5E5E;">%</span><span class="dv" style="color: #AD0000;">7</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>2</code></pre>
+</div>
+</div>
+</section>
+<section id="冪" class="level2">
+<h2 class="anchored" data-anchor-id="冪">冪</h2>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="dv" style="color: #AD0000;">2</span><span class="op" style="color: #5E5E5E;">**</span><span class="dv" style="color: #AD0000;">3</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>8</code></pre>
+</div>
+</div>
+</section>
+<section id="三角関数" class="level2">
+<h2 class="anchored" data-anchor-id="三角関数">三角関数</h2>
+<section id="sin" class="level3">
+<h3 class="anchored" data-anchor-id="sin">sin</h3>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="im" style="color: #00769E;">import</span> numpy <span class="im" style="color: #00769E;">as</span> np</span>
+<span id="cb13-2">np.sin(<span class="fl" style="color: #AD0000;">0.2</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>0.19866933079506122</code></pre>
+</div>
+</div>
+</section>
+<section id="cos" class="level3">
+<h3 class="anchored" data-anchor-id="cos">cos</h3>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1">np.cos(<span class="fl" style="color: #AD0000;">0.2</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>0.9800665778412416</code></pre>
+</div>
+</div>
+</section>
+<section id="tan" class="level3">
+<h3 class="anchored" data-anchor-id="tan">tan</h3>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1">np.tan(<span class="fl" style="color: #AD0000;">0.2</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>0.20271003550867248</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="python-version" class="level2">
+<h2 class="anchored" data-anchor-id="python-version">Python version</h2>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><span class="im" style="color: #00769E;">import</span> platform</span>
+<span id="cb19-2"><span class="co" style="color: #5E5E5E;">"Python version "</span><span class="op" style="color: #5E5E5E;">+</span>platform.python_version()</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>'Python version 3.10.7'</code></pre>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>Python</category>
+  <guid>https://nobukuni-hyakutake.github.io/statistics/posts/calculator/index.html</guid>
+  <pubDate>Thu, 26 Jan 2023 15:00:00 GMT</pubDate>
+  <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/calculator/calc.jpeg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>コード入りの投稿サンプル</title>
   <dc:creator>Nobukuni Hyakutake</dc:creator>
   <link>https://nobukuni-hyakutake.github.io/statistics/posts/post-with-code/index.html</link>
   <description><![CDATA[ 
@@ -29,7 +142,7 @@
 <span id="cb1-3">a<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">round</span>(a,<span class="dv" style="color: #AD0000;">2</span>)</span>
 <span id="cb1-4"><span class="fu" style="color: #4758AB;">print</span>(a)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.03 0.41 0.08</code></pre>
+<pre><code>[1] 0.89 0.10 0.61</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">b<span class="ot" style="color: #003B4F;">&lt;-</span><span class="st" style="color: #20794D;">"Hello, "</span></span></code></pre></div>
 </div>
@@ -195,8 +308,8 @@
   <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/standard_deviation/sd.png" medium="image" type="image/png" height="86" width="86"/>
 </item>
 <item>
-  <title>Welcome To My Blog</title>
-  <dc:creator>Tristan O&#39;Malley</dc:creator>
+  <title>ようこそ</title>
+  <dc:creator>Nobukuni Hyakutake</dc:creator>
   <link>https://nobukuni-hyakutake.github.io/statistics/posts/welcome/index.html</link>
   <description><![CDATA[ 
 

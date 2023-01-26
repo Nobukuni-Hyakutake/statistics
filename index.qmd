@@ -1,5 +1,5 @@
 ---
-title: "blog"
+title: "Top"
 listing:
   type: table
   contents: posts

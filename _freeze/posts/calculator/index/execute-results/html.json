@@ -1,0 +1,11 @@
+{
+  "hash": "ef41ff0879f1abd5d982796925c788c3",
+  "result": {
+    "markdown": "---\ntitle: \"Pythonを電卓として使う\"\nauthor: \"Nobukuni Hyakutake\"\ndate: \"2023-01-27\"\ndate-format: \"iso\"\ncategories: [Python]\nimage: \"calc.jpeg\"\n---\n\n## 足し算\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\n1+1\n```\n\n::: {.cell-output .cell-output-display execution_count=1}\n```\n2\n```\n:::\n:::\n\n\n## 引き算\n\n::: {.cell execution_count=2}\n``` {.python .cell-code}\n8-5\n```\n\n::: {.cell-output .cell-output-display execution_count=2}\n```\n3\n```\n:::\n:::\n\n\n## 掛け算\n\n::: {.cell execution_count=3}\n``` {.python .cell-code}\n8*7\n```\n\n::: {.cell-output .cell-output-display execution_count=3}\n```\n56\n```\n:::\n:::\n\n\n## 割り算\n\n::: {.cell execution_count=4}\n``` {.python .cell-code}\n12/6\n```\n\n::: {.cell-output .cell-output-display execution_count=4}\n```\n2.0\n```\n:::\n:::\n\n\n## 割り算の剰余\n\n::: {.cell execution_count=5}\n``` {.python .cell-code}\n23%7\n```\n\n::: {.cell-output .cell-output-display execution_count=5}\n```\n2\n```\n:::\n:::\n\n\n## 冪\n\n::: {.cell execution_count=6}\n``` {.python .cell-code}\n2**3\n```\n\n::: {.cell-output .cell-output-display execution_count=6}\n```\n8\n```\n:::\n:::\n\n\n## 三角関数\n\n### sin\n\n::: {.cell execution_count=7}\n``` {.python .cell-code}\nimport numpy as np\nnp.sin(0.2)\n```\n\n::: {.cell-output .cell-output-display execution_count=7}\n```\n0.19866933079506122\n```\n:::\n:::\n\n\n### cos\n\n::: {.cell execution_count=8}\n``` {.python .cell-code}\nnp.cos(0.2)\n```\n\n::: {.cell-output .cell-output-display execution_count=8}\n```\n0.9800665778412416\n```\n:::\n:::\n\n\n### tan\n\n::: {.cell execution_count=9}\n``` {.python .cell-code}\nnp.tan(0.2)\n```\n\n::: {.cell-output .cell-output-display execution_count=9}\n```\n0.20271003550867248\n```\n:::\n:::\n\n\n## Python version\n\n::: {.cell execution_count=10}\n``` {.python .cell-code}\nimport platform\n\"Python version \"+platform.python_version()\n```\n\n::: {.cell-output .cell-output-display execution_count=10}\n```\n'Python version 3.10.7'\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
