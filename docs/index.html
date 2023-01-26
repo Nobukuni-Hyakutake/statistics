@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-categories','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-image','listing-date','listing-title','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
       searchColumns: ["listing-date","listing-title","listing-author"],
     };
@@ -170,7 +170,10 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 
 
 
-<p>Hello, World!</p>
+<ul>
+<li>右側のCategoriesをクリックすると、該当する記事に絞られます。</li>
+<li>Filterに文字を入力すると、その文字を含む記事に絞られます。</li>
+</ul>
 
 
 
@@ -213,9 +216,6 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 <th>
 Categories
 </th>
-<th>
-Reading Time
-</th>
 </tr>
 </thead>
 <tbody class="list">
@@ -232,9 +232,6 @@ Reading Time
 <td class="listing-categories">
 Python
 </td>
-<td class="listing-reading-time">
-0 min
-</td>
 </tr>
 <tr data-index="1" data-categories="news,code,analysis,R,Python" data-listing-date-sort="1674572400000" data-listing-file-modified-sort="1674764997814" data-listing-reading-time-sort="0.1" data-listing-title-sort="コード入りの投稿サンプル" data-listing-filename-sort="index.qmd">
 <td class="listing-image">
@@ -248,9 +245,6 @@ Python
 </td>
 <td class="listing-categories">
 news,code,analysis,R,Python
-</td>
-<td class="listing-reading-time">
-0 min
 </td>
 </tr>
 <tr data-index="2" data-categories="STATISTICS" data-listing-date-sort="1674399600000" data-listing-file-modified-sort="1674421093463" data-listing-reading-time-sort="0.21" data-listing-title-sort="Standard deviation" data-listing-filename-sort="index.qmd">
@@ -266,9 +260,6 @@ news,code,analysis,R,Python
 <td class="listing-categories">
 STATISTICS
 </td>
-<td class="listing-reading-time">
-0 min
-</td>
 </tr>
 <tr data-index="3" data-categories="news" data-listing-date-sort="1674140400000" data-listing-file-modified-sort="1674765044417" data-listing-reading-time-sort="0.16" data-listing-title-sort="ようこそ" data-listing-filename-sort="index.qmd">
 <td class="listing-image">
@@ -282,9 +273,6 @@ STATISTICS
 </td>
 <td class="listing-categories">
 news
-</td>
-<td class="listing-reading-time">
-0 min
 </td>
 </tr>
 </tbody>

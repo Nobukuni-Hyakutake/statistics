@@ -3,7 +3,7 @@ title: "Top"
 listing:
   type: table
   contents: posts
-  fields: [image, date, title, categories, reading-time]
+  fields: [image, date, title, categories]
   sort: "date desc"
   categories: true
   sort-ui: true
@@ -14,4 +14,5 @@ page-layout: full
 title-block-banner: true
 ---
 
-Hello, World!
+- 右側のCategoriesをクリックすると、該当する記事に絞られます。
+- Filterに文字を入力すると、その文字を含む記事に絞られます。
