@@ -34,3 +34,9 @@ library(rmarkdown)
 rmarkdown::render("statistics_01.Rmd",output_format = "html_document")
 rmarkdown::render("statistics_01.Rmd",output_format = "md_document")
 ```
+
+## Google analytics設定
+
+下記に記載(Private repository)
+
+https://github.com/Nobukuni-Hyakutake/hon/blob/main/quarto/memo.md
