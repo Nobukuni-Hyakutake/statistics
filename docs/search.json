@@ -102,7 +102,7 @@
     "href": "posts/post-with-code/index.html#r-1",
     "title": "Post With Code",
     "section": "R-1",
-    "text": "R-1\n\nlibrary(reticulate)\na<-runif(3)\na<-round(a,2)\nprint(a)\n\n[1] 0.89 0.11 0.12\n\nb<-\"Hello, \""
+    "text": "R-1\n\nlibrary(reticulate)\na<-runif(3)\na<-round(a,2)\nprint(a)\n\n[1] 0.95 0.60 0.75\n\nb<-\"Hello, \""
   },
   {
     "objectID": "posts/post-with-code/index.html#python",
