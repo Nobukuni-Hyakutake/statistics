@@ -14,7 +14,6 @@ website:
         href: https://github.com/Nobukuni-Hyakutake/statistics
       - icon: rss
         href: index.xml
-  cookie-consent: true
 format:
   html:
     theme: cosmo
