@@ -10,7 +10,73 @@
 <atom:link href="https://nobukuni-hyakutake.github.io/statistics/index.xml" rel="self" type="application/rss+xml"/>
 <description>A sample blog</description>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Thu, 26 Jan 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 29 Jan 2023 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>Rを電卓として使う</title>
+  <dc:creator>Nobukuni Hyakutake</dc:creator>
+  <link>https://nobukuni-hyakutake.github.io/statistics/posts/calculator_R/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="四則演算" class="level2">
+<h2 class="anchored" data-anchor-id="四則演算">四則演算</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>内容</th>
+<th>記号</th>
+<th>例</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>足し算</td>
+<td><code>+</code></td>
+<td><code>5+6</code></td>
+<td><code>11</code></td>
+</tr>
+<tr class="even">
+<td>引き算</td>
+<td><code>-</code></td>
+<td><code>8-3</code></td>
+<td><code>5</code></td>
+</tr>
+<tr class="odd">
+<td>掛け算</td>
+<td><code>*</code></td>
+<td><code>3*4</code></td>
+<td><code>12</code></td>
+</tr>
+<tr class="even">
+<td>割り算</td>
+<td><code>/</code></td>
+<td><code>12/2</code></td>
+<td><code>6</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="r-version" class="level2">
+<h2 class="anchored" data-anchor-id="r-version">R version</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">R.version.string</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "R version 4.2.2 (2022-10-31)"</code></pre>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>R</category>
+  <guid>https://nobukuni-hyakutake.github.io/statistics/posts/calculator_R/index.html</guid>
+  <pubDate>Sun, 29 Jan 2023 15:00:00 GMT</pubDate>
+  <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/calculator_R/calc.jpeg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Pythonを電卓として使う</title>
   <dc:creator>Nobukuni Hyakutake</dc:creator>
