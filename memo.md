@@ -40,3 +40,14 @@ rmarkdown::render("statistics_01.Rmd",output_format = "md_document")
 下記に記載(Private repository)
 
 https://github.com/Nobukuni-Hyakutake/hon/blob/main/quarto/memo.md
+
+
+## 右側の目次
+
+_quarto.ymlに下記を加えると右側にページ内の目次がでる。
+
+```
+format:
+  html:
+    toc: true
+```

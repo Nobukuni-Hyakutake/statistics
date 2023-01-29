@@ -102,7 +102,7 @@
     "href": "posts/post-with-code/index.html#r-1",
     "title": "コード入りの投稿サンプル",
     "section": "R-1",
-    "text": "R-1\n\nlibrary(reticulate)\na<-runif(3)\na<-round(a,2)\nprint(a)\n\n[1] 0.89 0.10 0.61\n\nb<-\"Hello, \""
+    "text": "R-1\n\nlibrary(reticulate)\na<-runif(3)\na<-round(a,2)\nprint(a)\n\n[1] 0.79 0.63 0.09\n\nb<-\"Hello, \""
   },
   {
     "objectID": "posts/post-with-code/index.html#python",
