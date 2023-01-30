@@ -14,6 +14,9 @@ website:
         href: https://github.com/Nobukuni-Hyakutake/statistics
       - icon: rss
         href: index.xml
+  page-footer:
+    center: 
+      - text: "CC by 4.0 Nobukuni Hyakutake"
 format:
   html:
     theme: cosmo
