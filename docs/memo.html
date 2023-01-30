@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>blog – memo</title>
+<title>統計学の勉強ノート – memo</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,7 +73,7 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -81,7 +81,7 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">blog</span>
+    <span class="navbar-title">統計学の勉強ノート</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -91,7 +91,7 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./about.html">
- <span class="menu-text">About</span></a>
+ <span class="menu-text">このサイトについて</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/Nobukuni-Hyakutake/statistics"><i class="bi bi-github" role="img">
@@ -113,7 +113,25 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#メモ書き" id="toc-メモ書き" class="nav-link active" data-scroll-target="#メモ書き">メモ書き</a>
+  <ul class="collapse">
+  <li><a href="#統計" id="toc-統計" class="nav-link" data-scroll-target="#統計">統計</a></li>
+  <li><a href="#docsフォルダにrenderしたいとき" id="toc-docsフォルダにrenderしたいとき" class="nav-link" data-scroll-target="#docsフォルダにrenderしたいとき">docsフォルダにRenderしたいとき</a></li>
+  <li><a href="#combining-r-and-python-with-reticulate-and-quarto" id="toc-combining-r-and-python-with-reticulate-and-quarto" class="nav-link" data-scroll-target="#combining-r-and-python-with-reticulate-and-quarto">Combining R and Python with {reticulate} and Quarto</a></li>
+  <li><a href="#a-quarto-tip-a-day" id="toc-a-quarto-tip-a-day" class="nav-link" data-scroll-target="#a-quarto-tip-a-day">A Quarto tip a day</a></li>
+  <li><a href="#how-to-write-mathematics" id="toc-how-to-write-mathematics" class="nav-link" data-scroll-target="#how-to-write-mathematics">How to write mathematics</a></li>
+  <li><a href="#htmlとmarkdownの両方に出力する方法" id="toc-htmlとmarkdownの両方に出力する方法" class="nav-link" data-scroll-target="#htmlとmarkdownの両方に出力する方法">htmlとmarkdownの両方に出力する方法</a></li>
+  <li><a href="#google-analytics設定" id="toc-google-analytics設定" class="nav-link" data-scroll-target="#google-analytics設定">Google analytics設定</a></li>
+  <li><a href="#右側の目次" id="toc-右側の目次" class="nav-link" data-scroll-target="#右側の目次">右側の目次</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -157,6 +175,13 @@ rmarkdown::render("statistics_01.Rmd",output_format = "md_document")</code></pre
 <h2 class="anchored" data-anchor-id="google-analytics設定">Google analytics設定</h2>
 <p>下記に記載(Private repository)</p>
 <p>https://github.com/Nobukuni-Hyakutake/hon/blob/main/quarto/memo.md</p>
+</section>
+<section id="右側の目次" class="level2">
+<h2 class="anchored" data-anchor-id="右側の目次">右側の目次</h2>
+<p>_quarto.ymlに下記を加えると右側にページ内の目次がでる。</p>
+<pre><code>format:
+  html:
+    toc: true</code></pre>
 
 
 </section>

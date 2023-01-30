@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "このサイトについて"
 image: profile.jpg
 about:
   template: jolla
@@ -17,3 +17,5 @@ about:
 ---
 
 About this blog
+
+このサイトは統計学の勉強のノートです。

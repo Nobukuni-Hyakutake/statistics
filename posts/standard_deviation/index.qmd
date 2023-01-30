@@ -1,5 +1,5 @@
 ---
-title: "Standard deviation"
+title: "統計学基礎"
 author: "Nobukuni Hyakutake"
 date: "2023-01-23"
 categories: [STATISTICS]
