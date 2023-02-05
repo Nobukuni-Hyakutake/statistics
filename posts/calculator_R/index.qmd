@@ -7,6 +7,18 @@ categories: [R]
 image: "calc.jpeg"
 ---
 
+## データの型
+
+実数(numeric)、複素数(complex)、文字・文字列(character)、論理値(logical)、空値(NULL)がある。
+
+## データの構造
+
+```
+> x<-1    #xに1を代入
+> x    #xを表示
+> [1] 1    #出力結果
+```
+
 ## 四則演算
 
 | 内容   | 記号 | 例     | 結果 |

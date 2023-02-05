@@ -20,6 +20,16 @@
 
 
 
+<section id="データの型" class="level2">
+<h2 class="anchored" data-anchor-id="データの型">データの型</h2>
+<p>実数(numeric)、複素数(complex)、文字・文字列(character)、論理値(logical)、空値(NULL)がある。</p>
+</section>
+<section id="データの構造" class="level2">
+<h2 class="anchored" data-anchor-id="データの構造">データの構造</h2>
+<pre><code>&gt; x&lt;-1    #xに1を代入
+&gt; x    #xを表示
+&gt; [1] 1    #出力結果</code></pre>
+</section>
 <section id="四則演算" class="level2">
 <h2 class="anchored" data-anchor-id="四則演算">四則演算</h2>
 <table class="table">
@@ -62,7 +72,7 @@
 <section id="r-version" class="level2">
 <h2 class="anchored" data-anchor-id="r-version">R version</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">R.version.string</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">R.version.string</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "R version 4.2.2 (2022-10-31)"</code></pre>
 </div>

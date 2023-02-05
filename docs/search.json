@@ -256,7 +256,7 @@
     "href": "posts/calculator_R/index.html",
     "title": "Rを電卓として使う",
     "section": "",
-    "text": "内容\n記号\n例\n結果\n\n\n\n\n足し算\n+\n5+6\n11\n\n\n引き算\n-\n8-3\n5\n\n\n掛け算\n*\n3*4\n12\n\n\n割り算\n/\n12/2\n6"
+    "text": "実数(numeric)、複素数(complex)、文字・文字列(character)、論理値(logical)、空値(NULL)がある。"
   },
   {
     "objectID": "posts/calculator_R/index.html#r-version",
@@ -264,5 +264,19 @@
     "title": "Rを電卓として使う",
     "section": "R version",
     "text": "R version\n\nR.version.string\n\n[1] \"R version 4.2.2 (2022-10-31)\""
+  },
+  {
+    "objectID": "posts/calculator_R/index.html#データの構造",
+    "href": "posts/calculator_R/index.html#データの構造",
+    "title": "Rを電卓として使う",
+    "section": "データの構造",
+    "text": "データの構造\n> x<-1    #xに1を代入\n> x    #xを表示\n> [1] 1    #出力結果"
+  },
+  {
+    "objectID": "posts/calculator_R/index.html#四則演算",
+    "href": "posts/calculator_R/index.html#四則演算",
+    "title": "Rを電卓として使う",
+    "section": "四則演算",
+    "text": "四則演算\n\n\n\n内容\n記号\n例\n結果\n\n\n\n\n足し算\n+\n5+6\n11\n\n\n引き算\n-\n8-3\n5\n\n\n掛け算\n*\n3*4\n12\n\n\n割り算\n/\n12/2\n6"
   }
 ]
