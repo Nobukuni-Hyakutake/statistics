@@ -373,6 +373,15 @@
 <p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/standard_deviation/index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+</section>
+<section id="正規分布" class="level2">
+<h2 class="anchored" data-anchor-id="正規分布">正規分布</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><span class="fu" style="color: #4758AB;">curve</span>(<span class="fu" style="color: #4758AB;">dnorm</span>(x,<span class="at" style="color: #657422;">mean=</span><span class="dv" style="color: #AD0000;">0</span>,<span class="at" style="color: #657422;">sd=</span><span class="dv" style="color: #AD0000;">1</span>),<span class="at" style="color: #657422;">from=</span><span class="sc" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">4</span>,<span class="at" style="color: #657422;">to=</span><span class="dv" style="color: #AD0000;">4</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/standard_deviation/index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 
 
 </section>

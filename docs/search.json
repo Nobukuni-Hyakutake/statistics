@@ -278,5 +278,12 @@
     "title": "Rを電卓として使う",
     "section": "四則演算",
     "text": "四則演算\n\n\n\n内容\n記号\n例\n結果\n\n\n\n\n足し算\n+\n5+6\n11\n\n\n引き算\n-\n8-3\n5\n\n\n掛け算\n*\n3*4\n12\n\n\n割り算\n/\n12/2\n6"
+  },
+  {
+    "objectID": "posts/standard_deviation/index.html#正規分布",
+    "href": "posts/standard_deviation/index.html#正規分布",
+    "title": "統計学基礎",
+    "section": "正規分布",
+    "text": "正規分布\n\ncurve(dnorm(x,mean=0,sd=1),from=-4,to=4)"
   }
 ]

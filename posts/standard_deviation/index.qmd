@@ -79,3 +79,9 @@ cor(daa01,daa02,method="pearson")
 ```{r}
 plot(daa01,daa02)
 ```
+
+## 正規分布
+
+```{r}
+curve(dnorm(x,mean=0,sd=1),from=-4,to=4)
+```
