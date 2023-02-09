@@ -51,3 +51,10 @@ format:
   html:
     toc: true
 ```
+
+
+## Wordファイルに出力する方法
+
+```
+quarto render index.qmd --to docx  
+```
