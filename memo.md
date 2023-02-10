@@ -58,3 +58,44 @@ format:
 ```
 quarto render index.qmd --to docx  
 ```
+
+## 上部のナビゲージョンバーを入れ子にしたいとき
+
+下記のHelpのように、クリックするとさらに選択肢が出てくるようにする
+
+![](img/navbar_help.png)
+
+```
+  navbar:
+    background: light
+    logo: quarto.png
+    logo-alt: "Quarto logo."
+    title: false
+    collapse-below: lg
+    left:
+      - text: "Overview"
+        href: index.qmd
+      - text: "Get Started"
+        href: docs/get-started/index.qmd
+      - text: "Guide"
+        href: docs/guide/index.qmd
+      - text: Extensions
+        href: docs/extensions/index.qmd
+      - text: "Reference"
+        href: docs/reference/index.qmd
+      - text: "Gallery"
+        href: docs/gallery/index.qmd
+      - text: "Blog"
+        href: docs/blog/index.qmd
+      - text: "Help"
+        menu:
+          - text: "Report a Bug"
+            icon: "bug"
+            href: "https://github.com/quarto-dev/quarto-cli/issues"
+          - text: "Ask a Question"
+            icon: "chat-right-text"
+            href: "https://github.com/quarto-dev/quarto-cli/discussions"
+          - text: "FAQ"
+            icon: "question-circle"
+            href: docs/faq/index.qmd
+```
