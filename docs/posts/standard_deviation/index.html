@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Nobukuni Hyakutake">
-<meta name="dcterms.date" content="2023-01-23">
+<meta name="dcterms.date" content="2023-02-10">
 
 <title>統計学の勉強ノート - 統計学基礎</title>
 <style>
@@ -179,7 +179,7 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">統計学基礎</h1>
+      <div class="quarto-title-block"><div><h1 class="title">統計学基礎</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
                                 <div class="quarto-categories">
                 <div class="quarto-category">STATISTICS</div>
               </div>
@@ -199,7 +199,7 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 23, 2023</p>
+        <p class="date">2023-02-10</p>
       </div>
     </div>
     
@@ -211,28 +211,28 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#偏差平方和" id="toc-偏差平方和" class="nav-link active" data-scroll-target="#偏差平方和">偏差平方和</a></li>
-  <li><a href="#分散-標本分散" id="toc-分散-標本分散" class="nav-link" data-scroll-target="#分散-標本分散">分散 (標本分散)</a></li>
-  <li><a href="#標準偏差標本分散の平方根" id="toc-標準偏差標本分散の平方根" class="nav-link" data-scroll-target="#標準偏差標本分散の平方根">標準偏差(標本分散の平方根)</a></li>
-  <li><a href="#変動係数" id="toc-変動係数" class="nav-link" data-scroll-target="#変動係数">変動係数</a></li>
-  <li><a href="#相関係数" id="toc-相関係数" class="nav-link" data-scroll-target="#相関係数">相関係数</a></li>
-  <li><a href="#正規分布" id="toc-正規分布" class="nav-link" data-scroll-target="#正規分布">正規分布</a></li>
-  </ul>
-</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-
+<nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">目次</h2>
+   
+  <ul>
+  <li><a href="#偏差平方和" id="toc-偏差平方和"><span class="toc-section-number">1</span>  偏差平方和</a></li>
+  <li><a href="#分散-標本分散" id="toc-分散-標本分散"><span class="toc-section-number">2</span>  分散 (標本分散)</a></li>
+  <li><a href="#標準偏差標本分散の平方根" id="toc-標準偏差標本分散の平方根"><span class="toc-section-number">3</span>  標準偏差(標本分散の平方根)</a></li>
+  <li><a href="#変動係数" id="toc-変動係数"><span class="toc-section-number">4</span>  変動係数</a></li>
+  <li><a href="#相関係数" id="toc-相関係数"><span class="toc-section-number">5</span>  相関係数</a></li>
+  <li><a href="#正規分布" id="toc-正規分布"><span class="toc-section-number">6</span>  正規分布</a></li>
+  <li><a href="#ヒストグラム" id="toc-ヒストグラム"><span class="toc-section-number">7</span>  ヒストグラム</a></li>
+  </ul>
+</nav>
 <p><img src="sd.png" class="img-fluid"></p>
-<section id="偏差平方和" class="level2">
-<h2 class="anchored" data-anchor-id="偏差平方和">偏差平方和</h2>
+<section id="偏差平方和" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="偏差平方和"><span class="header-section-number">1</span> 偏差平方和</h2>
 <p><span class="math inline">\(\displaystyle\sum^{n}_{i=1}(x_i-\overline{x})^2\)</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>daa01<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">4</span>)</span>
@@ -244,8 +244,8 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 </div>
 </div>
 </section>
-<section id="分散-標本分散" class="level2">
-<h2 class="anchored" data-anchor-id="分散-標本分散">分散 (標本分散)</h2>
+<section id="分散-標本分散" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="分散-標本分散"><span class="header-section-number">2</span> 分散 (標本分散)</h2>
 <p><span class="math inline">\(s^2=\frac {\displaystyle\sum^{n}_{i=1}(x_i-\overline{x})^2} {n}\)</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(</span>
@@ -264,8 +264,8 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 </div>
 </div>
 </section>
-<section id="標準偏差標本分散の平方根" class="level2">
-<h2 class="anchored" data-anchor-id="標準偏差標本分散の平方根">標準偏差(標本分散の平方根)</h2>
+<section id="標準偏差標本分散の平方根" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="標準偏差標本分散の平方根"><span class="header-section-number">3</span> 標準偏差(標本分散の平方根)</h2>
 <p><span class="math inline">\(s=\sqrt{\frac {\displaystyle\sum^{n}_{i=1}(x_i-\overline{x})^2} {n}}\)</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(</span>
@@ -286,8 +286,8 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 </div>
 </div>
 </section>
-<section id="変動係数" class="level2">
-<h2 class="anchored" data-anchor-id="変動係数">変動係数</h2>
+<section id="変動係数" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="変動係数"><span class="header-section-number">4</span> 変動係数</h2>
 <p><span class="math inline">\(C.V.=\frac {s} {\overline{x}}\)</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(daa01)<span class="sc">*</span></span>
@@ -300,8 +300,8 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 </div>
 </div>
 </section>
-<section id="相関係数" class="level2">
-<h2 class="anchored" data-anchor-id="相関係数">相関係数</h2>
+<section id="相関係数" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="相関係数"><span class="header-section-number">5</span> 相関係数</h2>
 <p><span class="math inline">\(r=\frac {\displaystyle\sum^{n}_{i=1}(x_i-\overline{x}) (y_i-\overline{y})} {\sqrt{ {\displaystyle\sum^{n}_{i=1}(x_i-\overline{x})^2}} \sqrt{ {\displaystyle\sum^{n}_{i=1}(y_i-\overline{y})^2}}}\)</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>daa02<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">8</span>,<span class="dv">6</span>)</span>
@@ -317,15 +317,26 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 </div>
 </div>
 </section>
-<section id="正規分布" class="level2">
-<h2 class="anchored" data-anchor-id="正規分布">正規分布</h2>
+<section id="正規分布" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="正規分布"><span class="header-section-number">6</span> 正規分布</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x,<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span><span class="dv">1</span>),<span class="at">from=</span><span class="sc">-</span><span class="dv">4</span>,<span class="at">to=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+</section>
+<section id="ヒストグラム" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="ヒストグラム"><span class="header-section-number">7</span> ヒストグラム</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 
+
+<!-- -->
 
 </section>
 
@@ -395,6 +406,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
@@ -462,7 +524,103 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb18" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "統計学基礎"</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Nobukuni Hyakutake"</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-02-10"</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> "iso"</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [STATISTICS]</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "sd.png"</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="al">![](sd.png)</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## 偏差平方和</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>$\displaystyle\sum^{n}_{i=1}(x_i-\overline{x})^2$</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>daa01<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">4</span>)</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>  (daa01<span class="sc">-</span><span class="fu">mean</span>(daa01))<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## 分散 (標本分散)</span></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>$s^2=\frac {\displaystyle\sum^{n}_{i=1}(x_i-\overline{x})^2} {n}$</span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(</span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a>  (daa01<span class="sc">-</span><span class="fu">mean</span>(daa01))<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">/</span></span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">length</span>(daa01)</span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a>or</span>
+<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(daa01)<span class="sc">*</span>(<span class="fu">length</span>(daa01)<span class="sc">-</span><span class="dv">1</span>)<span class="sc">/</span><span class="fu">length</span>(daa01)</span>
+<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## 標準偏差(標本分散の平方根)</span></span>
+<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-48"><a href="#cb18-48" aria-hidden="true" tabindex="-1"></a>$s=\sqrt{\frac {\displaystyle\sum^{n}_{i=1}(x_i-\overline{x})^2} {n}}$</span>
+<span id="cb18-49"><a href="#cb18-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-52"><a href="#cb18-52" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-53"><a href="#cb18-53" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(</span>
+<span id="cb18-54"><a href="#cb18-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">var</span>(daa01)<span class="sc">*</span>(<span class="fu">length</span>(daa01)<span class="sc">-</span><span class="dv">1</span>)<span class="sc">/</span><span class="fu">length</span>(daa01)</span>
+<span id="cb18-55"><a href="#cb18-55" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-56"><a href="#cb18-56" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-57"><a href="#cb18-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-58"><a href="#cb18-58" aria-hidden="true" tabindex="-1"></a>or</span>
+<span id="cb18-59"><a href="#cb18-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-62"><a href="#cb18-62" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-63"><a href="#cb18-63" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(daa01)<span class="sc">*</span></span>
+<span id="cb18-64"><a href="#cb18-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sqrt</span>(</span>
+<span id="cb18-65"><a href="#cb18-65" aria-hidden="true" tabindex="-1"></a>  (<span class="fu">length</span>(daa01)<span class="sc">-</span><span class="dv">1</span>)<span class="sc">/</span><span class="fu">length</span>(daa01)</span>
+<span id="cb18-66"><a href="#cb18-66" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-67"><a href="#cb18-67" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-68"><a href="#cb18-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-69"><a href="#cb18-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## 変動係数</span></span>
+<span id="cb18-70"><a href="#cb18-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-71"><a href="#cb18-71" aria-hidden="true" tabindex="-1"></a>$C.V.=\frac {s} {\overline{x}}$</span>
+<span id="cb18-72"><a href="#cb18-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-75"><a href="#cb18-75" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-76"><a href="#cb18-76" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(daa01)<span class="sc">*</span></span>
+<span id="cb18-77"><a href="#cb18-77" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sqrt</span>(</span>
+<span id="cb18-78"><a href="#cb18-78" aria-hidden="true" tabindex="-1"></a>  (<span class="fu">length</span>(daa01)<span class="sc">-</span><span class="dv">1</span>)<span class="sc">/</span><span class="fu">length</span>(daa01)</span>
+<span id="cb18-79"><a href="#cb18-79" aria-hidden="true" tabindex="-1"></a>)<span class="sc">/</span></span>
+<span id="cb18-80"><a href="#cb18-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(daa01)</span>
+<span id="cb18-81"><a href="#cb18-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-82"><a href="#cb18-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-83"><a href="#cb18-83" aria-hidden="true" tabindex="-1"></a><span class="fu">## 相関係数</span></span>
+<span id="cb18-84"><a href="#cb18-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-85"><a href="#cb18-85" aria-hidden="true" tabindex="-1"></a>$r=\frac {\displaystyle\sum^{n}_{i=1}(x_i-\overline{x}) (y_i-\overline{y})} {\sqrt{ {\displaystyle\sum^{n}_{i=1}(x_i-\overline{x})^2}} \sqrt{ {\displaystyle\sum^{n}_{i=1}(y_i-\overline{y})^2}}}$</span>
+<span id="cb18-86"><a href="#cb18-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-89"><a href="#cb18-89" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-90"><a href="#cb18-90" aria-hidden="true" tabindex="-1"></a>daa02<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">8</span>,<span class="dv">6</span>)</span>
+<span id="cb18-91"><a href="#cb18-91" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(daa01,daa02,<span class="at">method=</span><span class="st">"pearson"</span>)</span>
+<span id="cb18-92"><a href="#cb18-92" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-93"><a href="#cb18-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-96"><a href="#cb18-96" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-97"><a href="#cb18-97" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(daa01,daa02)</span>
+<span id="cb18-98"><a href="#cb18-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-99"><a href="#cb18-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-100"><a href="#cb18-100" aria-hidden="true" tabindex="-1"></a><span class="fu">## 正規分布</span></span>
+<span id="cb18-101"><a href="#cb18-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-104"><a href="#cb18-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-105"><a href="#cb18-105" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x,<span class="at">mean=</span><span class="dv">0</span>,<span class="at">sd=</span><span class="dv">1</span>),<span class="at">from=</span><span class="sc">-</span><span class="dv">4</span>,<span class="at">to=</span><span class="dv">4</span>)</span>
+<span id="cb18-106"><a href="#cb18-106" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-107"><a href="#cb18-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-108"><a href="#cb18-108" aria-hidden="true" tabindex="-1"></a><span class="fu">## ヒストグラム</span></span>
+<span id="cb18-109"><a href="#cb18-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-112"><a href="#cb18-112" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb18-113"><a href="#cb18-113" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">6</span>))</span>
+<span id="cb18-114"><a href="#cb18-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

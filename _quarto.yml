@@ -22,5 +22,11 @@ format:
     theme: cerulean
     css: styles.css
     toc: true
-
-
+    toc-title: 目次
+    toc-location: body
+    number-sections: true
+    code-copy: true
+    code-tools: true
+execute:
+  warning: false
+ 

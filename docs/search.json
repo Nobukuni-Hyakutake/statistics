@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Top",
     "section": "",
-    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-23\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
+    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -123,7 +123,7 @@
     "href": "memo.html",
     "title": "統計学の勉強ノート",
     "section": "",
-    "text": "栗原の入門統計学から作った統計ノートで作った\n今後は東京大学出版会　統計学入門 からピックアップして作っていくか？その方が詳しいので。\n\n\n\n\n_quarto.yamlに下記の通り設定する\nRender to docs\n\n\n\nhttps://www.r-bloggers.com/2023/01/combining-r-and-python-with-reticulate-and-quarto/\n\n\n\n投稿の仕方の参考になりそう。\nhttps://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/\n\n\n\nMarkdownに数式を挿入する方法\nLaTeX/Mathematics\n\n\n\nlibrary(rmarkdown)\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"html_document\")\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"md_document\")\n\n\n\n下記に記載(Private repository)\nhttps://github.com/Nobukuni-Hyakutake/hon/blob/main/quarto/memo.md\n\n\n\n_quarto.ymlに下記を加えると右側にページ内の目次がでる。\nformat:\n  html:\n    toc: true"
+    "text": "栗原の入門統計学から作った統計ノートで作った\n今後は東京大学出版会　統計学入門 からピックアップして作っていくか？その方が詳しいので。\n\n\n\n\n_quarto.yamlに下記の通り設定する\nRender to docs\n\n\n\nhttps://www.r-bloggers.com/2023/01/combining-r-and-python-with-reticulate-and-quarto/\n\n\n\n投稿の仕方の参考になりそう。\nhttps://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/\n\n\n\nMarkdownに数式を挿入する方法\nLaTeX/Mathematics\n\n\n\nlibrary(rmarkdown)\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"html_document\")\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"md_document\")\n\n\n\n下記に記載(Private repository)\nhttps://github.com/Nobukuni-Hyakutake/hon/blob/main/quarto/memo.md\n\n\n\n_quarto.ymlに下記を加えると右側にページ内の目次がでる。\nformat:\n  html:\n    toc: true\n\n\n\nquarto render index.qmd --to docx"
   },
   {
     "objectID": "memo.html#combining-r-and-python-with-reticulate-and-quarto",
@@ -143,36 +143,36 @@
     "objectID": "posts/standard_deviation/index.html#偏差平方和",
     "href": "posts/standard_deviation/index.html#偏差平方和",
     "title": "統計学基礎",
-    "section": "偏差平方和",
-    "text": "偏差平方和\n\\(\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2\\)\n\ndaa01<-c(5,6,3,4,3,4,5,4)\nsum(\n  (daa01-mean(daa01))^2\n  )\n\n[1] 7.5"
+    "section": "1 偏差平方和",
+    "text": "1 偏差平方和\n\\(\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2\\)\n\ndaa01<-c(5,6,3,4,3,4,5,4)\nsum(\n  (daa01-mean(daa01))^2\n  )\n\n[1] 7.5"
   },
   {
     "objectID": "posts/standard_deviation/index.html#分散-標本分散",
     "href": "posts/standard_deviation/index.html#分散-標本分散",
     "title": "統計学基礎",
-    "section": "分散 (標本分散)",
-    "text": "分散 (標本分散)\n\\(s^2=\\frac {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2} {n}\\)\n\nsum(\n  (daa01-mean(daa01))^2\n  )/\n  length(daa01)\n\n[1] 0.9375\n\n\nor\n\nvar(daa01)*(length(daa01)-1)/length(daa01)\n\n[1] 0.9375"
+    "section": "2 分散 (標本分散)",
+    "text": "2 分散 (標本分散)\n\\(s^2=\\frac {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2} {n}\\)\n\nsum(\n  (daa01-mean(daa01))^2\n  )/\n  length(daa01)\n\n[1] 0.9375\n\n\nor\n\nvar(daa01)*(length(daa01)-1)/length(daa01)\n\n[1] 0.9375"
   },
   {
     "objectID": "posts/standard_deviation/index.html#標準偏差標本分散の平方根",
     "href": "posts/standard_deviation/index.html#標準偏差標本分散の平方根",
     "title": "統計学基礎",
-    "section": "標準偏差(標本分散の平方根)",
-    "text": "標準偏差(標本分散の平方根)\n\\(s=\\sqrt{\\frac {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2} {n}}\\)\n\nsqrt(\n  var(daa01)*(length(daa01)-1)/length(daa01)\n  )\n\n[1] 0.9682458\n\n\nor\n\nsd(daa01)*\n  sqrt(\n  (length(daa01)-1)/length(daa01)\n)\n\n[1] 0.9682458"
+    "section": "3 標準偏差(標本分散の平方根)",
+    "text": "3 標準偏差(標本分散の平方根)\n\\(s=\\sqrt{\\frac {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2} {n}}\\)\n\nsqrt(\n  var(daa01)*(length(daa01)-1)/length(daa01)\n  )\n\n[1] 0.9682458\n\n\nor\n\nsd(daa01)*\n  sqrt(\n  (length(daa01)-1)/length(daa01)\n)\n\n[1] 0.9682458"
   },
   {
     "objectID": "posts/standard_deviation/index.html#変動係数",
     "href": "posts/standard_deviation/index.html#変動係数",
     "title": "統計学基礎",
-    "section": "変動係数",
-    "text": "変動係数\n\\(C.V.=\\frac {s} {\\overline{x}}\\)\n\nsd(daa01)*\n  sqrt(\n  (length(daa01)-1)/length(daa01)\n)/\n  mean(daa01)\n\n[1] 0.2278225"
+    "section": "4 変動係数",
+    "text": "4 変動係数\n\\(C.V.=\\frac {s} {\\overline{x}}\\)\n\nsd(daa01)*\n  sqrt(\n  (length(daa01)-1)/length(daa01)\n)/\n  mean(daa01)\n\n[1] 0.2278225"
   },
   {
     "objectID": "posts/standard_deviation/index.html#相関係数",
     "href": "posts/standard_deviation/index.html#相関係数",
     "title": "統計学基礎",
-    "section": "相関係数",
-    "text": "相関係数\n\\(r=\\frac {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x}) (y_i-\\overline{y})} {\\sqrt{ {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2}} \\sqrt{ {\\displaystyle\\sum^{n}_{i=1}(y_i-\\overline{y})^2}}}\\)\n\ndaa02<-c(7,8,3,5,4,3,8,6)\ncor(daa01,daa02,method=\"pearson\")\n\n[1] 0.8666667\n\n\n\nplot(daa01,daa02)"
+    "section": "5 相関係数",
+    "text": "5 相関係数\n\\(r=\\frac {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x}) (y_i-\\overline{y})} {\\sqrt{ {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2}} \\sqrt{ {\\displaystyle\\sum^{n}_{i=1}(y_i-\\overline{y})^2}}}\\)\n\ndaa02<-c(7,8,3,5,4,3,8,6)\ncor(daa01,daa02,method=\"pearson\")\n\n[1] 0.8666667\n\n\n\nplot(daa01,daa02)"
   },
   {
     "objectID": "memo.html#a-quarto-tip-a-day",
@@ -283,7 +283,14 @@
     "objectID": "posts/standard_deviation/index.html#正規分布",
     "href": "posts/standard_deviation/index.html#正規分布",
     "title": "統計学基礎",
-    "section": "正規分布",
-    "text": "正規分布\n\ncurve(dnorm(x,mean=0,sd=1),from=-4,to=4)"
+    "section": "6 正規分布",
+    "text": "6 正規分布\n\ncurve(dnorm(x,mean=0,sd=1),from=-4,to=4)"
+  },
+  {
+    "objectID": "posts/standard_deviation/index.html#ヒストグラム",
+    "href": "posts/standard_deviation/index.html#ヒストグラム",
+    "title": "統計学基礎",
+    "section": "7 ヒストグラム",
+    "text": "7 ヒストグラム\n\nhist(c(4,4,5,5,6))"
   }
 ]

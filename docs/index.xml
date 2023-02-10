@@ -10,7 +10,132 @@
 <atom:link href="https://nobukuni-hyakutake.github.io/statistics/index.xml" rel="self" type="application/rss+xml"/>
 <description>A sample blog</description>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Sun, 29 Jan 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 09 Feb 2023 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>統計学基礎</title>
+  <dc:creator>Nobukuni Hyakutake</dc:creator>
+  <link>https://nobukuni-hyakutake.github.io/statistics/posts/standard_deviation/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/standard_deviation/sd.png" class="img-fluid"></p>
+<section id="偏差平方和" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="偏差平方和"><span class="header-section-number">1</span> 偏差平方和</h2>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cdisplaystyle%5Csum%5E%7Bn%7D_%7Bi=1%7D(x_i-%5Coverline%7Bx%7D)%5E2"></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">daa01<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">c</span>(<span class="dv" style="color: #AD0000;">5</span>,<span class="dv" style="color: #AD0000;">6</span>,<span class="dv" style="color: #AD0000;">3</span>,<span class="dv" style="color: #AD0000;">4</span>,<span class="dv" style="color: #AD0000;">3</span>,<span class="dv" style="color: #AD0000;">4</span>,<span class="dv" style="color: #AD0000;">5</span>,<span class="dv" style="color: #AD0000;">4</span>)</span>
+<span id="cb1-2"><span class="fu" style="color: #4758AB;">sum</span>(</span>
+<span id="cb1-3">  (daa01<span class="sc" style="color: #5E5E5E;">-</span><span class="fu" style="color: #4758AB;">mean</span>(daa01))<span class="sc" style="color: #5E5E5E;">^</span><span class="dv" style="color: #AD0000;">2</span></span>
+<span id="cb1-4">  )</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7.5</code></pre>
+</div>
+</div>
+</section>
+<section id="分散-標本分散" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="分散-標本分散"><span class="header-section-number">2</span> 分散 (標本分散)</h2>
+<p><img src="https://latex.codecogs.com/png.latex?s%5E2=%5Cfrac%20%7B%5Cdisplaystyle%5Csum%5E%7Bn%7D_%7Bi=1%7D(x_i-%5Coverline%7Bx%7D)%5E2%7D%20%7Bn%7D"></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;">sum</span>(</span>
+<span id="cb3-2">  (daa01<span class="sc" style="color: #5E5E5E;">-</span><span class="fu" style="color: #4758AB;">mean</span>(daa01))<span class="sc" style="color: #5E5E5E;">^</span><span class="dv" style="color: #AD0000;">2</span></span>
+<span id="cb3-3">  )<span class="sc" style="color: #5E5E5E;">/</span></span>
+<span id="cb3-4">  <span class="fu" style="color: #4758AB;">length</span>(daa01)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9375</code></pre>
+</div>
+</div>
+<p>or</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="fu" style="color: #4758AB;">var</span>(daa01)<span class="sc" style="color: #5E5E5E;">*</span>(<span class="fu" style="color: #4758AB;">length</span>(daa01)<span class="sc" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span>)<span class="sc" style="color: #5E5E5E;">/</span><span class="fu" style="color: #4758AB;">length</span>(daa01)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9375</code></pre>
+</div>
+</div>
+</section>
+<section id="標準偏差標本分散の平方根" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="標準偏差標本分散の平方根"><span class="header-section-number">3</span> 標準偏差(標本分散の平方根)</h2>
+<p><img src="https://latex.codecogs.com/png.latex?s=%5Csqrt%7B%5Cfrac%20%7B%5Cdisplaystyle%5Csum%5E%7Bn%7D_%7Bi=1%7D(x_i-%5Coverline%7Bx%7D)%5E2%7D%20%7Bn%7D%7D"></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><span class="fu" style="color: #4758AB;">sqrt</span>(</span>
+<span id="cb7-2">  <span class="fu" style="color: #4758AB;">var</span>(daa01)<span class="sc" style="color: #5E5E5E;">*</span>(<span class="fu" style="color: #4758AB;">length</span>(daa01)<span class="sc" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span>)<span class="sc" style="color: #5E5E5E;">/</span><span class="fu" style="color: #4758AB;">length</span>(daa01)</span>
+<span id="cb7-3">  )</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9682458</code></pre>
+</div>
+</div>
+<p>or</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><span class="fu" style="color: #4758AB;">sd</span>(daa01)<span class="sc" style="color: #5E5E5E;">*</span></span>
+<span id="cb9-2">  <span class="fu" style="color: #4758AB;">sqrt</span>(</span>
+<span id="cb9-3">  (<span class="fu" style="color: #4758AB;">length</span>(daa01)<span class="sc" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span>)<span class="sc" style="color: #5E5E5E;">/</span><span class="fu" style="color: #4758AB;">length</span>(daa01)</span>
+<span id="cb9-4">)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9682458</code></pre>
+</div>
+</div>
+</section>
+<section id="変動係数" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="変動係数"><span class="header-section-number">4</span> 変動係数</h2>
+<p><img src="https://latex.codecogs.com/png.latex?C.V.=%5Cfrac%20%7Bs%7D%20%7B%5Coverline%7Bx%7D%7D"></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><span class="fu" style="color: #4758AB;">sd</span>(daa01)<span class="sc" style="color: #5E5E5E;">*</span></span>
+<span id="cb11-2">  <span class="fu" style="color: #4758AB;">sqrt</span>(</span>
+<span id="cb11-3">  (<span class="fu" style="color: #4758AB;">length</span>(daa01)<span class="sc" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span>)<span class="sc" style="color: #5E5E5E;">/</span><span class="fu" style="color: #4758AB;">length</span>(daa01)</span>
+<span id="cb11-4">)<span class="sc" style="color: #5E5E5E;">/</span></span>
+<span id="cb11-5">  <span class="fu" style="color: #4758AB;">mean</span>(daa01)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2278225</code></pre>
+</div>
+</div>
+</section>
+<section id="相関係数" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="相関係数"><span class="header-section-number">5</span> 相関係数</h2>
+<p><img src="https://latex.codecogs.com/png.latex?r=%5Cfrac%20%7B%5Cdisplaystyle%5Csum%5E%7Bn%7D_%7Bi=1%7D(x_i-%5Coverline%7Bx%7D)%20(y_i-%5Coverline%7By%7D)%7D%20%7B%5Csqrt%7B%20%7B%5Cdisplaystyle%5Csum%5E%7Bn%7D_%7Bi=1%7D(x_i-%5Coverline%7Bx%7D)%5E2%7D%7D%20%5Csqrt%7B%20%7B%5Cdisplaystyle%5Csum%5E%7Bn%7D_%7Bi=1%7D(y_i-%5Coverline%7By%7D)%5E2%7D%7D%7D"></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1">daa02<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">c</span>(<span class="dv" style="color: #AD0000;">7</span>,<span class="dv" style="color: #AD0000;">8</span>,<span class="dv" style="color: #AD0000;">3</span>,<span class="dv" style="color: #AD0000;">5</span>,<span class="dv" style="color: #AD0000;">4</span>,<span class="dv" style="color: #AD0000;">3</span>,<span class="dv" style="color: #AD0000;">8</span>,<span class="dv" style="color: #AD0000;">6</span>)</span>
+<span id="cb13-2"><span class="fu" style="color: #4758AB;">cor</span>(daa01,daa02,<span class="at" style="color: #657422;">method=</span><span class="st" style="color: #20794D;">"pearson"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.8666667</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><span class="fu" style="color: #4758AB;">plot</span>(daa01,daa02)</span></code></pre></div>
+<div class="cell-output-display">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/standard_deviation/index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="正規分布" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="正規分布"><span class="header-section-number">6</span> 正規分布</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><span class="fu" style="color: #4758AB;">curve</span>(<span class="fu" style="color: #4758AB;">dnorm</span>(x,<span class="at" style="color: #657422;">mean=</span><span class="dv" style="color: #AD0000;">0</span>,<span class="at" style="color: #657422;">sd=</span><span class="dv" style="color: #AD0000;">1</span>),<span class="at" style="color: #657422;">from=</span><span class="sc" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">4</span>,<span class="at" style="color: #657422;">to=</span><span class="dv" style="color: #AD0000;">4</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/standard_deviation/index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="ヒストグラム" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="ヒストグラム"><span class="header-section-number">7</span> ヒストグラム</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><span class="fu" style="color: #4758AB;">hist</span>(<span class="fu" style="color: #4758AB;">c</span>(<span class="dv" style="color: #AD0000;">4</span>,<span class="dv" style="color: #AD0000;">4</span>,<span class="dv" style="color: #AD0000;">5</span>,<span class="dv" style="color: #AD0000;">5</span>,<span class="dv" style="color: #AD0000;">6</span>))</span></code></pre></div>
+<div class="cell-output-display">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/standard_deviation/index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>STATISTICS</category>
+  <guid>https://nobukuni-hyakutake.github.io/statistics/posts/standard_deviation/index.html</guid>
+  <pubDate>Thu, 09 Feb 2023 15:00:00 GMT</pubDate>
+  <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/standard_deviation/sd.png" medium="image" type="image/png" height="86" width="86"/>
+</item>
 <item>
   <title>Rを電卓として使う</title>
   <dc:creator>Nobukuni Hyakutake</dc:creator>
@@ -277,120 +402,6 @@
   <guid>https://nobukuni-hyakutake.github.io/statistics/posts/post-with-code/index.html</guid>
   <pubDate>Tue, 24 Jan 2023 15:00:00 GMT</pubDate>
   <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>統計学基礎</title>
-  <dc:creator>Nobukuni Hyakutake</dc:creator>
-  <link>https://nobukuni-hyakutake.github.io/statistics/posts/standard_deviation/index.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/standard_deviation/sd.png" class="img-fluid"></p>
-<section id="偏差平方和" class="level2">
-<h2 class="anchored" data-anchor-id="偏差平方和">偏差平方和</h2>
-<p><img src="https://latex.codecogs.com/png.latex?%5Cdisplaystyle%5Csum%5E%7Bn%7D_%7Bi=1%7D(x_i-%5Coverline%7Bx%7D)%5E2"></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">daa01<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">c</span>(<span class="dv" style="color: #AD0000;">5</span>,<span class="dv" style="color: #AD0000;">6</span>,<span class="dv" style="color: #AD0000;">3</span>,<span class="dv" style="color: #AD0000;">4</span>,<span class="dv" style="color: #AD0000;">3</span>,<span class="dv" style="color: #AD0000;">4</span>,<span class="dv" style="color: #AD0000;">5</span>,<span class="dv" style="color: #AD0000;">4</span>)</span>
-<span id="cb1-2"><span class="fu" style="color: #4758AB;">sum</span>(</span>
-<span id="cb1-3">  (daa01<span class="sc" style="color: #5E5E5E;">-</span><span class="fu" style="color: #4758AB;">mean</span>(daa01))<span class="sc" style="color: #5E5E5E;">^</span><span class="dv" style="color: #AD0000;">2</span></span>
-<span id="cb1-4">  )</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 7.5</code></pre>
-</div>
-</div>
-</section>
-<section id="分散-標本分散" class="level2">
-<h2 class="anchored" data-anchor-id="分散-標本分散">分散 (標本分散)</h2>
-<p><img src="https://latex.codecogs.com/png.latex?s%5E2=%5Cfrac%20%7B%5Cdisplaystyle%5Csum%5E%7Bn%7D_%7Bi=1%7D(x_i-%5Coverline%7Bx%7D)%5E2%7D%20%7Bn%7D"></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;">sum</span>(</span>
-<span id="cb3-2">  (daa01<span class="sc" style="color: #5E5E5E;">-</span><span class="fu" style="color: #4758AB;">mean</span>(daa01))<span class="sc" style="color: #5E5E5E;">^</span><span class="dv" style="color: #AD0000;">2</span></span>
-<span id="cb3-3">  )<span class="sc" style="color: #5E5E5E;">/</span></span>
-<span id="cb3-4">  <span class="fu" style="color: #4758AB;">length</span>(daa01)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9375</code></pre>
-</div>
-</div>
-<p>or</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="fu" style="color: #4758AB;">var</span>(daa01)<span class="sc" style="color: #5E5E5E;">*</span>(<span class="fu" style="color: #4758AB;">length</span>(daa01)<span class="sc" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span>)<span class="sc" style="color: #5E5E5E;">/</span><span class="fu" style="color: #4758AB;">length</span>(daa01)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9375</code></pre>
-</div>
-</div>
-</section>
-<section id="標準偏差標本分散の平方根" class="level2">
-<h2 class="anchored" data-anchor-id="標準偏差標本分散の平方根">標準偏差(標本分散の平方根)</h2>
-<p><img src="https://latex.codecogs.com/png.latex?s=%5Csqrt%7B%5Cfrac%20%7B%5Cdisplaystyle%5Csum%5E%7Bn%7D_%7Bi=1%7D(x_i-%5Coverline%7Bx%7D)%5E2%7D%20%7Bn%7D%7D"></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><span class="fu" style="color: #4758AB;">sqrt</span>(</span>
-<span id="cb7-2">  <span class="fu" style="color: #4758AB;">var</span>(daa01)<span class="sc" style="color: #5E5E5E;">*</span>(<span class="fu" style="color: #4758AB;">length</span>(daa01)<span class="sc" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span>)<span class="sc" style="color: #5E5E5E;">/</span><span class="fu" style="color: #4758AB;">length</span>(daa01)</span>
-<span id="cb7-3">  )</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9682458</code></pre>
-</div>
-</div>
-<p>or</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><span class="fu" style="color: #4758AB;">sd</span>(daa01)<span class="sc" style="color: #5E5E5E;">*</span></span>
-<span id="cb9-2">  <span class="fu" style="color: #4758AB;">sqrt</span>(</span>
-<span id="cb9-3">  (<span class="fu" style="color: #4758AB;">length</span>(daa01)<span class="sc" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span>)<span class="sc" style="color: #5E5E5E;">/</span><span class="fu" style="color: #4758AB;">length</span>(daa01)</span>
-<span id="cb9-4">)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9682458</code></pre>
-</div>
-</div>
-</section>
-<section id="変動係数" class="level2">
-<h2 class="anchored" data-anchor-id="変動係数">変動係数</h2>
-<p><img src="https://latex.codecogs.com/png.latex?C.V.=%5Cfrac%20%7Bs%7D%20%7B%5Coverline%7Bx%7D%7D"></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><span class="fu" style="color: #4758AB;">sd</span>(daa01)<span class="sc" style="color: #5E5E5E;">*</span></span>
-<span id="cb11-2">  <span class="fu" style="color: #4758AB;">sqrt</span>(</span>
-<span id="cb11-3">  (<span class="fu" style="color: #4758AB;">length</span>(daa01)<span class="sc" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span>)<span class="sc" style="color: #5E5E5E;">/</span><span class="fu" style="color: #4758AB;">length</span>(daa01)</span>
-<span id="cb11-4">)<span class="sc" style="color: #5E5E5E;">/</span></span>
-<span id="cb11-5">  <span class="fu" style="color: #4758AB;">mean</span>(daa01)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2278225</code></pre>
-</div>
-</div>
-</section>
-<section id="相関係数" class="level2">
-<h2 class="anchored" data-anchor-id="相関係数">相関係数</h2>
-<p><img src="https://latex.codecogs.com/png.latex?r=%5Cfrac%20%7B%5Cdisplaystyle%5Csum%5E%7Bn%7D_%7Bi=1%7D(x_i-%5Coverline%7Bx%7D)%20(y_i-%5Coverline%7By%7D)%7D%20%7B%5Csqrt%7B%20%7B%5Cdisplaystyle%5Csum%5E%7Bn%7D_%7Bi=1%7D(x_i-%5Coverline%7Bx%7D)%5E2%7D%7D%20%5Csqrt%7B%20%7B%5Cdisplaystyle%5Csum%5E%7Bn%7D_%7Bi=1%7D(y_i-%5Coverline%7By%7D)%5E2%7D%7D%7D"></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1">daa02<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">c</span>(<span class="dv" style="color: #AD0000;">7</span>,<span class="dv" style="color: #AD0000;">8</span>,<span class="dv" style="color: #AD0000;">3</span>,<span class="dv" style="color: #AD0000;">5</span>,<span class="dv" style="color: #AD0000;">4</span>,<span class="dv" style="color: #AD0000;">3</span>,<span class="dv" style="color: #AD0000;">8</span>,<span class="dv" style="color: #AD0000;">6</span>)</span>
-<span id="cb13-2"><span class="fu" style="color: #4758AB;">cor</span>(daa01,daa02,<span class="at" style="color: #657422;">method=</span><span class="st" style="color: #20794D;">"pearson"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.8666667</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><span class="fu" style="color: #4758AB;">plot</span>(daa01,daa02)</span></code></pre></div>
-<div class="cell-output-display">
-<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/standard_deviation/index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</section>
-<section id="正規分布" class="level2">
-<h2 class="anchored" data-anchor-id="正規分布">正規分布</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><span class="fu" style="color: #4758AB;">curve</span>(<span class="fu" style="color: #4758AB;">dnorm</span>(x,<span class="at" style="color: #657422;">mean=</span><span class="dv" style="color: #AD0000;">0</span>,<span class="at" style="color: #657422;">sd=</span><span class="dv" style="color: #AD0000;">1</span>),<span class="at" style="color: #657422;">from=</span><span class="sc" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">4</span>,<span class="at" style="color: #657422;">to=</span><span class="dv" style="color: #AD0000;">4</span>)</span></code></pre></div>
-<div class="cell-output-display">
-<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/standard_deviation/index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>STATISTICS</category>
-  <guid>https://nobukuni-hyakutake.github.io/statistics/posts/standard_deviation/index.html</guid>
-  <pubDate>Sun, 22 Jan 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/standard_deviation/sd.png" medium="image" type="image/png" height="86" width="86"/>
 </item>
 <item>
   <title>ようこそ</title>
