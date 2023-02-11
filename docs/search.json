@@ -291,6 +291,6 @@
     "href": "posts/standard_deviation/index.html#ヒストグラム",
     "title": "統計学基礎",
     "section": "7 ヒストグラム",
-    "text": "7 ヒストグラム\n\n7.1 グラフ\n\ndaa03<-hist(daa01)\n\n\n\n\n\n\n7.2 度数分布表\n\ntibble(mids=daa03$mids,counts=daa03$counts,density=daa03$density) |> \n  gt() |> \n  fmt_markdown(columns = everything())\n\n\n\n\n\n  \n  \n    \n      mids\n      counts\n      density\n    \n  \n  \n    3.5\n\n3\n\n0.375\n\n    4.5\n\n4\n\n0.5\n\n    5.5\n\n1\n\n0.125"
+    "text": "7 ヒストグラム\n\n7.1 グラフ\n\ndaa03<-hist(daa01)\n\n\n\n\n\n\n7.2 度数分布表\n\ntibble(mids=daa03$mids,counts=daa03$counts,density=daa03$density) |> \n  gt() %>%\n  tab_header(\n    title = \"Frequency table\",\n    subtitle = \"daa01\"\n  )\n\n\n\n\n\n  \n    \n      Frequency table\n    \n    \n      daa01\n    \n  \n  \n    \n      mids\n      counts\n      density\n    \n  \n  \n    3.5\n3\n0.375\n    4.5\n4\n0.500\n    5.5\n1\n0.125"
   }
 ]
