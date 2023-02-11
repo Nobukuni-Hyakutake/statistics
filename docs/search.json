@@ -123,7 +123,7 @@
     "href": "memo.html",
     "title": "統計学の勉強ノート",
     "section": "",
-    "text": "栗原の入門統計学から作った統計ノートで作った\n今後は東京大学出版会　統計学入門 からピックアップして作っていくか？その方が詳しいので。\n\n\n\n\n_quarto.yamlに下記の通り設定する\nRender to docs\n\n\n\nhttps://www.r-bloggers.com/2023/01/combining-r-and-python-with-reticulate-and-quarto/\n\n\n\n投稿の仕方の参考になりそう。\nhttps://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/\n\n\n\nMarkdownに数式を挿入する方法\nLaTeX/Mathematics\n\n\n\nlibrary(rmarkdown)\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"html_document\")\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"md_document\")\n\n\n\n下記に記載(Private repository)\nhttps://github.com/Nobukuni-Hyakutake/hon/blob/main/quarto/memo.md\n\n\n\n_quarto.ymlに下記を加えると右側にページ内の目次がでる。\nformat:\n  html:\n    toc: true\n\n\n\nquarto render index.qmd --to docx"
+    "text": "栗原の入門統計学から作った統計ノートで作った\n今後は東京大学出版会　統計学入門 からピックアップして作っていくか？その方が詳しいので。\n\n\n\n\n_quarto.yamlに下記の通り設定する\nRender to docs\n\n\n\nhttps://www.r-bloggers.com/2023/01/combining-r-and-python-with-reticulate-and-quarto/\n\n\n\n投稿の仕方の参考になりそう。\nhttps://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/\n\n\n\nMarkdownに数式を挿入する方法\nLaTeX/Mathematics\n\n\n\nlibrary(rmarkdown)\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"html_document\")\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"md_document\")\n\n\n\n下記に記載(Private repository)\nhttps://github.com/Nobukuni-Hyakutake/hon/blob/main/quarto/memo.md\n\n\n\n_quarto.ymlに下記を加えると右側にページ内の目次がでる。\nformat:\n  html:\n    toc: true\n\n\n\nquarto render index.qmd --to docx  \n\n\n\n下記のHelpのように、クリックするとさらに選択肢が出てくるようにする\n\n  navbar:\n    background: light\n    logo: quarto.png\n    logo-alt: \"Quarto logo.\"\n    title: false\n    collapse-below: lg\n    left:\n      - text: \"Overview\"\n        href: index.qmd\n      - text: \"Get Started\"\n        href: docs/get-started/index.qmd\n      - text: \"Guide\"\n        href: docs/guide/index.qmd\n      - text: Extensions\n        href: docs/extensions/index.qmd\n      - text: \"Reference\"\n        href: docs/reference/index.qmd\n      - text: \"Gallery\"\n        href: docs/gallery/index.qmd\n      - text: \"Blog\"\n        href: docs/blog/index.qmd\n      - text: \"Help\"\n        menu:\n          - text: \"Report a Bug\"\n            icon: \"bug\"\n            href: \"https://github.com/quarto-dev/quarto-cli/issues\"\n          - text: \"Ask a Question\"\n            icon: \"chat-right-text\"\n            href: \"https://github.com/quarto-dev/quarto-cli/discussions\"\n          - text: \"FAQ\"\n            icon: \"question-circle\"\n            href: docs/faq/index.qmd"
   },
   {
     "objectID": "memo.html#combining-r-and-python-with-reticulate-and-quarto",
@@ -144,35 +144,35 @@
     "href": "posts/standard_deviation/index.html#偏差平方和",
     "title": "統計学基礎",
     "section": "1 偏差平方和",
-    "text": "1 偏差平方和\n\\(\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2\\)\n\ndaa01<-c(5,6,3,4,3,4,5,4)\nsum(\n  (daa01-mean(daa01))^2\n  )\n\n[1] 7.5"
+    "text": "1 偏差平方和\n\\(\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2\\)\n\ndaa01<-c(5,6,3,5,5,4,5,4)\nsum(\n  (daa01-mean(daa01))^2\n  )\n\n[1] 5.875"
   },
   {
     "objectID": "posts/standard_deviation/index.html#分散-標本分散",
     "href": "posts/standard_deviation/index.html#分散-標本分散",
     "title": "統計学基礎",
     "section": "2 分散 (標本分散)",
-    "text": "2 分散 (標本分散)\n\\(s^2=\\frac {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2} {n}\\)\n\nsum(\n  (daa01-mean(daa01))^2\n  )/\n  length(daa01)\n\n[1] 0.9375\n\n\nor\n\nvar(daa01)*(length(daa01)-1)/length(daa01)\n\n[1] 0.9375"
+    "text": "2 分散 (標本分散)\n\\(s^2=\\frac {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2} {n}\\)\n\nsum(\n  (daa01-mean(daa01))^2\n  )/\n  length(daa01)\n\n[1] 0.734375\n\n\nor\n\nvar(daa01)*(length(daa01)-1)/length(daa01)\n\n[1] 0.734375"
   },
   {
     "objectID": "posts/standard_deviation/index.html#標準偏差標本分散の平方根",
     "href": "posts/standard_deviation/index.html#標準偏差標本分散の平方根",
     "title": "統計学基礎",
     "section": "3 標準偏差(標本分散の平方根)",
-    "text": "3 標準偏差(標本分散の平方根)\n\\(s=\\sqrt{\\frac {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2} {n}}\\)\n\nsqrt(\n  var(daa01)*(length(daa01)-1)/length(daa01)\n  )\n\n[1] 0.9682458\n\n\nor\n\nsd(daa01)*\n  sqrt(\n  (length(daa01)-1)/length(daa01)\n)\n\n[1] 0.9682458"
+    "text": "3 標準偏差(標本分散の平方根)\n\\(s=\\sqrt{\\frac {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2} {n}}\\)\n\nsqrt(\n  var(daa01)*(length(daa01)-1)/length(daa01)\n  )\n\n[1] 0.8569568\n\n\nor\n\nsd(daa01)*\n  sqrt(\n  (length(daa01)-1)/length(daa01)\n)\n\n[1] 0.8569568"
   },
   {
     "objectID": "posts/standard_deviation/index.html#変動係数",
     "href": "posts/standard_deviation/index.html#変動係数",
     "title": "統計学基礎",
     "section": "4 変動係数",
-    "text": "4 変動係数\n\\(C.V.=\\frac {s} {\\overline{x}}\\)\n\nsd(daa01)*\n  sqrt(\n  (length(daa01)-1)/length(daa01)\n)/\n  mean(daa01)\n\n[1] 0.2278225"
+    "text": "4 変動係数\n\\(C.V.=\\frac {s} {\\overline{x}}\\)\n\nsd(daa01)*\n  sqrt(\n  (length(daa01)-1)/length(daa01)\n)/\n  mean(daa01)\n\n[1] 0.185288"
   },
   {
     "objectID": "posts/standard_deviation/index.html#相関係数",
     "href": "posts/standard_deviation/index.html#相関係数",
     "title": "統計学基礎",
     "section": "5 相関係数",
-    "text": "5 相関係数\n\\(r=\\frac {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x}) (y_i-\\overline{y})} {\\sqrt{ {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2}} \\sqrt{ {\\displaystyle\\sum^{n}_{i=1}(y_i-\\overline{y})^2}}}\\)\n\ndaa02<-c(7,8,3,5,4,3,8,6)\ncor(daa01,daa02,method=\"pearson\")\n\n[1] 0.8666667\n\n\n\nplot(daa01,daa02)"
+    "text": "5 相関係数\n\\(r=\\frac {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x}) (y_i-\\overline{y})} {\\sqrt{ {\\displaystyle\\sum^{n}_{i=1}(x_i-\\overline{x})^2}} \\sqrt{ {\\displaystyle\\sum^{n}_{i=1}(y_i-\\overline{y})^2}}}\\)\n\ndaa02<-c(7,8,3,5,4,3,8,6)\ncor(daa01,daa02,method=\"pearson\")\n\n[1] 0.7155814\n\n\n\nplot(daa01,daa02)"
   },
   {
     "objectID": "memo.html#a-quarto-tip-a-day",
@@ -291,6 +291,6 @@
     "href": "posts/standard_deviation/index.html#ヒストグラム",
     "title": "統計学基礎",
     "section": "7 ヒストグラム",
-    "text": "7 ヒストグラム\n\nhist(c(4,4,5,5,6))"
+    "text": "7 ヒストグラム\n\n7.1 グラフ\n\ndaa03<-hist(daa01)\n\n\n\n\n\n\n7.2 度数分布表\n\ntibble(mids=daa03$mids,counts=daa03$counts,density=daa03$density) |> \n  gt() |> \n  fmt_markdown(columns = everything())\n\n\n\n\n\n  \n  \n    \n      mids\n      counts\n      density\n    \n  \n  \n    3.5\n\n3\n\n0.375\n\n    4.5\n\n4\n\n0.5\n\n    5.5\n\n1\n\n0.125"
   }
 ]

@@ -9,12 +9,18 @@ image: "sd.png"
 
 ![](sd.png)
 
+```{r}
+library(tidyverse)
+library(gt)
+```
+
+
 ## 偏差平方和
 
 $\displaystyle\sum^{n}_{i=1}(x_i-\overline{x})^2$
 
 ```{r}
-daa01<-c(5,6,3,4,3,4,5,4)
+daa01<-c(5,6,3,5,5,4,5,4)
 sum(
   (daa01-mean(daa01))^2
   )
@@ -89,7 +95,16 @@ curve(dnorm(x,mean=0,sd=1),from=-4,to=4)
 
 ## ヒストグラム
 
+### グラフ
+
 ```{r}
-hist(c(4,4,5,5,6))
+daa03<-hist(daa01)
 ```
 
+### 度数分布表
+
+```{r}
+tibble(mids=daa03$mids,counts=daa03$counts,density=daa03$density) |> 
+  gt() |> 
+  fmt_markdown(columns = everything())
+```
