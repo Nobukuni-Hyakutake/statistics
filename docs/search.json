@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Top",
     "section": "",
-    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
+    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n \n\n\n\n2023-02-13\n\n\n生存分析\n\n\nR\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -292,5 +292,26 @@
     "title": "統計学基礎",
     "section": "7 ヒストグラム",
     "text": "7 ヒストグラム\n\n7.1 グラフ\n\ndaa03<-hist(daa01)\n\n\n\n\n\n\n7.2 度数分布表\n\ntibble(mids=daa03$mids,counts=daa03$counts,density=daa03$density) |> \n  gt() %>%\n  tab_header(\n    title = \"Frequency table\",\n    subtitle = \"daa01\"\n  )\n\n\n\n\n\n  \n    \n      Frequency table\n    \n    \n      daa01\n    \n  \n  \n    \n      mids\n      counts\n      density\n    \n  \n  \n    3.5\n3\n0.375\n    4.5\n4\n0.500\n    5.5\n1\n0.125"
+  },
+  {
+    "objectID": "posts/survival/index.html",
+    "href": "posts/survival/index.html",
+    "title": "生存分析",
+    "section": "",
+    "text": "library(survival)\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "posts/survival/index.html#データの読み込み",
+    "href": "posts/survival/index.html#データの読み込み",
+    "title": "生存分析",
+    "section": "2 データの読み込み",
+    "text": "2 データの読み込み\nライフのデータ\n\ndsu01<-read_csv(\"\n  life\n  28\n  30\n  32\n  30\n  25\n  27\n  24\n  23\n  29\n  29\n  29\n  31\n  38\n  33\n  32\n  29\n  30\n  18\n  28\n  28\n  24\n  23\n  28\n  29\n  27\n  26\n  28\n  28\n  28\n  27\n  \",show_col_types = FALSE\n)\n\n\nhist(dsu01$life,breaks = max(dsu01$life)-min(dsu01$life)+1)\n\n\n\n\n\ny<-rweibull(1000, shape=2, scale=5)\nsurvreg(Surv(y)~1, dist=\"weibull\")\n\nCall:\nsurvreg(formula = Surv(y) ~ 1, dist = \"weibull\")\n\nCoefficients:\n(Intercept) \n   1.619122 \n\nScale= 0.4973306 \n\nLoglik(model)= -2205.4   Loglik(intercept only)= -2205.4\nn= 1000 \n\n\n\nhist(y)"
+  },
+  {
+    "objectID": "posts/survival/index.html#r-version",
+    "href": "posts/survival/index.html#r-version",
+    "title": "生存分析",
+    "section": "3 R version",
+    "text": "3 R version\n\nR.version.string\n\n[1] \"R version 4.2.2 (2022-10-31)\""
   }
 ]

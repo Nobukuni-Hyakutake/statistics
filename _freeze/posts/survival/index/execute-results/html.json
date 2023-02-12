@@ -1,0 +1,16 @@
+{
+  "hash": "7893411a1fa9587d88acdbf00465b455",
+  "result": {
+    "markdown": "---\ntitle: \"生存分析\"\nauthor: \"Nobukuni Hyakutake\"\ndate: \"2023-02-13\"\ndate-format: \"iso\"\ncategories: [R]\n---\n\n\n## パッケージの読み込み\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(survival)\nlibrary(tidyverse)\n```\n:::\n\n\n## データの読み込み\n\nライフのデータ\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndsu01<-read_csv(\"\n  life\n  28\n  30\n  32\n  30\n  25\n  27\n  24\n  23\n  29\n  29\n  29\n  31\n  38\n  33\n  32\n  29\n  30\n  18\n  28\n  28\n  24\n  23\n  28\n  29\n  27\n  26\n  28\n  28\n  28\n  27\n  \",show_col_types = FALSE\n)\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nhist(dsu01$life,breaks = max(dsu01$life)-min(dsu01$life)+1)\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-3-1.png){width=672}\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\ny<-rweibull(1000, shape=2, scale=5)\nsurvreg(Surv(y)~1, dist=\"weibull\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\nCall:\nsurvreg(formula = Surv(y) ~ 1, dist = \"weibull\")\n\nCoefficients:\n(Intercept) \n   1.619122 \n\nScale= 0.4973306 \n\nLoglik(model)= -2205.4   Loglik(intercept only)= -2205.4\nn= 1000 \n```\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\nhist(y)\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-5-1.png){width=672}\n:::\n:::\n\n\n\n## R version\n\n\n::: {.cell}\n\n```{.r .cell-code}\nR.version.string\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"R version 4.2.2 (2022-10-31)\"\n```\n:::\n:::\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

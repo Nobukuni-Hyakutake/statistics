@@ -1,0 +1,76 @@
+---
+title: "生存分析"
+author: "Nobukuni Hyakutake"
+date: "2023-02-13"
+date-format: "iso"
+categories: [R]
+---
+
+## パッケージの読み込み
+
+```{r}
+library(survival)
+library(tidyverse)
+```
+
+## データの読み込み
+
+ライフのデータ
+
+```{r}
+dsu01<-read_csv("
+  life
+  28
+  30
+  32
+  30
+  25
+  27
+  24
+  23
+  29
+  29
+  29
+  31
+  38
+  33
+  32
+  29
+  30
+  18
+  28
+  28
+  24
+  23
+  28
+  29
+  27
+  26
+  28
+  28
+  28
+  27
+  ",show_col_types = FALSE
+)
+```
+
+```{r}
+hist(dsu01$life,breaks = max(dsu01$life)-min(dsu01$life)+1)
+```
+
+
+```{r}
+y<-rweibull(1000, shape=2, scale=5)
+survreg(Surv(y)~1, dist="weibull")
+```
+
+```{r}
+hist(y)
+```
+
+
+## R version
+
+```{r}
+R.version.string
+```

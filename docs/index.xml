@@ -10,7 +10,111 @@
 <atom:link href="https://nobukuni-hyakutake.github.io/statistics/index.xml" rel="self" type="application/rss+xml"/>
 <description>A sample blog</description>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Thu, 09 Feb 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 12 Feb 2023 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>生存分析</title>
+  <dc:creator>Nobukuni Hyakutake</dc:creator>
+  <link>https://nobukuni-hyakutake.github.io/statistics/posts/survival/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="パッケージの読み込み" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="パッケージの読み込み"><span class="header-section-number">1</span> パッケージの読み込み</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;">library</span>(survival)</span>
+<span id="cb1-2"><span class="fu" style="color: #4758AB;">library</span>(tidyverse)</span></code></pre></div>
+</div>
+</section>
+<section id="データの読み込み" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="データの読み込み"><span class="header-section-number">2</span> データの読み込み</h2>
+<p>ライフのデータ</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">dsu01<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">read_csv</span>(<span class="st" style="color: #20794D;">"</span></span>
+<span id="cb2-2"><span class="st" style="color: #20794D;">  life</span></span>
+<span id="cb2-3"><span class="st" style="color: #20794D;">  28</span></span>
+<span id="cb2-4"><span class="st" style="color: #20794D;">  30</span></span>
+<span id="cb2-5"><span class="st" style="color: #20794D;">  32</span></span>
+<span id="cb2-6"><span class="st" style="color: #20794D;">  30</span></span>
+<span id="cb2-7"><span class="st" style="color: #20794D;">  25</span></span>
+<span id="cb2-8"><span class="st" style="color: #20794D;">  27</span></span>
+<span id="cb2-9"><span class="st" style="color: #20794D;">  24</span></span>
+<span id="cb2-10"><span class="st" style="color: #20794D;">  23</span></span>
+<span id="cb2-11"><span class="st" style="color: #20794D;">  29</span></span>
+<span id="cb2-12"><span class="st" style="color: #20794D;">  29</span></span>
+<span id="cb2-13"><span class="st" style="color: #20794D;">  29</span></span>
+<span id="cb2-14"><span class="st" style="color: #20794D;">  31</span></span>
+<span id="cb2-15"><span class="st" style="color: #20794D;">  38</span></span>
+<span id="cb2-16"><span class="st" style="color: #20794D;">  33</span></span>
+<span id="cb2-17"><span class="st" style="color: #20794D;">  32</span></span>
+<span id="cb2-18"><span class="st" style="color: #20794D;">  29</span></span>
+<span id="cb2-19"><span class="st" style="color: #20794D;">  30</span></span>
+<span id="cb2-20"><span class="st" style="color: #20794D;">  18</span></span>
+<span id="cb2-21"><span class="st" style="color: #20794D;">  28</span></span>
+<span id="cb2-22"><span class="st" style="color: #20794D;">  28</span></span>
+<span id="cb2-23"><span class="st" style="color: #20794D;">  24</span></span>
+<span id="cb2-24"><span class="st" style="color: #20794D;">  23</span></span>
+<span id="cb2-25"><span class="st" style="color: #20794D;">  28</span></span>
+<span id="cb2-26"><span class="st" style="color: #20794D;">  29</span></span>
+<span id="cb2-27"><span class="st" style="color: #20794D;">  27</span></span>
+<span id="cb2-28"><span class="st" style="color: #20794D;">  26</span></span>
+<span id="cb2-29"><span class="st" style="color: #20794D;">  28</span></span>
+<span id="cb2-30"><span class="st" style="color: #20794D;">  28</span></span>
+<span id="cb2-31"><span class="st" style="color: #20794D;">  28</span></span>
+<span id="cb2-32"><span class="st" style="color: #20794D;">  27</span></span>
+<span id="cb2-33"><span class="st" style="color: #20794D;">  "</span>,<span class="at" style="color: #657422;">show_col_types =</span> <span class="cn" style="color: #8f5902;">FALSE</span></span>
+<span id="cb2-34">)</span></code></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;">hist</span>(dsu01<span class="sc" style="color: #5E5E5E;">$</span>life,<span class="at" style="color: #657422;">breaks =</span> <span class="fu" style="color: #4758AB;">max</span>(dsu01<span class="sc" style="color: #5E5E5E;">$</span>life)<span class="sc" style="color: #5E5E5E;">-</span><span class="fu" style="color: #4758AB;">min</span>(dsu01<span class="sc" style="color: #5E5E5E;">$</span>life)<span class="sc" style="color: #5E5E5E;">+</span><span class="dv" style="color: #AD0000;">1</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/survival/index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">y<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">rweibull</span>(<span class="dv" style="color: #AD0000;">1000</span>, <span class="at" style="color: #657422;">shape=</span><span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">scale=</span><span class="dv" style="color: #AD0000;">5</span>)</span>
+<span id="cb4-2"><span class="fu" style="color: #4758AB;">survreg</span>(<span class="fu" style="color: #4758AB;">Surv</span>(y)<span class="sc" style="color: #5E5E5E;">~</span><span class="dv" style="color: #AD0000;">1</span>, <span class="at" style="color: #657422;">dist=</span><span class="st" style="color: #20794D;">"weibull"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Call:
+survreg(formula = Surv(y) ~ 1, dist = "weibull")
+
+Coefficients:
+(Intercept) 
+   1.619122 
+
+Scale= 0.4973306 
+
+Loglik(model)= -2205.4   Loglik(intercept only)= -2205.4
+n= 1000 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="fu" style="color: #4758AB;">hist</span>(y)</span></code></pre></div>
+<div class="cell-output-display">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/survival/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="r-version" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="r-version"><span class="header-section-number">3</span> R version</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">R.version.string</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "R version 4.2.2 (2022-10-31)"</code></pre>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>R</category>
+  <guid>https://nobukuni-hyakutake.github.io/statistics/posts/survival/index.html</guid>
+  <pubDate>Sun, 12 Feb 2023 15:00:00 GMT</pubDate>
+</item>
 <item>
   <title>統計学基礎</title>
   <dc:creator>Nobukuni Hyakutake</dc:creator>
