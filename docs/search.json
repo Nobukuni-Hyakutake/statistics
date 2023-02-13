@@ -123,7 +123,7 @@
     "href": "memo.html",
     "title": "統計学の勉強ノート",
     "section": "",
-    "text": "栗原の入門統計学から作った統計ノートで作った\n今後は東京大学出版会　統計学入門 からピックアップして作っていくか？その方が詳しいので。\n\n\n\n\n_quarto.yamlに下記の通り設定する\nRender to docs\n\n\n\nhttps://www.r-bloggers.com/2023/01/combining-r-and-python-with-reticulate-and-quarto/\n\n\n\n投稿の仕方の参考になりそう。\nhttps://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/\n\n\n\nMarkdownに数式を挿入する方法\nLaTeX/Mathematics\n\n\n\nlibrary(rmarkdown)\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"html_document\")\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"md_document\")\n\n\n\n下記に記載(Private repository)\nhttps://github.com/Nobukuni-Hyakutake/hon/blob/main/quarto/memo.md\n\n\n\n_quarto.ymlに下記を加えると右側にページ内の目次がでる。\nformat:\n  html:\n    toc: true\n\n\n\nquarto render index.qmd --to docx  \n\n\n\n下記のHelpのように、クリックするとさらに選択肢が出てくるようにする\n\n  navbar:\n    background: light\n    logo: quarto.png\n    logo-alt: \"Quarto logo.\"\n    title: false\n    collapse-below: lg\n    left:\n      - text: \"Overview\"\n        href: index.qmd\n      - text: \"Get Started\"\n        href: docs/get-started/index.qmd\n      - text: \"Guide\"\n        href: docs/guide/index.qmd\n      - text: Extensions\n        href: docs/extensions/index.qmd\n      - text: \"Reference\"\n        href: docs/reference/index.qmd\n      - text: \"Gallery\"\n        href: docs/gallery/index.qmd\n      - text: \"Blog\"\n        href: docs/blog/index.qmd\n      - text: \"Help\"\n        menu:\n          - text: \"Report a Bug\"\n            icon: \"bug\"\n            href: \"https://github.com/quarto-dev/quarto-cli/issues\"\n          - text: \"Ask a Question\"\n            icon: \"chat-right-text\"\n            href: \"https://github.com/quarto-dev/quarto-cli/discussions\"\n          - text: \"FAQ\"\n            icon: \"question-circle\"\n            href: docs/faq/index.qmd"
+    "text": "栗原の入門統計学から作った統計ノートで作った\n今後は東京大学出版会　統計学入門 からピックアップして作っていくか？その方が詳しいので。\n\n\n\n\n_quarto.yamlに下記の通り設定する\nRender to docs\n\n\n\nhttps://www.r-bloggers.com/2023/01/combining-r-and-python-with-reticulate-and-quarto/\n\n\n\n投稿の仕方の参考になりそう。\nhttps://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/\n\n\n\nMarkdownに数式を挿入する方法\nLaTeX/Mathematics\nMathematics in R Markdown\n\n\n\nlibrary(rmarkdown)\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"html_document\")\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"md_document\")\n\n\n\n下記に記載(Private repository)\nhttps://github.com/Nobukuni-Hyakutake/hon/blob/main/quarto/memo.md\n\n\n\n_quarto.ymlに下記を加えると右側にページ内の目次がでる。\nformat:\n  html:\n    toc: true\n\n\n\nquarto render index.qmd --to docx  \n\n\n\n下記のHelpのように、クリックするとさらに選択肢が出てくるようにする\n\n  navbar:\n    background: light\n    logo: quarto.png\n    logo-alt: \"Quarto logo.\"\n    title: false\n    collapse-below: lg\n    left:\n      - text: \"Overview\"\n        href: index.qmd\n      - text: \"Get Started\"\n        href: docs/get-started/index.qmd\n      - text: \"Guide\"\n        href: docs/guide/index.qmd\n      - text: Extensions\n        href: docs/extensions/index.qmd\n      - text: \"Reference\"\n        href: docs/reference/index.qmd\n      - text: \"Gallery\"\n        href: docs/gallery/index.qmd\n      - text: \"Blog\"\n        href: docs/blog/index.qmd\n      - text: \"Help\"\n        menu:\n          - text: \"Report a Bug\"\n            icon: \"bug\"\n            href: \"https://github.com/quarto-dev/quarto-cli/issues\"\n          - text: \"Ask a Question\"\n            icon: \"chat-right-text\"\n            href: \"https://github.com/quarto-dev/quarto-cli/discussions\"\n          - text: \"FAQ\"\n            icon: \"question-circle\"\n            href: docs/faq/index.qmd"
   },
   {
     "objectID": "memo.html#combining-r-and-python-with-reticulate-and-quarto",
@@ -305,13 +305,20 @@
     "href": "posts/survival/index.html#データの読み込み",
     "title": "生存分析",
     "section": "2 データの読み込み",
-    "text": "2 データの読み込み\nライフのデータ\n\ndsu01<-read_csv(\"\n  life\n  28\n  30\n  32\n  30\n  25\n  27\n  24\n  23\n  29\n  29\n  29\n  31\n  38\n  33\n  32\n  29\n  30\n  18\n  28\n  28\n  24\n  23\n  28\n  29\n  27\n  26\n  28\n  28\n  28\n  27\n  \",show_col_types = FALSE\n)\n\n\nhist(dsu01$life,breaks = max(dsu01$life)-min(dsu01$life)+1)\n\n\n\n\n\ny<-rweibull(1000, shape=2, scale=5)\nsurvreg(Surv(y)~1, dist=\"weibull\")\n\nCall:\nsurvreg(formula = Surv(y) ~ 1, dist = \"weibull\")\n\nCoefficients:\n(Intercept) \n   1.619122 \n\nScale= 0.4973306 \n\nLoglik(model)= -2205.4   Loglik(intercept only)= -2205.4\nn= 1000 \n\n\n\nhist(y)"
+    "text": "2 データの読み込み\nライフのデータ\n\ndsu01<-read_csv(\"\n  life\n  28\n  30\n  32\n  30\n  25\n  27\n  24\n  23\n  29\n  29\n  29\n  31\n  38\n  33\n  32\n  29\n  30\n  18\n  28\n  28\n  24\n  23\n  28\n  29\n  27\n  26\n  28\n  28\n  28\n  27\n  \",show_col_types = FALSE\n)\n\n\nhist(dsu01$life,breaks = max(dsu01$life)-min(dsu01$life)+1)"
   },
   {
     "objectID": "posts/survival/index.html#r-version",
     "href": "posts/survival/index.html#r-version",
     "title": "生存分析",
-    "section": "3 R version",
-    "text": "3 R version\n\nR.version.string\n\n[1] \"R version 4.2.2 (2022-10-31)\""
+    "section": "4 R version",
+    "text": "4 R version\n\nR.version.string\n\n[1] \"R version 4.2.2 (2022-10-31)\""
+  },
+  {
+    "objectID": "posts/survival/index.html#ワイブル",
+    "href": "posts/survival/index.html#ワイブル",
+    "title": "生存分析",
+    "section": "3 ワイブル",
+    "text": "3 ワイブル\n\n3.1 確率密度関数\n\\[\nf(t)=\\frac{m}{\\eta}\\left(\\frac{t}{\\eta}\\right)^{m-1}e^{-\\left(\\frac{t}{\\eta}\\right)^m}\n\\]\n\nweibull_d<-function(m,t,eta){\n  k<-(m/eta)*(t/eta)^(m-1)*exp(-1*((t/eta)^m))\n  return(k)}\n\n\\(m=2\\), \\(\\eta=15\\)の場合\n\nm1<-2\neta1<-15\nplot(weibull_d(m1,c(1:35),eta1))\n\n\n\n\n\n\n3.2 ワイブル分布に従う乱数\n\ni<-rweibull(1000,shape = m1,scale = eta1)\nhist(i)\n\n\n\n\n乱数からワイブルのパラメーターを算出する方法：survregを使う。\n\nt<-survreg(Surv(i)~1, dist=\"weibull\")\n\nsurvregの結果は、上述の確率密度関数のパラメーターとして使うには換算する必要がある。\n\\(m\\)\n\n1/t$scale\n\n[1] 2.107207\n\n\n\\(\\eta\\)\n\nexp(unname(t$coefficients))\n\n[1] 15.63876"
   }
 ]

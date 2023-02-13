@@ -58,16 +58,54 @@ dsu01<-read_csv("
 hist(dsu01$life,breaks = max(dsu01$life)-min(dsu01$life)+1)
 ```
 
+## ワイブル
+
+### 確率密度関数
+
+$$
+f(t)=\frac{m}{\eta}\left(\frac{t}{\eta}\right)^{m-1}e^{-\left(\frac{t}{\eta}\right)^m}
+$$
 
 ```{r}
-y<-rweibull(1000, shape=2, scale=5)
-survreg(Surv(y)~1, dist="weibull")
+weibull_d<-function(m,t,eta){
+  k<-(m/eta)*(t/eta)^(m-1)*exp(-1*((t/eta)^m))
+  return(k)}
 ```
+
+$m=2$, $\eta=15$の場合
 
 ```{r}
-hist(y)
+m1<-2
+eta1<-15
+plot(weibull_d(m1,c(1:35),eta1))
 ```
 
+### ワイブル分布に従う乱数
+
+```{r}
+i<-rweibull(1000,shape = m1,scale = eta1)
+hist(i)
+```
+
+乱数からワイブルのパラメーターを算出する方法：survregを使う。
+
+```{r}
+t<-survreg(Surv(i)~1, dist="weibull")
+```
+
+survregの結果は、上述の確率密度関数のパラメーターとして使うには換算する必要がある。
+
+$m$ 
+
+```{r}
+1/t$scale
+```
+
+$\eta$
+
+```{r}
+exp(unname(t$coefficients))
+```
 
 ## R version
 

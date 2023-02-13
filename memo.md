@@ -27,6 +27,8 @@ https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/
 
 [LaTeX/Mathematics](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
 
+[Mathematics in R Markdown](https://rpruim.github.io/s341/S19/from-class/MathinRmd.html)
+
 ## htmlとmarkdownの両方に出力する方法
 
 ```

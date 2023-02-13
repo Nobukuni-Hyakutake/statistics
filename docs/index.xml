@@ -72,34 +72,61 @@
 <p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/survival/index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+</section>
+<section id="ワイブル" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="ワイブル"><span class="header-section-number">3</span> ワイブル</h2>
+<section id="確率密度関数" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="確率密度関数"><span class="header-section-number">3.1</span> 確率密度関数</h3>
+<p><img src="https://latex.codecogs.com/png.latex?%0Af(t)=%5Cfrac%7Bm%7D%7B%5Ceta%7D%5Cleft(%5Cfrac%7Bt%7D%7B%5Ceta%7D%5Cright)%5E%7Bm-1%7De%5E%7B-%5Cleft(%5Cfrac%7Bt%7D%7B%5Ceta%7D%5Cright)%5Em%7D%0A"></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">y<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">rweibull</span>(<span class="dv" style="color: #AD0000;">1000</span>, <span class="at" style="color: #657422;">shape=</span><span class="dv" style="color: #AD0000;">2</span>, <span class="at" style="color: #657422;">scale=</span><span class="dv" style="color: #AD0000;">5</span>)</span>
-<span id="cb4-2"><span class="fu" style="color: #4758AB;">survreg</span>(<span class="fu" style="color: #4758AB;">Surv</span>(y)<span class="sc" style="color: #5E5E5E;">~</span><span class="dv" style="color: #AD0000;">1</span>, <span class="at" style="color: #657422;">dist=</span><span class="st" style="color: #20794D;">"weibull"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Call:
-survreg(formula = Surv(y) ~ 1, dist = "weibull")
-
-Coefficients:
-(Intercept) 
-   1.619122 
-
-Scale= 0.4973306 
-
-Loglik(model)= -2205.4   Loglik(intercept only)= -2205.4
-n= 1000 </code></pre>
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">weibull_d<span class="ot" style="color: #003B4F;">&lt;-</span><span class="cf" style="color: #003B4F;">function</span>(m,t,eta){</span>
+<span id="cb4-2">  k<span class="ot" style="color: #003B4F;">&lt;-</span>(m<span class="sc" style="color: #5E5E5E;">/</span>eta)<span class="sc" style="color: #5E5E5E;">*</span>(t<span class="sc" style="color: #5E5E5E;">/</span>eta)<span class="sc" style="color: #5E5E5E;">^</span>(m<span class="dv" style="color: #AD0000;">-1</span>)<span class="sc" style="color: #5E5E5E;">*</span><span class="fu" style="color: #4758AB;">exp</span>(<span class="sc" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span><span class="sc" style="color: #5E5E5E;">*</span>((t<span class="sc" style="color: #5E5E5E;">/</span>eta)<span class="sc" style="color: #5E5E5E;">^</span>m))</span>
+<span id="cb4-3">  <span class="fu" style="color: #4758AB;">return</span>(k)}</span></code></pre></div>
 </div>
-</div>
+<p><img src="https://latex.codecogs.com/png.latex?m=2">, <img src="https://latex.codecogs.com/png.latex?%5Ceta=15">の場合</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="fu" style="color: #4758AB;">hist</span>(y)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">m1<span class="ot" style="color: #003B4F;">&lt;-</span><span class="dv" style="color: #AD0000;">2</span></span>
+<span id="cb5-2">eta1<span class="ot" style="color: #003B4F;">&lt;-</span><span class="dv" style="color: #AD0000;">15</span></span>
+<span id="cb5-3"><span class="fu" style="color: #4758AB;">plot</span>(<span class="fu" style="color: #4758AB;">weibull_d</span>(m1,<span class="fu" style="color: #4758AB;">c</span>(<span class="dv" style="color: #AD0000;">1</span><span class="sc" style="color: #5E5E5E;">:</span><span class="dv" style="color: #AD0000;">35</span>),eta1))</span></code></pre></div>
 <div class="cell-output-display">
 <p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/survival/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
-<section id="r-version" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="r-version"><span class="header-section-number">3</span> R version</h2>
+<section id="ワイブル分布に従う乱数" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="ワイブル分布に従う乱数"><span class="header-section-number">3.2</span> ワイブル分布に従う乱数</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">R.version.string</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">i<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">rweibull</span>(<span class="dv" style="color: #AD0000;">1000</span>,<span class="at" style="color: #657422;">shape =</span> m1,<span class="at" style="color: #657422;">scale =</span> eta1)</span>
+<span id="cb6-2"><span class="fu" style="color: #4758AB;">hist</span>(i)</span></code></pre></div>
+<div class="cell-output-display">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/survival/index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>乱数からワイブルのパラメーターを算出する方法：survregを使う。</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">t<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">survreg</span>(<span class="fu" style="color: #4758AB;">Surv</span>(i)<span class="sc" style="color: #5E5E5E;">~</span><span class="dv" style="color: #AD0000;">1</span>, <span class="at" style="color: #657422;">dist=</span><span class="st" style="color: #20794D;">"weibull"</span>)</span></code></pre></div>
+</div>
+<p>survregの結果は、上述の確率密度関数のパラメーターとして使うには換算する必要がある。</p>
+<p><img src="https://latex.codecogs.com/png.latex?m"></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><span class="dv" style="color: #AD0000;">1</span><span class="sc" style="color: #5E5E5E;">/</span>t<span class="sc" style="color: #5E5E5E;">$</span>scale</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.107207</code></pre>
+</div>
+</div>
+<p><img src="https://latex.codecogs.com/png.latex?%5Ceta"></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><span class="fu" style="color: #4758AB;">exp</span>(<span class="fu" style="color: #4758AB;">unname</span>(t<span class="sc" style="color: #5E5E5E;">$</span>coefficients))</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15.63876</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="r-version" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="r-version"><span class="header-section-number">4</span> R version</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1">R.version.string</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "R version 4.2.2 (2022-10-31)"</code></pre>
 </div>
