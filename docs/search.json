@@ -298,7 +298,7 @@
     "href": "posts/survival/index.html",
     "title": "生存分析",
     "section": "",
-    "text": "library(survival)\nlibrary(tidyverse)\nlibrary(plotly)"
+    "text": "ライフのデータ\n\nlibrary(tidyverse)\nlibrary(plotly)\ndsu01<-read_csv(\"\n  life\n  28\n  30\n  32\n  30\n  25\n  27\n  24\n  23\n  29\n  29\n  29\n  31\n  38\n  33\n  32\n  29\n  30\n  18\n  28\n  28\n  24\n  23\n  28\n  29\n  27\n  26\n  28\n  28\n  28\n  27\n  \",show_col_types = FALSE\n)\ndsu11<-count(dsu01,life) |> \n  mutate(n=n/sum(n))\nf1<-plot_ly(x=dsu11$life,y=dsu11$n,type='bar',name=\"Actual\")\nf1"
   },
   {
     "objectID": "posts/survival/index.html#データの読み込み",
@@ -311,8 +311,8 @@
     "objectID": "posts/survival/index.html#r-version",
     "href": "posts/survival/index.html#r-version",
     "title": "生存分析",
-    "section": "4 R version",
-    "text": "4 R version\n\nR.version.string\n\n[1] \"R version 4.2.2 (2022-10-31)\""
+    "section": "3.4 R version",
+    "text": "3.4 R version\n\nR.version.string\n\n[1] \"R version 4.2.2 (2022-10-31)\""
   },
   {
     "objectID": "posts/survival/index.html#ワイブル",
@@ -332,8 +332,8 @@
     "objectID": "posts/survival/index.html#参考サイト",
     "href": "posts/survival/index.html#参考サイト",
     "title": "生存分析",
-    "section": "8 参考サイト",
-    "text": "8 参考サイト\nPython package reliability - Fitting a specific distribution to data"
+    "section": "4.4 参考サイト",
+    "text": "4.4 参考サイト\nPython package reliability - Fitting a specific distribution to data"
   },
   {
     "objectID": "posts/survival/index.html#ワイブル分布",
@@ -346,7 +346,42 @@
     "objectID": "posts/survival/index.html#フィット",
     "href": "posts/survival/index.html#フィット",
     "title": "生存分析",
-    "section": "7 フィット",
-    "text": "7 フィット\n\nfrom reliability.Fitters import Fit_Weibull_2P\ndsu02=r.dsu01\nlife_max=int(max(dsu02['life']))\ndsu03=dsu02['life'].values.tolist()\nwb2 = Fit_Weibull_2P(failures=dsu03)\n\n\u001b[1m\u001b[23m\u001b[4m\u001b[49m\u001b[39mResults from Fit_Weibull_2P (95% CI):\u001b[0m\nAnalysis method: Maximum Likelihood Estimation (MLE)\nOptimizer: TNC\nFailures / Right censored: 30/0 (0% right censored) \n\nParameter  Point Estimate  Standard Error  Lower CI  Upper CI\n    Alpha          29.579        0.709558   28.2204   31.0029\n     Beta         8.05733         1.02419   6.28047   10.3369 \n\nGoodness of fit    Value\n Log-likelihood -82.1756\n           AICc  168.796\n            BIC  171.154\n             AD  1.48179 \n\n\n\nprint('Fit_Weibull parameters:\\n Alpha(scale η):', wb2.alpha, '\\nBeta(shape m):', wb2.beta)\n\nFit_Weibull parameters:\n Alpha(scale η): 29.578959363748456 \nBeta(shape m): 8.057329129027952\n\n\n\nimport plotly.graph_objects as go\ntt=\"Scale parameter η: \"+str(round(wb2.alpha,3))+\", Shape parameter m: \"+str(round(wb2.beta,3))\n\nts=np.arange(1,life_max+1)\nta=r.dsu11\nfig0201=go.Bar(\n        x=ta['life'], y=ta[\"n\"],name='Actual',\n        marker={\"color\": \"#99cc66\"}\n        )\nfig0202=go.Scatter(\n        x=ts, y=weibull_d(wb2.beta,ts,wb2.alpha), name='Weibull fit',\n        line={\"color\": \"#cc6600\",\"width\":2},\n    )\nfig04=go.Figure(data=[fig0201,fig0202])\nfig04=fig04.update_layout(annotations=[\n  go.layout.Annotation(\n    xref=\"paper\",\n    yref=\"paper\",\n    x=0.03,\n    y=0.95,\n    showarrow=False,\n    text=tt\n)\n])\nfig04\n\n\n                        \n                                            \n\n\n\nfrom reliability.Distributions import Weibull_Distribution\nimport matplotlib.pyplot as plt\n\n\ndsu03=Weibull_Distribution(alpha=15.189, beta=2.032018)\ndsu03.PDF(label='dsu01')\n\narray([0.00000000e+00, 1.24409191e-03, 2.71913749e-03, 4.21858530e-03,\n       5.73161070e-03, 7.25248344e-03, 8.77729406e-03, 1.03030038e-02,\n       1.18270616e-02, 1.33472202e-02, 1.48614369e-02, 1.63678159e-02,\n       1.78645724e-02, 1.93500106e-02, 2.08225081e-02, 2.22805059e-02,\n       2.37225022e-02, 2.51470469e-02, 2.65527394e-02, 2.79382260e-02,\n       2.93021990e-02, 3.06433958e-02, 3.19605989e-02, 3.32526356e-02,\n       3.45183788e-02, 3.57567467e-02, 3.69667037e-02, 3.81472606e-02,\n       3.92974759e-02, 4.04164554e-02, 4.15033534e-02, 4.25573732e-02,\n       4.35777674e-02, 4.45638383e-02, 4.55149387e-02, 4.64304719e-02,\n       4.73098920e-02, 4.81527042e-02, 4.89584649e-02, 4.97267818e-02,\n       5.04573137e-02, 5.11497706e-02, 5.18039134e-02, 5.24195537e-02,\n       5.29965532e-02, 5.35348238e-02, 5.40343264e-02, 5.44950710e-02,\n       5.49171155e-02, 5.53005653e-02, 5.56455721e-02, 5.59523337e-02,\n       5.62210921e-02, 5.64521334e-02, 5.66457860e-02, 5.68024200e-02,\n       5.69224457e-02, 5.70063122e-02, 5.70545065e-02, 5.70675519e-02,\n       5.70460065e-02, 5.69904622e-02, 5.69015425e-02, 5.67799016e-02,\n       5.66262229e-02, 5.64412167e-02, 5.62256196e-02, 5.59801919e-02,\n       5.57057170e-02, 5.54029989e-02, 5.50728610e-02, 5.47161442e-02,\n       5.43337058e-02, 5.39264170e-02, 5.34951621e-02, 5.30408363e-02,\n       5.25643444e-02, 5.20665991e-02, 5.15485193e-02, 5.10110289e-02,\n       5.04550549e-02, 4.98815261e-02, 4.92913714e-02, 4.86855189e-02,\n       4.80648937e-02, 4.74304175e-02, 4.67830063e-02, 4.61235698e-02,\n       4.54530099e-02, 4.47722195e-02, 4.40820815e-02, 4.33834674e-02,\n       4.26772368e-02, 4.19642356e-02, 4.12452959e-02, 4.05212344e-02,\n       3.97928520e-02, 3.90609328e-02, 3.83262436e-02, 3.75895327e-02,\n       3.68515298e-02, 3.61129452e-02, 3.53744693e-02, 3.46367720e-02,\n       3.39005023e-02, 3.31662883e-02, 3.24347363e-02, 3.17064309e-02,\n       3.09819347e-02, 3.02617879e-02, 2.95465086e-02, 2.88365923e-02,\n       2.81325121e-02, 2.74347185e-02, 2.67436398e-02, 2.60596818e-02,\n       2.53832280e-02, 2.47146398e-02, 2.40542570e-02, 2.34023973e-02,\n       2.27593574e-02, 2.21254126e-02, 2.15008175e-02, 2.08858064e-02,\n       2.02805931e-02, 1.96853721e-02, 1.91003185e-02, 1.85255884e-02,\n       1.79613199e-02, 1.74076327e-02, 1.68646294e-02, 1.63323956e-02,\n       1.58110005e-02, 1.53004972e-02, 1.48009239e-02, 1.43123035e-02,\n       1.38346449e-02, 1.33679432e-02, 1.29121805e-02, 1.24673259e-02,\n       1.20333369e-02, 1.16101593e-02, 1.11977278e-02, 1.07959671e-02,\n       1.04047919e-02, 1.00241073e-02, 9.65381017e-03, 9.29378880e-03,\n       8.94392393e-03, 8.60408907e-03, 8.27415107e-03, 7.95397061e-03,\n       7.64340266e-03, 7.34229698e-03, 7.05049857e-03, 6.76784815e-03,\n       6.49418255e-03, 6.22933517e-03, 5.97313638e-03, 5.72541394e-03,\n       5.48599334e-03, 5.25469824e-03, 5.03135075e-03, 4.81577184e-03,\n       4.60778162e-03, 4.40719968e-03, 4.21384540e-03, 4.02753821e-03,\n       3.84809788e-03, 3.67534477e-03, 3.50910008e-03, 3.34918609e-03,\n       3.19542634e-03, 3.04764589e-03, 2.90567147e-03, 2.90567147e-03,\n       2.57639419e-03, 2.27541634e-03, 2.00143676e-03, 1.75308719e-03,\n       1.52894723e-03, 1.32755932e-03, 1.14744362e-03, 9.87112423e-04,\n       8.45084009e-04, 7.19895670e-04, 6.10115770e-04, 5.14354681e-04,\n       4.31274452e-04, 3.59597132e-04, 2.98111685e-04, 2.45679445e-04,\n       2.01238140e-04, 1.63804496e-04, 1.32475482e-04, 1.06428308e-04,\n       8.49192467e-05, 6.72814483e-05, 5.29218593e-05, 4.13174142e-05])\n\nplt.show()"
+    "section": "4.2 フィット",
+    "text": "4.2 フィット\n結果詳細。Alphaは形状パラメーターm、Betaは尺度パラメーターηに相当する。\n\ndsu02=r.dsu01\nlife_max=int(max(dsu02['life']))\ndsu03=dsu02['life'].values.tolist()\nwb2 = Fit_Weibull_2P(failures=dsu03)\n\n\u001b[1m\u001b[23m\u001b[4m\u001b[49m\u001b[39mResults from Fit_Weibull_2P (95% CI):\u001b[0m\nAnalysis method: Maximum Likelihood Estimation (MLE)\nOptimizer: TNC\nFailures / Right censored: 30/0 (0% right censored) \n\nParameter  Point Estimate  Standard Error  Lower CI  Upper CI\n    Alpha          29.579        0.709558   28.2204   31.0029\n     Beta         8.05733         1.02419   6.28047   10.3369 \n\nGoodness of fit    Value\n Log-likelihood -82.1756\n           AICc  168.796\n            BIC  171.154\n             AD  1.48179"
+  },
+  {
+    "objectID": "posts/survival/index.html#パッケージの読み込み",
+    "href": "posts/survival/index.html#パッケージの読み込み",
+    "title": "生存分析",
+    "section": "3.1 パッケージの読み込み",
+    "text": "3.1 パッケージの読み込み\n\nlibrary(survival)"
+  },
+  {
+    "objectID": "posts/survival/index.html#ワイブルのパラメーターを算出",
+    "href": "posts/survival/index.html#ワイブルのパラメーターを算出",
+    "title": "生存分析",
+    "section": "3.2 ワイブルのパラメーターを算出",
+    "text": "3.2 ワイブルのパラメーターを算出\nsurvregを使う。\n\nt<-survreg(Surv(dsu01$life)~1, dist=\"weibull\")\n\nsurvregの結果は、上述の確率密度関数のパラメーターとして使うには換算する必要がある。\n\\(m\\)\n\nm_fit<-1/t$scale\nm_fit\n\n[1] 8.057331\n\n\n\\(\\eta\\)\n\neta_fit<-exp(unname(t$coefficients))\neta_fit\n\n[1] 29.57896"
+  },
+  {
+    "objectID": "posts/survival/index.html#グラフ化",
+    "href": "posts/survival/index.html#グラフ化",
+    "title": "生存分析",
+    "section": "3.3 グラフ化",
+    "text": "3.3 グラフ化\n\ntsr<-c(1:max(dsu01$life))\nttr<-str_c(\"Scale parameter η: \",as.character(round(eta_fit,3)),\", Shape parameter m: \",as.character(round(m_fit,3)))\nf2<-f1|> \n  add_trace(x=tsr,y=dweibull(tsr,shape=m_fit,scale=eta_fit),type=\"scatter\",mode=\"line\",name=\"Weibull fit\") |>\n  layout(title=\"Weibull fit with 'survival' package - R\") |> \n  add_annotations(\n    x= 0.03,\n    y= 0.95,\n    xref = \"paper\",\n    yref = \"paper\",\n    text = ttr,\n    showarrow=FALSE)\nf2"
+  },
+  {
+    "objectID": "posts/survival/index.html#関数定義",
+    "href": "posts/survival/index.html#関数定義",
+    "title": "生存分析",
+    "section": "4.1 関数定義",
+    "text": "4.1 関数定義\npythonはワイブル関数の自作が必要\n\ndef weibull_d(m,t,eta):\n  k=(m/eta)*(t/eta)**(m-1)*np.exp(-1*((t/eta)**m))\n  return k"
+  },
+  {
+    "objectID": "posts/survival/index.html#グラフ化-1",
+    "href": "posts/survival/index.html#グラフ化-1",
+    "title": "生存分析",
+    "section": "4.3 グラフ化",
+    "text": "4.3 グラフ化\n\ntt=\"Scale parameter η: \"+str(round(wb2.alpha,3))+\", Shape parameter m: \"+str(round(wb2.beta,3))\nts=np.arange(1,life_max+1)\nta=r.dsu11\nfig0201=go.Bar(\n        x=ta['life'], y=ta[\"n\"],name='Actual',\n        marker={\"color\": \"blue\"}\n        )\nfig0202=go.Scatter(\n        x=ts, y=weibull_d(wb2.beta,ts,wb2.alpha), name='Weibull fit',\n        line={\"color\": \"orange\"},\n    )\nlayout=go.Layout(\n        title={\"text\":\"Weibull fit with 'leliability' package - Python \"})\nfig04=go.Figure(data=[fig0201,fig0202],layout=layout)\nfig04=fig04.update_layout(annotations=[\n  go.layout.Annotation(\n    xref=\"paper\",\n    yref=\"paper\",\n    x=0.03,\n    y=0.95,\n    showarrow=False,\n    text=tt\n)\n])\nfig04"
   }
 ]

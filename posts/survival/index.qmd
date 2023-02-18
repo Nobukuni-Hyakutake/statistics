@@ -6,19 +6,13 @@ date-format: "iso"
 categories: [R]
 ---
 
-## パッケージの読み込み
-
-```{r}
-library(survival)
-library(tidyverse)
-library(plotly)
-```
-
-## データの読み込み
+# データの読み込み
 
 ライフのデータ
 
 ```{r}
+library(tidyverse)
+library(plotly)
 dsu01<-read_csv("
   life
   28
@@ -59,32 +53,24 @@ f1<-plot_ly(x=dsu11$life,y=dsu11$n,type='bar',name="Actual")
 f1
 ```
 
-## ワイブル
 
-### 確率密度関数
+# 確率密度関数
 
 $$
 f(t)=\frac{m}{\eta}\left(\frac{t}{\eta}\right)^{m-1}e^{-\left(\frac{t}{\eta}\right)^m}
 $$
 
-```{r}
-weibull_d<-function(m,t,eta){
-  k<-(m/eta)*(t/eta)^(m-1)*exp(-1*((t/eta)^m))
-  return(k)}
-```
+# Rでのワイブル近似
 
-$m=2$, $\eta=15$の場合
+## パッケージの読み込み
 
 ```{r}
-m1<-2
-eta1<-15
-plot(weibull_d(m1,c(1:35),eta1))
+library(survival)
 ```
 
-### ワイブル分布にフィット
+## ワイブルのパラメーターを算出
 
-
-データからワイブルのパラメーターを算出する方法：survregを使う。
+survregを使う。
 
 ```{r}
 t<-survreg(Surv(dsu01$life)~1, dist="weibull")
@@ -106,7 +92,7 @@ eta_fit<-exp(unname(t$coefficients))
 eta_fit
 ```
 
-### グラフ化
+## グラフ化
 
 ```{r}
 tsr<-c(1:max(dsu01$life))
@@ -124,94 +110,45 @@ f2<-f1|>
 f2
 ```
 
-
-
 ## R version
 
 ```{r}
 R.version.string
 ```
-## Python
-
-```{python}
-from reliability.Fitters import Fit_Weibull_2P
-import matplotlib.pyplot as plt
-fail_times = [
-9402.7,
-6082.4,
-13367.2,
-10644.6,
-8632.0,
-3043.4,
-12860.2,
-1034.5,
-2550.9,
-3637.1
-]
-wb = Fit_Weibull_2P(failures=fail_times)
-plt.show()
-```
-
-```{python}
-from reliability.Distributions import Weibull_Distribution
-from reliability.Fitters import Fit_Weibull_3P
-from reliability.Other_functions import make_right_censored_data, histogram
-import matplotlib.pyplot as plt
-
-a = 30
-b = 2
-g = 20
-threshold=55
-dist = Weibull_Distribution(alpha=a, beta=b, gamma=g) # generate a weibull distribution
-raw_data = dist.random_samples(500, seed=2)  # create some data from the distribution
-data = make_right_censored_data(raw_data,threshold=threshold) #right censor some of the data
-print('There are', len(data.right_censored), 'right censored items.')
-wbf = Fit_Weibull_3P(failures=data.failures, right_censored=data.right_censored, show_probability_plot=False, print_results=False)  # fit the Weibull_3P distribution
-print('Fit_Weibull_3P parameters:\nAlpha:', wbf.alpha, '\nBeta:', wbf.beta, '\nGamma', wbf.gamma)
-histogram(raw_data,white_above=threshold) # generates the histogram using optimal bin width and shades the censored part as white
-dist.PDF(label='True Distribution')  # plots the true distribution's PDF
-wbf.distribution.PDF(label='Fit_Weibull_3P', linestyle='--')  # plots to PDF of the fitted Weibull_3P
-plt.title('Fitting comparison for failures and right censored data')
-plt.legend()
-plt.show()
-```
-
-
-## ワイブル分布
+# Pythonでのワイブル近似
 
 ```{python}
 import numpy as np
-import plotly.express as px
+from reliability.Fitters import Fit_Weibull_2P
+import plotly.graph_objects as go
+```
+
+
+## 関数定義
+
+pythonはワイブル関数の自作が必要
+
+```{python}
 def weibull_d(m,t,eta):
   k=(m/eta)*(t/eta)**(m-1)*np.exp(-1*((t/eta)**m))
   return k
-m1=2
-eta1=15
-t1=np.arange(1,36)
-d1=weibull_d(m1,t1,eta1)
-fig1=px.scatter(x=t1,y=d1)
-fig1
 ```
 
 ## フィット
 
+結果詳細。Alphaは形状パラメーターm、Betaは尺度パラメーターηに相当する。
+
 ```{python}
-from reliability.Fitters import Fit_Weibull_2P
 dsu02=r.dsu01
 life_max=int(max(dsu02['life']))
 dsu03=dsu02['life'].values.tolist()
 wb2 = Fit_Weibull_2P(failures=dsu03)
 ```
 
-```{python}
-print('Fit_Weibull parameters:\n Alpha(scale η):', wb2.alpha, '\nBeta(shape m):', wb2.beta)
-```
-
+## グラフ化
 
 ```{python}
-import plotly.graph_objects as go
 tt="Scale parameter η: "+str(round(wb2.alpha,3))+", Shape parameter m: "+str(round(wb2.beta,3))
-
 ts=np.arange(1,life_max+1)
 ta=r.dsu11
 fig0201=go.Bar(
@@ -235,21 +172,7 @@ fig04=fig04.update_layout(annotations=[
     text=tt
 )
 ])
-fig04.show()
-```
-
-
-
-```{python}
-from reliability.Distributions import Weibull_Distribution
-import matplotlib.pyplot as plt
-```
-
-
-```{python}
-dsu03=Weibull_Distribution(alpha=15.189, beta=2.032018)
-dsu03.PDF(label='dsu01')
-plt.show()
+fig04
 ```
 
 ## 参考サイト

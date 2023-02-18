@@ -20,328 +20,148 @@
 
 
 
-<section id="パッケージの読み込み" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="パッケージの読み込み"><span class="header-section-number">1</span> パッケージの読み込み</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;">library</span>(survival)</span>
-<span id="cb1-2"><span class="fu" style="color: #4758AB;">library</span>(tidyverse)</span>
-<span id="cb1-3"><span class="fu" style="color: #4758AB;">library</span>(plotly)</span></code></pre></div>
-</div>
-</section>
-<section id="データの読み込み" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="データの読み込み"><span class="header-section-number">2</span> データの読み込み</h2>
+<section id="データの読み込み" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> データの読み込み</h1>
 <p>ライフのデータ</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">dsu01<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">read_csv</span>(<span class="st" style="color: #20794D;">"</span></span>
-<span id="cb2-2"><span class="st" style="color: #20794D;">  life</span></span>
-<span id="cb2-3"><span class="st" style="color: #20794D;">  28</span></span>
-<span id="cb2-4"><span class="st" style="color: #20794D;">  30</span></span>
-<span id="cb2-5"><span class="st" style="color: #20794D;">  32</span></span>
-<span id="cb2-6"><span class="st" style="color: #20794D;">  30</span></span>
-<span id="cb2-7"><span class="st" style="color: #20794D;">  25</span></span>
-<span id="cb2-8"><span class="st" style="color: #20794D;">  27</span></span>
-<span id="cb2-9"><span class="st" style="color: #20794D;">  24</span></span>
-<span id="cb2-10"><span class="st" style="color: #20794D;">  23</span></span>
-<span id="cb2-11"><span class="st" style="color: #20794D;">  29</span></span>
-<span id="cb2-12"><span class="st" style="color: #20794D;">  29</span></span>
-<span id="cb2-13"><span class="st" style="color: #20794D;">  29</span></span>
-<span id="cb2-14"><span class="st" style="color: #20794D;">  31</span></span>
-<span id="cb2-15"><span class="st" style="color: #20794D;">  38</span></span>
-<span id="cb2-16"><span class="st" style="color: #20794D;">  33</span></span>
-<span id="cb2-17"><span class="st" style="color: #20794D;">  32</span></span>
-<span id="cb2-18"><span class="st" style="color: #20794D;">  29</span></span>
-<span id="cb2-19"><span class="st" style="color: #20794D;">  30</span></span>
-<span id="cb2-20"><span class="st" style="color: #20794D;">  18</span></span>
-<span id="cb2-21"><span class="st" style="color: #20794D;">  28</span></span>
-<span id="cb2-22"><span class="st" style="color: #20794D;">  28</span></span>
-<span id="cb2-23"><span class="st" style="color: #20794D;">  24</span></span>
-<span id="cb2-24"><span class="st" style="color: #20794D;">  23</span></span>
-<span id="cb2-25"><span class="st" style="color: #20794D;">  28</span></span>
-<span id="cb2-26"><span class="st" style="color: #20794D;">  29</span></span>
-<span id="cb2-27"><span class="st" style="color: #20794D;">  27</span></span>
-<span id="cb2-28"><span class="st" style="color: #20794D;">  26</span></span>
-<span id="cb2-29"><span class="st" style="color: #20794D;">  28</span></span>
-<span id="cb2-30"><span class="st" style="color: #20794D;">  28</span></span>
-<span id="cb2-31"><span class="st" style="color: #20794D;">  28</span></span>
-<span id="cb2-32"><span class="st" style="color: #20794D;">  27</span></span>
-<span id="cb2-33"><span class="st" style="color: #20794D;">  "</span>,<span class="at" style="color: #657422;">show_col_types =</span> <span class="cn" style="color: #8f5902;">FALSE</span></span>
-<span id="cb2-34">)</span>
-<span id="cb2-35">dsu11<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">count</span>(dsu01,life) <span class="sc" style="color: #5E5E5E;">|&gt;</span> </span>
-<span id="cb2-36">  <span class="fu" style="color: #4758AB;">mutate</span>(<span class="at" style="color: #657422;">n=</span>n<span class="sc" style="color: #5E5E5E;">/</span><span class="fu" style="color: #4758AB;">sum</span>(n))</span>
-<span id="cb2-37"><span class="fu" style="color: #4758AB;">plot_ly</span>(<span class="at" style="color: #657422;">x=</span>dsu11<span class="sc" style="color: #5E5E5E;">$</span>life,<span class="at" style="color: #657422;">y=</span>dsu11<span class="sc" style="color: #5E5E5E;">$</span>n,<span class="at" style="color: #657422;">type=</span><span class="st" style="color: #20794D;">'bar'</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;">library</span>(tidyverse)</span>
+<span id="cb1-2"><span class="fu" style="color: #4758AB;">library</span>(plotly)</span>
+<span id="cb1-3">dsu01<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">read_csv</span>(<span class="st" style="color: #20794D;">"</span></span>
+<span id="cb1-4"><span class="st" style="color: #20794D;">  life</span></span>
+<span id="cb1-5"><span class="st" style="color: #20794D;">  28</span></span>
+<span id="cb1-6"><span class="st" style="color: #20794D;">  30</span></span>
+<span id="cb1-7"><span class="st" style="color: #20794D;">  32</span></span>
+<span id="cb1-8"><span class="st" style="color: #20794D;">  30</span></span>
+<span id="cb1-9"><span class="st" style="color: #20794D;">  25</span></span>
+<span id="cb1-10"><span class="st" style="color: #20794D;">  27</span></span>
+<span id="cb1-11"><span class="st" style="color: #20794D;">  24</span></span>
+<span id="cb1-12"><span class="st" style="color: #20794D;">  23</span></span>
+<span id="cb1-13"><span class="st" style="color: #20794D;">  29</span></span>
+<span id="cb1-14"><span class="st" style="color: #20794D;">  29</span></span>
+<span id="cb1-15"><span class="st" style="color: #20794D;">  29</span></span>
+<span id="cb1-16"><span class="st" style="color: #20794D;">  31</span></span>
+<span id="cb1-17"><span class="st" style="color: #20794D;">  38</span></span>
+<span id="cb1-18"><span class="st" style="color: #20794D;">  33</span></span>
+<span id="cb1-19"><span class="st" style="color: #20794D;">  32</span></span>
+<span id="cb1-20"><span class="st" style="color: #20794D;">  29</span></span>
+<span id="cb1-21"><span class="st" style="color: #20794D;">  30</span></span>
+<span id="cb1-22"><span class="st" style="color: #20794D;">  18</span></span>
+<span id="cb1-23"><span class="st" style="color: #20794D;">  28</span></span>
+<span id="cb1-24"><span class="st" style="color: #20794D;">  28</span></span>
+<span id="cb1-25"><span class="st" style="color: #20794D;">  24</span></span>
+<span id="cb1-26"><span class="st" style="color: #20794D;">  23</span></span>
+<span id="cb1-27"><span class="st" style="color: #20794D;">  28</span></span>
+<span id="cb1-28"><span class="st" style="color: #20794D;">  29</span></span>
+<span id="cb1-29"><span class="st" style="color: #20794D;">  27</span></span>
+<span id="cb1-30"><span class="st" style="color: #20794D;">  26</span></span>
+<span id="cb1-31"><span class="st" style="color: #20794D;">  28</span></span>
+<span id="cb1-32"><span class="st" style="color: #20794D;">  28</span></span>
+<span id="cb1-33"><span class="st" style="color: #20794D;">  28</span></span>
+<span id="cb1-34"><span class="st" style="color: #20794D;">  27</span></span>
+<span id="cb1-35"><span class="st" style="color: #20794D;">  "</span>,<span class="at" style="color: #657422;">show_col_types =</span> <span class="cn" style="color: #8f5902;">FALSE</span></span>
+<span id="cb1-36">)</span>
+<span id="cb1-37">dsu11<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">count</span>(dsu01,life) <span class="sc" style="color: #5E5E5E;">|&gt;</span> </span>
+<span id="cb1-38">  <span class="fu" style="color: #4758AB;">mutate</span>(<span class="at" style="color: #657422;">n=</span>n<span class="sc" style="color: #5E5E5E;">/</span><span class="fu" style="color: #4758AB;">sum</span>(n))</span>
+<span id="cb1-39">f1<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">plot_ly</span>(<span class="at" style="color: #657422;">x=</span>dsu11<span class="sc" style="color: #5E5E5E;">$</span>life,<span class="at" style="color: #657422;">y=</span>dsu11<span class="sc" style="color: #5E5E5E;">$</span>n,<span class="at" style="color: #657422;">type=</span><span class="st" style="color: #20794D;">'bar'</span>,<span class="at" style="color: #657422;">name=</span><span class="st" style="color: #20794D;">"Actual"</span>)</span>
+<span id="cb1-40">f1</span></code></pre></div>
 <div class="cell-output-display">
-<div id="htmlwidget-60844651b87376367ef7" style="width:100%;height:464px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-60844651b87376367ef7">{"x":{"visdat":{"e1d50b8204":["function () ","plotlyVisDat"]},"cur_data":"e1d50b8204","attrs":{"e1d50b8204":{"x":[18,23,24,25,26,27,28,29,30,31,32,33,38],"y":[0.0333333333333333,0.0666666666666667,0.0666666666666667,0.0333333333333333,0.0333333333333333,0.1,0.233333333333333,0.166666666666667,0.1,0.0333333333333333,0.0666666666666667,0.0333333333333333,0.0333333333333333],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":[]},"yaxis":{"domain":[0,1],"automargin":true,"title":[]},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[18,23,24,25,26,27,28,29,30,31,32,33,38],"y":[0.0333333333333333,0.0666666666666667,0.0666666666666667,0.0333333333333333,0.0333333333333333,0.1,0.233333333333333,0.166666666666667,0.1,0.0333333333333333,0.0666666666666667,0.0333333333333333,0.0333333333333333],"type":"bar","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-1b4cc88841d5c5b0f9e0" style="width:100%;height:464px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1b4cc88841d5c5b0f9e0">{"x":{"visdat":{"1469aee193d":["function () ","plotlyVisDat"]},"cur_data":"1469aee193d","attrs":{"1469aee193d":{"x":[18,23,24,25,26,27,28,29,30,31,32,33,38],"y":[0.0333333333333333,0.0666666666666667,0.0666666666666667,0.0333333333333333,0.0333333333333333,0.1,0.233333333333333,0.166666666666667,0.1,0.0333333333333333,0.0666666666666667,0.0333333333333333,0.0333333333333333],"name":"Actual","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":[]},"yaxis":{"domain":[0,1],"automargin":true,"title":[]},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[18,23,24,25,26,27,28,29,30,31,32,33,38],"y":[0.0333333333333333,0.0666666666666667,0.0666666666666667,0.0333333333333333,0.0333333333333333,0.1,0.233333333333333,0.166666666666667,0.1,0.0333333333333333,0.0666666666666667,0.0333333333333333,0.0333333333333333],"name":"Actual","type":"bar","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
-<section id="ワイブル" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="ワイブル"><span class="header-section-number">3</span> ワイブル</h2>
-<section id="確率密度関数" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="確率密度関数"><span class="header-section-number">3.1</span> 確率密度関数</h3>
+<section id="確率密度関数" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> 確率密度関数</h1>
 <p><img src="https://latex.codecogs.com/png.latex?%0Af(t)=%5Cfrac%7Bm%7D%7B%5Ceta%7D%5Cleft(%5Cfrac%7Bt%7D%7B%5Ceta%7D%5Cright)%5E%7Bm-1%7De%5E%7B-%5Cleft(%5Cfrac%7Bt%7D%7B%5Ceta%7D%5Cright)%5Em%7D%0A"></p>
+</section>
+<section id="rでのワイブル近似" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Rでのワイブル近似</h1>
+<section id="パッケージの読み込み" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="パッケージの読み込み"><span class="header-section-number">3.1</span> パッケージの読み込み</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">weibull_d<span class="ot" style="color: #003B4F;">&lt;-</span><span class="cf" style="color: #003B4F;">function</span>(m,t,eta){</span>
-<span id="cb3-2">  k<span class="ot" style="color: #003B4F;">&lt;-</span>(m<span class="sc" style="color: #5E5E5E;">/</span>eta)<span class="sc" style="color: #5E5E5E;">*</span>(t<span class="sc" style="color: #5E5E5E;">/</span>eta)<span class="sc" style="color: #5E5E5E;">^</span>(m<span class="dv" style="color: #AD0000;">-1</span>)<span class="sc" style="color: #5E5E5E;">*</span><span class="fu" style="color: #4758AB;">exp</span>(<span class="sc" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span><span class="sc" style="color: #5E5E5E;">*</span>((t<span class="sc" style="color: #5E5E5E;">/</span>eta)<span class="sc" style="color: #5E5E5E;">^</span>m))</span>
-<span id="cb3-3">  <span class="fu" style="color: #4758AB;">return</span>(k)}</span></code></pre></div>
-</div>
-<p><img src="https://latex.codecogs.com/png.latex?m=2">, <img src="https://latex.codecogs.com/png.latex?%5Ceta=15">の場合</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">m1<span class="ot" style="color: #003B4F;">&lt;-</span><span class="dv" style="color: #AD0000;">2</span></span>
-<span id="cb4-2">eta1<span class="ot" style="color: #003B4F;">&lt;-</span><span class="dv" style="color: #AD0000;">15</span></span>
-<span id="cb4-3"><span class="fu" style="color: #4758AB;">plot</span>(<span class="fu" style="color: #4758AB;">weibull_d</span>(m1,<span class="fu" style="color: #4758AB;">c</span>(<span class="dv" style="color: #AD0000;">1</span><span class="sc" style="color: #5E5E5E;">:</span><span class="dv" style="color: #AD0000;">35</span>),eta1))</span></code></pre></div>
-<div class="cell-output-display">
-<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/survival/index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
-</div>
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;">library</span>(survival)</span></code></pre></div>
 </div>
 </section>
-<section id="ワイブル分布に従う乱数" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="ワイブル分布に従う乱数"><span class="header-section-number">3.2</span> ワイブル分布に従う乱数</h3>
+<section id="ワイブルのパラメーターを算出" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="ワイブルのパラメーターを算出"><span class="header-section-number">3.2</span> ワイブルのパラメーターを算出</h2>
+<p>survregを使う。</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">i<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">rweibull</span>(<span class="dv" style="color: #AD0000;">1000</span>,<span class="at" style="color: #657422;">shape =</span> m1,<span class="at" style="color: #657422;">scale =</span> eta1)</span>
-<span id="cb5-2"><span class="fu" style="color: #4758AB;">hist</span>(i)</span></code></pre></div>
-<div class="cell-output-display">
-<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/survival/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<p>データからワイブルのパラメーターを算出する方法：survregを使う。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">t<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">survreg</span>(<span class="fu" style="color: #4758AB;">Surv</span>(dsu01<span class="sc" style="color: #5E5E5E;">$</span>life)<span class="sc" style="color: #5E5E5E;">~</span><span class="dv" style="color: #AD0000;">1</span>, <span class="at" style="color: #657422;">dist=</span><span class="st" style="color: #20794D;">"weibull"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">t<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">survreg</span>(<span class="fu" style="color: #4758AB;">Surv</span>(dsu01<span class="sc" style="color: #5E5E5E;">$</span>life)<span class="sc" style="color: #5E5E5E;">~</span><span class="dv" style="color: #AD0000;">1</span>, <span class="at" style="color: #657422;">dist=</span><span class="st" style="color: #20794D;">"weibull"</span>)</span></code></pre></div>
 </div>
 <p>survregの結果は、上述の確率密度関数のパラメーターとして使うには換算する必要がある。</p>
 <p><img src="https://latex.codecogs.com/png.latex?m"></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><span class="dv" style="color: #AD0000;">1</span><span class="sc" style="color: #5E5E5E;">/</span>t<span class="sc" style="color: #5E5E5E;">$</span>scale</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">m_fit<span class="ot" style="color: #003B4F;">&lt;-</span><span class="dv" style="color: #AD0000;">1</span><span class="sc" style="color: #5E5E5E;">/</span>t<span class="sc" style="color: #5E5E5E;">$</span>scale</span>
+<span id="cb4-2">m_fit</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 8.057331</code></pre>
 </div>
 </div>
 <p><img src="https://latex.codecogs.com/png.latex?%5Ceta"></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><span class="fu" style="color: #4758AB;">exp</span>(<span class="fu" style="color: #4758AB;">unname</span>(t<span class="sc" style="color: #5E5E5E;">$</span>coefficients))</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">eta_fit<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">exp</span>(<span class="fu" style="color: #4758AB;">unname</span>(t<span class="sc" style="color: #5E5E5E;">$</span>coefficients))</span>
+<span id="cb6-2">eta_fit</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 29.57896</code></pre>
 </div>
 </div>
 </section>
-</section>
-<section id="r-version" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="r-version"><span class="header-section-number">4</span> R version</h2>
+<section id="グラフ化" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="グラフ化"><span class="header-section-number">3.3</span> グラフ化</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">R.version.string</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1">tsr<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">c</span>(<span class="dv" style="color: #AD0000;">1</span><span class="sc" style="color: #5E5E5E;">:</span><span class="fu" style="color: #4758AB;">max</span>(dsu01<span class="sc" style="color: #5E5E5E;">$</span>life))</span>
+<span id="cb8-2">ttr<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">str_c</span>(<span class="st" style="color: #20794D;">"Scale parameter η: "</span>,<span class="fu" style="color: #4758AB;">as.character</span>(<span class="fu" style="color: #4758AB;">round</span>(eta_fit,<span class="dv" style="color: #AD0000;">3</span>)),<span class="st" style="color: #20794D;">", Shape parameter m: "</span>,<span class="fu" style="color: #4758AB;">as.character</span>(<span class="fu" style="color: #4758AB;">round</span>(m_fit,<span class="dv" style="color: #AD0000;">3</span>)))</span>
+<span id="cb8-3">f2<span class="ot" style="color: #003B4F;">&lt;-</span>f1<span class="sc" style="color: #5E5E5E;">|&gt;</span> </span>
+<span id="cb8-4">  <span class="fu" style="color: #4758AB;">add_trace</span>(<span class="at" style="color: #657422;">x=</span>tsr,<span class="at" style="color: #657422;">y=</span><span class="fu" style="color: #4758AB;">dweibull</span>(tsr,<span class="at" style="color: #657422;">shape=</span>m_fit,<span class="at" style="color: #657422;">scale=</span>eta_fit),<span class="at" style="color: #657422;">type=</span><span class="st" style="color: #20794D;">"scatter"</span>,<span class="at" style="color: #657422;">mode=</span><span class="st" style="color: #20794D;">"line"</span>,<span class="at" style="color: #657422;">name=</span><span class="st" style="color: #20794D;">"Weibull fit"</span>) <span class="sc" style="color: #5E5E5E;">|&gt;</span></span>
+<span id="cb8-5">  <span class="fu" style="color: #4758AB;">layout</span>(<span class="at" style="color: #657422;">title=</span><span class="st" style="color: #20794D;">"Weibull fit with 'survival' package - R"</span>) <span class="sc" style="color: #5E5E5E;">|&gt;</span> </span>
+<span id="cb8-6">  <span class="fu" style="color: #4758AB;">add_annotations</span>(</span>
+<span id="cb8-7">    <span class="at" style="color: #657422;">x=</span> <span class="fl" style="color: #AD0000;">0.03</span>,</span>
+<span id="cb8-8">    <span class="at" style="color: #657422;">y=</span> <span class="fl" style="color: #AD0000;">0.95</span>,</span>
+<span id="cb8-9">    <span class="at" style="color: #657422;">xref =</span> <span class="st" style="color: #20794D;">"paper"</span>,</span>
+<span id="cb8-10">    <span class="at" style="color: #657422;">yref =</span> <span class="st" style="color: #20794D;">"paper"</span>,</span>
+<span id="cb8-11">    <span class="at" style="color: #657422;">text =</span> ttr,</span>
+<span id="cb8-12">    <span class="at" style="color: #657422;">showarrow=</span><span class="cn" style="color: #8f5902;">FALSE</span>)</span>
+<span id="cb8-13">f2</span></code></pre></div>
+<div class="cell-output-display">
+<div id="htmlwidget-14e908184a590da37e7f" style="width:100%;height:464px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-14e908184a590da37e7f">{"x":{"visdat":{"1469aee193d":["function () ","plotlyVisDat"]},"cur_data":"1469aee193d","attrs":{"1469aee193d":{"x":[18,23,24,25,26,27,28,29,30,31,32,33,38],"y":[0.0333333333333333,0.0666666666666667,0.0666666666666667,0.0333333333333333,0.0333333333333333,0.1,0.233333333333333,0.166666666666667,0.1,0.0333333333333333,0.0666666666666667,0.0333333333333333,0.0333333333333333],"name":"Actual","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"1469aee193d.1":{"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38],"y":[1.13238701652436e-11,1.50821497525071e-09,2.63753100437017e-08,2.00877628693453e-07,9.70191374147673e-07,3.51289208982579e-06,1.04262389923219e-05,2.67539830195499e-05,6.14285795380645e-05,0.000129198177770701,0.000253103299268035,0.000467553901279546,0.000822025412906788,0.00138532628337209,0.00225026331954211,0.00353830460625997,0.00540345726448282,0.008033970239261,0.0116495760096223,0.0164907824436752,0.0227953403535159,0.0307558739529034,0.0404527538273805,0.0517594104429517,0.0642260618328559,0.0769649552064973,0.0885859900531846,0.0972590483977193,0.100988364533984,0.0981407102432582,0.0881420808916129,0.0720645263546774,0.0526858129449,0.0337247904174444,0.0184407477164268,0.00836981161336808,0.00305016346954716,0.00085892578530151],"name":"Weibull fit","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","mode":"line","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"title":"Weibull fit with 'survival' package - R","annotations":[{"text":"Scale parameter η: 29.579, Shape parameter m: 8.057","x":0.03,"y":0.95,"xref":"paper","yref":"paper","showarrow":false}],"xaxis":{"domain":[0,1],"automargin":true,"title":[]},"yaxis":{"domain":[0,1],"automargin":true,"title":[]},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[18,23,24,25,26,27,28,29,30,31,32,33,38],"y":[0.0333333333333333,0.0666666666666667,0.0666666666666667,0.0333333333333333,0.0333333333333333,0.1,0.233333333333333,0.166666666666667,0.1,0.0333333333333333,0.0666666666666667,0.0333333333333333,0.0333333333333333],"name":"Actual","type":"bar","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38],"y":[1.13238701652436e-11,1.50821497525071e-09,2.63753100437017e-08,2.00877628693453e-07,9.70191374147673e-07,3.51289208982579e-06,1.04262389923219e-05,2.67539830195499e-05,6.14285795380645e-05,0.000129198177770701,0.000253103299268035,0.000467553901279546,0.000822025412906788,0.00138532628337209,0.00225026331954211,0.00353830460625997,0.00540345726448282,0.008033970239261,0.0116495760096223,0.0164907824436752,0.0227953403535159,0.0307558739529034,0.0404527538273805,0.0517594104429517,0.0642260618328559,0.0769649552064973,0.0885859900531846,0.0972590483977193,0.100988364533984,0.0981407102432582,0.0881420808916129,0.0720645263546774,0.0526858129449,0.0337247904174444,0.0184407477164268,0.00836981161336808,0.00305016346954716,0.00085892578530151],"name":"Weibull fit","type":"scatter","mode":"line","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"line":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="r-version" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="r-version"><span class="header-section-number">3.4</span> R version</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">R.version.string</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "R version 4.2.2 (2022-10-31)"</code></pre>
 </div>
 </div>
 </section>
-<section id="python" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="python"><span class="header-section-number">5</span> Python</h2>
+</section>
+<section id="pythonでのワイブル近似" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Pythonでのワイブル近似</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="im" style="color: #00769E;">from</span> reliability.Fitters <span class="im" style="color: #00769E;">import</span> Fit_Weibull_2P</span>
-<span id="cb13-2"><span class="im" style="color: #00769E;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;">as</span> plt</span>
-<span id="cb13-3">fail_times <span class="op" style="color: #5E5E5E;">=</span> [</span>
-<span id="cb13-4"><span class="fl" style="color: #AD0000;">9402.7</span>,</span>
-<span id="cb13-5"><span class="fl" style="color: #AD0000;">6082.4</span>,</span>
-<span id="cb13-6"><span class="fl" style="color: #AD0000;">13367.2</span>,</span>
-<span id="cb13-7"><span class="fl" style="color: #AD0000;">10644.6</span>,</span>
-<span id="cb13-8"><span class="fl" style="color: #AD0000;">8632.0</span>,</span>
-<span id="cb13-9"><span class="fl" style="color: #AD0000;">3043.4</span>,</span>
-<span id="cb13-10"><span class="fl" style="color: #AD0000;">12860.2</span>,</span>
-<span id="cb13-11"><span class="fl" style="color: #AD0000;">1034.5</span>,</span>
-<span id="cb13-12"><span class="fl" style="color: #AD0000;">2550.9</span>,</span>
-<span id="cb13-13"><span class="fl" style="color: #AD0000;">3637.1</span></span>
-<span id="cb13-14">]</span>
-<span id="cb13-15">wb <span class="op" style="color: #5E5E5E;">=</span> Fit_Weibull_2P(failures<span class="op" style="color: #5E5E5E;">=</span>fail_times)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1m[23m[4m[49m[39mResults from Fit_Weibull_2P (95% CI):[0m
-Analysis method: Maximum Likelihood Estimation (MLE)
-Optimizer: TNC
-Failures / Right censored: 10/0 (0% right censored) 
-
-Parameter  Point Estimate  Standard Error  Lower CI  Upper CI
-    Alpha         7965.97         1573.53   5408.78   11732.2
-     Beta         1.68128        0.444137    1.0018   2.82162 
-
-Goodness of fit    Value
- Log-likelihood -97.1296
-           AICc  199.973
-            BIC  198.864
-             AD   1.5487 </code></pre>
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="im" style="color: #00769E;">import</span> numpy <span class="im" style="color: #00769E;">as</span> np</span>
+<span id="cb11-2"><span class="im" style="color: #00769E;">from</span> reliability.Fitters <span class="im" style="color: #00769E;">import</span> Fit_Weibull_2P</span>
+<span id="cb11-3"><span class="im" style="color: #00769E;">import</span> plotly.graph_objects <span class="im" style="color: #00769E;">as</span> go</span></code></pre></div>
 </div>
-<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1">plt.show()</span></code></pre></div>
-<div class="cell-output-display">
-<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/survival/index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="864"></p>
-</div>
-</div>
+<section id="関数定義" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="関数定義"><span class="header-section-number">4.1</span> 関数定義</h2>
+<p>pythonはワイブル関数の自作が必要</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><span class="im" style="color: #00769E;">from</span> reliability.Distributions <span class="im" style="color: #00769E;">import</span> Weibull_Distribution</span>
-<span id="cb16-2"><span class="im" style="color: #00769E;">from</span> reliability.Fitters <span class="im" style="color: #00769E;">import</span> Fit_Weibull_3P</span>
-<span id="cb16-3"><span class="im" style="color: #00769E;">from</span> reliability.Other_functions <span class="im" style="color: #00769E;">import</span> make_right_censored_data, histogram</span>
-<span id="cb16-4"><span class="im" style="color: #00769E;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;">as</span> plt</span>
-<span id="cb16-5"></span>
-<span id="cb16-6">a <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">30</span></span>
-<span id="cb16-7">b <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">2</span></span>
-<span id="cb16-8">g <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">20</span></span>
-<span id="cb16-9">threshold<span class="op" style="color: #5E5E5E;">=</span><span class="dv" style="color: #AD0000;">55</span></span>
-<span id="cb16-10">dist <span class="op" style="color: #5E5E5E;">=</span> Weibull_Distribution(alpha<span class="op" style="color: #5E5E5E;">=</span>a, beta<span class="op" style="color: #5E5E5E;">=</span>b, gamma<span class="op" style="color: #5E5E5E;">=</span>g) <span class="co" style="color: #5E5E5E;"># generate a weibull distribution</span></span>
-<span id="cb16-11">raw_data <span class="op" style="color: #5E5E5E;">=</span> dist.random_samples(<span class="dv" style="color: #AD0000;">500</span>, seed<span class="op" style="color: #5E5E5E;">=</span><span class="dv" style="color: #AD0000;">2</span>)  <span class="co" style="color: #5E5E5E;"># create some data from the distribution</span></span>
-<span id="cb16-12">data <span class="op" style="color: #5E5E5E;">=</span> make_right_censored_data(raw_data,threshold<span class="op" style="color: #5E5E5E;">=</span>threshold) <span class="co" style="color: #5E5E5E;">#right censor some of the data</span></span>
-<span id="cb16-13"><span class="bu" style="color: null;">print</span>(<span class="st" style="color: #20794D;">'There are'</span>, <span class="bu" style="color: null;">len</span>(data.right_censored), <span class="st" style="color: #20794D;">'right censored items.'</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>There are 118 right censored items.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1">wbf <span class="op" style="color: #5E5E5E;">=</span> Fit_Weibull_3P(failures<span class="op" style="color: #5E5E5E;">=</span>data.failures, right_censored<span class="op" style="color: #5E5E5E;">=</span>data.right_censored, show_probability_plot<span class="op" style="color: #5E5E5E;">=</span><span class="va" style="color: #111111;">False</span>, print_results<span class="op" style="color: #5E5E5E;">=</span><span class="va" style="color: #111111;">False</span>)  <span class="co" style="color: #5E5E5E;"># fit the Weibull_3P distribution</span></span>
-<span id="cb18-2"><span class="bu" style="color: null;">print</span>(<span class="st" style="color: #20794D;">'Fit_Weibull_3P parameters:</span><span class="ch" style="color: #20794D;">\n</span><span class="st" style="color: #20794D;">Alpha:'</span>, wbf.alpha, <span class="st" style="color: #20794D;">'</span><span class="ch" style="color: #20794D;">\n</span><span class="st" style="color: #20794D;">Beta:'</span>, wbf.beta, <span class="st" style="color: #20794D;">'</span><span class="ch" style="color: #20794D;">\n</span><span class="st" style="color: #20794D;">Gamma'</span>, wbf.gamma)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Fit_Weibull_3P parameters:
-Alpha: 28.874744956093892 
-Beta: 2.029495367281646 
-Gamma 20.38395851616883</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1">histogram(raw_data,white_above<span class="op" style="color: #5E5E5E;">=</span>threshold) <span class="co" style="color: #5E5E5E;"># generates the histogram using optimal bin width and shades the censored part as white</span></span>
-<span id="cb20-2">dist.PDF(label<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">'True Distribution'</span>)  <span class="co" style="color: #5E5E5E;"># plots the true distribution's PDF</span></span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>array([0.00000000e+00, 0.00000000e+00, 6.66616666e-04, 1.49382607e-03,
-       2.31965387e-03, 3.14333731e-03, 3.96411691e-03, 4.78123770e-03,
-       5.59395029e-03, 6.40151210e-03, 7.20318844e-03, 7.99825363e-03,
-       8.78599213e-03, 9.56569954e-03, 1.03366837e-02, 1.10982658e-02,
-       1.18497811e-02, 1.25905803e-02, 1.33200300e-02, 1.40375141e-02,
-       1.47424341e-02, 1.54342105e-02, 1.61122833e-02, 1.67761126e-02,
-       1.74251796e-02, 1.80589870e-02, 1.86770599e-02, 1.92789461e-02,
-       1.98642167e-02, 2.04324668e-02, 2.09833155e-02, 2.15164068e-02,
-       2.20314094e-02, 2.25280173e-02, 2.30059501e-02, 2.34649530e-02,
-       2.39047969e-02, 2.43252787e-02, 2.47262211e-02, 2.51074729e-02,
-       2.54689087e-02, 2.58104287e-02, 2.61319588e-02, 2.64334504e-02,
-       2.67148801e-02, 2.69762491e-02, 2.72175834e-02, 2.74389331e-02,
-       2.76403723e-02, 2.78219982e-02, 2.79839310e-02, 2.81263131e-02,
-       2.82493090e-02, 2.83531041e-02, 2.84379046e-02, 2.85039366e-02,
-       2.85514456e-02, 2.85806957e-02, 2.85919688e-02, 2.85855640e-02,
-       2.85617970e-02, 2.85209990e-02, 2.84635160e-02, 2.83897082e-02,
-       2.82999489e-02, 2.81946241e-02, 2.80741312e-02, 2.79388784e-02,
-       2.77892840e-02, 2.76257751e-02, 2.74487875e-02, 2.72587640e-02,
-       2.70561544e-02, 2.68414140e-02, 2.66150032e-02, 2.63773865e-02,
-       2.61290318e-02, 2.58704095e-02, 2.56019918e-02, 2.53242521e-02,
-       2.50376638e-02, 2.47427001e-02, 2.44398329e-02, 2.41295323e-02,
-       2.38122660e-02, 2.34884982e-02, 2.31586898e-02, 2.28232968e-02,
-       2.24827705e-02, 2.21375568e-02, 2.17880952e-02, 2.14348187e-02,
-       2.10781535e-02, 2.07185180e-02, 2.03563227e-02, 1.99919699e-02,
-       1.96258531e-02, 1.92583567e-02, 1.88898556e-02, 1.85207152e-02,
-       1.81512908e-02, 1.77819276e-02, 1.74129602e-02, 1.70447127e-02,
-       1.66774984e-02, 1.63116196e-02, 1.59473677e-02, 1.55850226e-02,
-       1.52248534e-02, 1.48671177e-02, 1.45120617e-02, 1.41599206e-02,
-       1.38109180e-02, 1.34652664e-02, 1.31231671e-02, 1.27848103e-02,
-       1.24503750e-02, 1.21200294e-02, 1.17939308e-02, 1.14722261e-02,
-       1.11550513e-02, 1.08425324e-02, 1.05347849e-02, 1.02319146e-02,
-       9.93401738e-03, 9.64117967e-03, 9.35347847e-03, 9.07098174e-03,
-       8.79374853e-03, 8.52182930e-03, 8.25526614e-03, 7.99409305e-03,
-       7.73833617e-03, 7.48801406e-03, 7.24313800e-03, 7.00371222e-03,
-       6.76973419e-03, 6.54119492e-03, 6.31807920e-03, 6.10036589e-03,
-       5.88802820e-03, 5.68103396e-03, 5.47934592e-03, 5.28292197e-03,
-       5.09171543e-03, 4.90567536e-03, 4.72474672e-03, 4.54887075e-03,
-       4.37798513e-03, 4.21202427e-03, 4.05091953e-03, 3.89459949e-03,
-       3.74299017e-03, 3.59601522e-03, 3.45359621e-03, 3.31565280e-03,
-       3.18210293e-03, 3.05286308e-03, 2.92784842e-03, 2.80697300e-03,
-       2.69014997e-03, 2.57729170e-03, 2.46831000e-03, 2.36311623e-03,
-       2.26162149e-03, 2.16373678e-03, 2.06937308e-03, 1.97844153e-03,
-       1.89085357e-03, 1.80652101e-03, 1.72535616e-03, 1.64727197e-03,
-       1.57218210e-03, 1.50000100e-03, 1.43064402e-03, 1.43064402e-03,
-       1.26823159e-03, 1.11982024e-03, 9.84760211e-04, 8.62369364e-04,
-       7.51940507e-04, 6.52748831e-04, 5.64059222e-04, 4.85133371e-04,
-       4.15236573e-04, 3.53644133e-04, 2.99647272e-04, 2.52558481e-04,
-       2.11716241e-04, 1.76489082e-04, 1.46278940e-04, 1.20523799e-04,
-       9.86996169e-05, 8.03215666e-05, 6.49445999e-05, 5.21633981e-05,
-       4.16117551e-05, 3.29614580e-05, 2.59207377e-05, 2.02323617e-05])</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1">wbf.distribution.PDF(label<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">'Fit_Weibull_3P'</span>, linestyle<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">'--'</span>)  <span class="co" style="color: #5E5E5E;"># plots to PDF of the fitted Weibull_3P</span></span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>array([0.00000000e+00, 0.00000000e+00, 6.57310834e-04, 1.44368039e-03,
-       2.24199812e-03, 3.04682493e-03, 3.85526563e-03, 4.66532940e-03,
-       5.47545687e-03, 6.28433031e-03, 7.09078255e-03, 7.89374807e-03,
-       8.69223454e-03, 9.48530546e-03, 1.02720690e-02, 1.10516709e-02,
-       1.18232891e-02, 1.25861313e-02, 1.33394321e-02, 1.40824517e-02,
-       1.48144754e-02, 1.55348127e-02, 1.62427971e-02, 1.69377861e-02,
-       1.76191613e-02, 1.82863285e-02, 1.89387182e-02, 1.95757853e-02,
-       2.01970101e-02, 2.08018984e-02, 2.13899813e-02, 2.19608165e-02,
-       2.25139876e-02, 2.30491051e-02, 2.35658063e-02, 2.40637554e-02,
-       2.45426440e-02, 2.50021912e-02, 2.54421434e-02, 2.58622745e-02,
-       2.62623860e-02, 2.66423071e-02, 2.70018942e-02, 2.73410311e-02,
-       2.76596287e-02, 2.79576250e-02, 2.82349846e-02, 2.84916986e-02,
-       2.87277839e-02, 2.89432834e-02, 2.91382652e-02, 2.93128220e-02,
-       2.94670711e-02, 2.96011534e-02, 2.97152330e-02, 2.98094968e-02,
-       2.98841534e-02, 2.99394329e-02, 2.99755859e-02, 2.99928831e-02,
-       2.99916140e-02, 2.99720869e-02, 2.99346272e-02, 2.98795775e-02,
-       2.98072961e-02, 2.97181565e-02, 2.96125465e-02, 2.94908672e-02,
-       2.93535323e-02, 2.92009671e-02, 2.90336076e-02, 2.88518997e-02,
-       2.86562983e-02, 2.84472664e-02, 2.82252742e-02, 2.79907981e-02,
-       2.77443201e-02, 2.74863268e-02, 2.72173083e-02, 2.69377577e-02,
-       2.66481704e-02, 2.63490426e-02, 2.60408713e-02, 2.57241530e-02,
-       2.53993830e-02, 2.50670548e-02, 2.47276596e-02, 2.43816849e-02,
-       2.40296145e-02, 2.36719276e-02, 2.33090981e-02, 2.29415940e-02,
-       2.25698770e-02, 2.21944018e-02, 2.18156157e-02, 2.14339579e-02,
-       2.10498592e-02, 2.06637417e-02, 2.02760179e-02, 1.98870910e-02,
-       1.94973538e-02, 1.91071890e-02, 1.87169687e-02, 1.83270541e-02,
-       1.79377950e-02, 1.75495302e-02, 1.71625869e-02, 1.67772804e-02,
-       1.63939145e-02, 1.60127809e-02, 1.56341593e-02, 1.52583174e-02,
-       1.48855109e-02, 1.45159835e-02, 1.41499665e-02, 1.37876794e-02,
-       1.34293300e-02, 1.30751137e-02, 1.27252144e-02, 1.23798045e-02,
-       1.20390446e-02, 1.17030841e-02, 1.13720611e-02, 1.10461026e-02,
-       1.07253251e-02, 1.04098343e-02, 1.00997253e-02, 9.79508347e-03,
-       9.49598394e-03, 9.20249235e-03, 8.91466490e-03, 8.63254865e-03,
-       8.35618185e-03, 8.08559415e-03, 7.82080696e-03, 7.56183367e-03,
-       7.30867998e-03, 7.06134423e-03, 6.81981762e-03, 6.58408459e-03,
-       6.35412306e-03, 6.12990477e-03, 5.91139556e-03, 5.69855569e-03,
-       5.49134008e-03, 5.28969870e-03, 5.09357675e-03, 4.90291504e-03,
-       4.71765021e-03, 4.53771505e-03, 4.36303874e-03, 4.19354714e-03,
-       4.02916305e-03, 3.86980644e-03, 3.71539474e-03, 3.56584306e-03,
-       3.42106444e-03, 3.28097005e-03, 3.14546945e-03, 3.01447077e-03,
-       2.88788097e-03, 2.76560598e-03, 2.64755091e-03, 2.53362027e-03,
-       2.42371811e-03, 2.31774820e-03, 2.21561418e-03, 2.11721976e-03,
-       2.02246880e-03, 1.93126551e-03, 1.84351452e-03, 1.75912106e-03,
-       1.67799106e-03, 1.60003124e-03, 1.52514923e-03, 1.52514923e-03,
-       1.35229198e-03, 1.19429430e-03, 1.05047250e-03, 9.20107685e-04,
-       8.02453664e-04, 6.96744793e-04, 6.02203782e-04, 5.18049274e-04,
-       4.43503103e-04, 3.77797142e-04, 3.20179620e-04, 2.69920866e-04,
-       2.26318377e-04, 1.88701189e-04, 1.56433493e-04, 1.28917505e-04,
-       1.05595569e-04, 8.59515164e-05, 6.95113245e-05, 5.58431025e-05,
-       4.45564767e-05, 3.53014356e-05, 2.77667121e-05, 2.16777811e-05])</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1">plt.title(<span class="st" style="color: #20794D;">'Fitting comparison for failures and right censored data'</span>)</span>
-<span id="cb24-2">plt.legend()</span>
-<span id="cb24-3">plt.show()</span></code></pre></div>
-<div class="cell-output-display">
-<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/survival/index_files/figure-html/unnamed-chunk-11-3.png" class="img-fluid" width="864"></p>
-</div>
+<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><span class="kw" style="color: #003B4F;">def</span> weibull_d(m,t,eta):</span>
+<span id="cb12-2">  k<span class="op" style="color: #5E5E5E;">=</span>(m<span class="op" style="color: #5E5E5E;">/</span>eta)<span class="op" style="color: #5E5E5E;">*</span>(t<span class="op" style="color: #5E5E5E;">/</span>eta)<span class="op" style="color: #5E5E5E;">**</span>(m<span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span>)<span class="op" style="color: #5E5E5E;">*</span>np.exp(<span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">*</span>((t<span class="op" style="color: #5E5E5E;">/</span>eta)<span class="op" style="color: #5E5E5E;">**</span>m))</span>
+<span id="cb12-3">  <span class="cf" style="color: #003B4F;">return</span> k</span></code></pre></div>
 </div>
 </section>
-<section id="ワイブル分布" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="ワイブル分布"><span class="header-section-number">6</span> ワイブル分布</h2>
+<section id="フィット" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="フィット"><span class="header-section-number">4.2</span> フィット</h2>
+<p>結果詳細。Alphaは形状パラメーターm、Betaは尺度パラメーターηに相当する。</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><span class="im" style="color: #00769E;">import</span> numpy <span class="im" style="color: #00769E;">as</span> np</span>
-<span id="cb25-2"><span class="im" style="color: #00769E;">import</span> plotly.express <span class="im" style="color: #00769E;">as</span> px</span>
-<span id="cb25-3"><span class="kw" style="color: #003B4F;">def</span> weibull_d(m,t,eta):</span>
-<span id="cb25-4">  k<span class="op" style="color: #5E5E5E;">=</span>(m<span class="op" style="color: #5E5E5E;">/</span>eta)<span class="op" style="color: #5E5E5E;">*</span>(t<span class="op" style="color: #5E5E5E;">/</span>eta)<span class="op" style="color: #5E5E5E;">**</span>(m<span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span>)<span class="op" style="color: #5E5E5E;">*</span>np.exp(<span class="op" style="color: #5E5E5E;">-</span><span class="dv" style="color: #AD0000;">1</span><span class="op" style="color: #5E5E5E;">*</span>((t<span class="op" style="color: #5E5E5E;">/</span>eta)<span class="op" style="color: #5E5E5E;">**</span>m))</span>
-<span id="cb25-5">  <span class="cf" style="color: #003B4F;">return</span> k</span>
-<span id="cb25-6">m1<span class="op" style="color: #5E5E5E;">=</span><span class="dv" style="color: #AD0000;">2</span></span>
-<span id="cb25-7">eta1<span class="op" style="color: #5E5E5E;">=</span><span class="dv" style="color: #AD0000;">15</span></span>
-<span id="cb25-8">t1<span class="op" style="color: #5E5E5E;">=</span>np.arange(<span class="dv" style="color: #AD0000;">1</span>,<span class="dv" style="color: #AD0000;">36</span>)</span>
-<span id="cb25-9">d1<span class="op" style="color: #5E5E5E;">=</span>weibull_d(m1,t1,eta1)</span>
-<span id="cb25-10">fig1<span class="op" style="color: #5E5E5E;">=</span>px.scatter(x<span class="op" style="color: #5E5E5E;">=</span>t1,y<span class="op" style="color: #5E5E5E;">=</span>d1)</span>
-<span id="cb25-11">fig1</span></code></pre></div>
-<div class="cell-output-display">
-
-<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script src="https://cdn.plot.ly/plotly-2.14.0.min.js"></script>                <div id="5a4e6761-1547-4506-a3be-c485eda59241" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("5a4e6761-1547-4506-a3be-c485eda59241")) {                    Plotly.newPlot(                        "5a4e6761-1547-4506-a3be-c485eda59241",                        [{"hovertemplate":"x=%{x}<br>y=%{y}<extra></extra>","legendgroup":"","marker":{"color":"#636efa","symbol":"circle"},"mode":"markers","name":"","orientation":"v","showlegend":false,"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35],"xaxis":"x","y":[0.008849470377627492,0.017464521148767603,0.02562105171072862,0.03311496540840363,0.03977063630286087,0.04544766874486461,0.05004559193296894,0.05350628665523934,0.055814106085682484,0.05699381230488485,0.05710659175871299,0.056244525231258516,0.05452396357686195,0.05207829586307469,0.04905059215619231,0.04558656298887698,0.041828208522012966,0.037908441389139486,0.03394686785145694,0.03004681162774508,0.026293571905261735,0.022753828104813207,0.019476043311463413,0.016491677961237274,0.013817005338248065,0.011455318854468492,0.009399334823756895,0.007633619597680298,0.0061369023374145855,0.004884170370329114,0.003848479559591131,0.0030024446766076583,0.002319402521800741,0.001774262430000963,0.0013440745030514859],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"x"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"y"}},"legend":{"tracegroupgap":0},"margin":{"t":60}},                        {"responsive": true}                    )                };                            </script>        </div>
-</div>
-</div>
-</section>
-<section id="フィット" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="フィット"><span class="header-section-number">7</span> フィット</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><span class="im" style="color: #00769E;">from</span> reliability.Fitters <span class="im" style="color: #00769E;">import</span> Fit_Weibull_2P</span>
-<span id="cb26-2">dsu02<span class="op" style="color: #5E5E5E;">=</span>r.dsu01</span>
-<span id="cb26-3">life_max<span class="op" style="color: #5E5E5E;">=</span><span class="bu" style="color: null;">int</span>(<span class="bu" style="color: null;">max</span>(dsu02[<span class="st" style="color: #20794D;">'life'</span>]))</span>
-<span id="cb26-4">dsu03<span class="op" style="color: #5E5E5E;">=</span>dsu02[<span class="st" style="color: #20794D;">'life'</span>].values.tolist()</span>
-<span id="cb26-5">wb2 <span class="op" style="color: #5E5E5E;">=</span> Fit_Weibull_2P(failures<span class="op" style="color: #5E5E5E;">=</span>dsu03)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1">dsu02<span class="op" style="color: #5E5E5E;">=</span>r.dsu01</span>
+<span id="cb13-2">life_max<span class="op" style="color: #5E5E5E;">=</span><span class="bu" style="color: null;">int</span>(<span class="bu" style="color: null;">max</span>(dsu02[<span class="st" style="color: #20794D;">'life'</span>]))</span>
+<span id="cb13-3">dsu03<span class="op" style="color: #5E5E5E;">=</span>dsu02[<span class="st" style="color: #20794D;">'life'</span>].values.tolist()</span>
+<span id="cb13-4">wb2 <span class="op" style="color: #5E5E5E;">=</span> Fit_Weibull_2P(failures<span class="op" style="color: #5E5E5E;">=</span>dsu03)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1m[23m[4m[49m[39mResults from Fit_Weibull_2P (95% CI):[0m
 Analysis method: Maximum Likelihood Estimation (MLE)
@@ -359,118 +179,50 @@ Goodness of fit    Value
              AD  1.48179 </code></pre>
 </div>
 </div>
+</section>
+<section id="グラフ化-1" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="グラフ化-1"><span class="header-section-number">4.3</span> グラフ化</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><span class="bu" style="color: null;">print</span>(<span class="st" style="color: #20794D;">'Fit_Weibull parameters:</span><span class="ch" style="color: #20794D;">\n</span><span class="st" style="color: #20794D;"> Alpha(scale η):'</span>, wb2.alpha, <span class="st" style="color: #20794D;">'</span><span class="ch" style="color: #20794D;">\n</span><span class="st" style="color: #20794D;">Beta(shape m):'</span>, wb2.beta)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Fit_Weibull parameters:
- Alpha(scale η): 29.578959363748456 
-Beta(shape m): 8.057329129027952</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb30" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><span class="im" style="color: #00769E;">import</span> plotly.graph_objects <span class="im" style="color: #00769E;">as</span> go</span>
-<span id="cb30-2">tt<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"Scale parameter η: "</span><span class="op" style="color: #5E5E5E;">+</span><span class="bu" style="color: null;">str</span>(<span class="bu" style="color: null;">round</span>(wb2.alpha,<span class="dv" style="color: #AD0000;">3</span>))<span class="op" style="color: #5E5E5E;">+</span><span class="st" style="color: #20794D;">", Shape parameter m: "</span><span class="op" style="color: #5E5E5E;">+</span><span class="bu" style="color: null;">str</span>(<span class="bu" style="color: null;">round</span>(wb2.beta,<span class="dv" style="color: #AD0000;">3</span>))</span>
-<span id="cb30-3"></span>
-<span id="cb30-4">ts<span class="op" style="color: #5E5E5E;">=</span>np.arange(<span class="dv" style="color: #AD0000;">1</span>,life_max<span class="op" style="color: #5E5E5E;">+</span><span class="dv" style="color: #AD0000;">1</span>)</span>
-<span id="cb30-5">ta<span class="op" style="color: #5E5E5E;">=</span>r.dsu11</span>
-<span id="cb30-6">fig0201<span class="op" style="color: #5E5E5E;">=</span>go.Bar(</span>
-<span id="cb30-7">        x<span class="op" style="color: #5E5E5E;">=</span>ta[<span class="st" style="color: #20794D;">'life'</span>], y<span class="op" style="color: #5E5E5E;">=</span>ta[<span class="st" style="color: #20794D;">"n"</span>],name<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">'Actual'</span>,</span>
-<span id="cb30-8">        marker<span class="op" style="color: #5E5E5E;">=</span>{<span class="st" style="color: #20794D;">"color"</span>: <span class="st" style="color: #20794D;">"#99cc66"</span>}</span>
-<span id="cb30-9">        )</span>
-<span id="cb30-10">fig0202<span class="op" style="color: #5E5E5E;">=</span>go.Scatter(</span>
-<span id="cb30-11">        x<span class="op" style="color: #5E5E5E;">=</span>ts, y<span class="op" style="color: #5E5E5E;">=</span>weibull_d(wb2.beta,ts,wb2.alpha), name<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">'Weibull fit'</span>,</span>
-<span id="cb30-12">        line<span class="op" style="color: #5E5E5E;">=</span>{<span class="st" style="color: #20794D;">"color"</span>: <span class="st" style="color: #20794D;">"#cc6600"</span>,<span class="st" style="color: #20794D;">"width"</span>:<span class="dv" style="color: #AD0000;">2</span>},</span>
-<span id="cb30-13">    )</span>
-<span id="cb30-14">fig04<span class="op" style="color: #5E5E5E;">=</span>go.Figure(data<span class="op" style="color: #5E5E5E;">=</span>[fig0201,fig0202])</span>
-<span id="cb30-15">fig04<span class="op" style="color: #5E5E5E;">=</span>fig04.update_layout(annotations<span class="op" style="color: #5E5E5E;">=</span>[</span>
-<span id="cb30-16">  go.layout.Annotation(</span>
-<span id="cb30-17">    xref<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"paper"</span>,</span>
-<span id="cb30-18">    yref<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"paper"</span>,</span>
-<span id="cb30-19">    x<span class="op" style="color: #5E5E5E;">=</span><span class="fl" style="color: #AD0000;">0.03</span>,</span>
-<span id="cb30-20">    y<span class="op" style="color: #5E5E5E;">=</span><span class="fl" style="color: #AD0000;">0.95</span>,</span>
-<span id="cb30-21">    showarrow<span class="op" style="color: #5E5E5E;">=</span><span class="va" style="color: #111111;">False</span>,</span>
-<span id="cb30-22">    text<span class="op" style="color: #5E5E5E;">=</span>tt</span>
-<span id="cb30-23">)</span>
-<span id="cb30-24">])</span>
-<span id="cb30-25">fig04</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1">tt<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"Scale parameter η: "</span><span class="op" style="color: #5E5E5E;">+</span><span class="bu" style="color: null;">str</span>(<span class="bu" style="color: null;">round</span>(wb2.alpha,<span class="dv" style="color: #AD0000;">3</span>))<span class="op" style="color: #5E5E5E;">+</span><span class="st" style="color: #20794D;">", Shape parameter m: "</span><span class="op" style="color: #5E5E5E;">+</span><span class="bu" style="color: null;">str</span>(<span class="bu" style="color: null;">round</span>(wb2.beta,<span class="dv" style="color: #AD0000;">3</span>))</span>
+<span id="cb15-2">ts<span class="op" style="color: #5E5E5E;">=</span>np.arange(<span class="dv" style="color: #AD0000;">1</span>,life_max<span class="op" style="color: #5E5E5E;">+</span><span class="dv" style="color: #AD0000;">1</span>)</span>
+<span id="cb15-3">ta<span class="op" style="color: #5E5E5E;">=</span>r.dsu11</span>
+<span id="cb15-4">fig0201<span class="op" style="color: #5E5E5E;">=</span>go.Bar(</span>
+<span id="cb15-5">        x<span class="op" style="color: #5E5E5E;">=</span>ta[<span class="st" style="color: #20794D;">'life'</span>], y<span class="op" style="color: #5E5E5E;">=</span>ta[<span class="st" style="color: #20794D;">"n"</span>],name<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">'Actual'</span>,</span>
+<span id="cb15-6">        marker<span class="op" style="color: #5E5E5E;">=</span>{<span class="st" style="color: #20794D;">"color"</span>: <span class="st" style="color: #20794D;">"blue"</span>}</span>
+<span id="cb15-7">        )</span>
+<span id="cb15-8">fig0202<span class="op" style="color: #5E5E5E;">=</span>go.Scatter(</span>
+<span id="cb15-9">        x<span class="op" style="color: #5E5E5E;">=</span>ts, y<span class="op" style="color: #5E5E5E;">=</span>weibull_d(wb2.beta,ts,wb2.alpha), name<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">'Weibull fit'</span>,</span>
+<span id="cb15-10">        line<span class="op" style="color: #5E5E5E;">=</span>{<span class="st" style="color: #20794D;">"color"</span>: <span class="st" style="color: #20794D;">"orange"</span>},</span>
+<span id="cb15-11">    )</span>
+<span id="cb15-12">layout<span class="op" style="color: #5E5E5E;">=</span>go.Layout(</span>
+<span id="cb15-13">        title<span class="op" style="color: #5E5E5E;">=</span>{<span class="st" style="color: #20794D;">"text"</span>:<span class="st" style="color: #20794D;">"Weibull fit with 'leliability' package - Python "</span>})</span>
+<span id="cb15-14">fig04<span class="op" style="color: #5E5E5E;">=</span>go.Figure(data<span class="op" style="color: #5E5E5E;">=</span>[fig0201,fig0202],layout<span class="op" style="color: #5E5E5E;">=</span>layout)</span>
+<span id="cb15-15">fig04<span class="op" style="color: #5E5E5E;">=</span>fig04.update_layout(annotations<span class="op" style="color: #5E5E5E;">=</span>[</span>
+<span id="cb15-16">  go.layout.Annotation(</span>
+<span id="cb15-17">    xref<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"paper"</span>,</span>
+<span id="cb15-18">    yref<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"paper"</span>,</span>
+<span id="cb15-19">    x<span class="op" style="color: #5E5E5E;">=</span><span class="fl" style="color: #AD0000;">0.03</span>,</span>
+<span id="cb15-20">    y<span class="op" style="color: #5E5E5E;">=</span><span class="fl" style="color: #AD0000;">0.95</span>,</span>
+<span id="cb15-21">    showarrow<span class="op" style="color: #5E5E5E;">=</span><span class="va" style="color: #111111;">False</span>,</span>
+<span id="cb15-22">    text<span class="op" style="color: #5E5E5E;">=</span>tt</span>
+<span id="cb15-23">)</span>
+<span id="cb15-24">])</span>
+<span id="cb15-25">fig04</span></code></pre></div>
 <div class="cell-output-display">
 
 <div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script src="https://cdn.plot.ly/plotly-2.14.0.min.js"></script>                <div id="618c1f06-13b8-4d16-be66-59bc8d1bbbf3" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("618c1f06-13b8-4d16-be66-59bc8d1bbbf3")) {                    Plotly.newPlot(                        "618c1f06-13b8-4d16-be66-59bc8d1bbbf3",                        [{"marker":{"color":"#99cc66"},"name":"Actual","x":[18.0,23.0,24.0,25.0,26.0,27.0,28.0,29.0,30.0,31.0,32.0,33.0,38.0],"y":[0.03333333333333333,0.06666666666666667,0.06666666666666667,0.03333333333333333,0.03333333333333333,0.1,0.23333333333333334,0.16666666666666666,0.1,0.03333333333333333,0.06666666666666667,0.03333333333333333,0.03333333333333333],"type":"bar"},{"line":{"color":"#cc6600","width":2},"name":"Weibull fit","x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38],"y":[1.1323946539681028e-11,1.5082230276621622e-09,2.637542917727607e-08,2.0087841884913633e-07,9.7019475142361e-07,3.512903019612673e-06,1.0426268172667666e-05,2.6754050651741873e-05,6.142872014792959e-05,0.00012919844587711777,0.00025310377548923556,0.0004675546982099255,0.000822026679765255,0.0013853282079881854,0.0022502661256794776,0.003538308543570744,0.005403462587596613,0.008033977171833412,0.011649584689049298,0.016490792843479783,0.022795352184524473,0.03075588655313065,0.040452766065810025,0.051759420684160944,0.06422606803267603,0.07696495521898575,0.08858598219894565,0.09725903223996817,0.10098834162083929,0.0981406843670262,0.08814205737231402,0.07206451021851425,0.052685806676814134,0.03372479271200665,0.01844075439277052,0.008369818256685433,0.003050167741266745,0.0008589276986255127],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"annotations":[{"showarrow":false,"text":"Scale parameter \u03b7: 29.579, Shape parameter m: 8.057","x":0.03,"xref":"paper","y":0.95,"yref":"paper"}]},                        {"responsive": true}                    )                };                            </script>        </div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb31" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><span class="im" style="color: #00769E;">from</span> reliability.Distributions <span class="im" style="color: #00769E;">import</span> Weibull_Distribution</span>
-<span id="cb31-2"><span class="im" style="color: #00769E;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;">as</span> plt</span></code></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb32" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1">dsu03<span class="op" style="color: #5E5E5E;">=</span>Weibull_Distribution(alpha<span class="op" style="color: #5E5E5E;">=</span><span class="fl" style="color: #AD0000;">15.189</span>, beta<span class="op" style="color: #5E5E5E;">=</span><span class="fl" style="color: #AD0000;">2.032018</span>)</span>
-<span id="cb32-2">dsu03.PDF(label<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">'dsu01'</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>array([0.00000000e+00, 1.24409191e-03, 2.71913749e-03, 4.21858530e-03,
-       5.73161070e-03, 7.25248344e-03, 8.77729406e-03, 1.03030038e-02,
-       1.18270616e-02, 1.33472202e-02, 1.48614369e-02, 1.63678159e-02,
-       1.78645724e-02, 1.93500106e-02, 2.08225081e-02, 2.22805059e-02,
-       2.37225022e-02, 2.51470469e-02, 2.65527394e-02, 2.79382260e-02,
-       2.93021990e-02, 3.06433958e-02, 3.19605989e-02, 3.32526356e-02,
-       3.45183788e-02, 3.57567467e-02, 3.69667037e-02, 3.81472606e-02,
-       3.92974759e-02, 4.04164554e-02, 4.15033534e-02, 4.25573732e-02,
-       4.35777674e-02, 4.45638383e-02, 4.55149387e-02, 4.64304719e-02,
-       4.73098920e-02, 4.81527042e-02, 4.89584649e-02, 4.97267818e-02,
-       5.04573137e-02, 5.11497706e-02, 5.18039134e-02, 5.24195537e-02,
-       5.29965532e-02, 5.35348238e-02, 5.40343264e-02, 5.44950710e-02,
-       5.49171155e-02, 5.53005653e-02, 5.56455721e-02, 5.59523337e-02,
-       5.62210921e-02, 5.64521334e-02, 5.66457860e-02, 5.68024200e-02,
-       5.69224457e-02, 5.70063122e-02, 5.70545065e-02, 5.70675519e-02,
-       5.70460065e-02, 5.69904622e-02, 5.69015425e-02, 5.67799016e-02,
-       5.66262229e-02, 5.64412167e-02, 5.62256196e-02, 5.59801919e-02,
-       5.57057170e-02, 5.54029989e-02, 5.50728610e-02, 5.47161442e-02,
-       5.43337058e-02, 5.39264170e-02, 5.34951621e-02, 5.30408363e-02,
-       5.25643444e-02, 5.20665991e-02, 5.15485193e-02, 5.10110289e-02,
-       5.04550549e-02, 4.98815261e-02, 4.92913714e-02, 4.86855189e-02,
-       4.80648937e-02, 4.74304175e-02, 4.67830063e-02, 4.61235698e-02,
-       4.54530099e-02, 4.47722195e-02, 4.40820815e-02, 4.33834674e-02,
-       4.26772368e-02, 4.19642356e-02, 4.12452959e-02, 4.05212344e-02,
-       3.97928520e-02, 3.90609328e-02, 3.83262436e-02, 3.75895327e-02,
-       3.68515298e-02, 3.61129452e-02, 3.53744693e-02, 3.46367720e-02,
-       3.39005023e-02, 3.31662883e-02, 3.24347363e-02, 3.17064309e-02,
-       3.09819347e-02, 3.02617879e-02, 2.95465086e-02, 2.88365923e-02,
-       2.81325121e-02, 2.74347185e-02, 2.67436398e-02, 2.60596818e-02,
-       2.53832280e-02, 2.47146398e-02, 2.40542570e-02, 2.34023973e-02,
-       2.27593574e-02, 2.21254126e-02, 2.15008175e-02, 2.08858064e-02,
-       2.02805931e-02, 1.96853721e-02, 1.91003185e-02, 1.85255884e-02,
-       1.79613199e-02, 1.74076327e-02, 1.68646294e-02, 1.63323956e-02,
-       1.58110005e-02, 1.53004972e-02, 1.48009239e-02, 1.43123035e-02,
-       1.38346449e-02, 1.33679432e-02, 1.29121805e-02, 1.24673259e-02,
-       1.20333369e-02, 1.16101593e-02, 1.11977278e-02, 1.07959671e-02,
-       1.04047919e-02, 1.00241073e-02, 9.65381017e-03, 9.29378880e-03,
-       8.94392393e-03, 8.60408907e-03, 8.27415107e-03, 7.95397061e-03,
-       7.64340266e-03, 7.34229698e-03, 7.05049857e-03, 6.76784815e-03,
-       6.49418255e-03, 6.22933517e-03, 5.97313638e-03, 5.72541394e-03,
-       5.48599334e-03, 5.25469824e-03, 5.03135075e-03, 4.81577184e-03,
-       4.60778162e-03, 4.40719968e-03, 4.21384540e-03, 4.02753821e-03,
-       3.84809788e-03, 3.67534477e-03, 3.50910008e-03, 3.34918609e-03,
-       3.19542634e-03, 3.04764589e-03, 2.90567147e-03, 2.90567147e-03,
-       2.57639419e-03, 2.27541634e-03, 2.00143676e-03, 1.75308719e-03,
-       1.52894723e-03, 1.32755932e-03, 1.14744362e-03, 9.87112423e-04,
-       8.45084009e-04, 7.19895670e-04, 6.10115770e-04, 5.14354681e-04,
-       4.31274452e-04, 3.59597132e-04, 2.98111685e-04, 2.45679445e-04,
-       2.01238140e-04, 1.63804496e-04, 1.32475482e-04, 1.06428308e-04,
-       8.49192467e-05, 6.72814483e-05, 5.29218593e-05, 4.13174142e-05])</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb34" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1">plt.show()</span></code></pre></div>
-<div class="cell-output-display">
-<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/survival/index_files/figure-html/unnamed-chunk-17-5.png" class="img-fluid" width="864"></p>
+        <script src="https://cdn.plot.ly/plotly-2.14.0.min.js"></script>                <div id="28684aa4-d68a-47d2-ace4-1a8c7de7c940" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("28684aa4-d68a-47d2-ace4-1a8c7de7c940")) {                    Plotly.newPlot(                        "28684aa4-d68a-47d2-ace4-1a8c7de7c940",                        [{"marker":{"color":"blue"},"name":"Actual","x":[18.0,23.0,24.0,25.0,26.0,27.0,28.0,29.0,30.0,31.0,32.0,33.0,38.0],"y":[0.03333333333333333,0.06666666666666667,0.06666666666666667,0.03333333333333333,0.03333333333333333,0.1,0.23333333333333334,0.16666666666666666,0.1,0.03333333333333333,0.06666666666666667,0.03333333333333333,0.03333333333333333],"type":"bar"},{"line":{"color":"orange"},"name":"Weibull fit","x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38],"y":[1.1323946539681028e-11,1.5082230276621622e-09,2.637542917727607e-08,2.0087841884913633e-07,9.7019475142361e-07,3.512903019612673e-06,1.0426268172667666e-05,2.6754050651741873e-05,6.142872014792959e-05,0.00012919844587711777,0.00025310377548923556,0.0004675546982099255,0.000822026679765255,0.0013853282079881854,0.0022502661256794776,0.003538308543570744,0.005403462587596613,0.008033977171833412,0.011649584689049298,0.016490792843479783,0.022795352184524473,0.03075588655313065,0.040452766065810025,0.051759420684160944,0.06422606803267603,0.07696495521898575,0.08858598219894565,0.09725903223996817,0.10098834162083929,0.0981406843670262,0.08814205737231402,0.07206451021851425,0.052685806676814134,0.03372479271200665,0.01844075439277052,0.008369818256685433,0.003050167741266745,0.0008589276986255127],"type":"scatter"}],                        {"title":{"text":"Weibull fit with 'leliability' package - Python "},"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"annotations":[{"showarrow":false,"text":"Scale parameter \u03b7: 29.579, Shape parameter m: 8.057","x":0.03,"xref":"paper","y":0.95,"yref":"paper"}]},                        {"responsive": true}                    )                };                            </script>        </div>
 </div>
 </div>
 </section>
-<section id="参考サイト" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="参考サイト"><span class="header-section-number">8</span> 参考サイト</h2>
+<section id="参考サイト" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="参考サイト"><span class="header-section-number">4.4</span> 参考サイト</h2>
 <p><a href="https://reliability.readthedocs.io/en/latest/Fitting%20a%20specific%20distribution%20to%20data.html">Python package reliability - Fitting a specific distribution to data</a></p>
 
 
 <!-- -->
 
+</section>
 </section>
 
  ]]></description>
