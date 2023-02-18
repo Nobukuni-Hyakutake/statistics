@@ -133,4 +133,30 @@ wb = Fit_Weibull_2P(failures=fail_times)
 plt.show()
 ```
 
-[Python package reliability - Fitting a specific distribution to data](https://weibull.readthedocs.io/en/latest/examples.html#determining-beta-and-eta-values)
+```{python}
+from reliability.Distributions import Weibull_Distribution
+from reliability.Fitters import Fit_Weibull_3P
+from reliability.Other_functions import make_right_censored_data, histogram
+import matplotlib.pyplot as plt
+
+a = 30
+b = 2
+g = 20
+threshold=55
+dist = Weibull_Distribution(alpha=a, beta=b, gamma=g) # generate a weibull distribution
+raw_data = dist.random_samples(500, seed=2)  # create some data from the distribution
+data = make_right_censored_data(raw_data,threshold=threshold) #right censor some of the data
+print('There are', len(data.right_censored), 'right censored items.')
+wbf = Fit_Weibull_3P(failures=data.failures, right_censored=data.right_censored, show_probability_plot=False, print_results=False)  # fit the Weibull_3P distribution
+print('Fit_Weibull_3P parameters:\nAlpha:', wbf.alpha, '\nBeta:', wbf.beta, '\nGamma', wbf.gamma)
+histogram(raw_data,white_above=threshold) # generates the histogram using optimal bin width and shades the censored part as white
+dist.PDF(label='True Distribution')  # plots the true distribution's PDF
+wbf.distribution.PDF(label='Fit_Weibull_3P', linestyle='--')  # plots to PDF of the fitted Weibull_3P
+plt.title('Fitting comparison for failures and right censored data')
+plt.legend()
+plt.show()
+```
+
+## 参考サイト
+
+[Python package reliability - Fitting a specific distribution to data](https://reliability.readthedocs.io/en/latest/Fitting%20a%20specific%20distribution%20to%20data.html)

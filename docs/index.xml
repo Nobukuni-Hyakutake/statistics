@@ -111,14 +111,14 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><span class="dv" style="color: #AD0000;">1</span><span class="sc" style="color: #5E5E5E;">/</span>t<span class="sc" style="color: #5E5E5E;">$</span>scale</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.051372</code></pre>
+<pre><code>[1] 2.032018</code></pre>
 </div>
 </div>
 <p><img src="https://latex.codecogs.com/png.latex?%5Ceta"></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><span class="fu" style="color: #4758AB;">exp</span>(<span class="fu" style="color: #4758AB;">unname</span>(t<span class="sc" style="color: #5E5E5E;">$</span>coefficients))</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 15.54061</code></pre>
+<pre><code>[1] 15.189</code></pre>
 </div>
 </div>
 </section>
@@ -171,7 +171,149 @@ Goodness of fit    Value
 <p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/survival/index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
-<p><a href="https://weibull.readthedocs.io/en/latest/examples.html#determining-beta-and-eta-values">Python package reliability - Fitting a specific distribution to data</a></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><span class="im" style="color: #00769E;">from</span> reliability.Distributions <span class="im" style="color: #00769E;">import</span> Weibull_Distribution</span>
+<span id="cb17-2"><span class="im" style="color: #00769E;">from</span> reliability.Fitters <span class="im" style="color: #00769E;">import</span> Fit_Weibull_3P</span>
+<span id="cb17-3"><span class="im" style="color: #00769E;">from</span> reliability.Other_functions <span class="im" style="color: #00769E;">import</span> make_right_censored_data, histogram</span>
+<span id="cb17-4"><span class="im" style="color: #00769E;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;">as</span> plt</span>
+<span id="cb17-5"></span>
+<span id="cb17-6">a <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">30</span></span>
+<span id="cb17-7">b <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">2</span></span>
+<span id="cb17-8">g <span class="op" style="color: #5E5E5E;">=</span> <span class="dv" style="color: #AD0000;">20</span></span>
+<span id="cb17-9">threshold<span class="op" style="color: #5E5E5E;">=</span><span class="dv" style="color: #AD0000;">55</span></span>
+<span id="cb17-10">dist <span class="op" style="color: #5E5E5E;">=</span> Weibull_Distribution(alpha<span class="op" style="color: #5E5E5E;">=</span>a, beta<span class="op" style="color: #5E5E5E;">=</span>b, gamma<span class="op" style="color: #5E5E5E;">=</span>g) <span class="co" style="color: #5E5E5E;"># generate a weibull distribution</span></span>
+<span id="cb17-11">raw_data <span class="op" style="color: #5E5E5E;">=</span> dist.random_samples(<span class="dv" style="color: #AD0000;">500</span>, seed<span class="op" style="color: #5E5E5E;">=</span><span class="dv" style="color: #AD0000;">2</span>)  <span class="co" style="color: #5E5E5E;"># create some data from the distribution</span></span>
+<span id="cb17-12">data <span class="op" style="color: #5E5E5E;">=</span> make_right_censored_data(raw_data,threshold<span class="op" style="color: #5E5E5E;">=</span>threshold) <span class="co" style="color: #5E5E5E;">#right censor some of the data</span></span>
+<span id="cb17-13"><span class="bu" style="color: null;">print</span>(<span class="st" style="color: #20794D;">'There are'</span>, <span class="bu" style="color: null;">len</span>(data.right_censored), <span class="st" style="color: #20794D;">'right censored items.'</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>There are 118 right censored items.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1">wbf <span class="op" style="color: #5E5E5E;">=</span> Fit_Weibull_3P(failures<span class="op" style="color: #5E5E5E;">=</span>data.failures, right_censored<span class="op" style="color: #5E5E5E;">=</span>data.right_censored, show_probability_plot<span class="op" style="color: #5E5E5E;">=</span><span class="va" style="color: #111111;">False</span>, print_results<span class="op" style="color: #5E5E5E;">=</span><span class="va" style="color: #111111;">False</span>)  <span class="co" style="color: #5E5E5E;"># fit the Weibull_3P distribution</span></span>
+<span id="cb19-2"><span class="bu" style="color: null;">print</span>(<span class="st" style="color: #20794D;">'Fit_Weibull_3P parameters:</span><span class="ch" style="color: #20794D;">\n</span><span class="st" style="color: #20794D;">Alpha:'</span>, wbf.alpha, <span class="st" style="color: #20794D;">'</span><span class="ch" style="color: #20794D;">\n</span><span class="st" style="color: #20794D;">Beta:'</span>, wbf.beta, <span class="st" style="color: #20794D;">'</span><span class="ch" style="color: #20794D;">\n</span><span class="st" style="color: #20794D;">Gamma'</span>, wbf.gamma)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Fit_Weibull_3P parameters:
+Alpha: 28.8747438462942 
+Beta: 2.029494904764125 
+Gamma 20.38395959382001</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1">histogram(raw_data,white_above<span class="op" style="color: #5E5E5E;">=</span>threshold) <span class="co" style="color: #5E5E5E;"># generates the histogram using optimal bin width and shades the censored part as white</span></span>
+<span id="cb21-2">dist.PDF(label<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">'True Distribution'</span>)  <span class="co" style="color: #5E5E5E;"># plots the true distribution's PDF</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>array([0.00000000e+00, 0.00000000e+00, 6.66616666e-04, 1.49382607e-03,
+       2.31965387e-03, 3.14333731e-03, 3.96411691e-03, 4.78123770e-03,
+       5.59395029e-03, 6.40151210e-03, 7.20318844e-03, 7.99825363e-03,
+       8.78599213e-03, 9.56569954e-03, 1.03366837e-02, 1.10982658e-02,
+       1.18497811e-02, 1.25905803e-02, 1.33200300e-02, 1.40375141e-02,
+       1.47424341e-02, 1.54342105e-02, 1.61122833e-02, 1.67761126e-02,
+       1.74251796e-02, 1.80589870e-02, 1.86770599e-02, 1.92789461e-02,
+       1.98642167e-02, 2.04324668e-02, 2.09833155e-02, 2.15164068e-02,
+       2.20314094e-02, 2.25280173e-02, 2.30059501e-02, 2.34649530e-02,
+       2.39047969e-02, 2.43252787e-02, 2.47262211e-02, 2.51074729e-02,
+       2.54689087e-02, 2.58104287e-02, 2.61319588e-02, 2.64334504e-02,
+       2.67148801e-02, 2.69762491e-02, 2.72175834e-02, 2.74389331e-02,
+       2.76403723e-02, 2.78219982e-02, 2.79839310e-02, 2.81263131e-02,
+       2.82493090e-02, 2.83531041e-02, 2.84379046e-02, 2.85039366e-02,
+       2.85514456e-02, 2.85806957e-02, 2.85919688e-02, 2.85855640e-02,
+       2.85617970e-02, 2.85209990e-02, 2.84635160e-02, 2.83897082e-02,
+       2.82999489e-02, 2.81946241e-02, 2.80741312e-02, 2.79388784e-02,
+       2.77892840e-02, 2.76257751e-02, 2.74487875e-02, 2.72587640e-02,
+       2.70561544e-02, 2.68414140e-02, 2.66150032e-02, 2.63773865e-02,
+       2.61290318e-02, 2.58704095e-02, 2.56019918e-02, 2.53242521e-02,
+       2.50376638e-02, 2.47427001e-02, 2.44398329e-02, 2.41295323e-02,
+       2.38122660e-02, 2.34884982e-02, 2.31586898e-02, 2.28232968e-02,
+       2.24827705e-02, 2.21375568e-02, 2.17880952e-02, 2.14348187e-02,
+       2.10781535e-02, 2.07185180e-02, 2.03563227e-02, 1.99919699e-02,
+       1.96258531e-02, 1.92583567e-02, 1.88898556e-02, 1.85207152e-02,
+       1.81512908e-02, 1.77819276e-02, 1.74129602e-02, 1.70447127e-02,
+       1.66774984e-02, 1.63116196e-02, 1.59473677e-02, 1.55850226e-02,
+       1.52248534e-02, 1.48671177e-02, 1.45120617e-02, 1.41599206e-02,
+       1.38109180e-02, 1.34652664e-02, 1.31231671e-02, 1.27848103e-02,
+       1.24503750e-02, 1.21200294e-02, 1.17939308e-02, 1.14722261e-02,
+       1.11550513e-02, 1.08425324e-02, 1.05347849e-02, 1.02319146e-02,
+       9.93401738e-03, 9.64117967e-03, 9.35347847e-03, 9.07098174e-03,
+       8.79374853e-03, 8.52182930e-03, 8.25526614e-03, 7.99409305e-03,
+       7.73833617e-03, 7.48801406e-03, 7.24313800e-03, 7.00371222e-03,
+       6.76973419e-03, 6.54119492e-03, 6.31807920e-03, 6.10036589e-03,
+       5.88802820e-03, 5.68103396e-03, 5.47934592e-03, 5.28292197e-03,
+       5.09171543e-03, 4.90567536e-03, 4.72474672e-03, 4.54887075e-03,
+       4.37798513e-03, 4.21202427e-03, 4.05091953e-03, 3.89459949e-03,
+       3.74299017e-03, 3.59601522e-03, 3.45359621e-03, 3.31565280e-03,
+       3.18210293e-03, 3.05286308e-03, 2.92784842e-03, 2.80697300e-03,
+       2.69014997e-03, 2.57729170e-03, 2.46831000e-03, 2.36311623e-03,
+       2.26162149e-03, 2.16373678e-03, 2.06937308e-03, 1.97844153e-03,
+       1.89085357e-03, 1.80652101e-03, 1.72535616e-03, 1.64727197e-03,
+       1.57218210e-03, 1.50000100e-03, 1.43064402e-03, 1.43064402e-03,
+       1.26823159e-03, 1.11982024e-03, 9.84760211e-04, 8.62369364e-04,
+       7.51940507e-04, 6.52748831e-04, 5.64059222e-04, 4.85133371e-04,
+       4.15236573e-04, 3.53644133e-04, 2.99647272e-04, 2.52558481e-04,
+       2.11716241e-04, 1.76489082e-04, 1.46278940e-04, 1.20523799e-04,
+       9.86996169e-05, 8.03215666e-05, 6.49445999e-05, 5.21633981e-05,
+       4.16117551e-05, 3.29614580e-05, 2.59207377e-05, 2.02323617e-05])</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1">wbf.distribution.PDF(label<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">'Fit_Weibull_3P'</span>, linestyle<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">'--'</span>)  <span class="co" style="color: #5E5E5E;"># plots to PDF of the fitted Weibull_3P</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>array([0.00000000e+00, 0.00000000e+00, 6.57311389e-04, 1.44368206e-03,
+       2.24200072e-03, 3.04682834e-03, 3.85526975e-03, 4.66533415e-03,
+       5.47546218e-03, 6.28433613e-03, 7.09078882e-03, 7.89375473e-03,
+       8.69224155e-03, 9.48531278e-03, 1.02720766e-02, 1.10516787e-02,
+       1.18232971e-02, 1.25861394e-02, 1.33394403e-02, 1.40824600e-02,
+       1.48144838e-02, 1.55348211e-02, 1.62428055e-02, 1.69377944e-02,
+       1.76191696e-02, 1.82863367e-02, 1.89387262e-02, 1.95757932e-02,
+       2.01970179e-02, 2.08019059e-02, 2.13899887e-02, 2.19608236e-02,
+       2.25139945e-02, 2.30491117e-02, 2.35658125e-02, 2.40637614e-02,
+       2.45426497e-02, 2.50021966e-02, 2.54421484e-02, 2.58622791e-02,
+       2.62623903e-02, 2.66423110e-02, 2.70018977e-02, 2.73410342e-02,
+       2.76596315e-02, 2.79576274e-02, 2.82349866e-02, 2.84917001e-02,
+       2.87277851e-02, 2.89432842e-02, 2.91382655e-02, 2.93128220e-02,
+       2.94670706e-02, 2.96011525e-02, 2.97152317e-02, 2.98094951e-02,
+       2.98841513e-02, 2.99394304e-02, 2.99755831e-02, 2.99928799e-02,
+       2.99916104e-02, 2.99720829e-02, 2.99346229e-02, 2.98795728e-02,
+       2.98072911e-02, 2.97181512e-02, 2.96125409e-02, 2.94908613e-02,
+       2.93535261e-02, 2.92009606e-02, 2.90336008e-02, 2.88518926e-02,
+       2.86562910e-02, 2.84472589e-02, 2.82252664e-02, 2.79907901e-02,
+       2.77443120e-02, 2.74863184e-02, 2.72172997e-02, 2.69377490e-02,
+       2.66481616e-02, 2.63490337e-02, 2.60408622e-02, 2.57241438e-02,
+       2.53993737e-02, 2.50670455e-02, 2.47276502e-02, 2.43816754e-02,
+       2.40296050e-02, 2.36719180e-02, 2.33090885e-02, 2.29415843e-02,
+       2.25698673e-02, 2.21943922e-02, 2.18156061e-02, 2.14339483e-02,
+       2.10498497e-02, 2.06637322e-02, 2.02760085e-02, 1.98870816e-02,
+       1.94973445e-02, 1.91071798e-02, 1.87169596e-02, 1.83270450e-02,
+       1.79377861e-02, 1.75495214e-02, 1.71625782e-02, 1.67772719e-02,
+       1.63939061e-02, 1.60127725e-02, 1.56341511e-02, 1.52583094e-02,
+       1.48855031e-02, 1.45159757e-02, 1.41499589e-02, 1.37876720e-02,
+       1.34293227e-02, 1.30751065e-02, 1.27252075e-02, 1.23797977e-02,
+       1.20390380e-02, 1.17030776e-02, 1.13720547e-02, 1.10460965e-02,
+       1.07253192e-02, 1.04098284e-02, 1.00997197e-02, 9.79507798e-03,
+       9.49597862e-03, 9.20248719e-03, 8.91465989e-03, 8.63254381e-03,
+       8.35617716e-03, 8.08558962e-03, 7.82080258e-03, 7.56182944e-03,
+       7.30867591e-03, 7.06134030e-03, 6.81981384e-03, 6.58408095e-03,
+       6.35411956e-03, 6.12990141e-03, 5.91139233e-03, 5.69855258e-03,
+       5.49133711e-03, 5.28969584e-03, 5.09357402e-03, 4.90291243e-03,
+       4.71764772e-03, 4.53771267e-03, 4.36303647e-03, 4.19354498e-03,
+       4.02916098e-03, 3.86980447e-03, 3.71539287e-03, 3.56584129e-03,
+       3.42106275e-03, 3.28096845e-03, 3.14546793e-03, 3.01446934e-03,
+       2.88787962e-03, 2.76560469e-03, 2.64754970e-03, 2.53361913e-03,
+       2.42371704e-03, 2.31774719e-03, 2.21561323e-03, 2.11721887e-03,
+       2.02246797e-03, 1.93126472e-03, 1.84351378e-03, 1.75912038e-03,
+       1.67799042e-03, 1.60003065e-03, 1.52514868e-03, 1.52514868e-03,
+       1.35229148e-03, 1.19429386e-03, 1.05047211e-03, 9.20107341e-04,
+       8.02453362e-04, 6.96744528e-04, 6.02203551e-04, 5.18049073e-04,
+       4.43502930e-04, 3.77796993e-04, 3.20179493e-04, 2.69920758e-04,
+       2.26318286e-04, 1.88701112e-04, 1.56433429e-04, 1.28917452e-04,
+       1.05595525e-04, 8.59514804e-05, 6.95112951e-05, 5.58430788e-05,
+       4.45564576e-05, 3.53014204e-05, 2.77667000e-05, 2.16777715e-05])</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1">plt.title(<span class="st" style="color: #20794D;">'Fitting comparison for failures and right censored data'</span>)</span>
+<span id="cb25-2">plt.legend()</span>
+<span id="cb25-3">plt.show()</span></code></pre></div>
+<div class="cell-output-display">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/survival/index_files/figure-html/unnamed-chunk-12-3.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+</section>
+<section id="参考サイト" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="参考サイト"><span class="header-section-number">6</span> 参考サイト</h2>
+<p><a href="https://reliability.readthedocs.io/en/latest/Fitting%20a%20specific%20distribution%20to%20data.html">Python package reliability - Fitting a specific distribution to data</a></p>
 
 
 <!-- -->
