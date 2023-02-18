@@ -112,3 +112,25 @@ exp(unname(t$coefficients))
 ```{r}
 R.version.string
 ```
+## Python
+
+```{python}
+from reliability.Fitters import Fit_Weibull_2P
+import matplotlib.pyplot as plt
+fail_times = [
+9402.7,
+6082.4,
+13367.2,
+10644.6,
+8632.0,
+3043.4,
+12860.2,
+1034.5,
+2550.9,
+3637.1
+]
+wb = Fit_Weibull_2P(failures=fail_times)
+plt.show()
+```
+
+[Python package reliability - Fitting a specific distribution to data](https://weibull.readthedocs.io/en/latest/examples.html#determining-beta-and-eta-values)

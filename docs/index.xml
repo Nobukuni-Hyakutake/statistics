@@ -111,14 +111,14 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><span class="dv" style="color: #AD0000;">1</span><span class="sc" style="color: #5E5E5E;">/</span>t<span class="sc" style="color: #5E5E5E;">$</span>scale</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.107207</code></pre>
+<pre><code>[1] 2.051372</code></pre>
 </div>
 </div>
 <p><img src="https://latex.codecogs.com/png.latex?%5Ceta"></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><span class="fu" style="color: #4758AB;">exp</span>(<span class="fu" style="color: #4758AB;">unname</span>(t<span class="sc" style="color: #5E5E5E;">$</span>coefficients))</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 15.63876</code></pre>
+<pre><code>[1] 15.54061</code></pre>
 </div>
 </div>
 </section>
@@ -131,6 +131,47 @@
 <pre><code>[1] "R version 4.2.2 (2022-10-31)"</code></pre>
 </div>
 </div>
+</section>
+<section id="python" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="python"><span class="header-section-number">5</span> Python</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><span class="im" style="color: #00769E;">from</span> reliability.Fitters <span class="im" style="color: #00769E;">import</span> Fit_Weibull_2P</span>
+<span id="cb14-2"><span class="im" style="color: #00769E;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;">as</span> plt</span>
+<span id="cb14-3">fail_times <span class="op" style="color: #5E5E5E;">=</span> [</span>
+<span id="cb14-4"><span class="fl" style="color: #AD0000;">9402.7</span>,</span>
+<span id="cb14-5"><span class="fl" style="color: #AD0000;">6082.4</span>,</span>
+<span id="cb14-6"><span class="fl" style="color: #AD0000;">13367.2</span>,</span>
+<span id="cb14-7"><span class="fl" style="color: #AD0000;">10644.6</span>,</span>
+<span id="cb14-8"><span class="fl" style="color: #AD0000;">8632.0</span>,</span>
+<span id="cb14-9"><span class="fl" style="color: #AD0000;">3043.4</span>,</span>
+<span id="cb14-10"><span class="fl" style="color: #AD0000;">12860.2</span>,</span>
+<span id="cb14-11"><span class="fl" style="color: #AD0000;">1034.5</span>,</span>
+<span id="cb14-12"><span class="fl" style="color: #AD0000;">2550.9</span>,</span>
+<span id="cb14-13"><span class="fl" style="color: #AD0000;">3637.1</span></span>
+<span id="cb14-14">]</span>
+<span id="cb14-15">wb <span class="op" style="color: #5E5E5E;">=</span> Fit_Weibull_2P(failures<span class="op" style="color: #5E5E5E;">=</span>fail_times)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1m[23m[4m[49m[39mResults from Fit_Weibull_2P (95% CI):[0m
+Analysis method: Maximum Likelihood Estimation (MLE)
+Optimizer: TNC
+Failures / Right censored: 10/0 (0% right censored) 
+
+Parameter  Point Estimate  Standard Error  Lower CI  Upper CI
+    Alpha         7965.97         1573.53   5408.78   11732.2
+     Beta         1.68128        0.444137    1.0018   2.82162 
+
+Goodness of fit    Value
+ Log-likelihood -97.1296
+           AICc  199.973
+            BIC  198.864
+             AD   1.5487 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1">plt.show()</span></code></pre></div>
+<div class="cell-output-display">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/survival/index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="864"></p>
+</div>
+</div>
+<p><a href="https://weibull.readthedocs.io/en/latest/examples.html#determining-beta-and-eta-values">Python package reliability - Fitting a specific distribution to data</a></p>
 
 
 <!-- -->
