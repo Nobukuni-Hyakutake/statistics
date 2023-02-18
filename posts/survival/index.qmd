@@ -11,6 +11,7 @@ categories: [R]
 ```{r}
 library(survival)
 library(tidyverse)
+library(plotly)
 ```
 
 ## データの読み込み
@@ -52,10 +53,9 @@ dsu01<-read_csv("
   27
   ",show_col_types = FALSE
 )
-```
-
-```{r}
-hist(dsu01$life,breaks = max(dsu01$life)-min(dsu01$life)+1)
+dsu11<-count(dsu01,life) |> 
+  mutate(n=n/sum(n))
+plot_ly(x=dsu11$life,y=dsu11$n,type='bar')
 ```
 
 ## ワイブル
@@ -87,10 +87,10 @@ i<-rweibull(1000,shape = m1,scale = eta1)
 hist(i)
 ```
 
-乱数からワイブルのパラメーターを算出する方法：survregを使う。
+データからワイブルのパラメーターを算出する方法：survregを使う。
 
 ```{r}
-t<-survreg(Surv(i)~1, dist="weibull")
+t<-survreg(Surv(dsu01$life)~1, dist="weibull")
 ```
 
 survregの結果は、上述の確率密度関数のパラメーターとして使うには換算する必要がある。
@@ -154,6 +154,80 @@ dist.PDF(label='True Distribution')  # plots the true distribution's PDF
 wbf.distribution.PDF(label='Fit_Weibull_3P', linestyle='--')  # plots to PDF of the fitted Weibull_3P
 plt.title('Fitting comparison for failures and right censored data')
 plt.legend()
+plt.show()
+```
+
+
+## ワイブル分布
+
+```{python}
+import numpy as np
+import plotly.express as px
+def weibull_d(m,t,eta):
+  k=(m/eta)*(t/eta)**(m-1)*np.exp(-1*((t/eta)**m))
+  return k
+m1=2
+eta1=15
+t1=np.arange(1,36)
+d1=weibull_d(m1,t1,eta1)
+fig1=px.scatter(x=t1,y=d1)
+fig1
+```
+
+## フィット
+
+```{python}
+from reliability.Fitters import Fit_Weibull_2P
+dsu02=r.dsu01
+life_max=int(max(dsu02['life']))
+dsu03=dsu02['life'].values.tolist()
+wb2 = Fit_Weibull_2P(failures=dsu03)
+```
+
+```{python}
+print('Fit_Weibull parameters:\n Alpha(scale η):', wb2.alpha, '\nBeta(shape m):', wb2.beta)
+```
+
+
+```{python}
+import plotly.graph_objects as go
+tt="Scale parameter η: "+str(round(wb2.alpha,3))+", Shape parameter m: "+str(round(wb2.beta,3))
+
+ts=np.arange(1,life_max+1)
+ta=r.dsu11
+fig0201=go.Bar(
+        x=ta['life'], y=ta["n"],name='Actual',
+        marker={"color": "#99cc66"}
+        )
+fig0202=go.Scatter(
+        x=ts, y=weibull_d(wb2.beta,ts,wb2.alpha), name='Weibull fit',
+        line={"color": "#cc6600","width":2},
+    )
+fig04=go.Figure(data=[fig0201,fig0202])
+fig04=fig04.update_layout(annotations=[
+  go.layout.Annotation(
+    xref="paper",
+    yref="paper",
+    x=0.03,
+    y=0.95,
+    showarrow=False,
+    text=tt
+)
+])
+fig04
+```
+
+
+
+```{python}
+from reliability.Distributions import Weibull_Distribution
+import matplotlib.pyplot as plt
+```
+
+
+```{python}
+dsu03=Weibull_Distribution(alpha=15.189, beta=2.032018)
+dsu03.PDF(label='dsu01')
 plt.show()
 ```
 
