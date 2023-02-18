@@ -55,7 +55,8 @@ dsu01<-read_csv("
 )
 dsu11<-count(dsu01,life) |> 
   mutate(n=n/sum(n))
-plot_ly(x=dsu11$life,y=dsu11$n,type='bar')
+f1<-plot_ly(x=dsu11$life,y=dsu11$n,type='bar',name="Actual")
+f1
 ```
 
 ## ワイブル
@@ -80,12 +81,8 @@ eta1<-15
 plot(weibull_d(m1,c(1:35),eta1))
 ```
 
-### ワイブル分布に従う乱数
+### ワイブル分布にフィット
 
-```{r}
-i<-rweibull(1000,shape = m1,scale = eta1)
-hist(i)
-```
 
 データからワイブルのパラメーターを算出する方法：survregを使う。
 
@@ -98,14 +95,36 @@ survregの結果は、上述の確率密度関数のパラメーターとして�
 $m$ 
 
 ```{r}
-1/t$scale
+m_fit<-1/t$scale
+m_fit
 ```
 
 $\eta$
 
 ```{r}
-exp(unname(t$coefficients))
+eta_fit<-exp(unname(t$coefficients))
+eta_fit
 ```
+
+### グラフ化
+
+```{r}
+tsr<-c(1:max(dsu01$life))
+ttr<-str_c("Scale parameter η: ",as.character(round(eta_fit,3)),", Shape parameter m: ",as.character(round(m_fit,3)))
+f2<-f1|> 
+  add_trace(x=tsr,y=dweibull(tsr,shape=m_fit,scale=eta_fit),type="scatter",mode="line",name="Weibull fit") |>
+  layout(title="Weibull fit with 'survival' package - R") |> 
+  add_annotations(
+    x= 0.03,
+    y= 0.95,
+    xref = "paper",
+    yref = "paper",
+    text = ttr,
+    showarrow=FALSE)
+f2
+```
+
+
 
 ## R version
 
@@ -197,13 +216,15 @@ ts=np.arange(1,life_max+1)
 ta=r.dsu11
 fig0201=go.Bar(
         x=ta['life'], y=ta["n"],name='Actual',
-        marker={"color": "#99cc66"}
+        marker={"color": "blue"}
         )
 fig0202=go.Scatter(
         x=ts, y=weibull_d(wb2.beta,ts,wb2.alpha), name='Weibull fit',
-        line={"color": "#cc6600","width":2},
+        line={"color": "orange"},
     )
-fig04=go.Figure(data=[fig0201,fig0202])
+layout=go.Layout(
+        title={"text":"Weibull fit with 'leliability' package - Python "})
+fig04=go.Figure(data=[fig0201,fig0202],layout=layout)
 fig04=fig04.update_layout(annotations=[
   go.layout.Annotation(
     xref="paper",
@@ -214,7 +235,7 @@ fig04=fig04.update_layout(annotations=[
     text=tt
 )
 ])
-fig04
+fig04.show()
 ```
 
 
