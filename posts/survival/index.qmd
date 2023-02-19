@@ -1,5 +1,5 @@
 ---
-title: "ワイブル近似"
+title: "ワイブル分布の確率密度関数への近似"
 author: "Nobukuni Hyakutake"
 date: "2023-02-20"
 date-format: "iso"
@@ -10,7 +10,7 @@ categories: [R,Python]
 
 # 目的
 
-寿命データを最尤推定法でワイブル関数に近似します。
+寿命データを最尤推定法でワイブル分布の確率密度関数に近似します。
 
 # 解析するデータの読み込み
 
@@ -61,7 +61,9 @@ f1
 ```
 
 
-# ワイブルの確率密度関数
+# ワイブル分布の確率密度関数
+
+下記式のηとmを最尤推定します。
 
 $$
 f(t)=\frac{m}{\eta}\left(\frac{t}{\eta}\right)^{m-1}e^{-\left(\frac{t}{\eta}\right)^m}
