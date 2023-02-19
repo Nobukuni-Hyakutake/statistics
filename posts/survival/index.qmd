@@ -151,6 +151,7 @@ R.version.string
 
 ```{python}
 import numpy as np
+import pandas as pd
 from reliability.Fitters import Fit_Weibull_2P
 import plotly.graph_objects as go
 ```
@@ -168,7 +169,7 @@ def weibull_d(m,t,eta):
 
 ## フィット
 
-結果詳細。Alphaは形状パラメーターm、Betaは尺度パラメーターηに相当する。
+結果詳細。Alphaは尺度パラメーターη、Betaは形状パラメーターmに相当する。
 
 ```{python}
 dsu02=r.dsu01
@@ -206,6 +207,44 @@ fig04=fig04.update_layout(annotations=[
 ])
 fig04
 ```
+
+## 複数タイプから一気にηとmを計算
+
+```{python}
+pt1=pd.DataFrame([
+["a",5],
+["b",4],
+["a",5],
+["a",6],
+["b",3],
+["b",2],
+["a",4],
+["b",2]
+])
+pt1.columns=["type","life"]
+pt2=pt1.drop_duplicates("type")
+```
+
+### タイプごとの結果
+
+```{python}
+def mp(i):
+  print("type: "+i)
+  dpu01=pt1.loc[pt1["type"]==i]
+  dpu02=dpu01['life'].values.tolist()
+  wb21 = Fit_Weibull_2P(failures=dpu02)
+  dpu03=pd.DataFrame({"type":[i],"eta":[wb21.alpha],"m":[wb21.beta]})
+  return dpu03
+
+dpu04=pd.concat((mp(r) for r in pt2["type"]),ignore_index=True)
+```
+
+### まとめ結果
+
+```{python}
+dpu04
+```
+
 
 ## 参考サイト
 
