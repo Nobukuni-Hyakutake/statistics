@@ -99,3 +99,25 @@ quarto render index.qmd --to docx
             icon: "question-circle"
             href: docs/faq/index.qmd
 ```
+
+## python list結合
+
+```
+# coding: utf-8
+# 130秒でできた
+import time
+t1 = time.time() 
+
+import pandas as pd
+fname = '../../big_csv/14gb_csv_sample.csv'
+def preprocess(x): #必要な部分だけを取り出す前処理。ここでデータを削減しないと処理速度が上がらない。
+    x=x.loc[(x['0']<0.01),['1']]
+    return x    
+reader = pd.read_csv(fname,chunksize=100000)
+df04=pd.concat((preprocess(r) for r in reader),ignore_index=True)
+df04.to_csv('pandas_chunk_14gb_to_extract.csv')
+
+t2 = time.time()
+elapsed_time = round((t2-t1),1)
+print(f"Elapsed time：{elapsed_time} s")
+```
