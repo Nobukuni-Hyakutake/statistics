@@ -1,14 +1,20 @@
 ---
-title: "生存分析"
+title: "ワイブル近似"
 author: "Nobukuni Hyakutake"
-date: "2023-02-13"
+date: "2023-02-20"
 date-format: "iso"
-categories: [R]
+categories: [R,Python]
 ---
 
-# データの読み込み
+![](aqua.jpeg)
 
-ライフのデータ
+# 目的
+
+寿命データを最尤推定法でワイブル関数に近似します。
+
+# 解析するデータの読み込み
+
+寿命のデータ
 
 ```{r}
 library(tidyverse)
@@ -55,7 +61,7 @@ f1
 ```
 
 
-# 確率密度関数
+# ワイブルの確率密度関数
 
 $$
 f(t)=\frac{m}{\eta}\left(\frac{t}{\eta}\right)^{m-1}e^{-\left(\frac{t}{\eta}\right)^m}

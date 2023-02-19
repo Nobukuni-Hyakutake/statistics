@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Top",
     "section": "",
-    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n \n\n\n\n2023-02-13\n\n\n生存分析\n\n\nR\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
+    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル近似\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -296,9 +296,9 @@
   {
     "objectID": "posts/survival/index.html",
     "href": "posts/survival/index.html",
-    "title": "生存分析",
+    "title": "ワイブル近似",
     "section": "",
-    "text": "ライフのデータ\n\nlibrary(tidyverse)\nlibrary(plotly)\nlibrary(gt)\ndsu01<-read_csv(\"\n  life\n  28\n  30\n  32\n  30\n  25\n  27\n  24\n  23\n  29\n  29\n  29\n  31\n  38\n  33\n  32\n  29\n  30\n  18\n  28\n  28\n  24\n  23\n  28\n  29\n  27\n  26\n  28\n  28\n  28\n  27\n  \",show_col_types = FALSE\n)\ndsu11<-count(dsu01,life) |> \n  mutate(n=n/sum(n))\nf1<-plot_ly(x=dsu11$life,y=dsu11$n,type='bar',name=\"Actual\")\nf1"
+    "text": "このページの目的：寿命データを最尤推定法でワイブル関数に近似します。"
   },
   {
     "objectID": "posts/survival/index.html#データの読み込み",
@@ -310,9 +310,9 @@
   {
     "objectID": "posts/survival/index.html#r-version",
     "href": "posts/survival/index.html#r-version",
-    "title": "生存分析",
-    "section": "3.5 R version",
-    "text": "3.5 R version\n\nR.version.string\n\n[1] \"R version 4.2.2 (2022-10-31)\""
+    "title": "ワイブル近似",
+    "section": "4.5 R version",
+    "text": "4.5 R version\n\nR.version.string\n\n[1] \"R version 4.2.2 (2022-10-31)\""
   },
   {
     "objectID": "posts/survival/index.html#ワイブル",
@@ -331,9 +331,9 @@
   {
     "objectID": "posts/survival/index.html#参考サイト",
     "href": "posts/survival/index.html#参考サイト",
-    "title": "生存分析",
-    "section": "4.5 参考サイト",
-    "text": "4.5 参考サイト\nPython package reliability - Fitting a specific distribution to data"
+    "title": "ワイブル近似",
+    "section": "5.5 参考サイト",
+    "text": "5.5 参考サイト\nPython package reliability - Fitting a specific distribution to data"
   },
   {
     "objectID": "posts/survival/index.html#ワイブル分布",
@@ -345,57 +345,57 @@
   {
     "objectID": "posts/survival/index.html#フィット",
     "href": "posts/survival/index.html#フィット",
-    "title": "生存分析",
-    "section": "4.2 フィット",
-    "text": "4.2 フィット\n結果詳細。Alphaは尺度パラメーターη、Betaは形状パラメーターmに相当する。\n\ndsu02=r.dsu01\nlife_max=int(max(dsu02['life']))\ndsu03=dsu02['life'].values.tolist()\nwb2 = Fit_Weibull_2P(failures=dsu03)\n\n\u001b[1m\u001b[23m\u001b[4m\u001b[49m\u001b[39mResults from Fit_Weibull_2P (95% CI):\u001b[0m\nAnalysis method: Maximum Likelihood Estimation (MLE)\nOptimizer: TNC\nFailures / Right censored: 30/0 (0% right censored) \n\nParameter  Point Estimate  Standard Error  Lower CI  Upper CI\n    Alpha          29.579        0.709558   28.2204   31.0029\n     Beta         8.05733         1.02419   6.28047   10.3369 \n\nGoodness of fit    Value\n Log-likelihood -82.1756\n           AICc  168.796\n            BIC  171.154\n             AD  1.48179"
+    "title": "ワイブル近似",
+    "section": "5.2 フィット",
+    "text": "5.2 フィット\n結果詳細。Alphaは尺度パラメーターη、Betaは形状パラメーターmに相当する。\n\ndsu02=r.dsu01\nlife_max=int(max(dsu02['life']))\ndsu03=dsu02['life'].values.tolist()\nwb2 = Fit_Weibull_2P(failures=dsu03)\n\n\u001b[1m\u001b[23m\u001b[4m\u001b[49m\u001b[39mResults from Fit_Weibull_2P (95% CI):\u001b[0m\nAnalysis method: Maximum Likelihood Estimation (MLE)\nOptimizer: TNC\nFailures / Right censored: 30/0 (0% right censored) \n\nParameter  Point Estimate  Standard Error  Lower CI  Upper CI\n    Alpha          29.579        0.709558   28.2204   31.0029\n     Beta         8.05733         1.02419   6.28047   10.3369 \n\nGoodness of fit    Value\n Log-likelihood -82.1756\n           AICc  168.796\n            BIC  171.154\n             AD  1.48179"
   },
   {
     "objectID": "posts/survival/index.html#パッケージの読み込み",
     "href": "posts/survival/index.html#パッケージの読み込み",
-    "title": "生存分析",
-    "section": "3.1 パッケージの読み込み",
-    "text": "3.1 パッケージの読み込み\n\nlibrary(survival)"
+    "title": "ワイブル近似",
+    "section": "4.1 パッケージの読み込み",
+    "text": "4.1 パッケージの読み込み\n\nlibrary(survival)"
   },
   {
     "objectID": "posts/survival/index.html#ワイブルのパラメーターを算出",
     "href": "posts/survival/index.html#ワイブルのパラメーターを算出",
-    "title": "生存分析",
-    "section": "3.2 ワイブルのパラメーターを算出",
-    "text": "3.2 ワイブルのパラメーターを算出\nsurvregを使う。\n\nt<-survreg(Surv(dsu01$life)~1, dist=\"weibull\")\n\nsurvregの結果は、上述の確率密度関数のパラメーターとして使うには換算する必要がある。\n\\(m\\)\n\nm_fit<-1/t$scale\nm_fit\n\n[1] 8.057331\n\n\n\\(\\eta\\)\n\neta_fit<-exp(unname(t$coefficients))\neta_fit\n\n[1] 29.57896"
+    "title": "ワイブル近似",
+    "section": "4.2 ワイブルのパラメーターを算出",
+    "text": "4.2 ワイブルのパラメーターを算出\nsurvregを使う。\n\nt<-survreg(Surv(dsu01$life)~1, dist=\"weibull\")\n\nsurvregの結果は、上述の確率密度関数のパラメーターとして使うには換算する必要がある。\n\\(m\\)\n\nm_fit<-1/t$scale\nm_fit\n\n[1] 8.057331\n\n\n\\(\\eta\\)\n\neta_fit<-exp(unname(t$coefficients))\neta_fit\n\n[1] 29.57896"
   },
   {
     "objectID": "posts/survival/index.html#グラフ化",
     "href": "posts/survival/index.html#グラフ化",
-    "title": "生存分析",
-    "section": "3.3 グラフ化",
-    "text": "3.3 グラフ化\n\ntsr<-c(1:max(dsu01$life))\nttr<-str_c(\"Scale parameter η: \",as.character(round(eta_fit,3)),\", Shape parameter m: \",as.character(round(m_fit,3)))\nf2<-f1|> \n  add_trace(x=tsr,y=dweibull(tsr,shape=m_fit,scale=eta_fit),type=\"scatter\",mode=\"line\",name=\"Weibull fit\") |>\n  layout(title=\"Weibull fit with 'survival' package - R\") |> \n  add_annotations(\n    x= 0.03,\n    y= 0.95,\n    xref = \"paper\",\n    yref = \"paper\",\n    text = ttr,\n    showarrow=FALSE)\nf2"
+    "title": "ワイブル近似",
+    "section": "4.3 グラフ化",
+    "text": "4.3 グラフ化\n\ntsr<-c(1:max(dsu01$life))\nttr<-str_c(\"Scale parameter η: \",as.character(round(eta_fit,3)),\", Shape parameter m: \",as.character(round(m_fit,3)))\nf2<-f1|> \n  add_trace(x=tsr,y=dweibull(tsr,shape=m_fit,scale=eta_fit),type=\"scatter\",mode=\"line\",name=\"Weibull fit\") |>\n  layout(title=\"Weibull fit with 'survival' package - R\") |> \n  add_annotations(\n    x= 0.03,\n    y= 0.95,\n    xref = \"paper\",\n    yref = \"paper\",\n    text = ttr,\n    showarrow=FALSE)\nf2"
   },
   {
     "objectID": "posts/survival/index.html#関数定義",
     "href": "posts/survival/index.html#関数定義",
-    "title": "生存分析",
-    "section": "4.1 関数定義",
-    "text": "4.1 関数定義\npythonはワイブル関数の自作が必要\n\ndef weibull_d(m,t,eta):\n  k=(m/eta)*(t/eta)**(m-1)*np.exp(-1*((t/eta)**m))\n  return k"
+    "title": "ワイブル近似",
+    "section": "5.1 関数定義",
+    "text": "5.1 関数定義\npythonはワイブル関数の自作が必要\n\ndef weibull_d(m,t,eta):\n  k=(m/eta)*(t/eta)**(m-1)*np.exp(-1*((t/eta)**m))\n  return k"
   },
   {
     "objectID": "posts/survival/index.html#グラフ化-1",
     "href": "posts/survival/index.html#グラフ化-1",
-    "title": "生存分析",
-    "section": "4.3 グラフ化",
-    "text": "4.3 グラフ化\n\ntt=\"Scale parameter η: \"+str(round(wb2.alpha,3))+\", Shape parameter m: \"+str(round(wb2.beta,3))\nts=np.arange(1,life_max+1)\nta=r.dsu11\nfig0201=go.Bar(\n        x=ta['life'], y=ta[\"n\"],name='Actual',\n        marker={\"color\": \"blue\"}\n        )\nfig0202=go.Scatter(\n        x=ts, y=weibull_d(wb2.beta,ts,wb2.alpha), name='Weibull fit',\n        line={\"color\": \"orange\"},\n    )\nlayout=go.Layout(\n        title={\"text\":\"Weibull fit with 'leliability' package - Python \"})\nfig04=go.Figure(data=[fig0201,fig0202],layout=layout)\nfig04=fig04.update_layout(annotations=[\n  go.layout.Annotation(\n    xref=\"paper\",\n    yref=\"paper\",\n    x=0.03,\n    y=0.95,\n    showarrow=False,\n    text=tt\n)\n])\nfig04"
+    "title": "ワイブル近似",
+    "section": "5.3 グラフ化",
+    "text": "5.3 グラフ化\n\ntt=\"Scale parameter η: \"+str(round(wb2.alpha,3))+\", Shape parameter m: \"+str(round(wb2.beta,3))\nts=np.arange(1,life_max+1)\nta=r.dsu11\nfig0201=go.Bar(\n        x=ta['life'], y=ta[\"n\"],name='Actual',\n        marker={\"color\": \"blue\"}\n        )\nfig0202=go.Scatter(\n        x=ts, y=weibull_d(wb2.beta,ts,wb2.alpha), name='Weibull fit',\n        line={\"color\": \"orange\"},\n    )\nlayout=go.Layout(\n        title={\"text\":\"Weibull fit with 'leliability' package - Python \"})\nfig04=go.Figure(data=[fig0201,fig0202],layout=layout)\nfig04=fig04.update_layout(annotations=[\n  go.layout.Annotation(\n    xref=\"paper\",\n    yref=\"paper\",\n    x=0.03,\n    y=0.95,\n    showarrow=False,\n    text=tt\n)\n])\nfig04"
   },
   {
     "objectID": "posts/survival/index.html#複数タイプから一気にηとmを計算",
     "href": "posts/survival/index.html#複数タイプから一気にηとmを計算",
-    "title": "生存分析",
-    "section": "3.4 複数タイプから一気にηとmを計算",
-    "text": "3.4 複数タイプから一気にηとmを計算\n\nt3<-read_csv(\"\ntype,life\na,5\nb,4\na,5\na,6\nb,3\nb,2\na,4\nb,2\n\",show_col_types = FALSE)\n\nt4<-split(t3,t3$type)\n\nmm2<-function(i){\n  t<-survreg(Surv(i$life)~1, dist=\"weibull\")\n  t1<-tibble(eta=exp(unname(t$coefficients)),m=1/t$scale)\n  return(t1)\n}\n\nqq3<-map(t4,mm2) |> \n  bind_rows(.id=\"id\") |> \n  rename(type=id) |> \n  arrange(type)\ngt(qq3)\n\n\n\n\n\n  \n  \n    \n      type\n      eta\n      m\n    \n  \n  \n    a\n5.308623\n7.975578\n    b\n3.058647\n3.613229"
+    "title": "ワイブル近似",
+    "section": "4.4 複数タイプから一気にηとmを計算",
+    "text": "4.4 複数タイプから一気にηとmを計算\n\nt3<-read_csv(\"\ntype,life\na,5\nb,4\na,5\na,6\nb,3\nb,2\na,4\nb,2\n\",show_col_types = FALSE)\n\nt4<-split(t3,t3$type)\n\nmm2<-function(i){\n  t<-survreg(Surv(i$life)~1, dist=\"weibull\")\n  t1<-tibble(eta=exp(unname(t$coefficients)),m=1/t$scale)\n  return(t1)\n}\n\nqq3<-map(t4,mm2) |> \n  bind_rows(.id=\"id\") |> \n  rename(type=id) |> \n  arrange(type)\ngt(qq3)\n\n\n\n\n\n  \n  \n    \n      type\n      eta\n      m\n    \n  \n  \n    a\n5.308623\n7.975578\n    b\n3.058647\n3.613229"
   },
   {
     "objectID": "posts/survival/index.html#複数タイプから一気にηとmを計算-1",
     "href": "posts/survival/index.html#複数タイプから一気にηとmを計算-1",
-    "title": "生存分析",
-    "section": "4.4 複数タイプから一気にηとmを計算",
-    "text": "4.4 複数タイプから一気にηとmを計算\n\npt1=pd.DataFrame([\n[\"a\",5],\n[\"b\",4],\n[\"a\",5],\n[\"a\",6],\n[\"b\",3],\n[\"b\",2],\n[\"a\",4],\n[\"b\",2]\n])\npt1.columns=[\"type\",\"life\"]\npt2=pt1.drop_duplicates(\"type\")\n\n\n4.4.1 タイプごとの結果\n\ndef mp(i):\n  print(\"type: \"+i)\n  dpu01=pt1.loc[pt1[\"type\"]==i]\n  dpu02=dpu01['life'].values.tolist()\n  wb21 = Fit_Weibull_2P(failures=dpu02)\n  dpu03=pd.DataFrame({\"type\":[i],\"eta\":[wb21.alpha],\"m\":[wb21.beta]})\n  return dpu03\n\ndpu04=pd.concat((mp(r) for r in pt2[\"type\"]),ignore_index=True)\n\ntype: a\n\u001b[1m\u001b[23m\u001b[4m\u001b[49m\u001b[39mResults from Fit_Weibull_2P (95% CI):\u001b[0m\nAnalysis method: Maximum Likelihood Estimation (MLE)\nOptimizer: TNC\nFailures / Right censored: 4/0 (0% right censored) \n\nParameter  Point Estimate  Standard Error  Lower CI  Upper CI\n    Alpha         5.30868        0.351929   4.66185   6.04527\n     Beta         7.97623          3.1118   3.71291   17.1349 \n\nGoodness of fit    Value\n Log-likelihood -4.32774\n           AICc  24.6555\n            BIC  11.4281\n             AD  3.03487 \n\ntype: b\n\u001b[1m\u001b[23m\u001b[4m\u001b[49m\u001b[39mResults from Fit_Weibull_2P (95% CI):\u001b[0m\nAnalysis method: Maximum Likelihood Estimation (MLE)\nOptimizer: TNC\nFailures / Right censored: 4/0 (0% right censored) \n\nParameter  Point Estimate  Standard Error  Lower CI  Upper CI\n    Alpha         3.05865        0.449056   2.29382   4.07848\n     Beta         3.61323         1.39996   1.69081   7.72139 \n\nGoodness of fit    Value\n Log-likelihood -4.90322\n           AICc  25.8064\n            BIC   12.579\n             AD  3.02246 \n\n\n\n\n4.4.2 まとめ結果\n\ndpu04\n\n  type     eta       m\n0    a 5.30868 7.97623\n1    b 3.05865 3.61323"
+    "title": "ワイブル近似",
+    "section": "5.4 複数タイプから一気にηとmを計算",
+    "text": "5.4 複数タイプから一気にηとmを計算\n\npt1=pd.DataFrame([\n[\"a\",5],\n[\"b\",4],\n[\"a\",5],\n[\"a\",6],\n[\"b\",3],\n[\"b\",2],\n[\"a\",4],\n[\"b\",2]\n])\npt1.columns=[\"type\",\"life\"]\npt2=pt1.drop_duplicates(\"type\")\n\n\n5.4.1 タイプごとの結果\n\ndef mp(i):\n  print(\"type: \"+i)\n  dpu01=pt1.loc[pt1[\"type\"]==i]\n  dpu02=dpu01['life'].values.tolist()\n  wb21 = Fit_Weibull_2P(failures=dpu02)\n  dpu03=pd.DataFrame({\"type\":[i],\"eta\":[wb21.alpha],\"m\":[wb21.beta]})\n  return dpu03\n\ndpu04=pd.concat((mp(r) for r in pt2[\"type\"]),ignore_index=True)\n\ntype: a\n\u001b[1m\u001b[23m\u001b[4m\u001b[49m\u001b[39mResults from Fit_Weibull_2P (95% CI):\u001b[0m\nAnalysis method: Maximum Likelihood Estimation (MLE)\nOptimizer: TNC\nFailures / Right censored: 4/0 (0% right censored) \n\nParameter  Point Estimate  Standard Error  Lower CI  Upper CI\n    Alpha         5.30868        0.351929   4.66185   6.04527\n     Beta         7.97623          3.1118   3.71291   17.1349 \n\nGoodness of fit    Value\n Log-likelihood -4.32774\n           AICc  24.6555\n            BIC  11.4281\n             AD  3.03487 \n\ntype: b\n\u001b[1m\u001b[23m\u001b[4m\u001b[49m\u001b[39mResults from Fit_Weibull_2P (95% CI):\u001b[0m\nAnalysis method: Maximum Likelihood Estimation (MLE)\nOptimizer: TNC\nFailures / Right censored: 4/0 (0% right censored) \n\nParameter  Point Estimate  Standard Error  Lower CI  Upper CI\n    Alpha         3.05865        0.449056   2.29382   4.07848\n     Beta         3.61323         1.39996   1.69081   7.72139 \n\nGoodness of fit    Value\n Log-likelihood -4.90322\n           AICc  25.8064\n            BIC   12.579\n             AD  3.02246 \n\n\n\n\n5.4.2 まとめ結果\n\ndpu04\n\n  type     eta       m\n0    a 5.30868 7.97623\n1    b 3.05865 3.61323"
   }
 ]
