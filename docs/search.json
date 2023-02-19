@@ -298,7 +298,7 @@
     "href": "posts/survival/index.html",
     "title": "生存分析",
     "section": "",
-    "text": "ライフのデータ\n\nlibrary(tidyverse)\nlibrary(plotly)\ndsu01<-read_csv(\"\n  life\n  28\n  30\n  32\n  30\n  25\n  27\n  24\n  23\n  29\n  29\n  29\n  31\n  38\n  33\n  32\n  29\n  30\n  18\n  28\n  28\n  24\n  23\n  28\n  29\n  27\n  26\n  28\n  28\n  28\n  27\n  \",show_col_types = FALSE\n)\ndsu11<-count(dsu01,life) |> \n  mutate(n=n/sum(n))\nf1<-plot_ly(x=dsu11$life,y=dsu11$n,type='bar',name=\"Actual\")\nf1"
+    "text": "ライフのデータ\n\nlibrary(tidyverse)\nlibrary(plotly)\nlibrary(gt)\ndsu01<-read_csv(\"\n  life\n  28\n  30\n  32\n  30\n  25\n  27\n  24\n  23\n  29\n  29\n  29\n  31\n  38\n  33\n  32\n  29\n  30\n  18\n  28\n  28\n  24\n  23\n  28\n  29\n  27\n  26\n  28\n  28\n  28\n  27\n  \",show_col_types = FALSE\n)\ndsu11<-count(dsu01,life) |> \n  mutate(n=n/sum(n))\nf1<-plot_ly(x=dsu11$life,y=dsu11$n,type='bar',name=\"Actual\")\nf1"
   },
   {
     "objectID": "posts/survival/index.html#データの読み込み",
@@ -311,8 +311,8 @@
     "objectID": "posts/survival/index.html#r-version",
     "href": "posts/survival/index.html#r-version",
     "title": "生存分析",
-    "section": "3.4 R version",
-    "text": "3.4 R version\n\nR.version.string\n\n[1] \"R version 4.2.2 (2022-10-31)\""
+    "section": "3.5 R version",
+    "text": "3.5 R version\n\nR.version.string\n\n[1] \"R version 4.2.2 (2022-10-31)\""
   },
   {
     "objectID": "posts/survival/index.html#ワイブル",
@@ -383,5 +383,12 @@
     "title": "生存分析",
     "section": "4.3 グラフ化",
     "text": "4.3 グラフ化\n\ntt=\"Scale parameter η: \"+str(round(wb2.alpha,3))+\", Shape parameter m: \"+str(round(wb2.beta,3))\nts=np.arange(1,life_max+1)\nta=r.dsu11\nfig0201=go.Bar(\n        x=ta['life'], y=ta[\"n\"],name='Actual',\n        marker={\"color\": \"blue\"}\n        )\nfig0202=go.Scatter(\n        x=ts, y=weibull_d(wb2.beta,ts,wb2.alpha), name='Weibull fit',\n        line={\"color\": \"orange\"},\n    )\nlayout=go.Layout(\n        title={\"text\":\"Weibull fit with 'leliability' package - Python \"})\nfig04=go.Figure(data=[fig0201,fig0202],layout=layout)\nfig04=fig04.update_layout(annotations=[\n  go.layout.Annotation(\n    xref=\"paper\",\n    yref=\"paper\",\n    x=0.03,\n    y=0.95,\n    showarrow=False,\n    text=tt\n)\n])\nfig04"
+  },
+  {
+    "objectID": "posts/survival/index.html#複数タイプから一気にηとmを計算",
+    "href": "posts/survival/index.html#複数タイプから一気にηとmを計算",
+    "title": "生存分析",
+    "section": "3.4 複数タイプから一気にηとmを計算",
+    "text": "3.4 複数タイプから一気にηとmを計算\n\nt3<-read_csv(\"\ntype,life\na,5\nb,4\na,5\na,6\nb,3\nb,2\na,4\nb,2\n\",show_col_types = FALSE)\n\nt4<-split(t3,t3$type)\n\nmm2<-function(i){\n  t<-survreg(Surv(i$life)~1, dist=\"weibull\")\n  t1<-tibble(eta=exp(unname(t$coefficients)),m=1/t$scale)\n  return(t1)\n}\n\nqq3<-map(t4,mm2) |> \n  bind_rows(.id=\"id\") |> \n  rename(type=id) |> \n  arrange(type)\ngt(qq3)\n\n\n\n\n\n  \n  \n    \n      type\n      eta\n      m\n    \n  \n  \n    a\n5.308623\n7.975578\n    b\n3.058647\n3.613229"
   }
 ]

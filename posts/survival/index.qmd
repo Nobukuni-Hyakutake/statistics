@@ -13,6 +13,7 @@ categories: [R]
 ```{r}
 library(tidyverse)
 library(plotly)
+library(gt)
 dsu01<-read_csv("
   life
   28
@@ -109,6 +110,37 @@ f2<-f1|>
     showarrow=FALSE)
 f2
 ```
+
+## 複数タイプから一気にηとmを計算
+
+```{r}
+t3<-read_csv("
+type,life
+a,5
+b,4
+a,5
+a,6
+b,3
+b,2
+a,4
+b,2
+",show_col_types = FALSE)
+
+t4<-split(t3,t3$type)
+
+mm2<-function(i){
+  t<-survreg(Surv(i$life)~1, dist="weibull")
+  t1<-tibble(eta=exp(unname(t$coefficients)),m=1/t$scale)
+  return(t1)
+}
+
+qq3<-map(t4,mm2) |> 
+  bind_rows(.id="id") |> 
+  rename(type=id) |> 
+  arrange(type)
+gt(qq3)
+```
+
 
 ## R version
 
