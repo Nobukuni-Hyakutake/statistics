@@ -1,0 +1,16 @@
+{
+  "hash": "55b38d907331680ac00cea37641fe8e0",
+  "result": {
+    "markdown": "---\ntitle: \"グラフ\"\nauthor: \"Nobukuni Hyakutake\"\ndate: \"2023-02-22\"\ndate-format: \"iso\"\ncategories: [R,Python]\n---\n\n\n![](mountain.jpeg)\n\n# 目的\n\nRとPythonでグラフ作成をします。\n\n# ヒストグラム\n\n## R\n\n### データの読み込み\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\ndgr01<-read_csv(\"\n  value\n  4\n  5\n  6\n  7\n  5\n  8\n  4\n  8\n  6\n  8\n  2\n  7\n  7\n  7\n  7\n  6\n  2\n  3\n  3\n  3\n\")\n```\n:::\n\n\n### グラフ化\n\n\n::: {.cell}\n\n```{.r .cell-code}\nhist(dgr01$value)\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Top",
     "section": "",
-    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
+    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-02-22\n\n\nグラフ\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -397,5 +397,12 @@
     "title": "ワイブル分布の確率密度関数への近似",
     "section": "5.4 複数タイプから一気にηとmを計算",
     "text": "5.4 複数タイプから一気にηとmを計算\n\npt1=pd.DataFrame([\n[\"a\",5],\n[\"b\",4],\n[\"a\",5],\n[\"a\",6],\n[\"b\",3],\n[\"b\",2],\n[\"a\",4],\n[\"b\",2]\n])\npt1.columns=[\"type\",\"life\"]\npt2=pt1.drop_duplicates(\"type\")\n\n\n5.4.1 タイプごとの結果\n\ndef mp(i):\n  print(\"type: \"+i)\n  dpu01=pt1.loc[pt1[\"type\"]==i]\n  dpu02=dpu01['life'].values.tolist()\n  wb21 = Fit_Weibull_2P(failures=dpu02)\n  dpu03=pd.DataFrame({\"type\":[i],\"eta\":[wb21.alpha],\"m\":[wb21.beta]})\n  return dpu03\n\ndpu04=pd.concat((mp(r) for r in pt2[\"type\"]),ignore_index=True)\n\ntype: a\n\u001b[1m\u001b[23m\u001b[4m\u001b[49m\u001b[39mResults from Fit_Weibull_2P (95% CI):\u001b[0m\nAnalysis method: Maximum Likelihood Estimation (MLE)\nOptimizer: TNC\nFailures / Right censored: 4/0 (0% right censored) \n\nParameter  Point Estimate  Standard Error  Lower CI  Upper CI\n    Alpha         5.30868        0.351929   4.66185   6.04527\n     Beta         7.97623          3.1118   3.71291   17.1349 \n\nGoodness of fit    Value\n Log-likelihood -4.32774\n           AICc  24.6555\n            BIC  11.4281\n             AD  3.03487 \n\ntype: b\n\u001b[1m\u001b[23m\u001b[4m\u001b[49m\u001b[39mResults from Fit_Weibull_2P (95% CI):\u001b[0m\nAnalysis method: Maximum Likelihood Estimation (MLE)\nOptimizer: TNC\nFailures / Right censored: 4/0 (0% right censored) \n\nParameter  Point Estimate  Standard Error  Lower CI  Upper CI\n    Alpha         3.05865        0.449056   2.29382   4.07848\n     Beta         3.61323         1.39996   1.69081   7.72139 \n\nGoodness of fit    Value\n Log-likelihood -4.90322\n           AICc  25.8064\n            BIC   12.579\n             AD  3.02246 \n\n\n\n\n5.4.2 まとめ結果\n\ndpu04\n\n  type     eta       m\n0    a 5.30868 7.97623\n1    b 3.05865 3.61323"
+  },
+  {
+    "objectID": "posts/graph/index.html#r",
+    "href": "posts/graph/index.html#r",
+    "title": "グラフ",
+    "section": "2.1 R",
+    "text": "2.1 R\n\n2.1.1 データの読み込み\n\nlibrary(tidyverse)\ndgr01<-read_csv(\"\n  value\n  4\n  5\n  6\n  7\n  5\n  8\n  4\n  8\n  6\n  8\n  2\n  7\n  7\n  7\n  7\n  6\n  2\n  3\n  3\n  3\n\")\n\n\n\n2.1.2 グラフ化\n\nhist(dgr01$value)"
   }
 ]

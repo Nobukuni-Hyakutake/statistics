@@ -1,0 +1,55 @@
+---
+title: "グラフ"
+author: "Nobukuni Hyakutake"
+date: "2023-02-22"
+date-format: "iso"
+categories: [R,Python]
+---
+
+![](mountain.jpeg)
+
+# 目的
+
+RとPythonでグラフ作成をします。
+
+# ヒストグラム
+
+## R
+
+### データの読み込み
+
+```{r}
+library(tidyverse)
+dgr01<-read_csv("
+  value
+  4
+  5
+  6
+  7
+  5
+  8
+  4
+  8
+  6
+  8
+  2
+  7
+  7
+  7
+  7
+  6
+  2
+  3
+  3
+  3
+")
+```
+
+### グラフ化
+
+```{r}
+hist(dgr01$value)
+```
+
+
+

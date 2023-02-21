@@ -10,7 +10,77 @@
 <atom:link href="https://nobukuni-hyakutake.github.io/statistics/index.xml" rel="self" type="application/rss+xml"/>
 <description>A sample blog</description>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Sun, 19 Feb 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 21 Feb 2023 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>グラフ</title>
+  <dc:creator>Nobukuni Hyakutake</dc:creator>
+  <link>https://nobukuni-hyakutake.github.io/statistics/posts/graph/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/graph/mountain.jpeg" class="img-fluid"></p>
+<section id="目的" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> 目的</h1>
+<p>RとPythonでグラフ作成をします。</p>
+</section>
+<section id="ヒストグラム" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> ヒストグラム</h1>
+<section id="r" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="r"><span class="header-section-number">2.1</span> R</h2>
+<section id="データの読み込み" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="データの読み込み"><span class="header-section-number">2.1.1</span> データの読み込み</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;">library</span>(tidyverse)</span>
+<span id="cb1-2">dgr01<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">read_csv</span>(<span class="st" style="color: #20794D;">"</span></span>
+<span id="cb1-3"><span class="st" style="color: #20794D;">  value</span></span>
+<span id="cb1-4"><span class="st" style="color: #20794D;">  4</span></span>
+<span id="cb1-5"><span class="st" style="color: #20794D;">  5</span></span>
+<span id="cb1-6"><span class="st" style="color: #20794D;">  6</span></span>
+<span id="cb1-7"><span class="st" style="color: #20794D;">  7</span></span>
+<span id="cb1-8"><span class="st" style="color: #20794D;">  5</span></span>
+<span id="cb1-9"><span class="st" style="color: #20794D;">  8</span></span>
+<span id="cb1-10"><span class="st" style="color: #20794D;">  4</span></span>
+<span id="cb1-11"><span class="st" style="color: #20794D;">  8</span></span>
+<span id="cb1-12"><span class="st" style="color: #20794D;">  6</span></span>
+<span id="cb1-13"><span class="st" style="color: #20794D;">  8</span></span>
+<span id="cb1-14"><span class="st" style="color: #20794D;">  2</span></span>
+<span id="cb1-15"><span class="st" style="color: #20794D;">  7</span></span>
+<span id="cb1-16"><span class="st" style="color: #20794D;">  7</span></span>
+<span id="cb1-17"><span class="st" style="color: #20794D;">  7</span></span>
+<span id="cb1-18"><span class="st" style="color: #20794D;">  7</span></span>
+<span id="cb1-19"><span class="st" style="color: #20794D;">  6</span></span>
+<span id="cb1-20"><span class="st" style="color: #20794D;">  2</span></span>
+<span id="cb1-21"><span class="st" style="color: #20794D;">  3</span></span>
+<span id="cb1-22"><span class="st" style="color: #20794D;">  3</span></span>
+<span id="cb1-23"><span class="st" style="color: #20794D;">  3</span></span>
+<span id="cb1-24"><span class="st" style="color: #20794D;">"</span>)</span></code></pre></div>
+</div>
+</section>
+<section id="グラフ化" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="グラフ化"><span class="header-section-number">2.1.2</span> グラフ化</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;">hist</span>(dgr01<span class="sc" style="color: #5E5E5E;">$</span>value)</span></code></pre></div>
+<div class="cell-output-display">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/graph/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+</section>
+</section>
+
+ ]]></description>
+  <category>R</category>
+  <category>Python</category>
+  <guid>https://nobukuni-hyakutake.github.io/statistics/posts/graph/index.html</guid>
+  <pubDate>Tue, 21 Feb 2023 15:00:00 GMT</pubDate>
+  <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/graph/mountain.jpeg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>ワイブル分布の確率密度関数への近似</title>
   <dc:creator>Nobukuni Hyakutake</dc:creator>

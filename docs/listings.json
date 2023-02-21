@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/graph/index.html",
       "/posts/survival/index.html",
       "/posts/standard_deviation/index.html",
       "/posts/calculator_R/index.html",
