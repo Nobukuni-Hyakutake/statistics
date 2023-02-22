@@ -46,7 +46,9 @@ analy_titlle <- c("analy_a", "analy_b", "analy_c")
 for(i in 1:length(analy_titlle)){
   cat(paste("\n##",  analy_titlle[i], "\n"))
   
-  cat(str_c("analysis- ",i))
+  cat(str_c("i= ",i, "\n"))
+  
+  hist(rnorm(100,mean = i*3))
   
   cat("\n")
 }

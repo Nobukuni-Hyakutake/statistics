@@ -2198,7 +2198,7 @@ Goodness of fit    Value
 <span id="cb1-5">a<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">round</span>(a,<span class="dv" style="color: #AD0000;">2</span>)</span>
 <span id="cb1-6"><span class="fu" style="color: #4758AB;">print</span>(a)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.23 0.58 0.29</code></pre>
+<pre><code>[1] 0.28 0.12 0.93</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">b<span class="ot" style="color: #003B4F;">&lt;-</span><span class="st" style="color: #20794D;">"Hello, "</span></span></code></pre></div>
 </div>
@@ -2233,21 +2233,23 @@ Goodness of fit    Value
 <span id="cb9-3"><span class="cf" style="color: #003B4F;">for</span>(i <span class="cf" style="color: #003B4F;">in</span> <span class="dv" style="color: #AD0000;">1</span><span class="sc" style="color: #5E5E5E;">:</span><span class="fu" style="color: #4758AB;">length</span>(analy_titlle)){</span>
 <span id="cb9-4">  <span class="fu" style="color: #4758AB;">cat</span>(<span class="fu" style="color: #4758AB;">paste</span>(<span class="st" style="color: #20794D;">"</span><span class="sc" style="color: #5E5E5E;">\n</span><span class="st" style="color: #20794D;">##"</span>,  analy_titlle[i], <span class="st" style="color: #20794D;">"</span><span class="sc" style="color: #5E5E5E;">\n</span><span class="st" style="color: #20794D;">"</span>))</span>
 <span id="cb9-5">  </span>
-<span id="cb9-6">  <span class="fu" style="color: #4758AB;">cat</span>(<span class="fu" style="color: #4758AB;">str_c</span>(<span class="st" style="color: #20794D;">"analysis- "</span>,i))</span>
+<span id="cb9-6">  <span class="fu" style="color: #4758AB;">cat</span>(<span class="fu" style="color: #4758AB;">str_c</span>(<span class="st" style="color: #20794D;">"i= "</span>,i, <span class="st" style="color: #20794D;">"</span><span class="sc" style="color: #5E5E5E;">\n</span><span class="st" style="color: #20794D;">"</span>))</span>
 <span id="cb9-7">  </span>
-<span id="cb9-8">  <span class="fu" style="color: #4758AB;">cat</span>(<span class="st" style="color: #20794D;">"</span><span class="sc" style="color: #5E5E5E;">\n</span><span class="st" style="color: #20794D;">"</span>)</span>
-<span id="cb9-9">}</span></code></pre></div>
+<span id="cb9-8">  <span class="fu" style="color: #4758AB;">hist</span>(<span class="fu" style="color: #4758AB;">rnorm</span>(<span class="dv" style="color: #AD0000;">100</span>,<span class="at" style="color: #657422;">mean =</span> i<span class="sc" style="color: #5E5E5E;">*</span><span class="dv" style="color: #AD0000;">3</span>))</span>
+<span id="cb9-9">  </span>
+<span id="cb9-10">  <span class="fu" style="color: #4758AB;">cat</span>(<span class="st" style="color: #20794D;">"</span><span class="sc" style="color: #5E5E5E;">\n</span><span class="st" style="color: #20794D;">"</span>)</span>
+<span id="cb9-11">}</span></code></pre></div>
 <section id="analy_a" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="analy_a"><span class="header-section-number">4.1</span> analy_a</h2>
-<p>analysis- 1</p>
+<p>i= 1 ::: {.cell-output-display} <img src="https://nobukuni-hyakutake.github.io/statistics/posts/post-with-code/index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"> :::</p>
 </section>
 <section id="analy_b" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="analy_b"><span class="header-section-number">4.2</span> analy_b</h2>
-<p>analysis- 2</p>
+<p>i= 2 ::: {.cell-output-display} <img src="https://nobukuni-hyakutake.github.io/statistics/posts/post-with-code/index_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid" width="672"> :::</p>
 </section>
 <section id="analy_c" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="analy_c"><span class="header-section-number">4.3</span> analy_c</h2>
-<p>analysis- 3</p>
+<p>i= 3 ::: {.cell-output-display} <img src="https://nobukuni-hyakutake.github.io/statistics/posts/post-with-code/index_files/figure-html/unnamed-chunk-4-3.png" class="img-fluid" width="672"> :::</p>
 </section>
 </section>
 <section id="r-version" class="level1" data-number="5">

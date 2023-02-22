@@ -424,20 +424,20 @@
     "href": "posts/post-with-code/index.html#analy_a",
     "title": "コード入りの投稿サンプル",
     "section": "4.1 analy_a",
-    "text": "4.1 analy_a\nanalysis- 1"
+    "text": "4.1 analy_a\ni= 1 ::: {.cell-output-display}  :::"
   },
   {
     "objectID": "posts/post-with-code/index.html#analy_b",
     "href": "posts/post-with-code/index.html#analy_b",
     "title": "コード入りの投稿サンプル",
     "section": "4.2 analy_b",
-    "text": "4.2 analy_b\nanalysis- 2"
+    "text": "4.2 analy_b\ni= 2 ::: {.cell-output-display}  :::"
   },
   {
     "objectID": "posts/post-with-code/index.html#analy_c",
     "href": "posts/post-with-code/index.html#analy_c",
     "title": "コード入りの投稿サンプル",
     "section": "4.3 analy_c",
-    "text": "4.3 analy_c\nanalysis- 3"
+    "text": "4.3 analy_c\ni= 3 ::: {.cell-output-display}  :::"
   }
 ]

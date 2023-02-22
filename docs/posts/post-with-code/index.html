@@ -248,7 +248,7 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>a<span class="ot">&lt;-</span><span class="fu">round</span>(a,<span class="dv">2</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.23 0.58 0.29</code></pre>
+<pre><code>[1] 0.28 0.12 0.93</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>b<span class="ot">&lt;-</span><span class="st">"Hello, "</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -283,21 +283,23 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(analy_titlle)){</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">##"</span>,  analy_titlle[i], <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>))</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">str_c</span>(<span class="st">"analysis- "</span>,i))</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">str_c</span>(<span class="st">"i= "</span>,i, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>))</span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="at">mean =</span> i<span class="sc">*</span><span class="dv">3</span>))</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="analy_a" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="analy_a"><span class="header-section-number">4.1</span> analy_a</h2>
-<p>analysis- 1</p>
+<p>i= 1 ::: {.cell-output-display} <img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"> :::</p>
 </section>
 <section id="analy_b" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="analy_b"><span class="header-section-number">4.2</span> analy_b</h2>
-<p>analysis- 2</p>
+<p>i= 2 ::: {.cell-output-display} <img src="index_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid" width="672"> :::</p>
 </section>
 <section id="analy_c" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="analy_c"><span class="header-section-number">4.3</span> analy_c</h2>
-<p>analysis- 3</p>
+<p>i= 3 ::: {.cell-output-display} <img src="index_files/figure-html/unnamed-chunk-4-3.png" class="img-fluid" width="672"> :::</p>
 </section>
 </section>
 <section id="r-version" class="level1" data-number="5">
@@ -557,25 +559,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(analy_titlle)){</span>
 <span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">##"</span>,  analy_titlle[i], <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>))</span>
 <span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">str_c</span>(<span class="st">"analysis- "</span>,i))</span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">str_c</span>(<span class="st">"i= "</span>,i, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>))</span>
 <span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a><span class="fu"># R version</span></span>
+<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="at">mean =</span> i<span class="sc">*</span><span class="dv">3</span>))</span>
+<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb14-69"><a href="#cb14-69" aria-hidden="true" tabindex="-1"></a>R.version.string</span>
-<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a><span class="fu"># Python version</span></span>
+<span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a><span class="fu"># R version</span></span>
+<span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a>R.version.string</span>
+<span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb14-73"><a href="#cb14-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-76"><a href="#cb14-76" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb14-77"><a href="#cb14-77" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> platform</span>
-<span id="cb14-78"><a href="#cb14-78" aria-hidden="true" tabindex="-1"></a><span class="co">"Python version "</span><span class="op">+</span>platform.python_version()</span>
-<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-74"><a href="#cb14-74" aria-hidden="true" tabindex="-1"></a><span class="fu"># Python version</span></span>
+<span id="cb14-75"><a href="#cb14-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-78"><a href="#cb14-78" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> platform</span>
+<span id="cb14-80"><a href="#cb14-80" aria-hidden="true" tabindex="-1"></a><span class="co">"Python version "</span><span class="op">+</span>platform.python_version()</span>
+<span id="cb14-81"><a href="#cb14-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
