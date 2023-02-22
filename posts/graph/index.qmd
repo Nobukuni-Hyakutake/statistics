@@ -20,14 +20,13 @@ RとPythonでグラフ作成をします。
 
 ```{r}
 library(tidyverse)
-dgr01<-c(2,2,3,3,3,4,4,5,5,6,6,6,7,7,7,7,7,8,8,8)
-dgr02<-tibble(value=dgr01)
+dgr01<-tibble(value=c(2,2,3,3,3,4,4,5,5,6,6,6,7,7,7,7,7,8,8,8))
 ```
 
 ### グラフ化
 
 ```{r}
-ggplot(dgr02,aes(value))+
+ggplot(dgr01,aes(value))+
   geom_histogram(binwidth = 1)
 ```
 
@@ -40,7 +39,9 @@ ggplot(dgr02,aes(value))+
 import numpy as np
 import matplotlib.pyplot as plt
 dgp01=[2,2,3,3,3,4,4,5,5,6,6,6,7,7,7,7,7,8,8,8]
-counts,bins=np.histogram(dgp01,bins=int(max(dgp01)-min(dgp01)+1),range=(min(dgp01)-0.5,max(dgp01)+0.5))
+counts,bins=np.histogram(dgp01,
+bins=int(max(dgp01)-min(dgp01)+1),
+range=(min(dgp01)-0.5,max(dgp01)+0.5))
 ```
 
 ### グラフ化
