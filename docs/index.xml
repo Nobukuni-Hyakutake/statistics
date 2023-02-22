@@ -33,45 +33,63 @@
 <h3 data-number="2.1.1" class="anchored" data-anchor-id="データの読み込み"><span class="header-section-number">2.1.1</span> データの読み込み</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;">library</span>(tidyverse)</span>
-<span id="cb1-2">dgr01<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">read_csv</span>(<span class="st" style="color: #20794D;">"</span></span>
-<span id="cb1-3"><span class="st" style="color: #20794D;">  value</span></span>
-<span id="cb1-4"><span class="st" style="color: #20794D;">  4</span></span>
-<span id="cb1-5"><span class="st" style="color: #20794D;">  5</span></span>
-<span id="cb1-6"><span class="st" style="color: #20794D;">  6</span></span>
-<span id="cb1-7"><span class="st" style="color: #20794D;">  7</span></span>
-<span id="cb1-8"><span class="st" style="color: #20794D;">  5</span></span>
-<span id="cb1-9"><span class="st" style="color: #20794D;">  8</span></span>
-<span id="cb1-10"><span class="st" style="color: #20794D;">  4</span></span>
-<span id="cb1-11"><span class="st" style="color: #20794D;">  8</span></span>
-<span id="cb1-12"><span class="st" style="color: #20794D;">  6</span></span>
-<span id="cb1-13"><span class="st" style="color: #20794D;">  8</span></span>
-<span id="cb1-14"><span class="st" style="color: #20794D;">  2</span></span>
-<span id="cb1-15"><span class="st" style="color: #20794D;">  7</span></span>
-<span id="cb1-16"><span class="st" style="color: #20794D;">  7</span></span>
-<span id="cb1-17"><span class="st" style="color: #20794D;">  7</span></span>
-<span id="cb1-18"><span class="st" style="color: #20794D;">  7</span></span>
-<span id="cb1-19"><span class="st" style="color: #20794D;">  6</span></span>
-<span id="cb1-20"><span class="st" style="color: #20794D;">  2</span></span>
-<span id="cb1-21"><span class="st" style="color: #20794D;">  3</span></span>
-<span id="cb1-22"><span class="st" style="color: #20794D;">  3</span></span>
-<span id="cb1-23"><span class="st" style="color: #20794D;">  3</span></span>
-<span id="cb1-24"><span class="st" style="color: #20794D;">"</span>)</span></code></pre></div>
+<span id="cb1-2">dgr01<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">c</span>(<span class="dv" style="color: #AD0000;">2</span>,<span class="dv" style="color: #AD0000;">2</span>,<span class="dv" style="color: #AD0000;">3</span>,<span class="dv" style="color: #AD0000;">3</span>,<span class="dv" style="color: #AD0000;">3</span>,<span class="dv" style="color: #AD0000;">4</span>,<span class="dv" style="color: #AD0000;">4</span>,<span class="dv" style="color: #AD0000;">5</span>,<span class="dv" style="color: #AD0000;">5</span>,<span class="dv" style="color: #AD0000;">6</span>,<span class="dv" style="color: #AD0000;">6</span>,<span class="dv" style="color: #AD0000;">6</span>,<span class="dv" style="color: #AD0000;">7</span>,<span class="dv" style="color: #AD0000;">7</span>,<span class="dv" style="color: #AD0000;">7</span>,<span class="dv" style="color: #AD0000;">7</span>,<span class="dv" style="color: #AD0000;">7</span>,<span class="dv" style="color: #AD0000;">8</span>,<span class="dv" style="color: #AD0000;">8</span>,<span class="dv" style="color: #AD0000;">8</span>)</span>
+<span id="cb1-3">dgr02<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">tibble</span>(<span class="at" style="color: #657422;">value=</span>dgr01)</span></code></pre></div>
 </div>
 </section>
 <section id="グラフ化" class="level3" data-number="2.1.2">
 <h3 data-number="2.1.2" class="anchored" data-anchor-id="グラフ化"><span class="header-section-number">2.1.2</span> グラフ化</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;">hist</span>(dgr01<span class="sc" style="color: #5E5E5E;">$</span>value)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;">ggplot</span>(dgr02,<span class="fu" style="color: #4758AB;">aes</span>(value))<span class="sc" style="color: #5E5E5E;">+</span></span>
+<span id="cb2-2">  <span class="fu" style="color: #4758AB;">geom_histogram</span>(<span class="at" style="color: #657422;">binwidth =</span> <span class="dv" style="color: #AD0000;">1</span>)</span></code></pre></div>
 <div class="cell-output-display">
 <p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/graph/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+</section>
+</section>
+<section id="python" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="python"><span class="header-section-number">2.2</span> Python</h2>
+<section id="データの読み込み-1" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="データの読み込み-1"><span class="header-section-number">2.2.1</span> データの読み込み</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;">import</span> numpy <span class="im" style="color: #00769E;">as</span> np</span>
+<span id="cb3-2"><span class="im" style="color: #00769E;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;">as</span> plt</span>
+<span id="cb3-3">dgp01<span class="op" style="color: #5E5E5E;">=</span>[<span class="dv" style="color: #AD0000;">2</span>,<span class="dv" style="color: #AD0000;">2</span>,<span class="dv" style="color: #AD0000;">3</span>,<span class="dv" style="color: #AD0000;">3</span>,<span class="dv" style="color: #AD0000;">3</span>,<span class="dv" style="color: #AD0000;">4</span>,<span class="dv" style="color: #AD0000;">4</span>,<span class="dv" style="color: #AD0000;">5</span>,<span class="dv" style="color: #AD0000;">5</span>,<span class="dv" style="color: #AD0000;">6</span>,<span class="dv" style="color: #AD0000;">6</span>,<span class="dv" style="color: #AD0000;">6</span>,<span class="dv" style="color: #AD0000;">7</span>,<span class="dv" style="color: #AD0000;">7</span>,<span class="dv" style="color: #AD0000;">7</span>,<span class="dv" style="color: #AD0000;">7</span>,<span class="dv" style="color: #AD0000;">7</span>,<span class="dv" style="color: #AD0000;">8</span>,<span class="dv" style="color: #AD0000;">8</span>,<span class="dv" style="color: #AD0000;">8</span>]</span>
+<span id="cb3-4">counts,bins<span class="op" style="color: #5E5E5E;">=</span>np.histogram(dgp01,bins<span class="op" style="color: #5E5E5E;">=</span><span class="bu" style="color: null;">int</span>(<span class="bu" style="color: null;">max</span>(dgp01)<span class="op" style="color: #5E5E5E;">-</span><span class="bu" style="color: null;">min</span>(dgp01)<span class="op" style="color: #5E5E5E;">+</span><span class="dv" style="color: #AD0000;">1</span>),<span class="bu" style="color: null;">range</span><span class="op" style="color: #5E5E5E;">=</span>(<span class="bu" style="color: null;">min</span>(dgp01)<span class="op" style="color: #5E5E5E;">-</span><span class="fl" style="color: #AD0000;">0.5</span>,<span class="bu" style="color: null;">max</span>(dgp01)<span class="op" style="color: #5E5E5E;">+</span><span class="fl" style="color: #AD0000;">0.5</span>))</span></code></pre></div>
+</div>
+</section>
+<section id="グラフ化-1" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="グラフ化-1"><span class="header-section-number">2.2.2</span> グラフ化</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">plt.stairs(counts,bins,fill<span class="op" style="color: #5E5E5E;">=</span><span class="va" style="color: #111111;">True</span>)</span>
+<span id="cb4-2">plt.show()</span></code></pre></div>
+<div class="cell-output-display">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/graph/index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="参考書籍" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> 参考書籍</h1>
+<ul>
+<li><a href="https://www.oreilly.co.jp/books/9784873118413/">Pythonデータサイエンスハンドブック</a></li>
+</ul>
+</section>
+<section id="参考ウェブサイト" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> 参考ウェブサイト</h1>
+<ul>
+<li><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">ggplot2 - Histograms and frequency polygons</a></li>
+<li><a href="https://utokyo-ipp.github.io/index.html">Pythonプログラミング入門 (東京大学 数理・情報教育研究センター)</a></li>
+<li><a href="https://nakazakimasahito.wordpress.com/">matplotlib 初期化</a></li>
+<li><a href="https://numpy.org/doc/stable/reference/generated/numpy.histogram.html">numpy.histogram</a></li>
+<li><a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.stairs.html">matplotlib.pyplot.stairs</a></li>
+</ul>
 
 
 <!-- -->
 
-</section>
-</section>
 </section>
 
  ]]></description>

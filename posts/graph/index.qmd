@@ -20,36 +20,44 @@ RとPythonでグラフ作成をします。
 
 ```{r}
 library(tidyverse)
-dgr01<-read_csv("
-  value
-  4
-  5
-  6
-  7
-  5
-  8
-  4
-  8
-  6
-  8
-  2
-  7
-  7
-  7
-  7
-  6
-  2
-  3
-  3
-  3
-")
+dgr01<-c(2,2,3,3,3,4,4,5,5,6,6,6,7,7,7,7,7,8,8,8)
+dgr02<-tibble(value=dgr01)
 ```
 
 ### グラフ化
 
 ```{r}
-hist(dgr01$value)
+ggplot(dgr02,aes(value))+
+  geom_histogram(binwidth = 1)
 ```
 
 
+## Python
 
+### データの読み込み
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+dgp01=[2,2,3,3,3,4,4,5,5,6,6,6,7,7,7,7,7,8,8,8]
+counts,bins=np.histogram(dgp01,bins=int(max(dgp01)-min(dgp01)+1),range=(min(dgp01)-0.5,max(dgp01)+0.5))
+```
+
+### グラフ化
+
+```{python}
+plt.stairs(counts,bins,fill=True)
+plt.show()
+```
+
+# 参考書籍
+
+- [Pythonデータサイエンスハンドブック](https://www.oreilly.co.jp/books/9784873118413/)
+
+# 参考ウェブサイト
+
+- [ggplot2 - Histograms and frequency polygons](https://ggplot2.tidyverse.org/reference/geom_histogram.html)
+- [Pythonプログラミング入門 (東京大学 数理・情報教育研究センター)](https://utokyo-ipp.github.io/index.html)
+- [matplotlib 初期化](https://nakazakimasahito.wordpress.com/)
+- [numpy.histogram](https://numpy.org/doc/stable/reference/generated/numpy.histogram.html)
+- [matplotlib.pyplot.stairs](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.stairs.html)

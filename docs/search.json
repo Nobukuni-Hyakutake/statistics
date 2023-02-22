@@ -403,6 +403,13 @@
     "href": "posts/graph/index.html#r",
     "title": "グラフ",
     "section": "2.1 R",
-    "text": "2.1 R\n\n2.1.1 データの読み込み\n\nlibrary(tidyverse)\ndgr01<-read_csv(\"\n  value\n  4\n  5\n  6\n  7\n  5\n  8\n  4\n  8\n  6\n  8\n  2\n  7\n  7\n  7\n  7\n  6\n  2\n  3\n  3\n  3\n\")\n\n\n\n2.1.2 グラフ化\n\nhist(dgr01$value)"
+    "text": "2.1 R\n\n2.1.1 データの読み込み\n\nlibrary(tidyverse)\ndgr01<-c(2,2,3,3,3,4,4,5,5,6,6,6,7,7,7,7,7,8,8,8)\ndgr02<-tibble(value=dgr01)\n\n\n\n2.1.2 グラフ化\n\nggplot(dgr02,aes(value))+\n  geom_histogram(binwidth = 1)"
+  },
+  {
+    "objectID": "posts/graph/index.html#python",
+    "href": "posts/graph/index.html#python",
+    "title": "グラフ",
+    "section": "2.2 Python",
+    "text": "2.2 Python\n\n2.2.1 データの読み込み\n\nimport numpy as np\nimport matplotlib.pyplot as plt\ndgp01=[2,2,3,3,3,4,4,5,5,6,6,6,7,7,7,7,7,8,8,8]\ncounts,bins=np.histogram(dgp01,bins=int(max(dgp01)-min(dgp01)+1),range=(min(dgp01)-0.5,max(dgp01)+0.5))\n\n\n\n2.2.2 グラフ化\n\nplt.stairs(counts,bins,fill=True)\nplt.show()"
   }
 ]
