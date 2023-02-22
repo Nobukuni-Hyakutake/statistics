@@ -347,7 +347,7 @@
     "href": "posts/survival/index.html#フィット",
     "title": "ワイブル分布の確率密度関数への近似",
     "section": "5.2 フィット",
-    "text": "5.2 フィット\n結果詳細。Alphaは尺度パラメーターη、Betaは形状パラメーターmに相当する。\n\ndsu02=r.dsu01\nlife_max=int(max(dsu02['life']))\ndsu03=dsu02['life'].values.tolist()\nwb2 = Fit_Weibull_2P(failures=dsu03)\n\n\u001b[1m\u001b[23m\u001b[4m\u001b[49m\u001b[39mResults from Fit_Weibull_2P (95% CI):\u001b[0m\nAnalysis method: Maximum Likelihood Estimation (MLE)\nOptimizer: TNC\nFailures / Right censored: 30/0 (0% right censored) \n\nParameter  Point Estimate  Standard Error  Lower CI  Upper CI\n    Alpha          29.579        0.709558   28.2204   31.0029\n     Beta         8.05733         1.02419   6.28047   10.3369 \n\nGoodness of fit    Value\n Log-likelihood -82.1756\n           AICc  168.796\n            BIC  171.154\n             AD  1.48179"
+    "text": "5.2 フィット\n結果詳細。Alphaは尺度パラメーターη、Betaは形状パラメーターmに相当する。\n\ndsu02=r.dsu01\nlife_max=int(max(dsu02['life']))\ndsu03=dsu02['life'].values.tolist()\nwb2 = Fit_Weibull_2P(failures=dsu03)\n\n\u001b[1m\u001b[23m\u001b[4m\u001b[49m\u001b[39mResults from Fit_Weibull_2P (95% CI):\u001b[0m\nAnalysis method: Maximum Likelihood Estimation (MLE)\nOptimizer: TNC\nFailures / Right censored: 30/0 (0% right censored) \n\nParameter  Point Estimate  Standard Error  Lower CI  Upper CI\n    Alpha         29.4443        0.725964   28.0553   30.9021\n     Beta         7.84309          1.0011   6.10715   10.0725 \n\nGoodness of fit    Value\n Log-likelihood -82.7942\n           AICc  170.033\n            BIC  172.391\n             AD   1.2344"
   },
   {
     "objectID": "posts/survival/index.html#パッケージの読み込み",
@@ -361,7 +361,7 @@
     "href": "posts/survival/index.html#ワイブルのパラメーターを算出",
     "title": "ワイブル分布の確率密度関数への近似",
     "section": "4.2 ワイブルのパラメーターを算出",
-    "text": "4.2 ワイブルのパラメーターを算出\nsurvregを使う。\n\nt<-survreg(Surv(dsu01$life)~1, dist=\"weibull\")\n\nsurvregの結果は、上述の確率密度関数のパラメーターとして使うには換算する必要がある。\n\\(m\\)\n\nm_fit<-1/t$scale\nm_fit\n\n[1] 8.057331\n\n\n\\(\\eta\\)\n\neta_fit<-exp(unname(t$coefficients))\neta_fit\n\n[1] 29.57896"
+    "text": "4.2 ワイブルのパラメーターを算出\nsurvregを使う。\n\nt<-survreg(Surv(dsu01$life)~1, dist=\"weibull\")\nt\n\nCall:\nsurvreg(formula = Surv(dsu01$life) ~ 1, dist = \"weibull\")\n\nCoefficients:\n(Intercept) \n   3.382502 \n\nScale= 0.1275018 \n\nLoglik(model)= -82.8   Loglik(intercept only)= -82.8\nn= 30 \n\n\nsurvregの結果は、上述の確率密度関数のパラメーターとして使うには換算する必要がある。\n\\(m\\)\n\nm_fit<-1/t$scale\nm_fit\n\n[1] 7.843027\n\n\n\\(\\eta\\)\n\neta_fit<-exp(unname(t$coefficients))\neta_fit\n\n[1] 29.44436"
   },
   {
     "objectID": "posts/survival/index.html#グラフ化",
