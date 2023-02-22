@@ -22,7 +22,7 @@ library(plotly)
 library(gt)
 dsu01<-read_csv("
   life
-  28
+  26
   30
   32
   30
@@ -41,7 +41,7 @@ dsu01<-read_csv("
   30
   18
   28
-  28
+  25
   24
   23
   28
@@ -83,6 +83,7 @@ survregを使う。
 
 ```{r}
 t<-survreg(Surv(dsu01$life)~1, dist="weibull")
+t
 ```
 
 survregの結果は、上述の確率密度関数のパラメーターとして使うには換算する必要がある。
