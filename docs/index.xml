@@ -2188,21 +2188,23 @@ Goodness of fit    Value
 
 
 <p>This is a post with executable code.</p>
-<section id="r-1" class="level2">
-<h2 class="anchored" data-anchor-id="r-1">R-1</h2>
+<section id="r-1" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> R-1</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;">library</span>(reticulate)</span>
-<span id="cb1-2">a<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">runif</span>(<span class="dv" style="color: #AD0000;">3</span>)</span>
-<span id="cb1-3">a<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">round</span>(a,<span class="dv" style="color: #AD0000;">2</span>)</span>
-<span id="cb1-4"><span class="fu" style="color: #4758AB;">print</span>(a)</span></code></pre></div>
+<span id="cb1-2"><span class="fu" style="color: #4758AB;">library</span>(knitr)</span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;">library</span>(tidyverse)</span>
+<span id="cb1-4">a<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">runif</span>(<span class="dv" style="color: #AD0000;">3</span>)</span>
+<span id="cb1-5">a<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">round</span>(a,<span class="dv" style="color: #AD0000;">2</span>)</span>
+<span id="cb1-6"><span class="fu" style="color: #4758AB;">print</span>(a)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.79 0.63 0.09</code></pre>
+<pre><code>[1] 0.23 0.58 0.29</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">b<span class="ot" style="color: #003B4F;">&lt;-</span><span class="st" style="color: #20794D;">"Hello, "</span></span></code></pre></div>
 </div>
 </section>
-<section id="python" class="level2">
-<h2 class="anchored" data-anchor-id="python">Python</h2>
+<section id="python" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Python</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="im" style="color: #00769E;">import</span> numpy <span class="im" style="color: #00769E;">as</span> np</span>
 <span id="cb4-2">c<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"World!"</span></span>
@@ -2214,8 +2216,8 @@ Goodness of fit    Value
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">e<span class="op" style="color: #5E5E5E;">=</span>np.sin(<span class="fl" style="color: #AD0000;">1.5</span>)<span class="op" style="color: #5E5E5E;">*</span><span class="dv" style="color: #AD0000;">12</span></span></code></pre></div>
 </div>
 </section>
-<section id="r-2" class="level2">
-<h2 class="anchored" data-anchor-id="r-2">R-2</h2>
+<section id="r-2" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> R-2</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">f<span class="ot" style="color: #003B4F;">&lt;-</span>py<span class="sc" style="color: #5E5E5E;">$</span>e<span class="sc" style="color: #5E5E5E;">/</span><span class="dv" style="color: #AD0000;">3</span></span>
 <span id="cb7-2"><span class="fu" style="color: #4758AB;">print</span>(f)</span></code></pre></div>
@@ -2224,25 +2226,51 @@ Goodness of fit    Value
 </div>
 </div>
 </section>
-<section id="r-version" class="level2">
-<h2 class="anchored" data-anchor-id="r-version">R version</h2>
+<section id="変数をループで解析して出す" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> 変数をループで解析して出す</h1>
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">analy_titlle <span class="ot" style="color: #003B4F;">&lt;-</span> <span class="fu" style="color: #4758AB;">c</span>(<span class="st" style="color: #20794D;">"analy_a"</span>, <span class="st" style="color: #20794D;">"analy_b"</span>, <span class="st" style="color: #20794D;">"analy_c"</span>)</span>
+<span id="cb9-2"></span>
+<span id="cb9-3"><span class="cf" style="color: #003B4F;">for</span>(i <span class="cf" style="color: #003B4F;">in</span> <span class="dv" style="color: #AD0000;">1</span><span class="sc" style="color: #5E5E5E;">:</span><span class="fu" style="color: #4758AB;">length</span>(analy_titlle)){</span>
+<span id="cb9-4">  <span class="fu" style="color: #4758AB;">cat</span>(<span class="fu" style="color: #4758AB;">paste</span>(<span class="st" style="color: #20794D;">"</span><span class="sc" style="color: #5E5E5E;">\n</span><span class="st" style="color: #20794D;">##"</span>,  analy_titlle[i], <span class="st" style="color: #20794D;">"</span><span class="sc" style="color: #5E5E5E;">\n</span><span class="st" style="color: #20794D;">"</span>))</span>
+<span id="cb9-5">  </span>
+<span id="cb9-6">  <span class="fu" style="color: #4758AB;">cat</span>(<span class="fu" style="color: #4758AB;">str_c</span>(<span class="st" style="color: #20794D;">"analysis- "</span>,i))</span>
+<span id="cb9-7">  </span>
+<span id="cb9-8">  <span class="fu" style="color: #4758AB;">cat</span>(<span class="st" style="color: #20794D;">"</span><span class="sc" style="color: #5E5E5E;">\n</span><span class="st" style="color: #20794D;">"</span>)</span>
+<span id="cb9-9">}</span></code></pre></div>
+<section id="analy_a" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="analy_a"><span class="header-section-number">4.1</span> analy_a</h2>
+<p>analysis- 1</p>
+</section>
+<section id="analy_b" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="analy_b"><span class="header-section-number">4.2</span> analy_b</h2>
+<p>analysis- 2</p>
+</section>
+<section id="analy_c" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="analy_c"><span class="header-section-number">4.3</span> analy_c</h2>
+<p>analysis- 3</p>
+</section>
+</section>
+<section id="r-version" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> R version</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">R.version.string</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1">R.version.string</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "R version 4.2.2 (2022-10-31)"</code></pre>
 </div>
 </div>
 </section>
-<section id="python-version" class="level2">
-<h2 class="anchored" data-anchor-id="python-version">Python version</h2>
+<section id="python-version" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Python version</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="im" style="color: #00769E;">import</span> platform</span>
-<span id="cb11-2"><span class="co" style="color: #5E5E5E;">"Python version "</span><span class="op" style="color: #5E5E5E;">+</span>platform.python_version()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><span class="im" style="color: #00769E;">import</span> platform</span>
+<span id="cb12-2"><span class="co" style="color: #5E5E5E;">"Python version "</span><span class="op" style="color: #5E5E5E;">+</span>platform.python_version()</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'Python version 3.10.7'</code></pre>
 </div>
 </div>
 
+
+<!-- -->
 
 </section>
 
