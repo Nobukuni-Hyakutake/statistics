@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Top",
     "section": "",
-    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-02-22\n\n\nグラフ\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
+    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-02-23\n\n\n相関係数\n\n\nR\n\n\n\n\n\n\n\n2023-02-22\n\n\nグラフ\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -411,5 +411,12 @@
     "title": "グラフ",
     "section": "2.2 Python",
     "text": "2.2 Python\n\n2.2.1 データの読み込み\n\nimport numpy as np\nimport matplotlib.pyplot as plt\ndgp01=[2,2,3,3,3,4,4,5,5,6,6,6,7,7,7,7,7,8,8,8]\ncounts,bins=np.histogram(dgp01,\nbins=int(max(dgp01)-min(dgp01)+1),\nrange=(min(dgp01)-0.5,max(dgp01)+0.5))\n\n\n\n2.2.2 グラフ化\n\nplt.stairs(counts,bins,fill=True)\nplt.show()"
+  },
+  {
+    "objectID": "posts/correlations/index.html",
+    "href": "posts/correlations/index.html",
+    "title": "相関係数",
+    "section": "",
+    "text": "1 目的\nRで相関係数行列を作成します。\n\n\n2 作成\n\nlibrary(corrr)\nlibrary(tidyverse)\nlibrary(gt)\ndcr01<-datasets::airquality %>% \n  correlate() |> \n  shave()\ngt(dcr01)\n\n\n\n\n\n  \n  \n    \n      term\n      Ozone\n      Solar.R\n      Wind\n      Temp\n      Month\n      Day\n    \n  \n  \n    Ozone\nNA\nNA\nNA\nNA\nNA\nNA\n    Solar.R\n0.34834169\nNA\nNA\nNA\nNA\nNA\n    Wind\n-0.60154653\n-0.05679167\nNA\nNA\nNA\nNA\n    Temp\n0.69836034\n0.27584027\n-0.4579879\nNA\nNA\nNA\n    Month\n0.16451931\n-0.07530076\n-0.1782926\n0.4209473\nNA\nNA\n    Day\n-0.01322565\n-0.15027498\n0.0271809\n-0.1305932\n-0.007961763\nNA\n  \n  \n  \n\n\n\n\n\n\n3 参考ウェブサイト\n\ncorrr"
   }
 ]

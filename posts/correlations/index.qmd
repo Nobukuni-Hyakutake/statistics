@@ -1,0 +1,31 @@
+---
+title: "相関係数"
+author: "Nobukuni Hyakutake"
+date: "2023-02-23"
+date-format: "iso"
+categories: [R]
+---
+
+![](sea.jpeg)
+
+# 目的
+
+Rで相関係数行列を作成します。
+
+# 作成
+
+```{r}
+library(corrr)
+library(tidyverse)
+library(gt)
+dcr01<-datasets::airquality %>% 
+  correlate() |> 
+  shave()
+gt(dcr01)
+```
+
+
+
+# 参考ウェブサイト
+
+- [corrr](https://corrr.tidymodels.org/)
