@@ -67,3 +67,7 @@ R.version.string
 import platform
 "Python version "+platform.python_version()
 ```
+
+# Citation
+
+- R Core Team (2022). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL [https://www.R-project.org/](https://www.R-project.org/)
