@@ -74,5 +74,5 @@ import platform
 
 
 ```{=html}
-<iframe width="320" height="200" src="https://nobukuni-hyakutake.github.io/thanks.html" title="Quarto Documentation"></iframe>
+<iframe width="320" height="200" src="https://nobukuni-hyakutake.github.io/see_you_again.html" title="Quarto Documentation"></iframe>
 ```

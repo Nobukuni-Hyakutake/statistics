@@ -2198,7 +2198,7 @@ Goodness of fit    Value
 <span id="cb1-5">a<span class="ot" style="color: #003B4F;">&lt;-</span><span class="fu" style="color: #4758AB;">round</span>(a,<span class="dv" style="color: #AD0000;">2</span>)</span>
 <span id="cb1-6"><span class="fu" style="color: #4758AB;">print</span>(a)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.25 0.61 0.50</code></pre>
+<pre><code>[1] 0.84 0.86 0.55</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">b<span class="ot" style="color: #003B4F;">&lt;-</span><span class="st" style="color: #20794D;">"Hello, "</span></span></code></pre></div>
 </div>
@@ -2276,7 +2276,7 @@ Goodness of fit    Value
 <ul>
 <li>R Core Team (2022). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL <a href="https://www.R-project.org/">https://www.R-project.org/</a></li>
 </ul>
-<iframe width="320" height="200" src="https://nobukuni-hyakutake.github.io/thanks.html" title="Quarto Documentation"></iframe>
+<iframe width="320" height="200" src="https://nobukuni-hyakutake.github.io/see_you_again.html" title="Quarto Documentation"></iframe>
 
 
 <!-- -->
