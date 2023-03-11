@@ -23,11 +23,20 @@ library(tidyverse)
 dgr01<-tibble(value=c(2,2,3,3,3,4,4,5,5,6,6,6,7,7,7,7,7,8,8,8))
 ```
 
-### グラフ化
+### ヒストグラム
 
 ```{r}
 ggplot(dgr01,aes(value))+
   geom_histogram(binwidth = 1)
+```
+
+### QQプロット
+
+```{r}
+ggplot(dgr01,aes(sample=value))+
+  stat_qq()+
+  stat_qq_line()+
+  labs(x = "Theoretical Quantiles", y = "Sample Quantiles")
 ```
 
 
@@ -38,18 +47,30 @@ ggplot(dgr01,aes(value))+
 ```{python}
 import numpy as np
 import matplotlib.pyplot as plt
-dgp01=[2,2,3,3,3,4,4,5,5,6,6,6,7,7,7,7,7,8,8,8]
+import statsmodels.api as sm
+dgp01=np.array([2,2,3,3,3,4,4,5,5,6,6,6,7,7,7,7,7,8,8,8])
 counts,bins=np.histogram(dgp01,
 bins=int(max(dgp01)-min(dgp01)+1),
 range=(min(dgp01)-0.5,max(dgp01)+0.5))
 ```
 
-### グラフ化
+### ヒストグラム
 
 ```{python}
 plt.stairs(counts,bins,fill=True)
 plt.show()
+plt.clf()
 ```
+
+### QQプロット
+
+```{python}
+import matplotlib.pyplot as plt
+sm.qqplot(dgp01,fit=True,line='45')
+plt.show()
+plt.clf()
+```
+
 
 # 参考書籍
 
@@ -58,6 +79,7 @@ plt.show()
 # 参考ウェブサイト
 
 - [ggplot2 - Histograms and frequency polygons](https://ggplot2.tidyverse.org/reference/geom_histogram.html)
+- [ggplot2- A quantile-quantile plot](https://ggplot2.tidyverse.org/reference/geom_qq.html)
 - [Pythonプログラミング入門 (東京大学 数理・情報教育研究センター)](https://utokyo-ipp.github.io/index.html)
 - [matplotlib 初期化](https://nakazakimasahito.wordpress.com/)
 - [numpy.histogram](https://numpy.org/doc/stable/reference/generated/numpy.histogram.html)
