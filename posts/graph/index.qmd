@@ -38,7 +38,10 @@ ggplot(dgr01,aes(sample=value))+
   stat_qq_line()+
   labs(x = "Theoretical Quantiles", y = "Sample Quantiles")
 ```
-
+```{r}
+qqnorm(dgr01$value)
+qqline(dgr01$value)
+```
 
 ## Python
 
@@ -65,12 +68,10 @@ plt.clf()
 ### QQプロット
 
 ```{python}
-import matplotlib.pyplot as plt
-sm.qqplot(dgp01,fit=True,line='45')
+sm.qqplot(dgp01,fit=True,line='q')
 plt.show()
 plt.clf()
 ```
-
 
 # 参考書籍
 
@@ -80,6 +81,7 @@ plt.clf()
 
 - [ggplot2 - Histograms and frequency polygons](https://ggplot2.tidyverse.org/reference/geom_histogram.html)
 - [ggplot2- A quantile-quantile plot](https://ggplot2.tidyverse.org/reference/geom_qq.html)
+- [QQプロット](https://k-metrics.netlify.app/post/2018-09/qqplot/)
 - [Pythonプログラミング入門 (東京大学 数理・情報教育研究センター)](https://utokyo-ipp.github.io/index.html)
 - [matplotlib 初期化](https://nakazakimasahito.wordpress.com/)
 - [numpy.histogram](https://numpy.org/doc/stable/reference/generated/numpy.histogram.html)
