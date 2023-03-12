@@ -76,6 +76,7 @@ plt.clf()
 # 参考書籍
 
 - [Pythonデータサイエンスハンドブック](https://www.oreilly.co.jp/books/9784873118413/)
+- [正規性の検定 共立出版](https://www.kyoritsu-pub.co.jp/book/b10003193.html)
 
 # 参考ウェブサイト
 
