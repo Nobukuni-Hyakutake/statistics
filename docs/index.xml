@@ -20,6 +20,7 @@
 
 
 
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/basic/mountain2.jpeg" class="img-fluid"></p>
 <section id="数の入力" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="数の入力"><span class="header-section-number">1</span> 数の入力</h2>
 <div class="cell" data-execution_count="1">
@@ -249,7 +250,7 @@ font-style: inherit;">+</span>platform.python_version()</span></code></pre></div
   <category>Python</category>
   <guid>https://nobukuni-hyakutake.github.io/statistics/posts/basic/index.html</guid>
   <pubDate>Thu, 05 Oct 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/basic/mountain.jpeg" medium="image" type="image/jpeg"/>
+  <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/basic/mountain2.jpeg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>相関係数</title>

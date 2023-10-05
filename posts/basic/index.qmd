@@ -4,8 +4,10 @@ author: "Nobukuni Hyakutake"
 date: "2023-10-06"
 date-format: "iso"
 categories: [Python]
-image: "mountain.jpeg"
+image: "mountain2.jpeg"
 ---
+
+![](mountain2.jpeg)
 
 ## 数の入力
 
