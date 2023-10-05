@@ -16,7 +16,7 @@ website:
         href: index.xml
   page-footer:
     center: 
-      - text: "CC by 4.0 Nobukuni Hyakutake"
+      - text: "© 2023 NO PORTION OF THIS SITE MAY BE USED FOR TRAINING A MACHINELEARNING MODEL (INCLUDING LLMS) WITHOUT THE EXPRESS WRITTENCONSENT OF THE AUTHOR."
 format:
   html:
     theme: cerulean
@@ -29,4 +29,3 @@ format:
     code-tools: true
 execute:
   warning: false
- 

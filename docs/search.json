@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Top",
     "section": "",
-    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-02-23\n\n\n相関係数\n\n\nR\n\n\n\n\n\n\n\n2023-02-22\n\n\nグラフ\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
+    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-10-06\n\n\nPython基本\n\n\nPython\n\n\n\n\n\n\n\n2023-02-23\n\n\n相関係数\n\n\nR\n\n\n\n\n\n\n\n2023-02-22\n\n\nグラフ\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -403,7 +403,7 @@
     "href": "posts/graph/index.html#r",
     "title": "グラフ",
     "section": "2.1 R",
-    "text": "2.1 R\n\n2.1.1 データの読み込み\n\nlibrary(tidyverse)\ndgr01<-tibble(value=c(2,2,3,3,3,4,4,5,5,6,6,6,7,7,7,7,7,8,8,8))\n\n\n\n2.1.2 ヒストグラム\n\nggplot(dgr01,aes(value))+\n  geom_histogram(binwidth = 1)\n\n\n\n\n\n\n2.1.3 QQプロット\n\nggplot(dgr01,aes(sample=value))+\n  stat_qq()+\n  stat_qq_line()+\n  labs(x = \"Theoretical Quantiles\", y = \"Sample Quantiles\")\n\n\n\n\n\nqqnorm(dgr01$value)\nqqline(dgr01$value)"
+    "text": "2.1 R\n\n2.1.1 データの読み込み\n\nlibrary(tidyverse)\ndgr01&lt;-tibble(value=c(2,2,3,3,3,4,4,5,5,6,6,6,7,7,7,7,7,8,8,8))\n\n\n\n2.1.2 ヒストグラム\n\nggplot(dgr01,aes(value))+\n  geom_histogram(binwidth = 1)\n\n\n\n\n\n\n2.1.3 QQプロット\n\nggplot(dgr01,aes(sample=value))+\n  stat_qq()+\n  stat_qq_line()+\n  labs(x = \"Theoretical Quantiles\", y = \"Sample Quantiles\")\n\n\n\n\n\nqqnorm(dgr01$value)\nqqline(dgr01$value)"
   },
   {
     "objectID": "posts/graph/index.html#python",
@@ -439,5 +439,54 @@
     "title": "コード入りの投稿サンプル",
     "section": "4.3 analy_c",
     "text": "4.3 analy_c\ni= 3 ::: {.cell-output-display}  :::"
+  },
+  {
+    "objectID": "posts/basic/index.html",
+    "href": "posts/basic/index.html",
+    "title": "Python基本",
+    "section": "",
+    "text": "0x10\n\n16\n\n\n\n1.23e5\n\n123000.0"
+  },
+  {
+    "objectID": "posts/basic/index.html#数の入力",
+    "href": "posts/basic/index.html#数の入力",
+    "title": "Python基本",
+    "section": "",
+    "text": "0x10\n\n16\n\n\n\n1.23e5\n\n123000.0"
+  },
+  {
+    "objectID": "posts/basic/index.html#簡単な計算",
+    "href": "posts/basic/index.html#簡単な計算",
+    "title": "Python基本",
+    "section": "2 簡単な計算",
+    "text": "2 簡単な計算\n\n2*3\n\n6\n\n\n\n10/3\n\n3.3333333333333335\n\n\n\n10//3\n\n3\n\n\n\n10%3\n\n1"
+  },
+  {
+    "objectID": "posts/basic/index.html#変数",
+    "href": "posts/basic/index.html#変数",
+    "title": "Python基本",
+    "section": "3 変数",
+    "text": "3 変数\n\nx=2\ny=3\nx*y\n\n6\n\n\n\nx,y=20,30\nx*y\n\n600\n\n\n\nx=1+1\nx\n\n2"
+  },
+  {
+    "objectID": "posts/basic/index.html#文字列",
+    "href": "posts/basic/index.html#文字列",
+    "title": "Python基本",
+    "section": "4 文字列",
+    "text": "4 文字列\n\nmy_s='abcde'\nlen(my_s)\n\n5\n\n\n\n'This is' ' a' ' pen.'\n\n'This is a pen.'\n\n\n\n'This is'+' a'+' pen.'\n\n'This is a pen.'\n\n\n\nmy_s[1:4]\n\n'bcd'\n\n\n\ntmp=\"{} is {}\"\ntmp.format('This', 'a pen')\n\n'This is a pen'"
+  },
+  {
+    "objectID": "posts/basic/index.html#参考文献",
+    "href": "posts/basic/index.html#参考文献",
+    "title": "Python基本",
+    "section": "5 参考文献",
+    "text": "5 参考文献\nゼロからはじめるデータサイエンス入門"
+  },
+  {
+    "objectID": "posts/basic/index.html#python-version",
+    "href": "posts/basic/index.html#python-version",
+    "title": "Python基本",
+    "section": "6 Python version",
+    "text": "6 Python version\n\nimport platform\n\"Python version \"+platform.python_version()\n\n'Python version 3.10.7'"
   }
 ]

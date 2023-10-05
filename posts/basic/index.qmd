@@ -1,0 +1,90 @@
+---
+title: "Python基本"
+author: "Nobukuni Hyakutake"
+date: "2023-10-06"
+date-format: "iso"
+categories: [Python]
+image: "mountain.jpeg"
+---
+
+## 数の入力
+
+```{python}
+0x10
+```
+
+```{python}
+1.23e5
+```
+
+## 簡単な計算
+
+```{python}
+2*3
+```
+
+```{python}
+10/3
+```
+
+```{python}
+10//3
+```
+
+
+```{python}
+10%3
+```
+
+## 変数
+
+```{python}
+x=2
+y=3
+x*y
+```
+
+```{python}
+x,y=20,30
+x*y
+```
+
+```{python}
+x=1+1
+x
+```
+
+## 文字列
+
+```{python}
+my_s='abcde'
+len(my_s)
+```
+
+```{python}
+'This is' ' a' ' pen.'
+```
+
+```{python}
+'This is'+' a'+' pen.'
+```
+
+```{python}
+my_s[1:4]
+```
+
+```{python}
+tmp="{} is {}"
+tmp.format('This', 'a pen')
+```
+
+## 参考文献
+
+[ゼロからはじめるデータサイエンス入門](https://www.kspub.co.jp/book/detail/5132326.html)
+
+## Python version
+
+```{python}
+import platform
+"Python version "+platform.python_version()
+```
