@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Top",
     "section": "",
-    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-10-06\n\n\nPython基本\n\n\nPython\n\n\n\n\n\n\n\n2023-02-23\n\n\n相関係数\n\n\nR\n\n\n\n\n\n\n\n2023-02-22\n\n\nグラフ\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
+    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-10-08\n\n\n散布図と周辺分布\n\n\nR\n\n\n\n\n\n\n\n2023-10-06\n\n\nPython基本\n\n\nPython\n\n\n\n\n\n\n\n2023-02-23\n\n\n相関係数\n\n\nR\n\n\n\n\n\n\n\n2023-02-22\n\n\nグラフ\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -488,5 +488,33 @@
     "title": "Python基本",
     "section": "6 Python version",
     "text": "6 Python version\n\nimport platform\n\"Python version \"+platform.python_version()\n\n'Python version 3.10.7'"
+  },
+  {
+    "objectID": "posts/joint_distribution/index.html#ggextraパッケージを用いる方法",
+    "href": "posts/joint_distribution/index.html#ggextraパッケージを用いる方法",
+    "title": "散布図と周辺分布",
+    "section": "1 ggExtraパッケージを用いる方法",
+    "text": "1 ggExtraパッケージを用いる方法\n\nlibrary(ggplot2)\nlibrary(ggExtra)\ndata(\"iris\")\n\ng &lt;- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species))\ng &lt;- g + geom_point()\nggMarginal(\n  g,\n  type = \"density\",\n  margins = \"both\",\n  size = 5,\n  groupColour = TRUE,\n  groupFill = TRUE\n)"
+  },
+  {
+    "objectID": "posts/joint_distribution/index.html#参考サイト",
+    "href": "posts/joint_distribution/index.html#参考サイト",
+    "title": "散布図と周辺分布",
+    "section": "2 参考サイト",
+    "text": "2 参考サイト\nR ggplot2を用いて散布図と周辺分布をプロットする方法"
+  },
+  {
+    "objectID": "posts/joint_distribution/index.html#r-version",
+    "href": "posts/joint_distribution/index.html#r-version",
+    "title": "散布図と周辺分布",
+    "section": "3 R version",
+    "text": "3 R version\n\nR.version.string\n\n[1] \"R version 4.3.0 (2023-04-21)\""
+  },
+  {
+    "objectID": "posts/joint_distribution/index.html#散布図と周辺分布をプロットする方法",
+    "href": "posts/joint_distribution/index.html#散布図と周辺分布をプロットする方法",
+    "title": "散布図と周辺分布",
+    "section": "1 散布図と周辺分布をプロットする方法",
+    "text": "1 散布図と周辺分布をプロットする方法\n\nlibrary(ggplot2)\nlibrary(ggExtra)\ndata(\"iris\")\n\ng &lt;- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species))\ng &lt;- g + geom_point()\nggMarginal(\n  g,\n  type = \"density\",\n  margins = \"both\",\n  size = 5,\n  groupColour = TRUE,\n  groupFill = TRUE\n)"
   }
 ]

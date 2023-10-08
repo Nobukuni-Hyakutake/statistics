@@ -1,0 +1,16 @@
+{
+  "hash": "13e5dd4cd271c15a81ffe47dc5fd577e",
+  "result": {
+    "markdown": "---\ntitle: \"散布図と周辺分布\"\nauthor: \"Nobukuni Hyakutake\"\ndate: \"2023-10-08\"\ndate-format: \"iso\"\ncategories: [R]\nimage: \"river.jpeg\"\n---\n\n\n![](river.jpeg)\n\n## 散布図と周辺分布をプロットする方法\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ggplot2)\nlibrary(ggExtra)\ndata(\"iris\")\n\ng <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species))\ng <- g + geom_point()\nggMarginal(\n  g,\n  type = \"density\",\n  margins = \"both\",\n  size = 5,\n  groupColour = TRUE,\n  groupFill = TRUE\n)\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n\n\n## 参考サイト\n\n[R ggplot2を用いて散布図と周辺分布をプロットする方法](https://www.trifields.jp/how-to-plot-the-scatter-plot-and-marginal-distribution-using-ggplot2-in-r-2992)\n\n## R version\n\n\n::: {.cell}\n\n```{.r .cell-code}\nR.version.string\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"R version 4.3.0 (2023-04-21)\"\n```\n:::\n:::\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,40 @@
+---
+title: "散布図と周辺分布"
+author: "Nobukuni Hyakutake"
+date: "2023-10-08"
+date-format: "iso"
+categories: [R]
+image: "river.jpeg"
+---
+
+![](river.jpeg)
+
+## 散布図と周辺分布をプロットする方法
+
+```{r}
+library(ggplot2)
+library(ggExtra)
+data("iris")
+
+g <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species))
+g <- g + geom_point()
+ggMarginal(
+  g,
+  type = "density",
+  margins = "both",
+  size = 5,
+  groupColour = TRUE,
+  groupFill = TRUE
+)
+```
+
+## 参考サイト
+
+[R ggplot2を用いて散布図と周辺分布をプロットする方法](https://www.trifields.jp/how-to-plot-the-scatter-plot-and-marginal-distribution-using-ggplot2-in-r-2992)
+
+## R version
+
+```{r}
+R.version.string
+```
+
