@@ -27,7 +27,7 @@
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="bn" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0x10</span></span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>16</code></pre>
 </div>
 </div>
@@ -35,7 +35,7 @@ font-style: inherit;">0x10</span></span></code></pre></div>
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1.23e5</span></span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>123000.0</code></pre>
 </div>
 </div>
@@ -50,7 +50,7 @@ background-color: null;
 font-style: inherit;">*</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span></span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>6</code></pre>
 </div>
 </div>
@@ -62,7 +62,7 @@ background-color: null;
 font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span></span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>3.3333333333333335</code></pre>
 </div>
 </div>
@@ -74,7 +74,7 @@ background-color: null;
 font-style: inherit;">//</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span></span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>3</code></pre>
 </div>
 </div>
@@ -86,7 +86,7 @@ background-color: null;
 font-style: inherit;">%</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span></span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>1</code></pre>
 </div>
 </div>
@@ -107,7 +107,7 @@ font-style: inherit;">3</span></span>
 <span id="cb13-3">x<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">*</span>y</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="22">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>6</code></pre>
 </div>
 </div>
@@ -122,7 +122,7 @@ font-style: inherit;">30</span></span>
 <span id="cb15-2">x<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">*</span>y</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>600</code></pre>
 </div>
 </div>
@@ -137,7 +137,7 @@ font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span></span>
 <span id="cb17-2">x</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="24">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>2</code></pre>
 </div>
 </div>
@@ -153,7 +153,7 @@ font-style: inherit;">'abcde'</span></span>
 <span id="cb19-2"><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">len</span>(my_s)</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="25">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>5</code></pre>
 </div>
 </div>
@@ -165,7 +165,7 @@ background-color: null;
 font-style: inherit;">' a'</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">' pen.'</span></span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="26">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>'This is a pen.'</code></pre>
 </div>
 </div>
@@ -181,7 +181,7 @@ background-color: null;
 font-style: inherit;">+</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">' pen.'</span></span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="27">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>'This is a pen.'</code></pre>
 </div>
 </div>
@@ -191,7 +191,7 @@ background-color: null;
 font-style: inherit;">1</span>:<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">4</span>]</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="28">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>'bcd'</code></pre>
 </div>
 </div>
@@ -216,7 +216,7 @@ background-color: null;
 font-style: inherit;">'This'</span>, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'a pen'</span>)</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="29">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>'This is a pen'</code></pre>
 </div>
 </div>
@@ -236,7 +236,7 @@ background-color: null;
 font-style: inherit;">"Python version "</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span>platform.python_version()</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="30">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>'Python version 3.10.7'</code></pre>
 </div>
 </div>
