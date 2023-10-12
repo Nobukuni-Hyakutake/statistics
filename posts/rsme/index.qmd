@@ -11,9 +11,13 @@ image: "mountain3.jpeg"
 
 ## 平均二乗誤差
 
+### 定義
+
 $$
 RSME=\sqrt{\frac {\displaystyle\sum^{N}_{i=1}(予測値_i-実測値_i)^2} {N}}
 $$
+
+### Graph (plotly)
 
 ```{python}
 import numpy as np
@@ -26,12 +30,23 @@ fig=go.Figure([scatter_trace,line_trace])
 fig
 ```
 
+### Graph (matplotlib)
+
+```{python}
+import matplotlib.pyplot as plt
+fig,ax=plt.subplots()
+ax.plot(y_actual,y_predicted,'.')
+ax.plot([40,60],[40,60],'-',color="green")
+plt.show()
+```
+
+### RSME
 
 ```{python}
 from sklearn.metrics import mean_squared_error
 from math import sqrt
 rms=sqrt(mean_squared_error(y_actual,y_predicted))
-print(rms)
+print("RSME: "+str(round(rms,2)))
 ```
 
 
