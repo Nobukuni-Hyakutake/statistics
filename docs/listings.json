@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/rsme/index.html",
       "/posts/joint_distribution/index.html",
       "/posts/basic/index.html",
       "/posts/correlations/index.html",
