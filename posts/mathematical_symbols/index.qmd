@@ -1,0 +1,30 @@
+---
+title: "数式のLATEX記法"
+author: "Nobukuni Hyakutake"
+date: "2023-10-25"
+date-format: "iso"
+categories: [LATEX]
+image: "tree.jpeg"
+---
+
+![](tree.jpeg)
+
+## 数式の基本
+
+アインシュタインは$E=mc^2$と言った。
+
+```
+アインシュタインは$E=mc^2$と言った。
+```
+
+## 数式の詳細
+
+数式モードでは、次の例のように半角空白を入れても出力は変わりません。自動で出力スペース量が決まります。
+
+`a + (-b) = a- b` → $a + (-b) = a- b$
+
+`a+(-b)=a-b` → $a+(-b)=a-b$
+
+## 参考文献
+
+[LaTeX2ε 美文書作成入門 改訂第8版](https://gihyo.jp/book/2020/978-4-297-11712-2)

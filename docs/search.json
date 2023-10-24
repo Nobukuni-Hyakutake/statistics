@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Top",
     "section": "",
-    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-10-13\n\n\n平均二乗誤差\n\n\nPython\n\n\n\n\n\n\n\n2023-10-08\n\n\n散布図と周辺分布\n\n\nR\n\n\n\n\n\n\n\n2023-10-06\n\n\nPython基本\n\n\nPython\n\n\n\n\n\n\n\n2023-02-23\n\n\n相関係数\n\n\nR\n\n\n\n\n\n\n\n2023-02-22\n\n\nグラフ\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
+    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-10-25\n\n\n数式のLATEX記法\n\n\nLATEX\n\n\n\n\n\n\n\n2023-10-13\n\n\n平均二乗誤差\n\n\nPython\n\n\n\n\n\n\n\n2023-10-08\n\n\n散布図と周辺分布\n\n\nR\n\n\n\n\n\n\n\n2023-10-06\n\n\nPython基本\n\n\nPython\n\n\n\n\n\n\n\n2023-02-23\n\n\n相関係数\n\n\nR\n\n\n\n\n\n\n\n2023-02-22\n\n\nグラフ\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -537,5 +537,26 @@
     "title": "平均二乗誤差",
     "section": "3 Python version",
     "text": "3 Python version\n\nimport platform\n\"Python version \"+platform.python_version()\n\n'Python version 3.10.7'"
+  },
+  {
+    "objectID": "posts/mathematical_symbols/index.html#数式の基本",
+    "href": "posts/mathematical_symbols/index.html#数式の基本",
+    "title": "数式のLATEX記法",
+    "section": "1 数式の基本",
+    "text": "1 数式の基本\nアインシュタインは\\(E=mc^2\\)と言った。\nアインシュタインは$E=mc^2$と言った。"
+  },
+  {
+    "objectID": "posts/mathematical_symbols/index.html#数式の詳細",
+    "href": "posts/mathematical_symbols/index.html#数式の詳細",
+    "title": "数式のLATEX記法",
+    "section": "2 数式の詳細",
+    "text": "2 数式の詳細\n数式モードでは、次の例のように半角空白を入れても出力は変わりません。自動で出力スペース量が決まります。\na + (-b) = a- b → \\(a + (-b) = a- b\\)\na+(-b)=a-b → \\(a+(-b)=a-b\\)"
+  },
+  {
+    "objectID": "posts/mathematical_symbols/index.html#参考文献",
+    "href": "posts/mathematical_symbols/index.html#参考文献",
+    "title": "数式のLATEX記法",
+    "section": "3 参考文献",
+    "text": "3 参考文献\nLaTeX2ε 美文書作成入門 改訂第8版"
   }
 ]
