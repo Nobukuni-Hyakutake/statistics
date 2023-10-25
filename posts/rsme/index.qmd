@@ -1,5 +1,5 @@
 ---
-title: "平均二乗誤差"
+title: "二乗平均平方誤差"
 author: "Nobukuni Hyakutake"
 date: "2023-10-13"
 date-format: "iso"
@@ -9,7 +9,7 @@ image: "mountain3.jpeg"
 
 ![](mountain3.jpeg)
 
-## 平均二乗誤差
+## 二乗平均平方誤差
 
 ### 定義
 
@@ -52,7 +52,8 @@ print("RSME: "+str(round(rms,2)))
 
 ## 参考文献
 
-[仕事ではじめる機械学習 第2版](https://www.oreilly.co.jp//books/9784873119472/)
+- [仕事ではじめる機械学習 第2版](https://www.oreilly.co.jp//books/9784873119472/)
+- [評価指標入門 ~ データサイエンスとビジネスをつなぐ架け橋](https://gihyo.jp/book/2023/978-4-297-13314-6)
 
 ## Python version
 
