@@ -9,7 +9,7 @@
 <meta name="author" content="Nobukuni Hyakutake">
 <meta name="dcterms.date" content="2023-10-25">
 
-<title>統計学の勉強ノート - 数式のLATEX記法</title>
+<title>統計学の勉強ノート - 数式のLaTeX記法</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -154,7 +154,7 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <div class="quarto-title-block"><div><h1 class="title">数式のLATEX記法</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+      <div class="quarto-title-block"><div><h1 class="title">数式のLaTeX記法</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
                                 <div class="quarto-categories">
                 <div class="quarto-category">LATEX</div>
               </div>
@@ -198,24 +198,156 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
   <ul>
   <li><a href="#数式の基本" id="toc-数式の基本"><span class="header-section-number">1</span> 数式の基本</a></li>
   <li><a href="#数式の詳細" id="toc-数式の詳細"><span class="header-section-number">2</span> 数式の詳細</a></li>
-  <li><a href="#参考文献" id="toc-参考文献"><span class="header-section-number">3</span> 参考文献</a></li>
+  <li><a href="#ギリシャ文字" id="toc-ギリシャ文字"><span class="header-section-number">3</span> ギリシャ文字</a></li>
+  <li><a href="#記号" id="toc-記号"><span class="header-section-number">4</span> 記号</a>
+  <ul>
+  <li><a href="#キーボードで直接打ち込み可能なもの" id="toc-キーボードで直接打ち込み可能なもの"><span class="header-section-number">4.1</span> キーボードで直接打ち込み可能なもの</a></li>
+  <li><a href="#コマンドで打ち込む必要があるもの" id="toc-コマンドで打ち込む必要があるもの"><span class="header-section-number">4.2</span> コマンドで打ち込む必要があるもの</a></li>
+  </ul></li>
+  <li><a href="#参考文献" id="toc-参考文献"><span class="header-section-number">5</span> 参考文献</a></li>
   </ul>
 </nav>
 <p><img src="tree.jpeg" class="img-fluid"></p>
 <section id="数式の基本" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="数式の基本"><span class="header-section-number">1</span> 数式の基本</h2>
 <p>アインシュタインは<span class="math inline">\(E=mc^2\)</span>と言った。</p>
-<pre><code>アインシュタインは$E=mc^2$と言った。</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>アインシュタインは$E=mc^2$と言った。</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="数式の詳細" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="数式の詳細"><span class="header-section-number">2</span> 数式の詳細</h2>
 <p>数式モードでは、次の例のように半角空白を入れても出力は変わりません。自動で出力スペース量が決まります。</p>
-<p><code>a + (-b) = a- b</code> → <span class="math inline">\(a + (-b) = a- b\)</span></p>
-<p><code>a+(-b)=a-b</code> → <span class="math inline">\(a+(-b)=a-b\)</span></p>
+<p><code>$a + (-b) = a- b$</code> → <span class="math inline">\(a + (-b) = a- b\)</span></p>
+<p><code>$a+(-b)=a-b$</code> → <span class="math inline">\(a+(-b)=a-b\)</span></p>
 </section>
-<section id="参考文献" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">3</span> 参考文献</h2>
-<p><a href="https://gihyo.jp/book/2020/978-4-297-11712-2">LaTeX2ε 美文書作成入門 改訂第8版</a></p>
+<section id="ギリシャ文字" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="ギリシャ文字"><span class="header-section-number">3</span> ギリシャ文字</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>記号</th>
+<th>LaTeX</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\alpha\)</span></td>
+<td><code>$\alpha$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\beta\)</span></td>
+<td><code>$\beta$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\gamma\)</span></td>
+<td><code>$\gamma$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\delta\)</span></td>
+<td><code>$\delta$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\epsilon\)</span></td>
+<td><code>$\epsilon$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\zeta\)</span></td>
+<td><code>$\zeta$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\eta\)</span></td>
+<td><code>$\eta$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\theta\)</span></td>
+<td><code>$\theta$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\iota\)</span></td>
+<td><code>$\iota$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\kappa\)</span></td>
+<td><code>$\kappa$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\lambda\)</span></td>
+<td><code>$\lambda$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mu\)</span></td>
+<td><code>$\mu$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\nu\)</span></td>
+<td><code>$\nu$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\xi\)</span></td>
+<td><code>$\xi$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\omicron\)</span></td>
+<td><code>$\omicron$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\pi\)</span></td>
+<td><code>$\pi$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\rho\)</span></td>
+<td><code>$\rho$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\sigma\)</span></td>
+<td><code>$\sigma$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\tau\)</span></td>
+<td><code>$\tau$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\upsilon\)</span></td>
+<td><code>$\upsilon$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\phi\)</span></td>
+<td><code>$\phi$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\chi\)</span></td>
+<td><code>$\chi$</code></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\psi\)</span></td>
+<td><code>$\psi$</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\omega\)</span></td>
+<td><code>$\omega$</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="記号" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="記号"><span class="header-section-number">4</span> 記号</h2>
+<section id="キーボードで直接打ち込み可能なもの" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="キーボードで直接打ち込み可能なもの"><span class="header-section-number">4.1</span> キーボードで直接打ち込み可能なもの</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>- = ! / ( ) <span class="co">[ ]</span> &lt; &gt; | ' : *</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="コマンドで打ち込む必要があるもの" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="コマンドで打ち込む必要があるもの"><span class="header-section-number">4.2</span> コマンドで打ち込む必要があるもの</h3>
+<p>例：</p>
+<p><span class="math inline">\(\forall x \in X, \quad\exists y \leq \epsilon\)</span></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>$\forall x \in X, \quad\exists y \leq \epsilon$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="参考文献" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">5</span> 参考文献</h2>
+<ul>
+<li><a href="https://gihyo.jp/book/2020/978-4-297-11712-2">LaTeX2ε 美文書作成入門 改訂第8版</a></li>
+<li><a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">List of LaTeX mathematical symbols</a></li>
+<li><a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">LaTeX/Mathematics</a></li>
+</ul>
 
 
 <!-- -->
@@ -507,36 +639,85 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "数式のLATEX記法"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Nobukuni Hyakutake"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-10-25"</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> "iso"</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [LATEX]</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "tree.jpeg"</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="al">![](tree.jpeg)</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## 数式の基本</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>アインシュタインは$E=mc^2$と言った。</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="in">```         </span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="in">アインシュタインは$E=mc^2$と言った。</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## 数式の詳細</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>数式モードでは、次の例のように半角空白を入れても出力は変わりません。自動で出力スペース量が決まります。</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="in">`a + (-b) = a- b`</span> → $a + (-b) = a- b$</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="in">`a+(-b)=a-b`</span> → $a+(-b)=a-b$</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## 参考文献</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">LaTeX2ε 美文書作成入門 改訂第8版</span><span class="co">](https://gihyo.jp/book/2020/978-4-297-11712-2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "数式のLaTeX記法"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Nobukuni Hyakutake"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-10-25"</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> "iso"</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [LATEX]</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "tree.jpeg"</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="al">![](tree.jpeg)</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## 数式の基本</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>アインシュタインは$E=mc^2$と言った。</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>アインシュタインは$E=mc^2$と言った。</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## 数式の詳細</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>数式モードでは、次の例のように半角空白を入れても出力は変わりません。自動で出力スペース量が決まります。</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="in">`$a + (-b) = a- b$`</span> → $a + (-b) = a- b$</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="in">`$a+(-b)=a-b$`</span> → $a+(-b)=a-b$</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## ギリシャ文字</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>| 記号       | LaTeX        |</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>|------------|--------------|</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>| $\alpha$   | <span class="in">`$\alpha$`</span>   |</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>| $\beta$    | <span class="in">`$\beta$`</span>    |</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>| $\gamma$   | <span class="in">`$\gamma$`</span>   |</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>| $\delta$   | <span class="in">`$\delta$`</span>   |</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>| $\epsilon$ | <span class="in">`$\epsilon$`</span> |</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>| $\zeta$    | <span class="in">`$\zeta$`</span>    |</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>| $\eta$     | <span class="in">`$\eta$`</span>     |</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>| $\theta$   | <span class="in">`$\theta$`</span>   |</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>| $\iota$    | <span class="in">`$\iota$`</span>    |</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>| $\kappa$   | <span class="in">`$\kappa$`</span>   |</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>| $\lambda$  | <span class="in">`$\lambda$`</span>  |</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>| $\mu$      | <span class="in">`$\mu$`</span>      |</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>| $\nu$      | <span class="in">`$\nu$`</span>      |</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>| $\xi$      | <span class="in">`$\xi$`</span>      |</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>| $\omicron$ | <span class="in">`$\omicron$`</span> |</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>| $\pi$      | <span class="in">`$\pi$`</span>      |</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>| $\rho$     | <span class="in">`$\rho$`</span>     |</span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>| $\sigma$   | <span class="in">`$\sigma$`</span>   |</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>| $\tau$     | <span class="in">`$\tau$`</span>     |</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>| $\upsilon$ | <span class="in">`$\upsilon$`</span> |</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>| $\phi$     | <span class="in">`$\phi$`</span>     |</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>| $\chi$     | <span class="in">`$\chi$`</span>     |</span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>| $\psi$     | <span class="in">`$\psi$`</span>     |</span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>| $\omega$   | <span class="in">`$\omega$`</span>   |</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="fu">## 記号</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="fu">### キーボードで直接打ち込み可能なもの</span></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>- = ! / ( ) <span class="co">[ ]</span> &lt; &gt; | ' : *</span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="in">### コマンドで打ち込む必要があるもの</span></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="in">例：</span></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="in">$\forall x \in X, \quad\exists y \leq \epsilon$</span></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a><span class="in">$\forall x \in X, \quad\exists y \leq \epsilon$</span></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## 参考文献</span></span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">LaTeX2ε 美文書作成入門 改訂第8版</span><span class="co">](https://gihyo.jp/book/2020/978-4-297-11712-2)</span></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">List of LaTeX mathematical symbols</span><span class="co">](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)</span></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">LaTeX/Mathematics</span><span class="co">](https://en.wikibooks.org/wiki/LaTeX/Mathematics)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

@@ -1,5 +1,5 @@
 ---
-title: "数式のLATEX記法"
+title: "数式のLaTeX記法"
 author: "Nobukuni Hyakutake"
 date: "2023-10-25"
 date-format: "iso"
@@ -13,7 +13,7 @@ image: "tree.jpeg"
 
 アインシュタインは$E=mc^2$と言った。
 
-```
+``` markdown
 アインシュタインは$E=mc^2$と言った。
 ```
 
@@ -21,10 +21,59 @@ image: "tree.jpeg"
 
 数式モードでは、次の例のように半角空白を入れても出力は変わりません。自動で出力スペース量が決まります。
 
-`a + (-b) = a- b` → $a + (-b) = a- b$
+`$a + (-b) = a- b$` → $a + (-b) = a- b$
 
-`a+(-b)=a-b` → $a+(-b)=a-b$
+`$a+(-b)=a-b$` → $a+(-b)=a-b$
+
+## ギリシャ文字
+
+| 記号       | LaTeX        |
+|------------|--------------|
+| $\alpha$   | `$\alpha$`   |
+| $\beta$    | `$\beta$`    |
+| $\gamma$   | `$\gamma$`   |
+| $\delta$   | `$\delta$`   |
+| $\epsilon$ | `$\epsilon$` |
+| $\zeta$    | `$\zeta$`    |
+| $\eta$     | `$\eta$`     |
+| $\theta$   | `$\theta$`   |
+| $\iota$    | `$\iota$`    |
+| $\kappa$   | `$\kappa$`   |
+| $\lambda$  | `$\lambda$`  |
+| $\mu$      | `$\mu$`      |
+| $\nu$      | `$\nu$`      |
+| $\xi$      | `$\xi$`      |
+| $\omicron$ | `$\omicron$` |
+| $\pi$      | `$\pi$`      |
+| $\rho$     | `$\rho$`     |
+| $\sigma$   | `$\sigma$`   |
+| $\tau$     | `$\tau$`     |
+| $\upsilon$ | `$\upsilon$` |
+| $\phi$     | `$\phi$`     |
+| $\chi$     | `$\chi$`     |
+| $\psi$     | `$\psi$`     |
+| $\omega$   | `$\omega$`   |
+
+## 記号
+
+### キーボードで直接打ち込み可能なもの
+
+``` markdown
++ - = ! / ( ) [ ] < > | ' : *
+```
+
+### コマンドで打ち込む必要があるもの
+
+例：
+
+$\forall x \in X, \quad\exists y \leq \epsilon$
+
+``` markdown
+$\forall x \in X, \quad\exists y \leq \epsilon$
+```
 
 ## 参考文献
 
-[LaTeX2ε 美文書作成入門 改訂第8版](https://gihyo.jp/book/2020/978-4-297-11712-2)
+-   [LaTeX2ε 美文書作成入門 改訂第8版](https://gihyo.jp/book/2020/978-4-297-11712-2)
+-   [List of LaTeX mathematical symbols](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)
+-   [LaTeX/Mathematics](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
