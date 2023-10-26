@@ -1,7 +1,7 @@
 ---
 title: "数式のLaTeX記法"
 author: "Nobukuni Hyakutake"
-date: "2023-10-25"
+date: "2023-10-26"
 date-format: "iso"
 categories: [LATEX]
 image: "tree.jpeg"
@@ -11,11 +11,27 @@ image: "tree.jpeg"
 
 ## 数式の基本
 
+### インライン数式
+
 アインシュタインは$E=mc^2$と言った。
 
 ``` markdown
 アインシュタインは$E=mc^2$と言った。
 ```
+
+`$`記号でサンドイッチされた部分が数式です。`^`に続く文字が上付き文字になります。
+
+### 別行数式
+
+アインシュタインは $$E=mc^2$$ と言った。
+
+``` markdown
+アインシュタインは
+$$E=mc^2$$
+と言った。
+```
+
+のように、`$$`でサンドイッチすることで別行数式になります。
 
 ## 数式の詳細
 
@@ -71,6 +87,21 @@ $\forall x \in X, \quad\exists y \leq \epsilon$
 ``` markdown
 $\forall x \in X, \quad\exists y \leq \epsilon$
 ```
+
+## 括弧類(区切り記号)
+
+| 記号    | LaTeX     |
+|---------|-----------|
+| $(x)$   | `$(x)$`   |
+| $\{x\}$ | `$\{x\}$` |
+| $[x]$   | `$[x]$`   |
+
+次のように`\left`,`\right`を使えば、区切り記号の大きさが自動的に選ばれます。
+
+| 記号               | LaTeX                |
+|--------------------|----------------------|
+| $\left(x\right)$   | `$\left(x\right)$`   |
+| $\left(x^2\right)$ | `$\left(x^2\right)$` |
 
 ## 参考文献
 
