@@ -43,9 +43,20 @@
 <p>数式モードでは、次の例のように半角空白を入れても出力は変わりません。自動で出力スペース量が決まります。</p>
 <p><code>$a + (-b) = a- b$</code> → <img src="https://latex.codecogs.com/png.latex?a%20+%20(-b)%20=%20a-%20b"></p>
 <p><code>$a+(-b)=a-b$</code> → <img src="https://latex.codecogs.com/png.latex?a+(-b)=a-b"></p>
+<p>数式の中で改行したくない場合は<code>${a+b=c}$</code>→<img src="https://latex.codecogs.com/png.latex?%7Ba+b=c%7D">のように波括弧でグループ化します。</p>
 </section>
-<section id="ギリシャ文字" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="ギリシャ文字"><span class="header-section-number">3</span> ギリシャ文字</h2>
+<section id="上付き文字下付き文字" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="上付き文字下付き文字"><span class="header-section-number">3</span> 上付き文字、下付き文字</h2>
+<p><code>^</code>に続く文字が上付き文字になります。</p>
+<p><code>$x^4$</code>→<img src="https://latex.codecogs.com/png.latex?x%5E4"></p>
+<p>上付き文字が2桁の場合は波括弧でグループ化する必要があります。</p>
+<p><code>$x^23$</code>→<img src="https://latex.codecogs.com/png.latex?x%5E23">、<code>$x^{23}$</code>→<img src="https://latex.codecogs.com/png.latex?x%5E%7B23%7D"></p>
+<p>複雑な例</p>
+<p><code>$5^{5^{5^5}}$</code>→<img src="https://latex.codecogs.com/png.latex?5%5E%7B5%5E%7B5%5E5%7D%7D"></p>
+<p><code>$R^{\rho}{}_{\sigma\mu\nu}$</code>→<img src="https://latex.codecogs.com/png.latex?R%5E%7B%5Crho%7D%7B%7D_%7B%5Csigma%5Cmu%5Cnu%7D"></p>
+</section>
+<section id="ギリシャ文字" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="ギリシャ文字"><span class="header-section-number">4</span> ギリシャ文字</h2>
 <table class="table">
 <thead>
 <tr class="header">
@@ -153,25 +164,25 @@
 </tbody>
 </table>
 </section>
-<section id="記号" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="記号"><span class="header-section-number">4</span> 記号</h2>
-<section id="キーボードで直接打ち込み可能なもの" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="キーボードで直接打ち込み可能なもの"><span class="header-section-number">4.1</span> キーボードで直接打ち込み可能なもの</h3>
+<section id="記号" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="記号"><span class="header-section-number">5</span> 記号</h2>
+<section id="キーボードで直接打ち込み可能なもの" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="キーボードで直接打ち込み可能なもの"><span class="header-section-number">5.1</span> キーボードで直接打ち込み可能なもの</h3>
 <div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">+ </span>- = ! / ( ) <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">[ ]</span> &lt; &gt; | ' : *</span></code></pre></div>
 </section>
-<section id="コマンドで打ち込む必要があるもの" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="コマンドで打ち込む必要があるもの"><span class="header-section-number">4.2</span> コマンドで打ち込む必要があるもの</h3>
+<section id="コマンドで打ち込む必要があるもの" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="コマンドで打ち込む必要があるもの"><span class="header-section-number">5.2</span> コマンドで打ち込む必要があるもの</h3>
 <p>例：</p>
 <p><img src="https://latex.codecogs.com/png.latex?%5Cforall%20x%20%5Cin%20X,%20%5Cquad%5Cexists%20y%20%5Cleq%20%5Cepsilon"></p>
 <div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1">$\forall x \in X, \quad\exists y \leq \epsilon$</span></code></pre></div>
 </section>
 </section>
-<section id="括弧類区切り記号" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="括弧類区切り記号"><span class="header-section-number">5</span> 括弧類(区切り記号)</h2>
+<section id="括弧類区切り記号" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="括弧類区切り記号"><span class="header-section-number">6</span> 括弧類(区切り記号)</h2>
 <table class="table">
 <thead>
 <tr class="header">
@@ -214,8 +225,8 @@ font-style: inherit;">[ ]</span> &lt; &gt; | ' : *</span></code></pre></div>
 </tbody>
 </table>
 </section>
-<section id="参考文献" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">6</span> 参考文献</h2>
+<section id="参考文献" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">7</span> 参考文献</h2>
 <ul>
 <li><a href="https://gihyo.jp/book/2020/978-4-297-11712-2">LaTeX2ε 美文書作成入門 改訂第8版</a></li>
 <li><a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">List of LaTeX mathematical symbols</a></li>

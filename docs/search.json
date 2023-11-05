@@ -550,28 +550,28 @@
     "href": "posts/mathematical_symbols/index.html#数式の詳細",
     "title": "数式のLaTeX記法",
     "section": "2 数式の詳細",
-    "text": "2 数式の詳細\n数式モードでは、次の例のように半角空白を入れても出力は変わりません。自動で出力スペース量が決まります。\n$a + (-b) = a- b$ → \\(a + (-b) = a- b\\)\n$a+(-b)=a-b$ → \\(a+(-b)=a-b\\)"
+    "text": "2 数式の詳細\n数式モードでは、次の例のように半角空白を入れても出力は変わりません。自動で出力スペース量が決まります。\n$a + (-b) = a- b$ → \\(a + (-b) = a- b\\)\n$a+(-b)=a-b$ → \\(a+(-b)=a-b\\)\n数式の中で改行したくない場合は${a+b=c}$→\\({a+b=c}\\)のように波括弧でグループ化します。"
   },
   {
     "objectID": "posts/mathematical_symbols/index.html#参考文献",
     "href": "posts/mathematical_symbols/index.html#参考文献",
     "title": "数式のLaTeX記法",
-    "section": "6 参考文献",
-    "text": "6 参考文献\n\nLaTeX2ε 美文書作成入門 改訂第8版\nList of LaTeX mathematical symbols\nLaTeX/Mathematics"
+    "section": "7 参考文献",
+    "text": "7 参考文献\n\nLaTeX2ε 美文書作成入門 改訂第8版\nList of LaTeX mathematical symbols\nLaTeX/Mathematics"
   },
   {
     "objectID": "posts/mathematical_symbols/index.html#ギリシャ文字",
     "href": "posts/mathematical_symbols/index.html#ギリシャ文字",
     "title": "数式のLaTeX記法",
-    "section": "3 ギリシャ文字",
-    "text": "3 ギリシャ文字\n\n\n\n記号\nLaTeX\n\n\n\n\n\\(\\alpha\\)\n$\\alpha$\n\n\n\\(\\beta\\)\n$\\beta$\n\n\n\\(\\gamma\\)\n$\\gamma$\n\n\n\\(\\delta\\)\n$\\delta$\n\n\n\\(\\epsilon\\)\n$\\epsilon$\n\n\n\\(\\zeta\\)\n$\\zeta$\n\n\n\\(\\eta\\)\n$\\eta$\n\n\n\\(\\theta\\)\n$\\theta$\n\n\n\\(\\iota\\)\n$\\iota$\n\n\n\\(\\kappa\\)\n$\\kappa$\n\n\n\\(\\lambda\\)\n$\\lambda$\n\n\n\\(\\mu\\)\n$\\mu$\n\n\n\\(\\nu\\)\n$\\nu$\n\n\n\\(\\xi\\)\n$\\xi$\n\n\n\\(\\omicron\\)\n$\\omicron$\n\n\n\\(\\pi\\)\n$\\pi$\n\n\n\\(\\rho\\)\n$\\rho$\n\n\n\\(\\sigma\\)\n$\\sigma$\n\n\n\\(\\tau\\)\n$\\tau$\n\n\n\\(\\upsilon\\)\n$\\upsilon$\n\n\n\\(\\phi\\)\n$\\phi$\n\n\n\\(\\chi\\)\n$\\chi$\n\n\n\\(\\psi\\)\n$\\psi$\n\n\n\\(\\omega\\)\n$\\omega$"
+    "section": "4 ギリシャ文字",
+    "text": "4 ギリシャ文字\n\n\n\n記号\nLaTeX\n\n\n\n\n\\(\\alpha\\)\n$\\alpha$\n\n\n\\(\\beta\\)\n$\\beta$\n\n\n\\(\\gamma\\)\n$\\gamma$\n\n\n\\(\\delta\\)\n$\\delta$\n\n\n\\(\\epsilon\\)\n$\\epsilon$\n\n\n\\(\\zeta\\)\n$\\zeta$\n\n\n\\(\\eta\\)\n$\\eta$\n\n\n\\(\\theta\\)\n$\\theta$\n\n\n\\(\\iota\\)\n$\\iota$\n\n\n\\(\\kappa\\)\n$\\kappa$\n\n\n\\(\\lambda\\)\n$\\lambda$\n\n\n\\(\\mu\\)\n$\\mu$\n\n\n\\(\\nu\\)\n$\\nu$\n\n\n\\(\\xi\\)\n$\\xi$\n\n\n\\(\\omicron\\)\n$\\omicron$\n\n\n\\(\\pi\\)\n$\\pi$\n\n\n\\(\\rho\\)\n$\\rho$\n\n\n\\(\\sigma\\)\n$\\sigma$\n\n\n\\(\\tau\\)\n$\\tau$\n\n\n\\(\\upsilon\\)\n$\\upsilon$\n\n\n\\(\\phi\\)\n$\\phi$\n\n\n\\(\\chi\\)\n$\\chi$\n\n\n\\(\\psi\\)\n$\\psi$\n\n\n\\(\\omega\\)\n$\\omega$"
   },
   {
     "objectID": "posts/mathematical_symbols/index.html#記号",
     "href": "posts/mathematical_symbols/index.html#記号",
     "title": "数式のLaTeX記法",
-    "section": "4 記号",
-    "text": "4 記号\n\n4.1 キーボードで直接打ち込み可能なもの\n+ - = ! / ( ) [ ] &lt; &gt; | ' : *\n\n\n4.2 コマンドで打ち込む必要があるもの\n例：\n\\(\\forall x \\in X, \\quad\\exists y \\leq \\epsilon\\)\n$\\forall x \\in X, \\quad\\exists y \\leq \\epsilon$"
+    "section": "5 記号",
+    "text": "5 記号\n\n5.1 キーボードで直接打ち込み可能なもの\n+ - = ! / ( ) [ ] &lt; &gt; | ' : *\n\n\n5.2 コマンドで打ち込む必要があるもの\n例：\n\\(\\forall x \\in X, \\quad\\exists y \\leq \\epsilon\\)\n$\\forall x \\in X, \\quad\\exists y \\leq \\epsilon$"
   },
   {
     "objectID": "posts/rsme/index.html#二乗平均平方誤差",
@@ -584,8 +584,8 @@
     "objectID": "posts/mathematical_symbols/index.html#括弧類区切り記号",
     "href": "posts/mathematical_symbols/index.html#括弧類区切り記号",
     "title": "数式のLaTeX記法",
-    "section": "5 括弧類(区切り記号)",
-    "text": "5 括弧類(区切り記号)\n\n\n\n記号\nLaTeX\n\n\n\n\n\\((x)\\)\n$(x)$\n\n\n\\(\\{x\\}\\)\n$\\{x\\}$\n\n\n\\([x]\\)\n$[x]$\n\n\n\n次のように\\left,\\rightを使えば、区切り記号の大きさが自動的に選ばれます。\n\n\n\n記号\nLaTeX\n\n\n\n\n\\(\\left(x\\right)\\)\n$\\left(x\\right)$\n\n\n\\(\\left(x^2\\right)\\)\n$\\left(x^2\\right)$"
+    "section": "6 括弧類(区切り記号)",
+    "text": "6 括弧類(区切り記号)\n\n\n\n記号\nLaTeX\n\n\n\n\n\\((x)\\)\n$(x)$\n\n\n\\(\\{x\\}\\)\n$\\{x\\}$\n\n\n\\([x]\\)\n$[x]$\n\n\n\n次のように\\left,\\rightを使えば、区切り記号の大きさが自動的に選ばれます。\n\n\n\n記号\nLaTeX\n\n\n\n\n\\(\\left(x\\right)\\)\n$\\left(x\\right)$\n\n\n\\(\\left(x^2\\right)\\)\n$\\left(x^2\\right)$"
   },
   {
     "objectID": "posts/rmse/index.html#二乗平均平方誤差",
@@ -607,5 +607,12 @@
     "title": "二乗平均平方誤差",
     "section": "3 Python version",
     "text": "3 Python version\n\nimport platform\n\"Python version \"+platform.python_version()\n\n'Python version 3.10.7'"
+  },
+  {
+    "objectID": "posts/mathematical_symbols/index.html#上付き文字下付き文字",
+    "href": "posts/mathematical_symbols/index.html#上付き文字下付き文字",
+    "title": "数式のLaTeX記法",
+    "section": "3 上付き文字、下付き文字",
+    "text": "3 上付き文字、下付き文字\n^に続く文字が上付き文字になります。\n$x^4$→\\(x^4\\)\n上付き文字が2桁の場合は波括弧でグループ化する必要があります。\n$x^23$→\\(x^23\\)、$x^{23}$→\\(x^{23}\\)\n複雑な例\n$5^{5^{5^5}}$→\\(5^{5^{5^5}}\\)\n$R^{\\rho}{}_{\\sigma\\mu\\nu}$→\\(R^{\\rho}{}_{\\sigma\\mu\\nu}\\)"
   }
 ]

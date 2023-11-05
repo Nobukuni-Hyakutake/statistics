@@ -202,14 +202,15 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
   <li><a href="#別行数式" id="toc-別行数式"><span class="header-section-number">1.2</span> 別行数式</a></li>
   </ul></li>
   <li><a href="#数式の詳細" id="toc-数式の詳細"><span class="header-section-number">2</span> 数式の詳細</a></li>
-  <li><a href="#ギリシャ文字" id="toc-ギリシャ文字"><span class="header-section-number">3</span> ギリシャ文字</a></li>
-  <li><a href="#記号" id="toc-記号"><span class="header-section-number">4</span> 記号</a>
+  <li><a href="#上付き文字下付き文字" id="toc-上付き文字下付き文字"><span class="header-section-number">3</span> 上付き文字、下付き文字</a></li>
+  <li><a href="#ギリシャ文字" id="toc-ギリシャ文字"><span class="header-section-number">4</span> ギリシャ文字</a></li>
+  <li><a href="#記号" id="toc-記号"><span class="header-section-number">5</span> 記号</a>
   <ul>
-  <li><a href="#キーボードで直接打ち込み可能なもの" id="toc-キーボードで直接打ち込み可能なもの"><span class="header-section-number">4.1</span> キーボードで直接打ち込み可能なもの</a></li>
-  <li><a href="#コマンドで打ち込む必要があるもの" id="toc-コマンドで打ち込む必要があるもの"><span class="header-section-number">4.2</span> コマンドで打ち込む必要があるもの</a></li>
+  <li><a href="#キーボードで直接打ち込み可能なもの" id="toc-キーボードで直接打ち込み可能なもの"><span class="header-section-number">5.1</span> キーボードで直接打ち込み可能なもの</a></li>
+  <li><a href="#コマンドで打ち込む必要があるもの" id="toc-コマンドで打ち込む必要があるもの"><span class="header-section-number">5.2</span> コマンドで打ち込む必要があるもの</a></li>
   </ul></li>
-  <li><a href="#括弧類区切り記号" id="toc-括弧類区切り記号"><span class="header-section-number">5</span> 括弧類(区切り記号)</a></li>
-  <li><a href="#参考文献" id="toc-参考文献"><span class="header-section-number">6</span> 参考文献</a></li>
+  <li><a href="#括弧類区切り記号" id="toc-括弧類区切り記号"><span class="header-section-number">6</span> 括弧類(区切り記号)</a></li>
+  <li><a href="#参考文献" id="toc-参考文献"><span class="header-section-number">7</span> 参考文献</a></li>
   </ul>
 </nav>
 <p><img src="tree.jpeg" class="img-fluid"></p>
@@ -235,9 +236,20 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 <p>数式モードでは、次の例のように半角空白を入れても出力は変わりません。自動で出力スペース量が決まります。</p>
 <p><code>$a + (-b) = a- b$</code> → <span class="math inline">\(a + (-b) = a- b\)</span></p>
 <p><code>$a+(-b)=a-b$</code> → <span class="math inline">\(a+(-b)=a-b\)</span></p>
+<p>数式の中で改行したくない場合は<code>${a+b=c}$</code>→<span class="math inline">\({a+b=c}\)</span>のように波括弧でグループ化します。</p>
 </section>
-<section id="ギリシャ文字" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="ギリシャ文字"><span class="header-section-number">3</span> ギリシャ文字</h2>
+<section id="上付き文字下付き文字" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="上付き文字下付き文字"><span class="header-section-number">3</span> 上付き文字、下付き文字</h2>
+<p><code>^</code>に続く文字が上付き文字になります。</p>
+<p><code>$x^4$</code>→<span class="math inline">\(x^4\)</span></p>
+<p>上付き文字が2桁の場合は波括弧でグループ化する必要があります。</p>
+<p><code>$x^23$</code>→<span class="math inline">\(x^23\)</span>、<code>$x^{23}$</code>→<span class="math inline">\(x^{23}\)</span></p>
+<p>複雑な例</p>
+<p><code>$5^{5^{5^5}}$</code>→<span class="math inline">\(5^{5^{5^5}}\)</span></p>
+<p><code>$R^{\rho}{}_{\sigma\mu\nu}$</code>→<span class="math inline">\(R^{\rho}{}_{\sigma\mu\nu}\)</span></p>
+</section>
+<section id="ギリシャ文字" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="ギリシャ文字"><span class="header-section-number">4</span> ギリシャ文字</h2>
 <table class="table">
 <thead>
 <tr class="header">
@@ -345,21 +357,21 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 </tbody>
 </table>
 </section>
-<section id="記号" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="記号"><span class="header-section-number">4</span> 記号</h2>
-<section id="キーボードで直接打ち込み可能なもの" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="キーボードで直接打ち込み可能なもの"><span class="header-section-number">4.1</span> キーボードで直接打ち込み可能なもの</h3>
+<section id="記号" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="記号"><span class="header-section-number">5</span> 記号</h2>
+<section id="キーボードで直接打ち込み可能なもの" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="キーボードで直接打ち込み可能なもの"><span class="header-section-number">5.1</span> キーボードで直接打ち込み可能なもの</h3>
 <div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>- = ! / ( ) <span class="co">[ ]</span> &lt; &gt; | ' : *</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="コマンドで打ち込む必要があるもの" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="コマンドで打ち込む必要があるもの"><span class="header-section-number">4.2</span> コマンドで打ち込む必要があるもの</h3>
+<section id="コマンドで打ち込む必要があるもの" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="コマンドで打ち込む必要があるもの"><span class="header-section-number">5.2</span> コマンドで打ち込む必要があるもの</h3>
 <p>例：</p>
 <p><span class="math inline">\(\forall x \in X, \quad\exists y \leq \epsilon\)</span></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>$\forall x \in X, \quad\exists y \leq \epsilon$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="括弧類区切り記号" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="括弧類区切り記号"><span class="header-section-number">5</span> 括弧類(区切り記号)</h2>
+<section id="括弧類区切り記号" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="括弧類区切り記号"><span class="header-section-number">6</span> 括弧類(区切り記号)</h2>
 <table class="table">
 <thead>
 <tr class="header">
@@ -402,8 +414,8 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 </tbody>
 </table>
 </section>
-<section id="参考文献" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">6</span> 参考文献</h2>
+<section id="参考文献" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">7</span> 参考文献</h2>
 <ul>
 <li><a href="https://gihyo.jp/book/2020/978-4-297-11712-2">LaTeX2ε 美文書作成入門 改訂第8版</a></li>
 <li><a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">List of LaTeX mathematical symbols</a></li>
@@ -743,73 +755,91 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="in">`$a+(-b)=a-b$`</span> → $a+(-b)=a-b$</span>
 <span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a><span class="fu">## ギリシャ文字</span></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>数式の中で改行したくない場合は<span class="in">`${a+b=c}$`</span>→${a+b=c}$のように波括弧でグループ化します。</span>
 <span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>| 記号       | LaTeX        |</span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>|------------|--------------|</span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>| $\alpha$   | <span class="in">`$\alpha$`</span>   |</span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>| $\beta$    | <span class="in">`$\beta$`</span>    |</span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>| $\gamma$   | <span class="in">`$\gamma$`</span>   |</span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>| $\delta$   | <span class="in">`$\delta$`</span>   |</span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>| $\epsilon$ | <span class="in">`$\epsilon$`</span> |</span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>| $\zeta$    | <span class="in">`$\zeta$`</span>    |</span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>| $\eta$     | <span class="in">`$\eta$`</span>     |</span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>| $\theta$   | <span class="in">`$\theta$`</span>   |</span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>| $\iota$    | <span class="in">`$\iota$`</span>    |</span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>| $\kappa$   | <span class="in">`$\kappa$`</span>   |</span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>| $\lambda$  | <span class="in">`$\lambda$`</span>  |</span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>| $\mu$      | <span class="in">`$\mu$`</span>      |</span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>| $\nu$      | <span class="in">`$\nu$`</span>      |</span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>| $\xi$      | <span class="in">`$\xi$`</span>      |</span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>| $\omicron$ | <span class="in">`$\omicron$`</span> |</span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>| $\pi$      | <span class="in">`$\pi$`</span>      |</span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>| $\rho$     | <span class="in">`$\rho$`</span>     |</span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>| $\sigma$   | <span class="in">`$\sigma$`</span>   |</span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>| $\tau$     | <span class="in">`$\tau$`</span>     |</span>
-<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>| $\upsilon$ | <span class="in">`$\upsilon$`</span> |</span>
-<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>| $\phi$     | <span class="in">`$\phi$`</span>     |</span>
-<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>| $\chi$     | <span class="in">`$\chi$`</span>     |</span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>| $\psi$     | <span class="in">`$\psi$`</span>     |</span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>| $\omega$   | <span class="in">`$\omega$`</span>   |</span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a><span class="fu">## 記号</span></span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a><span class="fu">### キーボードで直接打ち込み可能なもの</span></span>
-<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>- = ! / ( ) <span class="co">[ ]</span> &lt; &gt; | ' : *</span>
-<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a><span class="in">### コマンドで打ち込む必要があるもの</span></span>
-<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a><span class="in">例：</span></span>
-<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a><span class="in">$\forall x \in X, \quad\exists y \leq \epsilon$</span></span>
-<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
-<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a><span class="in">$\forall x \in X, \quad\exists y \leq \epsilon$</span></span>
-<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## 上付き文字、下付き文字</span></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a><span class="in">`^`</span>に続く文字が上付き文字になります。</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="in">`$x^4$`</span>→$x^4$</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>上付き文字が2桁の場合は波括弧でグループ化する必要があります。</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="in">`$x^23$`</span>→$x^23$、<span class="in">`$x^{23}$`</span>→$x^{23}$</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>複雑な例</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a><span class="in">`$5^{5^{5^5}}$`</span>→$5^{5^{5^5}}$</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a><span class="in">`$R^{\rho}{}_{\sigma\mu\nu}$`</span>→$R^{\rho}{}_{\sigma\mu\nu}$</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## ギリシャ文字</span></span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>| 記号       | LaTeX        |</span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>|------------|--------------|</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>| $\alpha$   | <span class="in">`$\alpha$`</span>   |</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>| $\beta$    | <span class="in">`$\beta$`</span>    |</span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>| $\gamma$   | <span class="in">`$\gamma$`</span>   |</span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>| $\delta$   | <span class="in">`$\delta$`</span>   |</span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>| $\epsilon$ | <span class="in">`$\epsilon$`</span> |</span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>| $\zeta$    | <span class="in">`$\zeta$`</span>    |</span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>| $\eta$     | <span class="in">`$\eta$`</span>     |</span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>| $\theta$   | <span class="in">`$\theta$`</span>   |</span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>| $\iota$    | <span class="in">`$\iota$`</span>    |</span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>| $\kappa$   | <span class="in">`$\kappa$`</span>   |</span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>| $\lambda$  | <span class="in">`$\lambda$`</span>  |</span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>| $\mu$      | <span class="in">`$\mu$`</span>      |</span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>| $\nu$      | <span class="in">`$\nu$`</span>      |</span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>| $\xi$      | <span class="in">`$\xi$`</span>      |</span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>| $\omicron$ | <span class="in">`$\omicron$`</span> |</span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>| $\pi$      | <span class="in">`$\pi$`</span>      |</span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>| $\rho$     | <span class="in">`$\rho$`</span>     |</span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>| $\sigma$   | <span class="in">`$\sigma$`</span>   |</span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>| $\tau$     | <span class="in">`$\tau$`</span>     |</span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>| $\upsilon$ | <span class="in">`$\upsilon$`</span> |</span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>| $\phi$     | <span class="in">`$\phi$`</span>     |</span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>| $\chi$     | <span class="in">`$\chi$`</span>     |</span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a>| $\psi$     | <span class="in">`$\psi$`</span>     |</span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>| $\omega$   | <span class="in">`$\omega$`</span>   |</span>
 <span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a><span class="fu">## 括弧類(区切り記号)</span></span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a><span class="fu">## 記号</span></span>
 <span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a>| 記号    | LaTeX     |</span>
-<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a>|---------|-----------|</span>
-<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a>| $(x)$   | <span class="in">`$(x)$`</span>   |</span>
-<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a>| $<span class="sc">\{</span>x<span class="sc">\}</span>$ | <span class="in">`$\{x\}$`</span> |</span>
-<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a>| $<span class="co">[</span><span class="ot">x</span><span class="co">]</span>$   | <span class="in">`$[x]$`</span>   |</span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a><span class="fu">### キーボードで直接打ち込み可能なもの</span></span>
+<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>- = ! / ( ) <span class="co">[ ]</span> &lt; &gt; | ' : *</span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a>次のように<span class="in">`\left`</span>,<span class="in">`\right`</span>を使えば、区切り記号の大きさが自動的に選ばれます。</span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a><span class="in">### コマンドで打ち込む必要があるもの</span></span>
 <span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a>| 記号               | LaTeX                |</span>
-<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a>|--------------------|----------------------|</span>
-<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a>| $\left(x\right)$   | <span class="in">`$\left(x\right)$`</span>   |</span>
-<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a>| $\left(x^2\right)$ | <span class="in">`$\left(x^2\right)$`</span> |</span>
-<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a><span class="fu">## 参考文献</span></span>
-<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">LaTeX2ε 美文書作成入門 改訂第8版</span><span class="co">](https://gihyo.jp/book/2020/978-4-297-11712-2)</span></span>
-<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">List of LaTeX mathematical symbols</span><span class="co">](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)</span></span>
-<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">LaTeX/Mathematics</span><span class="co">](https://en.wikibooks.org/wiki/LaTeX/Mathematics)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a><span class="in">例：</span></span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a><span class="in">$\forall x \in X, \quad\exists y \leq \epsilon$</span></span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a><span class="in">``` markdown</span></span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a><span class="in">$\forall x \in X, \quad\exists y \leq \epsilon$</span></span>
+<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a><span class="fu">## 括弧類(区切り記号)</span></span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a>| 記号    | LaTeX     |</span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a>|---------|-----------|</span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a>| $(x)$   | <span class="in">`$(x)$`</span>   |</span>
+<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a>| $<span class="sc">\{</span>x<span class="sc">\}</span>$ | <span class="in">`$\{x\}$`</span> |</span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a>| $<span class="co">[</span><span class="ot">x</span><span class="co">]</span>$   | <span class="in">`$[x]$`</span>   |</span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a>次のように<span class="in">`\left`</span>,<span class="in">`\right`</span>を使えば、区切り記号の大きさが自動的に選ばれます。</span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a>| 記号               | LaTeX                |</span>
+<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a>|--------------------|----------------------|</span>
+<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a>| $\left(x\right)$   | <span class="in">`$\left(x\right)$`</span>   |</span>
+<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a>| $\left(x^2\right)$ | <span class="in">`$\left(x^2\right)$`</span> |</span>
+<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a><span class="fu">## 参考文献</span></span>
+<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">LaTeX2ε 美文書作成入門 改訂第8版</span><span class="co">](https://gihyo.jp/book/2020/978-4-297-11712-2)</span></span>
+<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">List of LaTeX mathematical symbols</span><span class="co">](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)</span></span>
+<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">LaTeX/Mathematics</span><span class="co">](https://en.wikibooks.org/wiki/LaTeX/Mathematics)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
