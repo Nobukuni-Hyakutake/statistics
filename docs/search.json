@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Top",
     "section": "",
-    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-10-26\n\n\n数式のLaTeX記法\n\n\nLATEX\n\n\n\n\n\n\n\n2023-10-13\n\n\n二乗平均平方誤差\n\n\nPython\n\n\n\n\n\n\n\n2023-10-08\n\n\n散布図と周辺分布\n\n\nR\n\n\n\n\n\n\n\n2023-10-06\n\n\nPython基本\n\n\nPython\n\n\n\n\n\n\n\n2023-02-23\n\n\n相関係数\n\n\nR\n\n\n\n\n\n\n\n2023-02-22\n\n\nグラフ\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
+    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-11-08\n\n\nサンプルサイズ\n\n\nR\n\n\n\n\n\n\n\n2023-10-26\n\n\n数式のLaTeX記法\n\n\nLATEX\n\n\n\n\n\n\n\n2023-10-13\n\n\n二乗平均平方誤差\n\n\nPython\n\n\n\n\n\n\n\n2023-10-08\n\n\n散布図と周辺分布\n\n\nR\n\n\n\n\n\n\n\n2023-10-06\n\n\nPython基本\n\n\nPython\n\n\n\n\n\n\n\n2023-02-23\n\n\n相関係数\n\n\nR\n\n\n\n\n\n\n\n2023-02-22\n\n\nグラフ\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -614,5 +614,26 @@
     "title": "数式のLaTeX記法",
     "section": "3 上付き文字、下付き文字",
     "text": "3 上付き文字、下付き文字\n^に続く文字が上付き文字になります。\n$x^4$→\\(x^4\\)\n上付き文字が2桁の場合は波括弧でグループ化する必要があります。\n$x^23$→\\(x^23\\)、$x^{23}$→\\(x^{23}\\)\n複雑な例\n$5^{5^{5^5}}$→\\(5^{5^{5^5}}\\)\n$R^{\\rho}{}_{\\sigma\\mu\\nu}$→\\(R^{\\rho}{}_{\\sigma\\mu\\nu}\\)"
+  },
+  {
+    "objectID": "posts/sample_size/index.html#power.prop.testの使い方",
+    "href": "posts/sample_size/index.html#power.prop.testの使い方",
+    "title": "サンプルサイズ",
+    "section": "1 power.prop.testの使い方",
+    "text": "1 power.prop.testの使い方\n\n1.1 第一群の母比率𝑝1=100E-6、第二群の母比率𝑝2=500E-6、第一の過誤𝛼=0.05のときの母比率の差の検定の検出力\nここでは、0.8の検出力に線を引く。\n\nIt is proposed here as a convention that, when the investigator has no other basis for setting the desired power value, the value .80 be used.\n\n出典: Statistical Power Analysis for the Behavioral Sciences Second Edition\n\nn &lt;- seq(1,1E5,1000)\nalpha &lt;- 0.05\np1 &lt;- 100E-6\np2 &lt;- 500E-6\n \npower &lt;- power.prop.test(n = n, p1 = p1, p2 = p2, sig.level = alpha)\nplot(power$n,power$power)\nabline(h=0.8)\n\n\n\n\n\n\n1.2 第一群の母比率𝑝1=100E-6、第二群の母比率𝑝2=10000E-6、第一の過誤𝛼=0.05のときの母比率の差の検定の検出力\n\nn &lt;- seq(1,1E4,100)\nalpha &lt;- 0.05\np1 &lt;- 100E-6\np2 &lt;- 10000E-6\n \npower &lt;- power.prop.test(n = n, p1 = p1, p2 = p2, sig.level = alpha)\nplot(power$n,power$power)\nabline(h=0.8)"
+  },
+  {
+    "objectID": "posts/sample_size/index.html#参考文献",
+    "href": "posts/sample_size/index.html#参考文献",
+    "title": "サンプルサイズ",
+    "section": "2 参考文献",
+    "text": "2 参考文献\n\nR言語　検出力・サンプルサイズ　t検定や母比率の検定の検出力の計算\n【pythonで統計学】統計検定のサンプルサイズを計算するサンプルコード+無料ソフトつき"
+  },
+  {
+    "objectID": "posts/sample_size/index.html#r-version",
+    "href": "posts/sample_size/index.html#r-version",
+    "title": "サンプルサイズ",
+    "section": "3 R version",
+    "text": "3 R version\n\nR.version.string\n\n[1] \"R version 4.3.0 (2023-04-21)\""
   }
 ]

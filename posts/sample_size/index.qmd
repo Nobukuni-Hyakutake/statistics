@@ -1,0 +1,56 @@
+---
+title: "サンプルサイズ"
+author: "Nobukuni Hyakutake"
+date: "2023-11-08"
+date-format: "iso"
+categories: [R]
+image: "lake.jpeg"
+---
+
+![](lake.jpeg)
+
+## power.prop.testの使い方
+
+### 第一群の母比率𝑝1=100E-6、第二群の母比率𝑝2=500E-6、第一の過誤𝛼=0.05のときの母比率の差の検定の検出力
+
+ここでは、0.8の検出力に線を引く。
+
+> It is proposed here as a convention that, when the investigator has no other basis for setting the desired power value, the value .80 be used.
+
+出典: [Statistical Power Analysis for the Behavioral Sciences Second Edition](https://www.utstat.toronto.edu/~brunner/oldclass/378f16/readings/CohenPower.pdf)
+
+```{r}
+n <- seq(1,1E5,1000)
+alpha <- 0.05
+p1 <- 100E-6
+p2 <- 500E-6
+ 
+power <- power.prop.test(n = n, p1 = p1, p2 = p2, sig.level = alpha)
+plot(power$n,power$power)
+abline(h=0.8)
+```
+
+### 第一群の母比率𝑝1=100E-6、第二群の母比率𝑝2=10000E-6、第一の過誤𝛼=0.05のときの母比率の差の検定の検出力
+
+```{r}
+n <- seq(1,1E4,100)
+alpha <- 0.05
+p1 <- 100E-6
+p2 <- 10000E-6
+ 
+power <- power.prop.test(n = n, p1 = p1, p2 = p2, sig.level = alpha)
+plot(power$n,power$power)
+abline(h=0.8)
+```
+
+
+## 参考文献
+
+- [R言語　検出力・サンプルサイズ　t検定や母比率の検定の検出力の計算](https://multivariate-statistics.com/2021/10/16/r-programming-power-sample-size/)
+- [【pythonで統計学】統計検定のサンプルサイズを計算する~サンプルコード+無料ソフトつき~](https://python-man.club/sample_size/)
+
+## R version
+
+```{r}
+R.version.string
+```

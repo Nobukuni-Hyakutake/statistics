@@ -1,0 +1,16 @@
+{
+  "hash": "d3a2acb901dd3b6008176fc68f7e40f5",
+  "result": {
+    "markdown": "---\ntitle: \"サンプルサイズ\"\nauthor: \"Nobukuni Hyakutake\"\ndate: \"2023-11-08\"\ndate-format: \"iso\"\ncategories: [R]\nimage: \"lake.jpeg\"\n---\n\n\n![](lake.jpeg)\n\n## power.prop.testの使い方\n\n### 第一群の母比率𝑝1=100E-6、第二群の母比率𝑝2=500E-6、第一の過誤𝛼=0.05のときの母比率の差の検定の検出力\n\nここでは、0.8の検出力に線を引く。\n\n> It is proposed here as a convention that, when the investigator has no other basis for setting the desired power value, the value .80 be used.\n\n出典: [Statistical Power Analysis for the Behavioral Sciences Second Edition](https://www.utstat.toronto.edu/~brunner/oldclass/378f16/readings/CohenPower.pdf)\n\n\n::: {.cell}\n\n```{.r .cell-code}\nn <- seq(1,1E5,1000)\nalpha <- 0.05\np1 <- 100E-6\np2 <- 500E-6\n \npower <- power.prop.test(n = n, p1 = p1, p2 = p2, sig.level = alpha)\nplot(power$n,power$power)\nabline(h=0.8)\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n\n\n### 第一群の母比率𝑝1=100E-6、第二群の母比率𝑝2=10000E-6、第一の過誤𝛼=0.05のときの母比率の差の検定の検出力\n\n\n::: {.cell}\n\n```{.r .cell-code}\nn <- seq(1,1E4,100)\nalpha <- 0.05\np1 <- 100E-6\np2 <- 10000E-6\n \npower <- power.prop.test(n = n, p1 = p1, p2 = p2, sig.level = alpha)\nplot(power$n,power$power)\nabline(h=0.8)\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n\n\n## 参考文献\n\n- [R言語　検出力・サンプルサイズ　t検定や母比率の検定の検出力の計算](https://multivariate-statistics.com/2021/10/16/r-programming-power-sample-size/)\n- [【pythonで統計学】統計検定のサンプルサイズを計算する~サンプルコード+無料ソフトつき~](https://python-man.club/sample_size/)\n\n## R version\n\n\n::: {.cell}\n\n```{.r .cell-code}\nR.version.string\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"R version 4.3.0 (2023-04-21)\"\n```\n:::\n:::",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
