@@ -598,15 +598,15 @@
     "objectID": "posts/rmse/index.html#参考文献",
     "href": "posts/rmse/index.html#参考文献",
     "title": "二乗平均平方誤差",
-    "section": "2 参考文献",
-    "text": "2 参考文献\n\n仕事ではじめる機械学習 第2版\n評価指標入門 ~ データサイエンスとビジネスをつなぐ架け橋"
+    "section": "3 参考文献",
+    "text": "3 参考文献\n\n仕事ではじめる機械学習 第2版\n評価指標入門 ~ データサイエンスとビジネスをつなぐ架け橋\n［評価関数］平均二乗パーセント誤差の平方根（RMSPE：Root Mean Squared Percentage Error）とは？"
   },
   {
     "objectID": "posts/rmse/index.html#python-version",
     "href": "posts/rmse/index.html#python-version",
     "title": "二乗平均平方誤差",
-    "section": "3 Python version",
-    "text": "3 Python version\n\nimport platform\n\"Python version \"+platform.python_version()\n\n'Python version 3.10.7'"
+    "section": "4 Python version",
+    "text": "4 Python version\n\nimport platform\n\"Python version \"+platform.python_version()\n\n'Python version 3.10.7'"
   },
   {
     "objectID": "posts/mathematical_symbols/index.html#上付き文字下付き文字",
@@ -635,5 +635,12 @@
     "title": "サンプルサイズ",
     "section": "3 R version",
     "text": "3 R version\n\nR.version.string\n\n[1] \"R version 4.3.0 (2023-04-21)\""
+  },
+  {
+    "objectID": "posts/rmse/index.html#平均二乗パーセント誤差の平方根rmsperoot-mean-squared-percentage-error",
+    "href": "posts/rmse/index.html#平均二乗パーセント誤差の平方根rmsperoot-mean-squared-percentage-error",
+    "title": "二乗平均平方誤差",
+    "section": "2 平均二乗パーセント誤差の平方根（RMSPE：Root Mean Squared Percentage Error)",
+    "text": "2 平均二乗パーセント誤差の平方根（RMSPE：Root Mean Squared Percentage Error)\n工事中です"
   }
 ]

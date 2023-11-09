@@ -49,11 +49,15 @@ rms=sqrt(mean_squared_error(y_actual,y_predicted))
 print("RSME: "+str(round(rms,2)))
 ```
 
+## 平均二乗パーセント誤差の平方根（RMSPE：Root Mean Squared Percentage Error)
+
+工事中です
 
 ## 参考文献
 
 - [仕事ではじめる機械学習 第2版](https://www.oreilly.co.jp//books/9784873119472/)
 - [評価指標入門 ~ データサイエンスとビジネスをつなぐ架け橋](https://gihyo.jp/book/2023/978-4-297-13314-6)
+- [［評価関数］平均二乗パーセント誤差の平方根（RMSPE：Root Mean Squared Percentage Error）とは？](https://atmarkit.itmedia.co.jp/ait/articles/2106/23/news031.html)
 
 ## Python version
 
