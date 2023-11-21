@@ -1,0 +1,62 @@
+---
+title: "比率の検定"
+author: "Nobukuni Hyakutake"
+date: "2023-11-22"
+date-format: "iso"
+categories: [R]
+image: "river.jpeg"
+---
+
+![](river.jpeg)
+
+## 母比率の検定
+
+### ベルヌーイ試行の場合
+
+```{r}
+samples <- sample(c(0, 1), 100, replace = TRUE) #100回のベルヌーイ試行
+sampleTable <- table(samples)
+testResult<-prop.test(sampleTable["0"],p=0.5,length(samples),correct=FALSE)
+test_p<-testResult$p.value
+testResult
+```
+
+「p-value = `r test_p` > 0.05」より有意水準0.05の下で、このベルヌーイ試行の成功確率は0.5であることがいえました。（成功と失敗の確率が異なるとはいえない）
+
+### 指定値の場合
+
+```{r}
+successes<-1 #成功回数
+prop<-0.5 #成功する確率
+size<-10 #試行回数
+testResult2<-prop.test(successes,size,p=prop)
+test_p2<-testResult2$p.value
+```
+
+
+「p-value = `r test_p2` < 0.05」より有意水準0.05の下で、このベルヌーイ試行の成功確率は0.5ではないことが言えました。
+
+
+### 指定値の場合
+
+試行回数が10未満だとWarningが出るが、計算は可能。
+
+```{r}
+successes2<-6 #成功回数
+prop2<-0.98 #成功する確率
+size2<-6 #試行回数
+testResult3<-prop.test(successes2,size2,p=prop2)
+test_p3<-testResult3$p.value
+```
+
+「p-value = `r test_p3` > 0.05」より有意水準0.05の下で、このベルヌーイ試行の成功確率は0.98であることがいえました。（成功と失敗の確率が異なるとはいえない）
+
+## 参考文献
+
+- [【R言語】母比率の検定・母比率の差の検定](https://multivariate-statistics.com/2021/08/08/r-programming-proportions-test/)
+
+## R version
+
+```{r}
+R.version.string
+```

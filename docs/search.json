@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Top",
     "section": "",
-    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-11-08\n\n\nサンプルサイズ\n\n\nR\n\n\n\n\n\n\n\n2023-10-26\n\n\n数式のLaTeX記法\n\n\nLATEX\n\n\n\n\n\n\n\n2023-10-13\n\n\n二乗平均平方誤差\n\n\nPython\n\n\n\n\n\n\n\n2023-10-08\n\n\n散布図と周辺分布\n\n\nR\n\n\n\n\n\n\n\n2023-10-06\n\n\nPython基本\n\n\nPython\n\n\n\n\n\n\n\n2023-02-23\n\n\n相関係数\n\n\nR\n\n\n\n\n\n\n\n2023-02-22\n\n\nグラフ\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
+    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-11-22\n\n\n比率の検定\n\n\nR\n\n\n\n\n\n\n\n2023-11-08\n\n\nサンプルサイズ\n\n\nR\n\n\n\n\n\n\n\n2023-10-26\n\n\n数式のLaTeX記法\n\n\nLATEX\n\n\n\n\n\n\n\n2023-10-13\n\n\n二乗平均平方誤差\n\n\nPython\n\n\n\n\n\n\n\n2023-10-08\n\n\n散布図と周辺分布\n\n\nR\n\n\n\n\n\n\n\n2023-10-06\n\n\nPython基本\n\n\nPython\n\n\n\n\n\n\n\n2023-02-23\n\n\n相関係数\n\n\nR\n\n\n\n\n\n\n\n2023-02-22\n\n\nグラフ\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -642,5 +642,26 @@
     "title": "二乗平均平方誤差",
     "section": "2 平均二乗パーセント誤差の平方根（RMSPE：Root Mean Squared Percentage Error)",
     "text": "2 平均二乗パーセント誤差の平方根（RMSPE：Root Mean Squared Percentage Error)\n工事中です"
+  },
+  {
+    "objectID": "posts/proportions_test/index.html#母比率の検定",
+    "href": "posts/proportions_test/index.html#母比率の検定",
+    "title": "比率の検定",
+    "section": "1 母比率の検定",
+    "text": "1 母比率の検定\n\n1.1 ベルヌーイ試行の場合\n\nsamples &lt;- sample(c(0, 1), 100, replace = TRUE) #100回のベルヌーイ試行\nsampleTable &lt;- table(samples)\ntestResult&lt;-prop.test(sampleTable[\"0\"],p=0.5,length(samples),correct=FALSE)\ntest_p&lt;-testResult$p.value\ntestResult\n\n\n    1-sample proportions test without continuity correction\n\ndata:  sampleTable[\"0\"] out of length(samples), null probability 0.5\nX-squared = 0.16, df = 1, p-value = 0.6892\nalternative hypothesis: true p is not equal to 0.5\n95 percent confidence interval:\n 0.3846455 0.5768342\nsample estimates:\n   p \n0.48 \n\n\n「p-value = 0.6891565 &gt; 0.05」より有意水準0.05の下で、このベルヌーイ試行の成功確率は0.5であることがいえました。（成功と失敗の確率が異なるとはいえない）\n\n\n1.2 指定値の場合\n\nsuccesses&lt;-1 #成功回数\nprop&lt;-0.5 #成功する確率\nsize&lt;-10 #試行回数\ntestResult2&lt;-prop.test(successes,size,p=prop)\ntest_p2&lt;-testResult2$p.value\n\n「p-value = 0.0268567 &lt; 0.05」より有意水準0.05の下で、このベルヌーイ試行の成功確率は0.5ではないことが言えました。\n\n\n1.3 指定値の場合\n試行回数が10未満だとWarningが出るが、計算は可能。\n\nsuccesses2&lt;-6 #成功回数\nprop2&lt;-0.98 #成功する確率\nsize2&lt;-6 #試行回数\ntestResult3&lt;-prop.test(successes2,size2,p=prop2)\ntest_p3&lt;-testResult3$p.value\n\n「p-value = 1 &gt; 0.05」より有意水準0.05の下で、このベルヌーイ試行の成功確率は0.98であることがいえました。（成功と失敗の確率が異なるとはいえない）"
+  },
+  {
+    "objectID": "posts/proportions_test/index.html#参考文献",
+    "href": "posts/proportions_test/index.html#参考文献",
+    "title": "比率の検定",
+    "section": "2 参考文献",
+    "text": "2 参考文献\n\n【R言語】母比率の検定・母比率の差の検定"
+  },
+  {
+    "objectID": "posts/proportions_test/index.html#r-version",
+    "href": "posts/proportions_test/index.html#r-version",
+    "title": "比率の検定",
+    "section": "3 R version",
+    "text": "3 R version\n\nR.version.string\n\n[1] \"R version 4.3.0 (2023-04-21)\""
   }
 ]

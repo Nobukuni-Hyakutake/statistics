@@ -1,0 +1,14 @@
+{
+  "hash": "0d9b86396e6aefbf3d17df8867a2a9a5",
+  "result": {
+    "markdown": "---\ntitle: \"比率の検定\"\nauthor: \"Nobukuni Hyakutake\"\ndate: \"2023-11-22\"\ndate-format: \"iso\"\ncategories: [R]\nimage: \"river.jpeg\"\n---\n\n\n![](river.jpeg)\n\n## 母比率の検定\n\n### ベルヌーイ試行の場合\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsamples <- sample(c(0, 1), 100, replace = TRUE) #100回のベルヌーイ試行\nsampleTable <- table(samples)\ntestResult<-prop.test(sampleTable[\"0\"],p=0.5,length(samples),correct=FALSE)\ntest_p<-testResult$p.value\ntestResult\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n\n\t1-sample proportions test without continuity correction\n\ndata:  sampleTable[\"0\"] out of length(samples), null probability 0.5\nX-squared = 0.16, df = 1, p-value = 0.6892\nalternative hypothesis: true p is not equal to 0.5\n95 percent confidence interval:\n 0.3846455 0.5768342\nsample estimates:\n   p \n0.48 \n```\n:::\n:::\n\n\n「p-value = 0.6891565 > 0.05」より有意水準0.05の下で、このベルヌーイ試行の成功確率は0.5であることがいえました。（成功と失敗の確率が異なるとはいえない）\n\n### 指定値の場合\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsuccesses<-1 #成功回数\nprop<-0.5 #成功する確率\nsize<-10 #試行回数\ntestResult2<-prop.test(successes,size,p=prop)\ntest_p2<-testResult2$p.value\n```\n:::\n\n\n\n「p-value = 0.0268567 < 0.05」より有意水準0.05の下で、このベルヌーイ試行の成功確率は0.5ではないことが言えました。\n\n\n### 指定値の場合\n\n試行回数が10未満だとWarningが出るが、計算は可能。\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsuccesses2<-6 #成功回数\nprop2<-0.98 #成功する確率\nsize2<-6 #試行回数\ntestResult3<-prop.test(successes2,size2,p=prop2)\ntest_p3<-testResult3$p.value\n```\n:::\n\n\n「p-value = 1 > 0.05」より有意水準0.05の下で、このベルヌーイ試行の成功確率は0.98であることがいえました。（成功と失敗の確率が異なるとはいえない）\n\n## 参考文献\n\n- [【R言語】母比率の検定・母比率の差の検定](https://multivariate-statistics.com/2021/08/08/r-programming-proportions-test/)\n\n## R version\n\n\n::: {.cell}\n\n```{.r .cell-code}\nR.version.string\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"R version 4.3.0 (2023-04-21)\"\n```\n:::\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
