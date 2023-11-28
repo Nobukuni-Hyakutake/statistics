@@ -1,7 +1,7 @@
 ---
 title: "数式のLaTeX記法"
 author: "Nobukuni Hyakutake"
-date: "2023-10-26"
+date: "2023-11-29"
 date-format: "iso"
 categories: [LATEX]
 image: "tree.jpeg"
@@ -61,6 +61,8 @@ $$E=mc^2$$
 
 ## ギリシャ文字
 
+### 小文字
+
 | 記号       | LaTeX        |
 |------------|--------------|
 | $\alpha$   | `$\alpha$`   |
@@ -87,6 +89,30 @@ $$E=mc^2$$
 | $\chi$     | `$\chi$`     |
 | $\psi$     | `$\psi$`     |
 | $\omega$   | `$\omega$`   |
+
+### 大文字
+
+| 記号       | LaTeX        |
+|------------|--------------|
+| $\Gamma$   | `$\Gamma$`   |
+| $\Delta$   | `$\Delta$`   |
+| $\Theta$   | `$\Theta$`   |
+| $\Lambda$  | `$\Lambda$`  |
+| $\Xi$      | `$\Xi$`      |
+| $\Pi$      | `$\Pi$`      |
+| $\Sigma$   | `$\Sigma$`   |
+| $\Upsilon$ | `$\Upsilon$` |
+| $\Phi$     | `$\Phi$`     |
+| $\Psi$     | `$\Psi$`     |
+| $\Omega$   | `$\Omega$`   |
+
+上記以外の大文字は英語のアルファベットの大文字と同じです。
+
+## 筆記体
+
+`$\mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$`
+
+→ $\mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$
 
 ## 記号
 
@@ -120,6 +146,24 @@ $\forall x \in X, \quad\exists y \leq \epsilon$
 |--------------------|----------------------|
 | $\left(x\right)$   | `$\left(x\right)$`   |
 | $\left(x^2\right)$ | `$\left(x^2\right)$` |
+
+## 2項演算子
+
+| 入力       | 出力     |
+|------------|----------|
+| `$+$`      | $+$      |
+| `$-$`      | $-$      |
+| `$\pm$`    | $\pm$    |
+| `$\mp$`    | $\mp$    |
+| `$\times$` | $\times$ |
+| `$\div$`   | $\div$   |
+| `$*$`      | $*$      |
+| `$\ast$`   | $\ast$   |
+| `$\cdot$`  | $\cdot$  |
+| `$\cap$`   | $\cap$   |
+| `$\cup$`   | $\cup$   |
+| `$\sqcap$` | $\sqcap$ |
+| `$\sqcup$` | $\sqcup$ |
 
 ## 参考文献
 

@@ -10,7 +10,371 @@
 <atom:link href="https://nobukuni-hyakutake.github.io/statistics/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.3.361</generator>
-<lastBuildDate>Tue, 21 Nov 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 28 Nov 2023 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>数式のLaTeX記法</title>
+  <dc:creator>Nobukuni Hyakutake</dc:creator>
+  <link>https://nobukuni-hyakutake.github.io/statistics/posts/mathematical_symbols/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/mathematical_symbols/tree.jpeg" class="img-fluid"></p>
+<section id="数式の基本" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="数式の基本"><span class="header-section-number">1</span> 数式の基本</h2>
+<section id="インライン数式" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="インライン数式"><span class="header-section-number">1.1</span> インライン数式</h3>
+<p>アインシュタインは<img src="https://latex.codecogs.com/png.latex?E=mc%5E2">と言った。</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1">アインシュタインは$E=mc^2$と言った。</span></code></pre></div>
+<p><code>$</code>記号でサンドイッチされた部分が数式です。<code>^</code>に続く文字が上付き文字になります。</p>
+</section>
+<section id="別行数式" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="別行数式"><span class="header-section-number">1.2</span> 別行数式</h3>
+<p>アインシュタインは <img src="https://latex.codecogs.com/png.latex?E=mc%5E2"> と言った。</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1">アインシュタインは</span>
+<span id="cb2-2">$$E=mc^2$$</span>
+<span id="cb2-3">と言った。</span></code></pre></div>
+<p>のように、<code>$$</code>でサンドイッチすることで別行数式になります。</p>
+</section>
+</section>
+<section id="数式の詳細" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="数式の詳細"><span class="header-section-number">2</span> 数式の詳細</h2>
+<p>数式モードでは、次の例のように半角空白を入れても出力は変わりません。自動で出力スペース量が決まります。</p>
+<p><code>$a + (-b) = a- b$</code> → <img src="https://latex.codecogs.com/png.latex?a%20+%20(-b)%20=%20a-%20b"></p>
+<p><code>$a+(-b)=a-b$</code> → <img src="https://latex.codecogs.com/png.latex?a+(-b)=a-b"></p>
+<p>数式の中で改行したくない場合は<code>${a+b=c}$</code>→<img src="https://latex.codecogs.com/png.latex?%7Ba+b=c%7D">のように波括弧でグループ化します。</p>
+</section>
+<section id="上付き文字下付き文字" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="上付き文字下付き文字"><span class="header-section-number">3</span> 上付き文字、下付き文字</h2>
+<p><code>^</code>に続く文字が上付き文字になります。</p>
+<p><code>$x^4$</code>→<img src="https://latex.codecogs.com/png.latex?x%5E4"></p>
+<p>上付き文字が2桁の場合は波括弧でグループ化する必要があります。</p>
+<p><code>$x^23$</code>→<img src="https://latex.codecogs.com/png.latex?x%5E23">、<code>$x^{23}$</code>→<img src="https://latex.codecogs.com/png.latex?x%5E%7B23%7D"></p>
+<p>複雑な例</p>
+<p><code>$5^{5^{5^5}}$</code>→<img src="https://latex.codecogs.com/png.latex?5%5E%7B5%5E%7B5%5E5%7D%7D"></p>
+<p><code>$R^{\rho}{}_{\sigma\mu\nu}$</code>→<img src="https://latex.codecogs.com/png.latex?R%5E%7B%5Crho%7D%7B%7D_%7B%5Csigma%5Cmu%5Cnu%7D"></p>
+</section>
+<section id="ギリシャ文字" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="ギリシャ文字"><span class="header-section-number">4</span> ギリシャ文字</h2>
+<section id="小文字" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="小文字"><span class="header-section-number">4.1</span> 小文字</h3>
+<table class="table">
+<thead>
+<tr class="header">
+<th>記号</th>
+<th>LaTeX</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5Calpha"></td>
+<td><code>$\alpha$</code></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cbeta"></td>
+<td><code>$\beta$</code></td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cgamma"></td>
+<td><code>$\gamma$</code></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cdelta"></td>
+<td><code>$\delta$</code></td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cepsilon"></td>
+<td><code>$\epsilon$</code></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5Czeta"></td>
+<td><code>$\zeta$</code></td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5Ceta"></td>
+<td><code>$\eta$</code></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5Ctheta"></td>
+<td><code>$\theta$</code></td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5Ciota"></td>
+<td><code>$\iota$</code></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5Ckappa"></td>
+<td><code>$\kappa$</code></td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5Clambda"></td>
+<td><code>$\lambda$</code></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cmu"></td>
+<td><code>$\mu$</code></td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cnu"></td>
+<td><code>$\nu$</code></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cxi"></td>
+<td><code>$\xi$</code></td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5Comicron"></td>
+<td><code>$\omicron$</code></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cpi"></td>
+<td><code>$\pi$</code></td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5Crho"></td>
+<td><code>$\rho$</code></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5Csigma"></td>
+<td><code>$\sigma$</code></td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5Ctau"></td>
+<td><code>$\tau$</code></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cupsilon"></td>
+<td><code>$\upsilon$</code></td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cphi"></td>
+<td><code>$\phi$</code></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cchi"></td>
+<td><code>$\chi$</code></td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cpsi"></td>
+<td><code>$\psi$</code></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5Comega"></td>
+<td><code>$\omega$</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="大文字" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="大文字"><span class="header-section-number">4.2</span> 大文字</h3>
+<table class="table">
+<thead>
+<tr class="header">
+<th>記号</th>
+<th>LaTeX</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5CGamma"></td>
+<td><code>$\Gamma$</code></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5CDelta"></td>
+<td><code>$\Delta$</code></td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5CTheta"></td>
+<td><code>$\Theta$</code></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5CLambda"></td>
+<td><code>$\Lambda$</code></td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5CXi"></td>
+<td><code>$\Xi$</code></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5CPi"></td>
+<td><code>$\Pi$</code></td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5CSigma"></td>
+<td><code>$\Sigma$</code></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5CUpsilon"></td>
+<td><code>$\Upsilon$</code></td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5CPhi"></td>
+<td><code>$\Phi$</code></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5CPsi"></td>
+<td><code>$\Psi$</code></td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5COmega"></td>
+<td><code>$\Omega$</code></td>
+</tr>
+</tbody>
+</table>
+<p>上記以外の大文字は英語のアルファベットの大文字と同じです。</p>
+</section>
+</section>
+<section id="筆記体" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="筆記体"><span class="header-section-number">5</span> 筆記体</h2>
+<p><code>$\mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$</code></p>
+<p>→ <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BABCDEFGHIJKLMNOPQRSTUVWXYZ%7D"></p>
+</section>
+<section id="記号" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="記号"><span class="header-section-number">6</span> 記号</h2>
+<section id="キーボードで直接打ち込み可能なもの" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="キーボードで直接打ち込み可能なもの"><span class="header-section-number">6.1</span> キーボードで直接打ち込み可能なもの</h3>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">+ </span>- = ! / ( ) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">[ ]</span> &lt; &gt; | ' : *</span></code></pre></div>
+</section>
+<section id="コマンドで打ち込む必要があるもの" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="コマンドで打ち込む必要があるもの"><span class="header-section-number">6.2</span> コマンドで打ち込む必要があるもの</h3>
+<p>例：</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cforall%20x%20%5Cin%20X,%20%5Cquad%5Cexists%20y%20%5Cleq%20%5Cepsilon"></p>
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1">$\forall x \in X, \quad\exists y \leq \epsilon$</span></code></pre></div>
+</section>
+</section>
+<section id="括弧類区切り記号" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="括弧類区切り記号"><span class="header-section-number">7</span> 括弧類(区切り記号)</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>記号</th>
+<th>LaTeX</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?(x)"></td>
+<td><code>$(x)$</code></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5C%7Bx%5C%7D"></td>
+<td><code>$\{x\}$</code></td>
+</tr>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5Bx%5D"></td>
+<td><code>$[x]$</code></td>
+</tr>
+</tbody>
+</table>
+<p>次のように<code>\left</code>,<code>\right</code>を使えば、区切り記号の大きさが自動的に選ばれます。</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>記号</th>
+<th>LaTeX</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cleft(x%5Cright)"></td>
+<td><code>$\left(x\right)$</code></td>
+</tr>
+<tr class="even">
+<td><img src="https://latex.codecogs.com/png.latex?%5Cleft(x%5E2%5Cright)"></td>
+<td><code>$\left(x^2\right)$</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="項演算子" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="項演算子"><span class="header-section-number">8</span> 2項演算子</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>入力</th>
+<th>出力</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>$+$</code></td>
+<td><img src="https://latex.codecogs.com/png.latex?+"></td>
+</tr>
+<tr class="even">
+<td><code>$-$</code></td>
+<td><img src="https://latex.codecogs.com/png.latex?-"></td>
+</tr>
+<tr class="odd">
+<td><code>$\pm$</code></td>
+<td><img src="https://latex.codecogs.com/png.latex?%5Cpm"></td>
+</tr>
+<tr class="even">
+<td><code>$\mp$</code></td>
+<td><img src="https://latex.codecogs.com/png.latex?%5Cmp"></td>
+</tr>
+<tr class="odd">
+<td><code>$\times$</code></td>
+<td><img src="https://latex.codecogs.com/png.latex?%5Ctimes"></td>
+</tr>
+<tr class="even">
+<td><code>$\div$</code></td>
+<td><img src="https://latex.codecogs.com/png.latex?%5Cdiv"></td>
+</tr>
+<tr class="odd">
+<td><code>$*$</code></td>
+<td><img src="https://latex.codecogs.com/png.latex?*"></td>
+</tr>
+<tr class="even">
+<td><code>$\ast$</code></td>
+<td><img src="https://latex.codecogs.com/png.latex?%5Cast"></td>
+</tr>
+<tr class="odd">
+<td><code>$\cdot$</code></td>
+<td><img src="https://latex.codecogs.com/png.latex?%5Ccdot"></td>
+</tr>
+<tr class="even">
+<td><code>$\cap$</code></td>
+<td><img src="https://latex.codecogs.com/png.latex?%5Ccap"></td>
+</tr>
+<tr class="odd">
+<td><code>$\cup$</code></td>
+<td><img src="https://latex.codecogs.com/png.latex?%5Ccup"></td>
+</tr>
+<tr class="even">
+<td><code>$\sqcap$</code></td>
+<td><img src="https://latex.codecogs.com/png.latex?%5Csqcap"></td>
+</tr>
+<tr class="odd">
+<td><code>$\sqcup$</code></td>
+<td><img src="https://latex.codecogs.com/png.latex?%5Csqcup"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="参考文献" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">9</span> 参考文献</h2>
+<ul>
+<li><a href="https://gihyo.jp/book/2020/978-4-297-11712-2">LaTeX2ε 美文書作成入門 改訂第8版</a></li>
+<li><a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">List of LaTeX mathematical symbols</a></li>
+<li><a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">LaTeX/Mathematics</a></li>
+</ul>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>LATEX</category>
+  <guid>https://nobukuni-hyakutake.github.io/statistics/posts/mathematical_symbols/index.html</guid>
+  <pubDate>Tue, 28 Nov 2023 15:00:00 GMT</pubDate>
+  <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/mathematical_symbols/tree.jpeg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>比率の検定</title>
   <dc:creator>Nobukuni Hyakutake</dc:creator>
@@ -363,239 +727,6 @@ font-style: inherit;">0.8</span>)</span></code></pre></div>
   <guid>https://nobukuni-hyakutake.github.io/statistics/posts/sample_size/index.html</guid>
   <pubDate>Tue, 07 Nov 2023 15:00:00 GMT</pubDate>
   <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/sample_size/lake.jpeg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>数式のLaTeX記法</title>
-  <dc:creator>Nobukuni Hyakutake</dc:creator>
-  <link>https://nobukuni-hyakutake.github.io/statistics/posts/mathematical_symbols/index.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/mathematical_symbols/tree.jpeg" class="img-fluid"></p>
-<section id="数式の基本" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="数式の基本"><span class="header-section-number">1</span> 数式の基本</h2>
-<section id="インライン数式" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="インライン数式"><span class="header-section-number">1.1</span> インライン数式</h3>
-<p>アインシュタインは<img src="https://latex.codecogs.com/png.latex?E=mc%5E2">と言った。</p>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1">アインシュタインは$E=mc^2$と言った。</span></code></pre></div>
-<p><code>$</code>記号でサンドイッチされた部分が数式です。<code>^</code>に続く文字が上付き文字になります。</p>
-</section>
-<section id="別行数式" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="別行数式"><span class="header-section-number">1.2</span> 別行数式</h3>
-<p>アインシュタインは <img src="https://latex.codecogs.com/png.latex?E=mc%5E2"> と言った。</p>
-<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1">アインシュタインは</span>
-<span id="cb2-2">$$E=mc^2$$</span>
-<span id="cb2-3">と言った。</span></code></pre></div>
-<p>のように、<code>$$</code>でサンドイッチすることで別行数式になります。</p>
-</section>
-</section>
-<section id="数式の詳細" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="数式の詳細"><span class="header-section-number">2</span> 数式の詳細</h2>
-<p>数式モードでは、次の例のように半角空白を入れても出力は変わりません。自動で出力スペース量が決まります。</p>
-<p><code>$a + (-b) = a- b$</code> → <img src="https://latex.codecogs.com/png.latex?a%20+%20(-b)%20=%20a-%20b"></p>
-<p><code>$a+(-b)=a-b$</code> → <img src="https://latex.codecogs.com/png.latex?a+(-b)=a-b"></p>
-<p>数式の中で改行したくない場合は<code>${a+b=c}$</code>→<img src="https://latex.codecogs.com/png.latex?%7Ba+b=c%7D">のように波括弧でグループ化します。</p>
-</section>
-<section id="上付き文字下付き文字" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="上付き文字下付き文字"><span class="header-section-number">3</span> 上付き文字、下付き文字</h2>
-<p><code>^</code>に続く文字が上付き文字になります。</p>
-<p><code>$x^4$</code>→<img src="https://latex.codecogs.com/png.latex?x%5E4"></p>
-<p>上付き文字が2桁の場合は波括弧でグループ化する必要があります。</p>
-<p><code>$x^23$</code>→<img src="https://latex.codecogs.com/png.latex?x%5E23">、<code>$x^{23}$</code>→<img src="https://latex.codecogs.com/png.latex?x%5E%7B23%7D"></p>
-<p>複雑な例</p>
-<p><code>$5^{5^{5^5}}$</code>→<img src="https://latex.codecogs.com/png.latex?5%5E%7B5%5E%7B5%5E5%7D%7D"></p>
-<p><code>$R^{\rho}{}_{\sigma\mu\nu}$</code>→<img src="https://latex.codecogs.com/png.latex?R%5E%7B%5Crho%7D%7B%7D_%7B%5Csigma%5Cmu%5Cnu%7D"></p>
-</section>
-<section id="ギリシャ文字" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="ギリシャ文字"><span class="header-section-number">4</span> ギリシャ文字</h2>
-<table class="table">
-<thead>
-<tr class="header">
-<th>記号</th>
-<th>LaTeX</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><img src="https://latex.codecogs.com/png.latex?%5Calpha"></td>
-<td><code>$\alpha$</code></td>
-</tr>
-<tr class="even">
-<td><img src="https://latex.codecogs.com/png.latex?%5Cbeta"></td>
-<td><code>$\beta$</code></td>
-</tr>
-<tr class="odd">
-<td><img src="https://latex.codecogs.com/png.latex?%5Cgamma"></td>
-<td><code>$\gamma$</code></td>
-</tr>
-<tr class="even">
-<td><img src="https://latex.codecogs.com/png.latex?%5Cdelta"></td>
-<td><code>$\delta$</code></td>
-</tr>
-<tr class="odd">
-<td><img src="https://latex.codecogs.com/png.latex?%5Cepsilon"></td>
-<td><code>$\epsilon$</code></td>
-</tr>
-<tr class="even">
-<td><img src="https://latex.codecogs.com/png.latex?%5Czeta"></td>
-<td><code>$\zeta$</code></td>
-</tr>
-<tr class="odd">
-<td><img src="https://latex.codecogs.com/png.latex?%5Ceta"></td>
-<td><code>$\eta$</code></td>
-</tr>
-<tr class="even">
-<td><img src="https://latex.codecogs.com/png.latex?%5Ctheta"></td>
-<td><code>$\theta$</code></td>
-</tr>
-<tr class="odd">
-<td><img src="https://latex.codecogs.com/png.latex?%5Ciota"></td>
-<td><code>$\iota$</code></td>
-</tr>
-<tr class="even">
-<td><img src="https://latex.codecogs.com/png.latex?%5Ckappa"></td>
-<td><code>$\kappa$</code></td>
-</tr>
-<tr class="odd">
-<td><img src="https://latex.codecogs.com/png.latex?%5Clambda"></td>
-<td><code>$\lambda$</code></td>
-</tr>
-<tr class="even">
-<td><img src="https://latex.codecogs.com/png.latex?%5Cmu"></td>
-<td><code>$\mu$</code></td>
-</tr>
-<tr class="odd">
-<td><img src="https://latex.codecogs.com/png.latex?%5Cnu"></td>
-<td><code>$\nu$</code></td>
-</tr>
-<tr class="even">
-<td><img src="https://latex.codecogs.com/png.latex?%5Cxi"></td>
-<td><code>$\xi$</code></td>
-</tr>
-<tr class="odd">
-<td><img src="https://latex.codecogs.com/png.latex?%5Comicron"></td>
-<td><code>$\omicron$</code></td>
-</tr>
-<tr class="even">
-<td><img src="https://latex.codecogs.com/png.latex?%5Cpi"></td>
-<td><code>$\pi$</code></td>
-</tr>
-<tr class="odd">
-<td><img src="https://latex.codecogs.com/png.latex?%5Crho"></td>
-<td><code>$\rho$</code></td>
-</tr>
-<tr class="even">
-<td><img src="https://latex.codecogs.com/png.latex?%5Csigma"></td>
-<td><code>$\sigma$</code></td>
-</tr>
-<tr class="odd">
-<td><img src="https://latex.codecogs.com/png.latex?%5Ctau"></td>
-<td><code>$\tau$</code></td>
-</tr>
-<tr class="even">
-<td><img src="https://latex.codecogs.com/png.latex?%5Cupsilon"></td>
-<td><code>$\upsilon$</code></td>
-</tr>
-<tr class="odd">
-<td><img src="https://latex.codecogs.com/png.latex?%5Cphi"></td>
-<td><code>$\phi$</code></td>
-</tr>
-<tr class="even">
-<td><img src="https://latex.codecogs.com/png.latex?%5Cchi"></td>
-<td><code>$\chi$</code></td>
-</tr>
-<tr class="odd">
-<td><img src="https://latex.codecogs.com/png.latex?%5Cpsi"></td>
-<td><code>$\psi$</code></td>
-</tr>
-<tr class="even">
-<td><img src="https://latex.codecogs.com/png.latex?%5Comega"></td>
-<td><code>$\omega$</code></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="記号" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="記号"><span class="header-section-number">5</span> 記号</h2>
-<section id="キーボードで直接打ち込み可能なもの" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="キーボードで直接打ち込み可能なもの"><span class="header-section-number">5.1</span> キーボードで直接打ち込み可能なもの</h3>
-<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">+ </span>- = ! / ( ) <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">[ ]</span> &lt; &gt; | ' : *</span></code></pre></div>
-</section>
-<section id="コマンドで打ち込む必要があるもの" class="level3" data-number="5.2">
-<h3 data-number="5.2" class="anchored" data-anchor-id="コマンドで打ち込む必要があるもの"><span class="header-section-number">5.2</span> コマンドで打ち込む必要があるもの</h3>
-<p>例：</p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Cforall%20x%20%5Cin%20X,%20%5Cquad%5Cexists%20y%20%5Cleq%20%5Cepsilon"></p>
-<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1">$\forall x \in X, \quad\exists y \leq \epsilon$</span></code></pre></div>
-</section>
-</section>
-<section id="括弧類区切り記号" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="括弧類区切り記号"><span class="header-section-number">6</span> 括弧類(区切り記号)</h2>
-<table class="table">
-<thead>
-<tr class="header">
-<th>記号</th>
-<th>LaTeX</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><img src="https://latex.codecogs.com/png.latex?(x)"></td>
-<td><code>$(x)$</code></td>
-</tr>
-<tr class="even">
-<td><img src="https://latex.codecogs.com/png.latex?%5C%7Bx%5C%7D"></td>
-<td><code>$\{x\}$</code></td>
-</tr>
-<tr class="odd">
-<td><img src="https://latex.codecogs.com/png.latex?%5Bx%5D"></td>
-<td><code>$[x]$</code></td>
-</tr>
-</tbody>
-</table>
-<p>次のように<code>\left</code>,<code>\right</code>を使えば、区切り記号の大きさが自動的に選ばれます。</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th>記号</th>
-<th>LaTeX</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><img src="https://latex.codecogs.com/png.latex?%5Cleft(x%5Cright)"></td>
-<td><code>$\left(x\right)$</code></td>
-</tr>
-<tr class="even">
-<td><img src="https://latex.codecogs.com/png.latex?%5Cleft(x%5E2%5Cright)"></td>
-<td><code>$\left(x^2\right)$</code></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="参考文献" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">7</span> 参考文献</h2>
-<ul>
-<li><a href="https://gihyo.jp/book/2020/978-4-297-11712-2">LaTeX2ε 美文書作成入門 改訂第8版</a></li>
-<li><a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">List of LaTeX mathematical symbols</a></li>
-<li><a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">LaTeX/Mathematics</a></li>
-</ul>
-
-
-<!-- -->
-
-</section>
-
- ]]></description>
-  <category>LATEX</category>
-  <guid>https://nobukuni-hyakutake.github.io/statistics/posts/mathematical_symbols/index.html</guid>
-  <pubDate>Wed, 25 Oct 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/mathematical_symbols/tree.jpeg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>二乗平均平方誤差</title>

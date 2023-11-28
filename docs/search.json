@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Top",
     "section": "",
-    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-11-22\n\n\n比率の検定\n\n\nR\n\n\n\n\n\n\n\n2023-11-08\n\n\nサンプルサイズ\n\n\nR\n\n\n\n\n\n\n\n2023-10-26\n\n\n数式のLaTeX記法\n\n\nLATEX\n\n\n\n\n\n\n\n2023-10-13\n\n\n二乗平均平方誤差\n\n\nPython\n\n\n\n\n\n\n\n2023-10-08\n\n\n散布図と周辺分布\n\n\nR\n\n\n\n\n\n\n\n2023-10-06\n\n\nPython基本\n\n\nPython\n\n\n\n\n\n\n\n2023-02-23\n\n\n相関係数\n\n\nR\n\n\n\n\n\n\n\n2023-02-22\n\n\nグラフ\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
+    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-11-29\n\n\n数式のLaTeX記法\n\n\nLATEX\n\n\n\n\n\n\n\n2023-11-22\n\n\n比率の検定\n\n\nR\n\n\n\n\n\n\n\n2023-11-08\n\n\nサンプルサイズ\n\n\nR\n\n\n\n\n\n\n\n2023-10-13\n\n\n二乗平均平方誤差\n\n\nPython\n\n\n\n\n\n\n\n2023-10-08\n\n\n散布図と周辺分布\n\n\nR\n\n\n\n\n\n\n\n2023-10-06\n\n\nPython基本\n\n\nPython\n\n\n\n\n\n\n\n2023-02-23\n\n\n相関係数\n\n\nR\n\n\n\n\n\n\n\n2023-02-22\n\n\nグラフ\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -556,22 +556,22 @@
     "objectID": "posts/mathematical_symbols/index.html#参考文献",
     "href": "posts/mathematical_symbols/index.html#参考文献",
     "title": "数式のLaTeX記法",
-    "section": "7 参考文献",
-    "text": "7 参考文献\n\nLaTeX2ε 美文書作成入門 改訂第8版\nList of LaTeX mathematical symbols\nLaTeX/Mathematics"
+    "section": "9 参考文献",
+    "text": "9 参考文献\n\nLaTeX2ε 美文書作成入門 改訂第8版\nList of LaTeX mathematical symbols\nLaTeX/Mathematics"
   },
   {
     "objectID": "posts/mathematical_symbols/index.html#ギリシャ文字",
     "href": "posts/mathematical_symbols/index.html#ギリシャ文字",
     "title": "数式のLaTeX記法",
     "section": "4 ギリシャ文字",
-    "text": "4 ギリシャ文字\n\n\n\n記号\nLaTeX\n\n\n\n\n\\(\\alpha\\)\n$\\alpha$\n\n\n\\(\\beta\\)\n$\\beta$\n\n\n\\(\\gamma\\)\n$\\gamma$\n\n\n\\(\\delta\\)\n$\\delta$\n\n\n\\(\\epsilon\\)\n$\\epsilon$\n\n\n\\(\\zeta\\)\n$\\zeta$\n\n\n\\(\\eta\\)\n$\\eta$\n\n\n\\(\\theta\\)\n$\\theta$\n\n\n\\(\\iota\\)\n$\\iota$\n\n\n\\(\\kappa\\)\n$\\kappa$\n\n\n\\(\\lambda\\)\n$\\lambda$\n\n\n\\(\\mu\\)\n$\\mu$\n\n\n\\(\\nu\\)\n$\\nu$\n\n\n\\(\\xi\\)\n$\\xi$\n\n\n\\(\\omicron\\)\n$\\omicron$\n\n\n\\(\\pi\\)\n$\\pi$\n\n\n\\(\\rho\\)\n$\\rho$\n\n\n\\(\\sigma\\)\n$\\sigma$\n\n\n\\(\\tau\\)\n$\\tau$\n\n\n\\(\\upsilon\\)\n$\\upsilon$\n\n\n\\(\\phi\\)\n$\\phi$\n\n\n\\(\\chi\\)\n$\\chi$\n\n\n\\(\\psi\\)\n$\\psi$\n\n\n\\(\\omega\\)\n$\\omega$"
+    "text": "4 ギリシャ文字\n\n4.1 小文字\n\n\n\n記号\nLaTeX\n\n\n\n\n\\(\\alpha\\)\n$\\alpha$\n\n\n\\(\\beta\\)\n$\\beta$\n\n\n\\(\\gamma\\)\n$\\gamma$\n\n\n\\(\\delta\\)\n$\\delta$\n\n\n\\(\\epsilon\\)\n$\\epsilon$\n\n\n\\(\\zeta\\)\n$\\zeta$\n\n\n\\(\\eta\\)\n$\\eta$\n\n\n\\(\\theta\\)\n$\\theta$\n\n\n\\(\\iota\\)\n$\\iota$\n\n\n\\(\\kappa\\)\n$\\kappa$\n\n\n\\(\\lambda\\)\n$\\lambda$\n\n\n\\(\\mu\\)\n$\\mu$\n\n\n\\(\\nu\\)\n$\\nu$\n\n\n\\(\\xi\\)\n$\\xi$\n\n\n\\(\\omicron\\)\n$\\omicron$\n\n\n\\(\\pi\\)\n$\\pi$\n\n\n\\(\\rho\\)\n$\\rho$\n\n\n\\(\\sigma\\)\n$\\sigma$\n\n\n\\(\\tau\\)\n$\\tau$\n\n\n\\(\\upsilon\\)\n$\\upsilon$\n\n\n\\(\\phi\\)\n$\\phi$\n\n\n\\(\\chi\\)\n$\\chi$\n\n\n\\(\\psi\\)\n$\\psi$\n\n\n\\(\\omega\\)\n$\\omega$\n\n\n\n\n\n4.2 大文字\n\n\n\n記号\nLaTeX\n\n\n\n\n\\(\\Gamma\\)\n$\\Gamma$\n\n\n\\(\\Delta\\)\n$\\Delta$\n\n\n\\(\\Theta\\)\n$\\Theta$\n\n\n\\(\\Lambda\\)\n$\\Lambda$\n\n\n\\(\\Xi\\)\n$\\Xi$\n\n\n\\(\\Pi\\)\n$\\Pi$\n\n\n\\(\\Sigma\\)\n$\\Sigma$\n\n\n\\(\\Upsilon\\)\n$\\Upsilon$\n\n\n\\(\\Phi\\)\n$\\Phi$\n\n\n\\(\\Psi\\)\n$\\Psi$\n\n\n\\(\\Omega\\)\n$\\Omega$\n\n\n\n上記以外の大文字は英語のアルファベットの大文字と同じです。"
   },
   {
     "objectID": "posts/mathematical_symbols/index.html#記号",
     "href": "posts/mathematical_symbols/index.html#記号",
     "title": "数式のLaTeX記法",
-    "section": "5 記号",
-    "text": "5 記号\n\n5.1 キーボードで直接打ち込み可能なもの\n+ - = ! / ( ) [ ] &lt; &gt; | ' : *\n\n\n5.2 コマンドで打ち込む必要があるもの\n例：\n\\(\\forall x \\in X, \\quad\\exists y \\leq \\epsilon\\)\n$\\forall x \\in X, \\quad\\exists y \\leq \\epsilon$"
+    "section": "6 記号",
+    "text": "6 記号\n\n6.1 キーボードで直接打ち込み可能なもの\n+ - = ! / ( ) [ ] &lt; &gt; | ' : *\n\n\n6.2 コマンドで打ち込む必要があるもの\n例：\n\\(\\forall x \\in X, \\quad\\exists y \\leq \\epsilon\\)\n$\\forall x \\in X, \\quad\\exists y \\leq \\epsilon$"
   },
   {
     "objectID": "posts/rsme/index.html#二乗平均平方誤差",
@@ -584,8 +584,8 @@
     "objectID": "posts/mathematical_symbols/index.html#括弧類区切り記号",
     "href": "posts/mathematical_symbols/index.html#括弧類区切り記号",
     "title": "数式のLaTeX記法",
-    "section": "6 括弧類(区切り記号)",
-    "text": "6 括弧類(区切り記号)\n\n\n\n記号\nLaTeX\n\n\n\n\n\\((x)\\)\n$(x)$\n\n\n\\(\\{x\\}\\)\n$\\{x\\}$\n\n\n\\([x]\\)\n$[x]$\n\n\n\n次のように\\left,\\rightを使えば、区切り記号の大きさが自動的に選ばれます。\n\n\n\n記号\nLaTeX\n\n\n\n\n\\(\\left(x\\right)\\)\n$\\left(x\\right)$\n\n\n\\(\\left(x^2\\right)\\)\n$\\left(x^2\\right)$"
+    "section": "7 括弧類(区切り記号)",
+    "text": "7 括弧類(区切り記号)\n\n\n\n記号\nLaTeX\n\n\n\n\n\\((x)\\)\n$(x)$\n\n\n\\(\\{x\\}\\)\n$\\{x\\}$\n\n\n\\([x]\\)\n$[x]$\n\n\n\n次のように\\left,\\rightを使えば、区切り記号の大きさが自動的に選ばれます。\n\n\n\n記号\nLaTeX\n\n\n\n\n\\(\\left(x\\right)\\)\n$\\left(x\\right)$\n\n\n\\(\\left(x^2\\right)\\)\n$\\left(x^2\\right)$"
   },
   {
     "objectID": "posts/rmse/index.html#二乗平均平方誤差",
@@ -663,5 +663,19 @@
     "title": "比率の検定",
     "section": "3 R version",
     "text": "3 R version\n\nR.version.string\n\n[1] \"R version 4.3.0 (2023-04-21)\""
+  },
+  {
+    "objectID": "posts/mathematical_symbols/index.html#筆記体",
+    "href": "posts/mathematical_symbols/index.html#筆記体",
+    "title": "数式のLaTeX記法",
+    "section": "5 筆記体",
+    "text": "5 筆記体\n$\\mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ}$\n→ \\(\\mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ}\\)"
+  },
+  {
+    "objectID": "posts/mathematical_symbols/index.html#項演算子",
+    "href": "posts/mathematical_symbols/index.html#項演算子",
+    "title": "数式のLaTeX記法",
+    "section": "8 2項演算子",
+    "text": "8 2項演算子\n\n\n\n入力\n出力\n\n\n\n\n$+$\n\\(+\\)\n\n\n$-$\n\\(-\\)\n\n\n$\\pm$\n\\(\\pm\\)\n\n\n$\\mp$\n\\(\\mp\\)\n\n\n$\\times$\n\\(\\times\\)\n\n\n$\\div$\n\\(\\div\\)\n\n\n$*$\n\\(*\\)\n\n\n$\\ast$\n\\(\\ast\\)\n\n\n$\\cdot$\n\\(\\cdot\\)\n\n\n$\\cap$\n\\(\\cap\\)\n\n\n$\\cup$\n\\(\\cup\\)\n\n\n$\\sqcap$\n\\(\\sqcap\\)\n\n\n$\\sqcup$\n\\(\\sqcup\\)"
   }
 ]
