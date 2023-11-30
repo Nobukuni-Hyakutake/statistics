@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Nobukuni Hyakutake">
-<meta name="dcterms.date" content="2023-11-08">
+<meta name="dcterms.date" content="2023-11-30">
 
 <title>統計学の勉強ノート - サンプルサイズ</title>
 <style>
@@ -106,6 +106,8 @@ gtag('js', new Date());
 gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -172,7 +174,7 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">2023-11-08</p>
+        <p class="date">2023-11-30</p>
       </div>
     </div>
     
@@ -198,9 +200,19 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
   <ul>
   <li><a href="#第一群の母比率𝑝1100e-6第二群の母比率𝑝2500e-6第一の過誤𝛼0.05のときの母比率の差の検定の検出力" id="toc-第一群の母比率𝑝1100e-6第二群の母比率𝑝2500e-6第一の過誤𝛼0.05のときの母比率の差の検定の検出力"><span class="header-section-number">1.1</span> 第一群の母比率𝑝1=100E-6、第二群の母比率𝑝2=500E-6、第一の過誤𝛼=0.05のときの母比率の差の検定の検出力</a></li>
   <li><a href="#第一群の母比率𝑝1100e-6第二群の母比率𝑝210000e-6第一の過誤𝛼0.05のときの母比率の差の検定の検出力" id="toc-第一群の母比率𝑝1100e-6第二群の母比率𝑝210000e-6第一の過誤𝛼0.05のときの母比率の差の検定の検出力"><span class="header-section-number">1.2</span> 第一群の母比率𝑝1=100E-6、第二群の母比率𝑝2=10000E-6、第一の過誤𝛼=0.05のときの母比率の差の検定の検出力</a></li>
+  <li><a href="#観測数𝑛10母平均の差𝛿0.1標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のないt検定の検出力" id="toc-観測数𝑛10母平均の差𝛿0.1標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のないt検定の検出力"><span class="header-section-number">1.3</span> 観測数𝑛=10、母平均の差𝛿=0.1、標準偏差𝜎=0.05、第一の過誤𝛼=0.05のときの対応のないt検定の検出力</a></li>
+  <li><a href="#観測数𝑛10母平均の差𝛿0.01標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のないt検定の検出力" id="toc-観測数𝑛10母平均の差𝛿0.01標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のないt検定の検出力"><span class="header-section-number">1.4</span> 観測数𝑛=10、母平均の差𝛿=0.01、標準偏差𝜎=0.05、第一の過誤𝛼=0.05のときの対応のないt検定の検出力</a></li>
+  <li><a href="#観測数𝑛10母平均の差𝛿0.1標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のあるt検定の検出力" id="toc-観測数𝑛10母平均の差𝛿0.1標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のあるt検定の検出力"><span class="header-section-number">1.5</span> 観測数𝑛=10、母平均の差𝛿=0.1、標準偏差𝜎=0.05、第一の過誤𝛼=0.05のときの対応のあるt検定の検出力</a></li>
+  <li><a href="#観測数𝑛10母平均の差𝛿0.01標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のあるt検定の検出力" id="toc-観測数𝑛10母平均の差𝛿0.01標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のあるt検定の検出力"><span class="header-section-number">1.6</span> 観測数𝑛=10、母平均の差𝛿=0.01、標準偏差𝜎=0.05、第一の過誤𝛼=0.05のときの対応のあるt検定の検出力</a></li>
   </ul></li>
-  <li><a href="#参考文献" id="toc-参考文献"><span class="header-section-number">2</span> 参考文献</a></li>
-  <li><a href="#r-version" id="toc-r-version"><span class="header-section-number">3</span> R version</a></li>
+  <li><a href="#サンプルサイズの計算" id="toc-サンプルサイズの計算"><span class="header-section-number">2</span> サンプルサイズの計算</a>
+  <ul>
+  <li><a href="#割合の差の検定カイ2乗検定" id="toc-割合の差の検定カイ2乗検定"><span class="header-section-number">2.1</span> 割合の差の検定(カイ2乗検定)</a></li>
+  <li><a href="#対応のないt検定のときのサンプルサイズ" id="toc-対応のないt検定のときのサンプルサイズ"><span class="header-section-number">2.2</span> 対応のないt検定のときのサンプルサイズ</a></li>
+  <li><a href="#対応のあるt検定のときのサンプルサイズ" id="toc-対応のあるt検定のときのサンプルサイズ"><span class="header-section-number">2.3</span> 対応のあるt検定のときのサンプルサイズ</a></li>
+  </ul></li>
+  <li><a href="#参考文献" id="toc-参考文献"><span class="header-section-number">3</span> 参考文献</a></li>
+  <li><a href="#r-version" id="toc-r-version"><span class="header-section-number">4</span> R version</a></li>
   </ul>
 </nav>
 <p><img src="lake.jpeg" class="img-fluid"></p>
@@ -226,35 +238,204 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 <p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>n=29423のとき</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">29423</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fl">100E-6</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fl">500E-6</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.prop.test</span>(<span class="at">n =</span> n, <span class="at">p1 =</span> p1, <span class="at">p2 =</span> p2, <span class="at">sig.level =</span> alpha)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>power<span class="sc">$</span>power</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7999961</code></pre>
+</div>
+</div>
 </section>
 <section id="第一群の母比率𝑝1100e-6第二群の母比率𝑝210000e-6第一の過誤𝛼0.05のときの母比率の差の検定の検出力" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="第一群の母比率𝑝1100e-6第二群の母比率𝑝210000e-6第一の過誤𝛼0.05のときの母比率の差の検定の検出力"><span class="header-section-number">1.2</span> 第一群の母比率𝑝1=100E-6、第二群の母比率𝑝2=10000E-6、第一の過誤𝛼=0.05のときの母比率の差の検定の検出力</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="fl">1E4</span>,<span class="dv">100</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fl">100E-6</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fl">10000E-6</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.prop.test</span>(<span class="at">n =</span> n, <span class="at">p1 =</span> p1, <span class="at">p2 =</span> p2, <span class="at">sig.level =</span> alpha)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(power<span class="sc">$</span>n,power<span class="sc">$</span>power)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="fl">1E4</span>,<span class="dv">100</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fl">100E-6</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fl">10000E-6</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.prop.test</span>(<span class="at">n =</span> n, <span class="at">p1 =</span> p1, <span class="at">p2 =</span> p2, <span class="at">sig.level =</span> alpha)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(power<span class="sc">$</span>n,power<span class="sc">$</span>power)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="観測数𝑛10母平均の差𝛿0.1標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のないt検定の検出力" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="観測数𝑛10母平均の差𝛿0.1標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のないt検定の検出力"><span class="header-section-number">1.3</span> 観測数𝑛=10、母平均の差𝛿=0.1、標準偏差𝜎=0.05、第一の過誤𝛼=0.05のときの対応のないt検定の検出力</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">100</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.t.test</span>(<span class="at">n =</span> n, <span class="at">delta =</span> delta, <span class="at">sd=</span>sd, <span class="at">sig.level =</span> alpha)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(power<span class="sc">$</span>n,power<span class="sc">$</span>power)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="観測数𝑛10母平均の差𝛿0.01標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のないt検定の検出力" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="観測数𝑛10母平均の差𝛿0.01標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のないt検定の検出力"><span class="header-section-number">1.4</span> 観測数𝑛=10、母平均の差𝛿=0.01、標準偏差𝜎=0.05、第一の過誤𝛼=0.05のときの対応のないt検定の検出力</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="fl">1e3</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fl">0.01</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.t.test</span>(<span class="at">n =</span> n, <span class="at">delta =</span> delta, <span class="at">sd=</span>sd, <span class="at">sig.level =</span> alpha)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(power<span class="sc">$</span>n,power<span class="sc">$</span>power)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>n=392のときの検出力</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">392</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fl">0.01</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.t.test</span>(<span class="at">n =</span> n, <span class="at">delta =</span> delta, <span class="at">sd=</span>sd, <span class="at">sig.level =</span> alpha)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>power<span class="sc">$</span>power</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7985901</code></pre>
+</div>
+</div>
+</section>
+<section id="観測数𝑛10母平均の差𝛿0.1標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のあるt検定の検出力" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="観測数𝑛10母平均の差𝛿0.1標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のあるt検定の検出力"><span class="header-section-number">1.5</span> 観測数𝑛=10、母平均の差𝛿=0.1、標準偏差𝜎=0.05、第一の過誤𝛼=0.05のときの対応のあるt検定の検出力</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">100</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.t.test</span>(<span class="at">n =</span> n, <span class="at">delta =</span> delta, <span class="at">sd=</span>sd, <span class="at">sig.level =</span> alpha,<span class="at">type=</span><span class="st">"paired"</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(power<span class="sc">$</span>n,power<span class="sc">$</span>power)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="観測数𝑛10母平均の差𝛿0.01標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のあるt検定の検出力" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="観測数𝑛10母平均の差𝛿0.01標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のあるt検定の検出力"><span class="header-section-number">1.6</span> 観測数𝑛=10、母平均の差𝛿=0.01、標準偏差𝜎=0.05、第一の過誤𝛼=0.05のときの対応のあるt検定の検出力</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="fl">1e3</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fl">0.01</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.t.test</span>(<span class="at">n =</span> n, <span class="at">delta =</span> delta, <span class="at">sd=</span>sd, <span class="at">sig.level =</span> alpha,<span class="at">type=</span><span class="st">"paired"</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(power<span class="sc">$</span>n,power<span class="sc">$</span>power)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>n=196のときの検出力</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">196</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fl">0.01</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.t.test</span>(<span class="at">n =</span> n, <span class="at">delta =</span> delta, <span class="at">sd=</span>sd, <span class="at">sig.level =</span> alpha,<span class="at">type=</span><span class="st">"paired"</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>power<span class="sc">$</span>power</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7956606</code></pre>
 </div>
 </div>
 </section>
 </section>
-<section id="参考文献" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">2</span> 参考文献</h2>
+<section id="サンプルサイズの計算" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="サンプルサイズの計算"><span class="header-section-number">2</span> サンプルサイズの計算</h2>
+<section id="割合の差の検定カイ2乗検定" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="割合の差の検定カイ2乗検定"><span class="header-section-number">2.1</span> 割合の差の検定(カイ2乗検定)</h3>
+<p><span class="math display">\[
+n=\frac{\{Z(\alpha/2)\sqrt{2\overline{p}(1-\overline{p})}+Z(\beta)\sqrt{p_0(1-p_0)+p_1(1-p_1)}\}^2}{d^2}
+\]</span></p>
+<p><span class="math display">\[
+\overline{p}=(p_0+p_1)/2
+\]</span></p>
+<section id="第一群の母比率𝑝0100e-6第二群の母比率𝑝1500e-6第一の過誤𝛼0.05検出力0.8としたときのサンプルサイズ" class="level4" data-number="2.1.1">
+<h4 data-number="2.1.1" class="anchored" data-anchor-id="第一群の母比率𝑝0100e-6第二群の母比率𝑝1500e-6第一の過誤𝛼0.05検出力0.8としたときのサンプルサイズ"><span class="header-section-number">2.1.1</span> 第一群の母比率𝑝0=100E-6、第二群の母比率𝑝1=500E-6、第一の過誤𝛼=0.05、検出力0.8としたときのサンプルサイズ</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>p0 <span class="ot">&lt;-</span> <span class="fl">100E-6</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fl">500E-6</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>power<span class="ot">&lt;-</span><span class="fl">0.8</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>beta<span class="ot">&lt;-</span><span class="dv">1</span><span class="sc">-</span>power</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>phat<span class="ot">&lt;-</span>(p0<span class="sc">+</span>p1)<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>((<span class="sc">-</span><span class="fu">qnorm</span>(alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">*</span>phat<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>phat))<span class="sc">+</span>(<span class="sc">-</span><span class="fu">qnorm</span>(beta)<span class="sc">*</span><span class="fu">sqrt</span>(p0<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p0)<span class="sc">+</span>p1<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p1))))<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>((p1<span class="sc">-</span>p0)<span class="sc">^</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 29423.29</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="対応のないt検定のときのサンプルサイズ" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="対応のないt検定のときのサンプルサイズ"><span class="header-section-number">2.2</span> 対応のないt検定のときのサンプルサイズ</h3>
+<p>下記で計算する</p>
+<p><span class="math display">\[
+n=\frac{2\sigma^2\{Z(\alpha/2)+Z(\beta)\}^2}{d^2}
+\]</span></p>
+<section id="標準偏差0.05-検出すべき差を0.01検出力0.8alphaを両側5検出力1-betaを80とした場合" class="level4" data-number="2.2.1">
+<h4 data-number="2.2.1" class="anchored" data-anchor-id="標準偏差0.05-検出すべき差を0.01検出力0.8alphaを両側5検出力1-betaを80とした場合"><span class="header-section-number">2.2.1</span> 標準偏差0.05, 検出すべき差を0.01,検出力0.8、<span class="math inline">\(\alpha\)</span>を両側5%、検出力<span class="math inline">\(1-\beta\)</span>を80%とした場合</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>power<span class="ot">&lt;-</span><span class="fl">0.8</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fl">0.01</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span><span class="sc">*</span>(sd<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>(<span class="sc">-</span><span class="fu">qnorm</span>(alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="sc">-</span><span class="fu">qnorm</span>(<span class="dv">1</span><span class="sc">-</span>power)))<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(delta<span class="sc">^</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 392.444</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="対応のあるt検定のときのサンプルサイズ" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="対応のあるt検定のときのサンプルサイズ"><span class="header-section-number">2.3</span> 対応のあるt検定のときのサンプルサイズ</h3>
+<p>下記で計算する</p>
+<p><span class="math display">\[
+n=\frac{\sigma^2\{Z(\alpha/2)+Z(\beta)\}^2}{d^2}
+\]</span></p>
+<section id="標準偏差0.05-検出すべき差を0.01検出力0.8alphaを両側5検出力1-betaを80とした場合-1" class="level4" data-number="2.3.1">
+<h4 data-number="2.3.1" class="anchored" data-anchor-id="標準偏差0.05-検出すべき差を0.01検出力0.8alphaを両側5検出力1-betaを80とした場合-1"><span class="header-section-number">2.3.1</span> 標準偏差0.05, 検出すべき差を0.01,検出力0.8、<span class="math inline">\(\alpha\)</span>を両側5%、検出力<span class="math inline">\(1-\beta\)</span>を80%とした場合</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>power<span class="ot">&lt;-</span><span class="fl">0.8</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fl">0.01</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>((sd<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>(<span class="sc">-</span><span class="fu">qnorm</span>(alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="sc">-</span><span class="fu">qnorm</span>(<span class="dv">1</span><span class="fl">-0.8</span>)))<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(delta<span class="sc">^</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 196.222</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="参考文献" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">3</span> 参考文献</h2>
 <ul>
 <li><a href="https://multivariate-statistics.com/2021/10/16/r-programming-power-sample-size/">R言語　検出力・サンプルサイズ　t検定や母比率の検定の検出力の計算</a></li>
-<li><a href="https://python-man.club/sample_size/">【pythonで統計学】統計検定のサンプルサイズを計算する<sub>サンプルコード+無料ソフトつき</sub></a></li>
+<li><a href="https://python-man.club/sample_size/">【pythonで統計学】統計検定のサンプルサイズを計算する</a></li>
+<li><a href="https://iss.ndl.go.jp/books/R100000002-I000011064467-00">サンプルサイズの設計</a></li>
+<li><a href="https://clover.fcg.world/2016/06/15/5302/">power.t.test() : 1群または2群のt検定のパワー計算をする関数</a></li>
 </ul>
 </section>
-<section id="r-version" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="r-version"><span class="header-section-number">3</span> R version</h2>
+<section id="r-version" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="r-version"><span class="header-section-number">4</span> R version</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>R.version.string</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>R.version.string</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "R version 4.3.0 (2023-04-21)"</code></pre>
 </div>
@@ -550,62 +731,211 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "サンプルサイズ"</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Nobukuni Hyakutake"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-11-08"</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> "iso"</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [R]</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "lake.jpeg"</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="al">![](lake.jpeg)</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## power.prop.testの使い方</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">### 第一群の母比率𝑝1=100E-6、第二群の母比率𝑝2=500E-6、第一の過誤𝛼=0.05のときの母比率の差の検定の検出力</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>ここでは、0.8の検出力に線を引く。</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; It is proposed here as a convention that, when the investigator has no other basis for setting the desired power value, the value .80 be used.</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>出典: <span class="co">[</span><span class="ot">Statistical Power Analysis for the Behavioral Sciences Second Edition</span><span class="co">](https://www.utstat.toronto.edu/~brunner/oldclass/378f16/readings/CohenPower.pdf)</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="fl">1E5</span>,<span class="dv">1000</span>)</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fl">100E-6</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fl">500E-6</span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.prop.test</span>(<span class="at">n =</span> n, <span class="at">p1 =</span> p1, <span class="at">p2 =</span> p2, <span class="at">sig.level =</span> alpha)</span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(power<span class="sc">$</span>n,power<span class="sc">$</span>power)</span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.8</span>)</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="fu">### 第一群の母比率𝑝1=100E-6、第二群の母比率𝑝2=10000E-6、第一の過誤𝛼=0.05のときの母比率の差の検定の検出力</span></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="fl">1E4</span>,<span class="dv">100</span>)</span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fl">100E-6</span></span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fl">10000E-6</span></span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.prop.test</span>(<span class="at">n =</span> n, <span class="at">p1 =</span> p1, <span class="at">p2 =</span> p2, <span class="at">sig.level =</span> alpha)</span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(power<span class="sc">$</span>n,power<span class="sc">$</span>power)</span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.8</span>)</span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="fu">## 参考文献</span></span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">R言語　検出力・サンプルサイズ　t検定や母比率の検定の検出力の計算</span><span class="co">](https://multivariate-statistics.com/2021/10/16/r-programming-power-sample-size/)</span></span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">【pythonで統計学】統計検定のサンプルサイズを計算する~サンプルコード+無料ソフトつき~</span><span class="co">](https://python-man.club/sample_size/)</span></span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a><span class="fu">## R version</span></span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>R.version.string</span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<div class="sourceCode" id="cb21" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "サンプルサイズ"</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Nobukuni Hyakutake"</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-11-30"</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> "iso"</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [R]</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "lake.jpeg"</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="al">![](lake.jpeg)</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## power.prop.testの使い方</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="fu">### 第一群の母比率𝑝1=100E-6、第二群の母比率𝑝2=500E-6、第一の過誤𝛼=0.05のときの母比率の差の検定の検出力</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>ここでは、0.8の検出力に線を引く。</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; It is proposed here as a convention that, when the investigator has no other basis for setting the desired power value, the value .80 be used.</span></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>出典: <span class="co">[</span><span class="ot">Statistical Power Analysis for the Behavioral Sciences Second Edition</span><span class="co">](https://www.utstat.toronto.edu/~brunner/oldclass/378f16/readings/CohenPower.pdf)</span></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="fl">1E5</span>,<span class="dv">1000</span>)</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fl">100E-6</span></span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fl">500E-6</span></span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.prop.test</span>(<span class="at">n =</span> n, <span class="at">p1 =</span> p1, <span class="at">p2 =</span> p2, <span class="at">sig.level =</span> alpha)</span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(power<span class="sc">$</span>n,power<span class="sc">$</span>power)</span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.8</span>)</span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a>n=29423のとき</span>
+<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">29423</span></span>
+<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fl">100E-6</span></span>
+<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fl">500E-6</span></span>
+<span id="cb21-44"><a href="#cb21-44" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.prop.test</span>(<span class="at">n =</span> n, <span class="at">p1 =</span> p1, <span class="at">p2 =</span> p2, <span class="at">sig.level =</span> alpha)</span>
+<span id="cb21-45"><a href="#cb21-45" aria-hidden="true" tabindex="-1"></a>power<span class="sc">$</span>power</span>
+<span id="cb21-46"><a href="#cb21-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-47"><a href="#cb21-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-48"><a href="#cb21-48" aria-hidden="true" tabindex="-1"></a><span class="fu">### 第一群の母比率𝑝1=100E-6、第二群の母比率𝑝2=10000E-6、第一の過誤𝛼=0.05のときの母比率の差の検定の検出力</span></span>
+<span id="cb21-49"><a href="#cb21-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-52"><a href="#cb21-52" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-53"><a href="#cb21-53" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="fl">1E4</span>,<span class="dv">100</span>)</span>
+<span id="cb21-54"><a href="#cb21-54" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-55"><a href="#cb21-55" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fl">100E-6</span></span>
+<span id="cb21-56"><a href="#cb21-56" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fl">10000E-6</span></span>
+<span id="cb21-57"><a href="#cb21-57" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb21-58"><a href="#cb21-58" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.prop.test</span>(<span class="at">n =</span> n, <span class="at">p1 =</span> p1, <span class="at">p2 =</span> p2, <span class="at">sig.level =</span> alpha)</span>
+<span id="cb21-59"><a href="#cb21-59" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(power<span class="sc">$</span>n,power<span class="sc">$</span>power)</span>
+<span id="cb21-60"><a href="#cb21-60" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.8</span>)</span>
+<span id="cb21-61"><a href="#cb21-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-62"><a href="#cb21-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-63"><a href="#cb21-63" aria-hidden="true" tabindex="-1"></a><span class="fu">### 観測数𝑛=10、母平均の差𝛿=0.1、標準偏差𝜎=0.05、第一の過誤𝛼=0.05のときの対応のないt検定の検出力</span></span>
+<span id="cb21-64"><a href="#cb21-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-67"><a href="#cb21-67" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-68"><a href="#cb21-68" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">100</span>)</span>
+<span id="cb21-69"><a href="#cb21-69" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-70"><a href="#cb21-70" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
+<span id="cb21-71"><a href="#cb21-71" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-72"><a href="#cb21-72" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb21-73"><a href="#cb21-73" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.t.test</span>(<span class="at">n =</span> n, <span class="at">delta =</span> delta, <span class="at">sd=</span>sd, <span class="at">sig.level =</span> alpha)</span>
+<span id="cb21-74"><a href="#cb21-74" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(power<span class="sc">$</span>n,power<span class="sc">$</span>power)</span>
+<span id="cb21-75"><a href="#cb21-75" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.8</span>)</span>
+<span id="cb21-76"><a href="#cb21-76" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-77"><a href="#cb21-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-78"><a href="#cb21-78" aria-hidden="true" tabindex="-1"></a><span class="fu">### 観測数𝑛=10、母平均の差𝛿=0.01、標準偏差𝜎=0.05、第一の過誤𝛼=0.05のときの対応のないt検定の検出力</span></span>
+<span id="cb21-79"><a href="#cb21-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-82"><a href="#cb21-82" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-83"><a href="#cb21-83" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="fl">1e3</span>)</span>
+<span id="cb21-84"><a href="#cb21-84" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-85"><a href="#cb21-85" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fl">0.01</span></span>
+<span id="cb21-86"><a href="#cb21-86" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-87"><a href="#cb21-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-88"><a href="#cb21-88" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.t.test</span>(<span class="at">n =</span> n, <span class="at">delta =</span> delta, <span class="at">sd=</span>sd, <span class="at">sig.level =</span> alpha)</span>
+<span id="cb21-89"><a href="#cb21-89" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(power<span class="sc">$</span>n,power<span class="sc">$</span>power)</span>
+<span id="cb21-90"><a href="#cb21-90" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.8</span>)</span>
+<span id="cb21-91"><a href="#cb21-91" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-92"><a href="#cb21-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-93"><a href="#cb21-93" aria-hidden="true" tabindex="-1"></a>n=392のときの検出力</span>
+<span id="cb21-94"><a href="#cb21-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-97"><a href="#cb21-97" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-98"><a href="#cb21-98" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">392</span></span>
+<span id="cb21-99"><a href="#cb21-99" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-100"><a href="#cb21-100" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fl">0.01</span></span>
+<span id="cb21-101"><a href="#cb21-101" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-102"><a href="#cb21-102" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.t.test</span>(<span class="at">n =</span> n, <span class="at">delta =</span> delta, <span class="at">sd=</span>sd, <span class="at">sig.level =</span> alpha)</span>
+<span id="cb21-103"><a href="#cb21-103" aria-hidden="true" tabindex="-1"></a>power<span class="sc">$</span>power</span>
+<span id="cb21-104"><a href="#cb21-104" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-105"><a href="#cb21-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-106"><a href="#cb21-106" aria-hidden="true" tabindex="-1"></a><span class="fu">### 観測数𝑛=10、母平均の差𝛿=0.1、標準偏差𝜎=0.05、第一の過誤𝛼=0.05のときの対応のあるt検定の検出力</span></span>
+<span id="cb21-107"><a href="#cb21-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-110"><a href="#cb21-110" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-111"><a href="#cb21-111" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">100</span>)</span>
+<span id="cb21-112"><a href="#cb21-112" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-113"><a href="#cb21-113" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
+<span id="cb21-114"><a href="#cb21-114" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-115"><a href="#cb21-115" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb21-116"><a href="#cb21-116" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.t.test</span>(<span class="at">n =</span> n, <span class="at">delta =</span> delta, <span class="at">sd=</span>sd, <span class="at">sig.level =</span> alpha,<span class="at">type=</span><span class="st">"paired"</span>)</span>
+<span id="cb21-117"><a href="#cb21-117" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(power<span class="sc">$</span>n,power<span class="sc">$</span>power)</span>
+<span id="cb21-118"><a href="#cb21-118" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.8</span>)</span>
+<span id="cb21-119"><a href="#cb21-119" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-120"><a href="#cb21-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-121"><a href="#cb21-121" aria-hidden="true" tabindex="-1"></a><span class="fu">### 観測数𝑛=10、母平均の差𝛿=0.01、標準偏差𝜎=0.05、第一の過誤𝛼=0.05のときの対応のあるt検定の検出力</span></span>
+<span id="cb21-122"><a href="#cb21-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-125"><a href="#cb21-125" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-126"><a href="#cb21-126" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="fl">1e3</span>)</span>
+<span id="cb21-127"><a href="#cb21-127" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-128"><a href="#cb21-128" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fl">0.01</span></span>
+<span id="cb21-129"><a href="#cb21-129" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-130"><a href="#cb21-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-131"><a href="#cb21-131" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.t.test</span>(<span class="at">n =</span> n, <span class="at">delta =</span> delta, <span class="at">sd=</span>sd, <span class="at">sig.level =</span> alpha,<span class="at">type=</span><span class="st">"paired"</span>)</span>
+<span id="cb21-132"><a href="#cb21-132" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(power<span class="sc">$</span>n,power<span class="sc">$</span>power)</span>
+<span id="cb21-133"><a href="#cb21-133" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.8</span>)</span>
+<span id="cb21-134"><a href="#cb21-134" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-135"><a href="#cb21-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-136"><a href="#cb21-136" aria-hidden="true" tabindex="-1"></a>n=196のときの検出力</span>
+<span id="cb21-137"><a href="#cb21-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-140"><a href="#cb21-140" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-141"><a href="#cb21-141" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">196</span></span>
+<span id="cb21-142"><a href="#cb21-142" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-143"><a href="#cb21-143" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fl">0.01</span></span>
+<span id="cb21-144"><a href="#cb21-144" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-145"><a href="#cb21-145" aria-hidden="true" tabindex="-1"></a>power <span class="ot">&lt;-</span> <span class="fu">power.t.test</span>(<span class="at">n =</span> n, <span class="at">delta =</span> delta, <span class="at">sd=</span>sd, <span class="at">sig.level =</span> alpha,<span class="at">type=</span><span class="st">"paired"</span>)</span>
+<span id="cb21-146"><a href="#cb21-146" aria-hidden="true" tabindex="-1"></a>power<span class="sc">$</span>power</span>
+<span id="cb21-147"><a href="#cb21-147" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-148"><a href="#cb21-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-149"><a href="#cb21-149" aria-hidden="true" tabindex="-1"></a><span class="fu">## サンプルサイズの計算</span></span>
+<span id="cb21-150"><a href="#cb21-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-151"><a href="#cb21-151" aria-hidden="true" tabindex="-1"></a><span class="fu">### 割合の差の検定(カイ2乗検定)</span></span>
+<span id="cb21-152"><a href="#cb21-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-153"><a href="#cb21-153" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb21-154"><a href="#cb21-154" aria-hidden="true" tabindex="-1"></a>n=\frac{<span class="sc">\{</span>Z(\alpha/2)\sqrt{2\overline{p}(1-\overline{p})}+Z(\beta)\sqrt{p_0(1-p_0)+p_1(1-p_1)}<span class="sc">\}</span>^2}{d^2}</span>
+<span id="cb21-155"><a href="#cb21-155" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb21-156"><a href="#cb21-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-157"><a href="#cb21-157" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb21-158"><a href="#cb21-158" aria-hidden="true" tabindex="-1"></a>\overline{p}=(p_0+p_1)/2</span>
+<span id="cb21-159"><a href="#cb21-159" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb21-160"><a href="#cb21-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-161"><a href="#cb21-161" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 第一群の母比率𝑝0=100E-6、第二群の母比率𝑝1=500E-6、第一の過誤𝛼=0.05、検出力0.8としたときのサンプルサイズ</span></span>
+<span id="cb21-162"><a href="#cb21-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-165"><a href="#cb21-165" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-166"><a href="#cb21-166" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-167"><a href="#cb21-167" aria-hidden="true" tabindex="-1"></a>p0 <span class="ot">&lt;-</span> <span class="fl">100E-6</span></span>
+<span id="cb21-168"><a href="#cb21-168" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fl">500E-6</span></span>
+<span id="cb21-169"><a href="#cb21-169" aria-hidden="true" tabindex="-1"></a>power<span class="ot">&lt;-</span><span class="fl">0.8</span></span>
+<span id="cb21-170"><a href="#cb21-170" aria-hidden="true" tabindex="-1"></a>beta<span class="ot">&lt;-</span><span class="dv">1</span><span class="sc">-</span>power</span>
+<span id="cb21-171"><a href="#cb21-171" aria-hidden="true" tabindex="-1"></a>phat<span class="ot">&lt;-</span>(p0<span class="sc">+</span>p1)<span class="sc">/</span><span class="dv">2</span></span>
+<span id="cb21-172"><a href="#cb21-172" aria-hidden="true" tabindex="-1"></a>((<span class="sc">-</span><span class="fu">qnorm</span>(alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">*</span>phat<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>phat))<span class="sc">+</span>(<span class="sc">-</span><span class="fu">qnorm</span>(beta)<span class="sc">*</span><span class="fu">sqrt</span>(p0<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p0)<span class="sc">+</span>p1<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p1))))<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>((p1<span class="sc">-</span>p0)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb21-173"><a href="#cb21-173" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-174"><a href="#cb21-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-175"><a href="#cb21-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-176"><a href="#cb21-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-177"><a href="#cb21-177" aria-hidden="true" tabindex="-1"></a><span class="fu">### 対応のないt検定のときのサンプルサイズ</span></span>
+<span id="cb21-178"><a href="#cb21-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-179"><a href="#cb21-179" aria-hidden="true" tabindex="-1"></a>下記で計算する</span>
+<span id="cb21-180"><a href="#cb21-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-181"><a href="#cb21-181" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb21-182"><a href="#cb21-182" aria-hidden="true" tabindex="-1"></a>n=\frac{2\sigma^2<span class="sc">\{</span>Z(\alpha/2)+Z(\beta)<span class="sc">\}</span>^2}{d^2}</span>
+<span id="cb21-183"><a href="#cb21-183" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb21-184"><a href="#cb21-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-185"><a href="#cb21-185" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 標準偏差0.05, 検出すべき差を0.01,検出力0.8、$\alpha$を両側5%、検出力$1-\beta$を80%とした場合</span></span>
+<span id="cb21-186"><a href="#cb21-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-189"><a href="#cb21-189" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-190"><a href="#cb21-190" aria-hidden="true" tabindex="-1"></a>power<span class="ot">&lt;-</span><span class="fl">0.8</span></span>
+<span id="cb21-191"><a href="#cb21-191" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-192"><a href="#cb21-192" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fl">0.01</span></span>
+<span id="cb21-193"><a href="#cb21-193" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-194"><a href="#cb21-194" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span><span class="sc">*</span>(sd<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>(<span class="sc">-</span><span class="fu">qnorm</span>(alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="sc">-</span><span class="fu">qnorm</span>(<span class="dv">1</span><span class="sc">-</span>power)))<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(delta<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb21-195"><a href="#cb21-195" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-196"><a href="#cb21-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-197"><a href="#cb21-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-198"><a href="#cb21-198" aria-hidden="true" tabindex="-1"></a><span class="fu">### 対応のあるt検定のときのサンプルサイズ</span></span>
+<span id="cb21-199"><a href="#cb21-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-200"><a href="#cb21-200" aria-hidden="true" tabindex="-1"></a>下記で計算する</span>
+<span id="cb21-201"><a href="#cb21-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-202"><a href="#cb21-202" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb21-203"><a href="#cb21-203" aria-hidden="true" tabindex="-1"></a>n=\frac{\sigma^2<span class="sc">\{</span>Z(\alpha/2)+Z(\beta)<span class="sc">\}</span>^2}{d^2}</span>
+<span id="cb21-204"><a href="#cb21-204" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb21-205"><a href="#cb21-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-206"><a href="#cb21-206" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 標準偏差0.05, 検出すべき差を0.01,検出力0.8、$\alpha$を両側5%、検出力$1-\beta$を80%とした場合</span></span>
+<span id="cb21-207"><a href="#cb21-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-210"><a href="#cb21-210" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-211"><a href="#cb21-211" aria-hidden="true" tabindex="-1"></a>power<span class="ot">&lt;-</span><span class="fl">0.8</span></span>
+<span id="cb21-212"><a href="#cb21-212" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-213"><a href="#cb21-213" aria-hidden="true" tabindex="-1"></a>delta <span class="ot">&lt;-</span> <span class="fl">0.01</span></span>
+<span id="cb21-214"><a href="#cb21-214" aria-hidden="true" tabindex="-1"></a>sd <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb21-215"><a href="#cb21-215" aria-hidden="true" tabindex="-1"></a>((sd<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>(<span class="sc">-</span><span class="fu">qnorm</span>(alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="sc">-</span><span class="fu">qnorm</span>(<span class="dv">1</span><span class="fl">-0.8</span>)))<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(delta<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb21-216"><a href="#cb21-216" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb21-217"><a href="#cb21-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-218"><a href="#cb21-218" aria-hidden="true" tabindex="-1"></a><span class="fu">## 参考文献</span></span>
+<span id="cb21-219"><a href="#cb21-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-220"><a href="#cb21-220" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">R言語　検出力・サンプルサイズ　t検定や母比率の検定の検出力の計算</span><span class="co">](https://multivariate-statistics.com/2021/10/16/r-programming-power-sample-size/)</span></span>
+<span id="cb21-221"><a href="#cb21-221" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">【pythonで統計学】統計検定のサンプルサイズを計算する</span><span class="co">](https://python-man.club/sample_size/)</span></span>
+<span id="cb21-222"><a href="#cb21-222" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">サンプルサイズの設計</span><span class="co">](https://iss.ndl.go.jp/books/R100000002-I000011064467-00)</span></span>
+<span id="cb21-223"><a href="#cb21-223" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">power.t.test() : 1群または2群のt検定のパワー計算をする関数</span><span class="co">](https://clover.fcg.world/2016/06/15/5302/)</span></span>
+<span id="cb21-224"><a href="#cb21-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-225"><a href="#cb21-225" aria-hidden="true" tabindex="-1"></a><span class="fu">## R version</span></span>
+<span id="cb21-226"><a href="#cb21-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-229"><a href="#cb21-229" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb21-230"><a href="#cb21-230" aria-hidden="true" tabindex="-1"></a>R.version.string</span>
+<span id="cb21-231"><a href="#cb21-231" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

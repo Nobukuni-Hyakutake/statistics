@@ -10,7 +10,807 @@
 <atom:link href="https://nobukuni-hyakutake.github.io/statistics/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.3.361</generator>
-<lastBuildDate>Tue, 28 Nov 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 29 Nov 2023 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>サンプルサイズ</title>
+  <dc:creator>Nobukuni Hyakutake</dc:creator>
+  <link>https://nobukuni-hyakutake.github.io/statistics/posts/sample_size/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/sample_size/lake.jpeg" class="img-fluid"></p>
+<section id="power.prop.testの使い方" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="power.prop.testの使い方"><span class="header-section-number">1</span> power.prop.testの使い方</h2>
+<section id="第一群の母比率𝑝1100e-6第二群の母比率𝑝2500e-6第一の過誤𝛼0.05のときの母比率の差の検定の検出力" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="第一群の母比率𝑝1100e-6第二群の母比率𝑝2500e-6第一の過誤𝛼0.05のときの母比率の差の検定の検出力"><span class="header-section-number">1.1</span> 第一群の母比率𝑝1=100E-6、第二群の母比率𝑝2=500E-6、第一の過誤𝛼=0.05のときの母比率の差の検定の検出力</h3>
+<p>ここでは、0.8の検出力に線を引く。</p>
+<blockquote class="blockquote">
+<p>It is proposed here as a convention that, when the investigator has no other basis for setting the desired power value, the value .80 be used.</p>
+</blockquote>
+<p>出典: <a href="https://www.utstat.toronto.edu/~brunner/oldclass/378f16/readings/CohenPower.pdf">Statistical Power Analysis for the Behavioral Sciences Second Edition</a></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">n <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">seq</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1E5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1000</span>)</span>
+<span id="cb1-2">alpha <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb1-3">p1 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100E-6</span></span>
+<span id="cb1-4">p2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">500E-6</span></span>
+<span id="cb1-5"> </span>
+<span id="cb1-6">power <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">power.prop.test</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">n =</span> n, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">p1 =</span> p1, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">p2 =</span> p2, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">sig.level =</span> alpha)</span>
+<span id="cb1-7"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">plot</span>(power<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>n,power<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>power)</span>
+<span id="cb1-8"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">abline</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">h=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.8</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/sample_size/index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>n=29423のとき</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">n <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">29423</span></span>
+<span id="cb2-2">alpha <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb2-3">p1 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100E-6</span></span>
+<span id="cb2-4">p2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">500E-6</span></span>
+<span id="cb2-5">power <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">power.prop.test</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">n =</span> n, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">p1 =</span> p1, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">p2 =</span> p2, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">sig.level =</span> alpha)</span>
+<span id="cb2-6">power<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>power</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7999961</code></pre>
+</div>
+</div>
+</section>
+<section id="第一群の母比率𝑝1100e-6第二群の母比率𝑝210000e-6第一の過誤𝛼0.05のときの母比率の差の検定の検出力" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="第一群の母比率𝑝1100e-6第二群の母比率𝑝210000e-6第一の過誤𝛼0.05のときの母比率の差の検定の検出力"><span class="header-section-number">1.2</span> 第一群の母比率𝑝1=100E-6、第二群の母比率𝑝2=10000E-6、第一の過誤𝛼=0.05のときの母比率の差の検定の検出力</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">n <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">seq</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1E4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>)</span>
+<span id="cb4-2">alpha <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb4-3">p1 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100E-6</span></span>
+<span id="cb4-4">p2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000E-6</span></span>
+<span id="cb4-5"> </span>
+<span id="cb4-6">power <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">power.prop.test</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">n =</span> n, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">p1 =</span> p1, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">p2 =</span> p2, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">sig.level =</span> alpha)</span>
+<span id="cb4-7"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">plot</span>(power<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>n,power<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>power)</span>
+<span id="cb4-8"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">abline</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">h=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.8</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/sample_size/index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="観測数𝑛10母平均の差𝛿0.1標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のないt検定の検出力" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="観測数𝑛10母平均の差𝛿0.1標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のないt検定の検出力"><span class="header-section-number">1.3</span> 観測数𝑛=10、母平均の差𝛿=0.1、標準偏差𝜎=0.05、第一の過誤𝛼=0.05のときの対応のないt検定の検出力</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">n <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">seq</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>)</span>
+<span id="cb5-2">alpha <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb5-3">delta <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.1</span></span>
+<span id="cb5-4">sd <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb5-5"> </span>
+<span id="cb5-6">power <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">power.t.test</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">n =</span> n, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">delta =</span> delta, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">sd=</span>sd, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">sig.level =</span> alpha)</span>
+<span id="cb5-7"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">plot</span>(power<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>n,power<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>power)</span>
+<span id="cb5-8"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">abline</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">h=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.8</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/sample_size/index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="観測数𝑛10母平均の差𝛿0.01標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のないt検定の検出力" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="観測数𝑛10母平均の差𝛿0.01標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のないt検定の検出力"><span class="header-section-number">1.4</span> 観測数𝑛=10、母平均の差𝛿=0.01、標準偏差𝜎=0.05、第一の過誤𝛼=0.05のときの対応のないt検定の検出力</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">n <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">seq</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1e3</span>)</span>
+<span id="cb6-2">alpha <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb6-3">delta <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.01</span></span>
+<span id="cb6-4">sd <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb6-5"></span>
+<span id="cb6-6">power <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">power.t.test</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">n =</span> n, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">delta =</span> delta, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">sd=</span>sd, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">sig.level =</span> alpha)</span>
+<span id="cb6-7"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">plot</span>(power<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>n,power<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>power)</span>
+<span id="cb6-8"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">abline</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">h=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.8</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/sample_size/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>n=392のときの検出力</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">n <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">392</span></span>
+<span id="cb7-2">alpha <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb7-3">delta <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.01</span></span>
+<span id="cb7-4">sd <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb7-5">power <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">power.t.test</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">n =</span> n, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">delta =</span> delta, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">sd=</span>sd, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">sig.level =</span> alpha)</span>
+<span id="cb7-6">power<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>power</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7985901</code></pre>
+</div>
+</div>
+</section>
+<section id="観測数𝑛10母平均の差𝛿0.1標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のあるt検定の検出力" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="観測数𝑛10母平均の差𝛿0.1標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のあるt検定の検出力"><span class="header-section-number">1.5</span> 観測数𝑛=10、母平均の差𝛿=0.1、標準偏差𝜎=0.05、第一の過誤𝛼=0.05のときの対応のあるt検定の検出力</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">n <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">seq</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>)</span>
+<span id="cb9-2">alpha <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb9-3">delta <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.1</span></span>
+<span id="cb9-4">sd <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb9-5"> </span>
+<span id="cb9-6">power <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">power.t.test</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">n =</span> n, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">delta =</span> delta, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">sd=</span>sd, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">sig.level =</span> alpha,<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">type=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"paired"</span>)</span>
+<span id="cb9-7"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">plot</span>(power<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>n,power<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>power)</span>
+<span id="cb9-8"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">abline</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">h=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.8</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/sample_size/index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="観測数𝑛10母平均の差𝛿0.01標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のあるt検定の検出力" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="観測数𝑛10母平均の差𝛿0.01標準偏差𝜎0.05第一の過誤𝛼0.05のときの対応のあるt検定の検出力"><span class="header-section-number">1.6</span> 観測数𝑛=10、母平均の差𝛿=0.01、標準偏差𝜎=0.05、第一の過誤𝛼=0.05のときの対応のあるt検定の検出力</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1">n <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">seq</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1e3</span>)</span>
+<span id="cb10-2">alpha <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb10-3">delta <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.01</span></span>
+<span id="cb10-4">sd <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb10-5"></span>
+<span id="cb10-6">power <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">power.t.test</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">n =</span> n, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">delta =</span> delta, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">sd=</span>sd, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">sig.level =</span> alpha,<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">type=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"paired"</span>)</span>
+<span id="cb10-7"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">plot</span>(power<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>n,power<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>power)</span>
+<span id="cb10-8"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">abline</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">h=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.8</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/sample_size/index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>n=196のときの検出力</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">n <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">196</span></span>
+<span id="cb11-2">alpha <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb11-3">delta <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.01</span></span>
+<span id="cb11-4">sd <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb11-5">power <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">power.t.test</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">n =</span> n, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">delta =</span> delta, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">sd=</span>sd, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">sig.level =</span> alpha,<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">type=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"paired"</span>)</span>
+<span id="cb11-6">power<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>power</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7956606</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="サンプルサイズの計算" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="サンプルサイズの計算"><span class="header-section-number">2</span> サンプルサイズの計算</h2>
+<section id="割合の差の検定カイ2乗検定" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="割合の差の検定カイ2乗検定"><span class="header-section-number">2.1</span> 割合の差の検定(カイ2乗検定)</h3>
+<p><img src="https://latex.codecogs.com/png.latex?%0An=%5Cfrac%7B%5C%7BZ(%5Calpha/2)%5Csqrt%7B2%5Coverline%7Bp%7D(1-%5Coverline%7Bp%7D)%7D+Z(%5Cbeta)%5Csqrt%7Bp_0(1-p_0)+p_1(1-p_1)%7D%5C%7D%5E2%7D%7Bd%5E2%7D%0A"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Coverline%7Bp%7D=(p_0+p_1)/2%0A"></p>
+<section id="第一群の母比率𝑝0100e-6第二群の母比率𝑝1500e-6第一の過誤𝛼0.05検出力0.8としたときのサンプルサイズ" class="level4" data-number="2.1.1">
+<h4 data-number="2.1.1" class="anchored" data-anchor-id="第一群の母比率𝑝0100e-6第二群の母比率𝑝1500e-6第一の過誤𝛼0.05検出力0.8としたときのサンプルサイズ"><span class="header-section-number">2.1.1</span> 第一群の母比率𝑝0=100E-6、第二群の母比率𝑝1=500E-6、第一の過誤𝛼=0.05、検出力0.8としたときのサンプルサイズ</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1">alpha <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb13-2">p0 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100E-6</span></span>
+<span id="cb13-3">p1 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">500E-6</span></span>
+<span id="cb13-4">power<span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.8</span></span>
+<span id="cb13-5">beta<span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>power</span>
+<span id="cb13-6">phat<span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span>(p0<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>p1)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span>
+<span id="cb13-7">((<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qnorm</span>(alpha<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sqrt</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>phat<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>phat))<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qnorm</span>(beta)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sqrt</span>(p0<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>p0)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>p1<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>p1))))<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>((p1<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>p0)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 29423.29</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="対応のないt検定のときのサンプルサイズ" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="対応のないt検定のときのサンプルサイズ"><span class="header-section-number">2.2</span> 対応のないt検定のときのサンプルサイズ</h3>
+<p>下記で計算する</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0An=%5Cfrac%7B2%5Csigma%5E2%5C%7BZ(%5Calpha/2)+Z(%5Cbeta)%5C%7D%5E2%7D%7Bd%5E2%7D%0A"></p>
+<section id="標準偏差0.05-検出すべき差を0.01検出力0.8alphaを両側5検出力1-betaを80とした場合" class="level4" data-number="2.2.1">
+<h4 data-number="2.2.1" class="anchored" data-anchor-id="標準偏差0.05-検出すべき差を0.01検出力0.8alphaを両側5検出力1-betaを80とした場合"><span class="header-section-number">2.2.1</span> 標準偏差0.05, 検出すべき差を0.01,検出力0.8、<img src="https://latex.codecogs.com/png.latex?%5Calpha">を両側5%、検出力<img src="https://latex.codecogs.com/png.latex?1-%5Cbeta">を80%とした場合</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1">power<span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.8</span></span>
+<span id="cb15-2">alpha <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb15-3">delta <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.01</span></span>
+<span id="cb15-4">sd <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb15-5">(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(sd<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qnorm</span>(alpha<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qnorm</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>power)))<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>(delta<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 392.444</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="対応のあるt検定のときのサンプルサイズ" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="対応のあるt検定のときのサンプルサイズ"><span class="header-section-number">2.3</span> 対応のあるt検定のときのサンプルサイズ</h3>
+<p>下記で計算する</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0An=%5Cfrac%7B%5Csigma%5E2%5C%7BZ(%5Calpha/2)+Z(%5Cbeta)%5C%7D%5E2%7D%7Bd%5E2%7D%0A"></p>
+<section id="標準偏差0.05-検出すべき差を0.01検出力0.8alphaを両側5検出力1-betaを80とした場合-1" class="level4" data-number="2.3.1">
+<h4 data-number="2.3.1" class="anchored" data-anchor-id="標準偏差0.05-検出すべき差を0.01検出力0.8alphaを両側5検出力1-betaを80とした場合-1"><span class="header-section-number">2.3.1</span> 標準偏差0.05, 検出すべき差を0.01,検出力0.8、<img src="https://latex.codecogs.com/png.latex?%5Calpha">を両側5%、検出力<img src="https://latex.codecogs.com/png.latex?1-%5Cbeta">を80%とした場合</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1">power<span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.8</span></span>
+<span id="cb17-2">alpha <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb17-3">delta <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.01</span></span>
+<span id="cb17-4">sd <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb17-5">((sd<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qnorm</span>(alpha<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qnorm</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">-0.8</span>)))<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>(delta<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 196.222</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="参考文献" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">3</span> 参考文献</h2>
+<ul>
+<li><a href="https://multivariate-statistics.com/2021/10/16/r-programming-power-sample-size/">R言語　検出力・サンプルサイズ　t検定や母比率の検定の検出力の計算</a></li>
+<li><a href="https://python-man.club/sample_size/">【pythonで統計学】統計検定のサンプルサイズを計算する</a></li>
+<li><a href="https://iss.ndl.go.jp/books/R100000002-I000011064467-00">サンプルサイズの設計</a></li>
+<li><a href="https://clover.fcg.world/2016/06/15/5302/">power.t.test() : 1群または2群のt検定のパワー計算をする関数</a></li>
+</ul>
+</section>
+<section id="r-version" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="r-version"><span class="header-section-number">4</span> R version</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1">R.version.string</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "R version 4.3.0 (2023-04-21)"</code></pre>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>R</category>
+  <guid>https://nobukuni-hyakutake.github.io/statistics/posts/sample_size/index.html</guid>
+  <pubDate>Wed, 29 Nov 2023 15:00:00 GMT</pubDate>
+  <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/sample_size/lake.jpeg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>数式のLaTeX記法</title>
   <dc:creator>Nobukuni Hyakutake</dc:creator>
@@ -558,175 +1358,6 @@ font-style: inherit;">$</span>p.value</span></code></pre></div>
   <guid>https://nobukuni-hyakutake.github.io/statistics/posts/proportions_test/index.html</guid>
   <pubDate>Tue, 21 Nov 2023 15:00:00 GMT</pubDate>
   <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/proportions_test/river.jpeg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>サンプルサイズ</title>
-  <dc:creator>Nobukuni Hyakutake</dc:creator>
-  <link>https://nobukuni-hyakutake.github.io/statistics/posts/sample_size/index.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/sample_size/lake.jpeg" class="img-fluid"></p>
-<section id="power.prop.testの使い方" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="power.prop.testの使い方"><span class="header-section-number">1</span> power.prop.testの使い方</h2>
-<section id="第一群の母比率𝑝1100e-6第二群の母比率𝑝2500e-6第一の過誤𝛼0.05のときの母比率の差の検定の検出力" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="第一群の母比率𝑝1100e-6第二群の母比率𝑝2500e-6第一の過誤𝛼0.05のときの母比率の差の検定の検出力"><span class="header-section-number">1.1</span> 第一群の母比率𝑝1=100E-6、第二群の母比率𝑝2=500E-6、第一の過誤𝛼=0.05のときの母比率の差の検定の検出力</h3>
-<p>ここでは、0.8の検出力に線を引く。</p>
-<blockquote class="blockquote">
-<p>It is proposed here as a convention that, when the investigator has no other basis for setting the desired power value, the value .80 be used.</p>
-</blockquote>
-<p>出典: <a href="https://www.utstat.toronto.edu/~brunner/oldclass/378f16/readings/CohenPower.pdf">Statistical Power Analysis for the Behavioral Sciences Second Edition</a></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">n <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">seq</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1E5</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1000</span>)</span>
-<span id="cb1-2">alpha <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.05</span></span>
-<span id="cb1-3">p1 <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100E-6</span></span>
-<span id="cb1-4">p2 <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">500E-6</span></span>
-<span id="cb1-5"> </span>
-<span id="cb1-6">power <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">power.prop.test</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">n =</span> n, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">p1 =</span> p1, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">p2 =</span> p2, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">sig.level =</span> alpha)</span>
-<span id="cb1-7"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">plot</span>(power<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>n,power<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>power)</span>
-<span id="cb1-8"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">abline</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">h=</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.8</span>)</span></code></pre></div>
-<div class="cell-output-display">
-<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/sample_size/index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</section>
-<section id="第一群の母比率𝑝1100e-6第二群の母比率𝑝210000e-6第一の過誤𝛼0.05のときの母比率の差の検定の検出力" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="第一群の母比率𝑝1100e-6第二群の母比率𝑝210000e-6第一の過誤𝛼0.05のときの母比率の差の検定の検出力"><span class="header-section-number">1.2</span> 第一群の母比率𝑝1=100E-6、第二群の母比率𝑝2=10000E-6、第一の過誤𝛼=0.05のときの母比率の差の検定の検出力</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">n <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">seq</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1E4</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100</span>)</span>
-<span id="cb2-2">alpha <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.05</span></span>
-<span id="cb2-3">p1 <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100E-6</span></span>
-<span id="cb2-4">p2 <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10000E-6</span></span>
-<span id="cb2-5"> </span>
-<span id="cb2-6">power <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">power.prop.test</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">n =</span> n, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">p1 =</span> p1, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">p2 =</span> p2, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">sig.level =</span> alpha)</span>
-<span id="cb2-7"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">plot</span>(power<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>n,power<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>power)</span>
-<span id="cb2-8"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">abline</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">h=</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.8</span>)</span></code></pre></div>
-<div class="cell-output-display">
-<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/sample_size/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</section>
-</section>
-<section id="参考文献" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">2</span> 参考文献</h2>
-<ul>
-<li><a href="https://multivariate-statistics.com/2021/10/16/r-programming-power-sample-size/">R言語　検出力・サンプルサイズ　t検定や母比率の検定の検出力の計算</a></li>
-<li><a href="https://python-man.club/sample_size/">【pythonで統計学】統計検定のサンプルサイズを計算する<sub>サンプルコード+無料ソフトつき</sub></a></li>
-</ul>
-</section>
-<section id="r-version" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="r-version"><span class="header-section-number">3</span> R version</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">R.version.string</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "R version 4.3.0 (2023-04-21)"</code></pre>
-</div>
-</div>
-
-
-<!-- -->
-
-</section>
-
- ]]></description>
-  <category>R</category>
-  <guid>https://nobukuni-hyakutake.github.io/statistics/posts/sample_size/index.html</guid>
-  <pubDate>Tue, 07 Nov 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/sample_size/lake.jpeg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>二乗平均平方誤差</title>

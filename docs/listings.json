@@ -2,9 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/sample_size/index.html",
       "/posts/mathematical_symbols/index.html",
       "/posts/proportions_test/index.html",
-      "/posts/sample_size/index.html",
       "/posts/rmse/index.html",
       "/posts/joint_distribution/index.html",
       "/posts/basic/index.html",
