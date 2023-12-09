@@ -168,5 +168,4 @@ $\forall x \in X, \quad\exists y \leq \epsilon$
 ## 参考文献
 
 -   [LaTeX2ε 美文書作成入門 改訂第8版](https://gihyo.jp/book/2020/978-4-297-11712-2)
--   [List of LaTeX mathematical symbols](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)
 -   [LaTeX/Mathematics](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
