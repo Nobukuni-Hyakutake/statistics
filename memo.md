@@ -1,5 +1,11 @@
 # メモ書き
 
+## MacでRStudio 日本語入力のイライラを解決する方法
+
+まずダミーのファイルを一つ作って、その後、作業したいファイルを編集すれば、ストレスなく日本語入力できるようになります。
+
+https://walkintheforest.net/rstudio-editor-japanese/
+
 ## 参考文献
 
 - Rによるやさしい統計学 (Kindle)

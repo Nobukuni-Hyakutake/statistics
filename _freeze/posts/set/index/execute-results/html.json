@@ -1,0 +1,14 @@
+{
+  "hash": "f6530c1ce46dc3212e51afe4c49ae487",
+  "result": {
+    "markdown": "---\ntitle: \"集合\"\nauthor: \"Nobukuni Hyakutake\"\ndate: \"2024-05-13\"\ndate-format: \"iso\"\ncategories: [Mathematics]\nimage: \"field_mustard.jpeg\"\n---\n\n\n![](field_mustard.jpeg)\n\n# 集合\n\n## 集合とその元\n\n### 定義\n\n数学的対象の集まりをひとつの対象とみて、これを集合(set)という。そして、集合を構成する個々のものをその集合の元(ゲン)または要素という。$A$が集合であり、$x$がその元のとき、$x$は$A$に属するといい、\n\n$$\nx \\in A\n$$\n\nまたは\n\n$$ \nA \\ni x \n$$\n\nとかく。$x$が$A$に属さないことを$x \\notin A$とかく。\n\n# 参考文献\n\n- [数学の基礎 集合・数・位相 基礎数学14](https://www.utp.or.jp/book/b302226.html)\n- [ 改訂9版 LaTeX美文書作成入門](https://direct.gihyo.jp/view/item/000000003233)\n\n# R version\n\n\n::: {.cell}\n\n```{.r .cell-code}\nR.version.string\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"R version 4.3.2 (2023-10-31)\"\n```\n:::\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

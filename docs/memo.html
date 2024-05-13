@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,9 +17,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -46,43 +47,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -119,7 +90,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-7CEVE5761Z"></script>
@@ -147,27 +119,29 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
     <span class="navbar-title">統計学の勉強ノート</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">このサイトについて</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Nobukuni-Hyakutake/statistics"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/Nobukuni-Hyakutake/statistics" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="./index.xml"><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="./index.xml" rel="" target=""><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -179,77 +153,83 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><div class="quarto-title-block"><div class="quarto-title-tools-only"><h1></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 
 
 <nav id="TOC" role="doc-toc">
     <h2 id="toc-title">目次</h2>
    
   <ul>
-  <li><a href="#メモ書き" id="toc-メモ書き"><span class="toc-section-number">1</span>  メモ書き</a>
+  <li><a href="#メモ書き" id="toc-メモ書き"><span class="header-section-number">1</span> メモ書き</a>
   <ul>
-  <li><a href="#参考文献" id="toc-参考文献"><span class="toc-section-number">1.1</span>  参考文献</a></li>
-  <li><a href="#combining-r-and-python-with-reticulate-and-quarto" id="toc-combining-r-and-python-with-reticulate-and-quarto"><span class="toc-section-number">1.2</span>  Combining R and Python with {reticulate} and Quarto</a></li>
-  <li><a href="#a-quarto-tip-a-day" id="toc-a-quarto-tip-a-day"><span class="toc-section-number">1.3</span>  A Quarto tip a day</a></li>
-  <li><a href="#how-to-write-mathematics" id="toc-how-to-write-mathematics"><span class="toc-section-number">1.4</span>  How to write mathematics</a></li>
-  <li><a href="#htmlとmarkdownの両方に出力する方法" id="toc-htmlとmarkdownの両方に出力する方法"><span class="toc-section-number">1.5</span>  htmlとmarkdownの両方に出力する方法</a></li>
-  <li><a href="#google-analytics設定" id="toc-google-analytics設定"><span class="toc-section-number">1.6</span>  Google analytics設定</a></li>
-  <li><a href="#右側の目次" id="toc-右側の目次"><span class="toc-section-number">1.7</span>  右側の目次</a></li>
-  <li><a href="#wordファイルに出力する方法" id="toc-wordファイルに出力する方法"><span class="toc-section-number">1.8</span>  Wordファイルに出力する方法</a></li>
-  <li><a href="#上部のナビゲージョンバーを入れ子にしたいとき" id="toc-上部のナビゲージョンバーを入れ子にしたいとき"><span class="toc-section-number">1.9</span>  上部のナビゲージョンバーを入れ子にしたいとき</a></li>
-  <li><a href="#python-list結合" id="toc-python-list結合"><span class="toc-section-number">1.10</span>  python list結合</a></li>
+  <li><a href="#macでrstudio-日本語入力のイライラを解決する方法" id="toc-macでrstudio-日本語入力のイライラを解決する方法"><span class="header-section-number">1.1</span> MacでRStudio 日本語入力のイライラを解決する方法</a></li>
+  <li><a href="#参考文献" id="toc-参考文献"><span class="header-section-number">1.2</span> 参考文献</a></li>
+  <li><a href="#combining-r-and-python-with-reticulate-and-quarto" id="toc-combining-r-and-python-with-reticulate-and-quarto"><span class="header-section-number">1.3</span> Combining R and Python with {reticulate} and Quarto</a></li>
+  <li><a href="#a-quarto-tip-a-day" id="toc-a-quarto-tip-a-day"><span class="header-section-number">1.4</span> A Quarto tip a day</a></li>
+  <li><a href="#how-to-write-mathematics" id="toc-how-to-write-mathematics"><span class="header-section-number">1.5</span> How to write mathematics</a></li>
+  <li><a href="#htmlとmarkdownの両方に出力する方法" id="toc-htmlとmarkdownの両方に出力する方法"><span class="header-section-number">1.6</span> htmlとmarkdownの両方に出力する方法</a></li>
+  <li><a href="#google-analytics設定" id="toc-google-analytics設定"><span class="header-section-number">1.7</span> Google analytics設定</a></li>
+  <li><a href="#右側の目次" id="toc-右側の目次"><span class="header-section-number">1.8</span> 右側の目次</a></li>
+  <li><a href="#wordファイルに出力する方法" id="toc-wordファイルに出力する方法"><span class="header-section-number">1.9</span> Wordファイルに出力する方法</a></li>
+  <li><a href="#上部のナビゲージョンバーを入れ子にしたいとき" id="toc-上部のナビゲージョンバーを入れ子にしたいとき"><span class="header-section-number">1.10</span> 上部のナビゲージョンバーを入れ子にしたいとき</a></li>
+  <li><a href="#python-list結合" id="toc-python-list結合"><span class="header-section-number">1.11</span> python list結合</a></li>
   </ul></li>
   </ul>
 </nav>
 <section id="メモ書き" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> メモ書き</h1>
-<section id="参考文献" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">1.1</span> 参考文献</h2>
+<section id="macでrstudio-日本語入力のイライラを解決する方法" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="macでrstudio-日本語入力のイライラを解決する方法"><span class="header-section-number">1.1</span> MacでRStudio 日本語入力のイライラを解決する方法</h2>
+<p>まずダミーのファイルを一つ作って、その後、作業したいファイルを編集すれば、ストレスなく日本語入力できるようになります。</p>
+<p>https://walkintheforest.net/rstudio-editor-japanese/</p>
+</section>
+<section id="参考文献" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">1.2</span> 参考文献</h2>
 <ul>
 <li>Rによるやさしい統計学 (Kindle) ## docsフォルダにRenderしたいとき</li>
 </ul>
 <p>_quarto.yamlに下記の通り設定する</p>
 <p><a href="https://quarto.org/docs/publishing/github-pages.html#render-to-docs">Render to docs</a></p>
 </section>
-<section id="combining-r-and-python-with-reticulate-and-quarto" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="combining-r-and-python-with-reticulate-and-quarto"><span class="header-section-number">1.2</span> Combining R and Python with {reticulate} and Quarto</h2>
+<section id="combining-r-and-python-with-reticulate-and-quarto" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="combining-r-and-python-with-reticulate-and-quarto"><span class="header-section-number">1.3</span> Combining R and Python with {reticulate} and Quarto</h2>
 <p>https://www.r-bloggers.com/2023/01/combining-r-and-python-with-reticulate-and-quarto/</p>
 </section>
-<section id="a-quarto-tip-a-day" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="a-quarto-tip-a-day"><span class="header-section-number">1.3</span> A Quarto tip a day</h2>
+<section id="a-quarto-tip-a-day" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="a-quarto-tip-a-day"><span class="header-section-number">1.4</span> A Quarto tip a day</h2>
 <p>投稿の仕方の参考になりそう。</p>
 <p>https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/</p>
 </section>
-<section id="how-to-write-mathematics" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="how-to-write-mathematics"><span class="header-section-number">1.4</span> How to write mathematics</h2>
+<section id="how-to-write-mathematics" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="how-to-write-mathematics"><span class="header-section-number">1.5</span> How to write mathematics</h2>
 <p><a href="https://b1san-blog.com/post/vscode/vscode-md-math/">Markdownに数式を挿入する方法</a></p>
 <p><a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">LaTeX/Mathematics</a></p>
 <p><a href="https://rpruim.github.io/s341/S19/from-class/MathinRmd.html">Mathematics in R Markdown</a></p>
 </section>
-<section id="htmlとmarkdownの両方に出力する方法" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="htmlとmarkdownの両方に出力する方法"><span class="header-section-number">1.5</span> htmlとmarkdownの両方に出力する方法</h2>
+<section id="htmlとmarkdownの両方に出力する方法" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="htmlとmarkdownの両方に出力する方法"><span class="header-section-number">1.6</span> htmlとmarkdownの両方に出力する方法</h2>
 <pre><code>library(rmarkdown)
 rmarkdown::render("statistics_01.Rmd",output_format = "html_document")
 rmarkdown::render("statistics_01.Rmd",output_format = "md_document")</code></pre>
 </section>
-<section id="google-analytics設定" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="google-analytics設定"><span class="header-section-number">1.6</span> Google analytics設定</h2>
+<section id="google-analytics設定" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="google-analytics設定"><span class="header-section-number">1.7</span> Google analytics設定</h2>
 <p>下記に記載(Private repository)</p>
 <p>https://github.com/Nobukuni-Hyakutake/hon/blob/main/quarto/memo.md</p>
 </section>
-<section id="右側の目次" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="右側の目次"><span class="header-section-number">1.7</span> 右側の目次</h2>
+<section id="右側の目次" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="右側の目次"><span class="header-section-number">1.8</span> 右側の目次</h2>
 <p>_quarto.ymlに下記を加えると右側にページ内の目次がでる。</p>
 <pre><code>format:
   html:
     toc: true</code></pre>
 </section>
-<section id="wordファイルに出力する方法" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="wordファイルに出力する方法"><span class="header-section-number">1.8</span> Wordファイルに出力する方法</h2>
+<section id="wordファイルに出力する方法" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="wordファイルに出力する方法"><span class="header-section-number">1.9</span> Wordファイルに出力する方法</h2>
 <pre><code>quarto render index.qmd --to docx  </code></pre>
 </section>
-<section id="上部のナビゲージョンバーを入れ子にしたいとき" class="level2" data-number="1.9">
-<h2 data-number="1.9" class="anchored" data-anchor-id="上部のナビゲージョンバーを入れ子にしたいとき"><span class="header-section-number">1.9</span> 上部のナビゲージョンバーを入れ子にしたいとき</h2>
+<section id="上部のナビゲージョンバーを入れ子にしたいとき" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="上部のナビゲージョンバーを入れ子にしたいとき"><span class="header-section-number">1.10</span> 上部のナビゲージョンバーを入れ子にしたいとき</h2>
 <p>下記のHelpのように、クリックするとさらに選択肢が出てくるようにする</p>
 <p><img src="img/navbar_help.png" class="img-fluid"></p>
 <pre><code>  navbar:
@@ -285,8 +265,8 @@ rmarkdown::render("statistics_01.Rmd",output_format = "md_document")</code></pre
             icon: "question-circle"
             href: docs/faq/index.qmd</code></pre>
 </section>
-<section id="python-list結合" class="level2" data-number="1.10">
-<h2 data-number="1.10" class="anchored" data-anchor-id="python-list結合"><span class="header-section-number">1.10</span> python list結合</h2>
+<section id="python-list結合" class="level2" data-number="1.11">
+<h2 data-number="1.11" class="anchored" data-anchor-id="python-list結合"><span class="header-section-number">1.11</span> python list結合</h2>
 <pre><code># coding: utf-8
 # 130秒でできた
 import time
@@ -339,9 +319,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -457,6 +451,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -498,138 +578,150 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb6" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># メモ書き</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## 参考文献</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## MacでRStudio 日本語入力のイライラを解決する方法</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Rによるやさしい統計学 (Kindle)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## docsフォルダにRenderしたいとき</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>_quarto.yamlに下記の通り設定する</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Render to docs</span><span class="co">](https://quarto.org/docs/publishing/github-pages.html#render-to-docs)</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Combining R and Python with {reticulate} and Quarto</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>まずダミーのファイルを一つ作って、その後、作業したいファイルを編集すれば、ストレスなく日本語入力できるようになります。</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>https://walkintheforest.net/rstudio-editor-japanese/</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## 参考文献</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Rによるやさしい統計学 (Kindle)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## docsフォルダにRenderしたいとき</span></span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>https://www.r-bloggers.com/2023/01/combining-r-and-python-with-reticulate-and-quarto/</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>_quarto.yamlに下記の通り設定する</span>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## A Quarto tip a day</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Render to docs</span><span class="co">](https://quarto.org/docs/publishing/github-pages.html#render-to-docs)</span></span>
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>投稿の仕方の参考になりそう。</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Combining R and Python with {reticulate} and Quarto</span></span>
 <span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>https://www.r-bloggers.com/2023/01/combining-r-and-python-with-reticulate-and-quarto/</span>
 <span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## How to write mathematics</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## A Quarto tip a day</span></span>
 <span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Markdownに数式を挿入する方法</span><span class="co">](https://b1san-blog.com/post/vscode/vscode-md-math/)</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>投稿の仕方の参考になりそう。</span>
 <span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">LaTeX/Mathematics</span><span class="co">](https://en.wikibooks.org/wiki/LaTeX/Mathematics)</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/</span>
 <span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Mathematics in R Markdown</span><span class="co">](https://rpruim.github.io/s341/S19/from-class/MathinRmd.html)</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## How to write mathematics</span></span>
 <span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## htmlとmarkdownの両方に出力する方法</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Markdownに数式を挿入する方法</span><span class="co">](https://b1san-blog.com/post/vscode/vscode-md-math/)</span></span>
 <span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="in">library(rmarkdown)</span></span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="in">rmarkdown::render("statistics_01.Rmd",output_format = "html_document")</span></span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="in">rmarkdown::render("statistics_01.Rmd",output_format = "md_document")</span></span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">LaTeX/Mathematics</span><span class="co">](https://en.wikibooks.org/wiki/LaTeX/Mathematics)</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Mathematics in R Markdown</span><span class="co">](https://rpruim.github.io/s341/S19/from-class/MathinRmd.html)</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## htmlとmarkdownの両方に出力する方法</span></span>
 <span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## Google analytics設定</span></span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>下記に記載(Private repository)</span>
-<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>https://github.com/Nobukuni-Hyakutake/hon/blob/main/quarto/memo.md</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="in">library(rmarkdown)</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a><span class="in">rmarkdown::render("statistics_01.Rmd",output_format = "html_document")</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="in">rmarkdown::render("statistics_01.Rmd",output_format = "md_document")</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## 右側の目次</span></span>
-<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>_quarto.ymlに下記を加えると右側にページ内の目次がでる。</span>
-<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a><span class="in">format:</span></span>
-<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a><span class="in">  html:</span></span>
-<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a><span class="in">    toc: true</span></span>
-<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a><span class="fu">## Google analytics設定</span></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>下記に記載(Private repository)</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>https://github.com/Nobukuni-Hyakutake/hon/blob/main/quarto/memo.md</span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a><span class="fu">## 右側の目次</span></span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>_quarto.ymlに下記を加えると右側にページ内の目次がでる。</span>
 <span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a><span class="fu">## Wordファイルに出力する方法</span></span>
-<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a><span class="in">quarto render index.qmd --to docx  </span></span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a><span class="in">format:</span></span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a><span class="in">  html:</span></span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a><span class="in">    toc: true</span></span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## 上部のナビゲージョンバーを入れ子にしたいとき</span></span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## Wordファイルに出力する方法</span></span>
 <span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a>下記のHelpのように、クリックするとさらに選択肢が出てくるようにする</span>
-<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/navbar_help.png)</span></span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a><span class="in">quarto render index.qmd --to docx  </span></span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a><span class="in">  navbar:</span></span>
-<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a><span class="in">    background: light</span></span>
-<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a><span class="in">    logo: quarto.png</span></span>
-<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a><span class="in">    logo-alt: "Quarto logo."</span></span>
-<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a><span class="in">    title: false</span></span>
-<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a><span class="in">    collapse-below: lg</span></span>
-<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a><span class="in">    left:</span></span>
-<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a><span class="in">      - text: "Overview"</span></span>
-<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a><span class="in">        href: index.qmd</span></span>
-<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a><span class="in">      - text: "Get Started"</span></span>
-<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a><span class="in">        href: docs/get-started/index.qmd</span></span>
-<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a><span class="in">      - text: "Guide"</span></span>
-<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a><span class="in">        href: docs/guide/index.qmd</span></span>
-<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a><span class="in">      - text: Extensions</span></span>
-<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a><span class="in">        href: docs/extensions/index.qmd</span></span>
-<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a><span class="in">      - text: "Reference"</span></span>
-<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a><span class="in">        href: docs/reference/index.qmd</span></span>
-<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a><span class="in">      - text: "Gallery"</span></span>
-<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a><span class="in">        href: docs/gallery/index.qmd</span></span>
-<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a><span class="in">      - text: "Blog"</span></span>
-<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a><span class="in">        href: docs/blog/index.qmd</span></span>
-<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a><span class="in">      - text: "Help"</span></span>
-<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a><span class="in">        menu:</span></span>
-<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a><span class="in">          - text: "Report a Bug"</span></span>
-<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a><span class="in">            icon: "bug"</span></span>
-<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a><span class="in">            href: "https://github.com/quarto-dev/quarto-cli/issues"</span></span>
-<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a><span class="in">          - text: "Ask a Question"</span></span>
-<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a><span class="in">            icon: "chat-right-text"</span></span>
-<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a><span class="in">            href: "https://github.com/quarto-dev/quarto-cli/discussions"</span></span>
-<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a><span class="in">          - text: "FAQ"</span></span>
-<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a><span class="in">            icon: "question-circle"</span></span>
-<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a><span class="in">            href: docs/faq/index.qmd</span></span>
-<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a><span class="fu">## python list結合</span></span>
-<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a><span class="in"># coding: utf-8</span></span>
-<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a><span class="in"># 130秒でできた</span></span>
-<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a><span class="in">import time</span></span>
-<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a><span class="in">t1 = time.time() </span></span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a><span class="fu">## 上部のナビゲージョンバーを入れ子にしたいとき</span></span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a>下記のHelpのように、クリックするとさらに選択肢が出てくるようにする</span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/navbar_help.png)</span></span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a><span class="in">  navbar:</span></span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a><span class="in">    background: light</span></span>
+<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a><span class="in">    logo: quarto.png</span></span>
+<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a><span class="in">    logo-alt: "Quarto logo."</span></span>
+<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a><span class="in">    title: false</span></span>
+<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a><span class="in">    collapse-below: lg</span></span>
+<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a><span class="in">    left:</span></span>
+<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a><span class="in">      - text: "Overview"</span></span>
+<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a><span class="in">        href: index.qmd</span></span>
+<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a><span class="in">      - text: "Get Started"</span></span>
+<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a><span class="in">        href: docs/get-started/index.qmd</span></span>
+<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a><span class="in">      - text: "Guide"</span></span>
+<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a><span class="in">        href: docs/guide/index.qmd</span></span>
+<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a><span class="in">      - text: Extensions</span></span>
+<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a><span class="in">        href: docs/extensions/index.qmd</span></span>
+<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a><span class="in">      - text: "Reference"</span></span>
+<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a><span class="in">        href: docs/reference/index.qmd</span></span>
+<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a><span class="in">      - text: "Gallery"</span></span>
+<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a><span class="in">        href: docs/gallery/index.qmd</span></span>
+<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a><span class="in">      - text: "Blog"</span></span>
+<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a><span class="in">        href: docs/blog/index.qmd</span></span>
+<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a><span class="in">      - text: "Help"</span></span>
+<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a><span class="in">        menu:</span></span>
+<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a><span class="in">          - text: "Report a Bug"</span></span>
+<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a><span class="in">            icon: "bug"</span></span>
+<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a><span class="in">            href: "https://github.com/quarto-dev/quarto-cli/issues"</span></span>
+<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a><span class="in">          - text: "Ask a Question"</span></span>
+<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a><span class="in">            icon: "chat-right-text"</span></span>
+<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a><span class="in">            href: "https://github.com/quarto-dev/quarto-cli/discussions"</span></span>
+<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a><span class="in">          - text: "FAQ"</span></span>
+<span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a><span class="in">            icon: "question-circle"</span></span>
+<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a><span class="in">            href: docs/faq/index.qmd</span></span>
+<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a><span class="fu">## python list結合</span></span>
 <span id="cb6-110"><a href="#cb6-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a><span class="in">import pandas as pd</span></span>
-<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a><span class="in">fname = '../../big_csv/14gb_csv_sample.csv'</span></span>
-<span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a><span class="in">def preprocess(x): #必要な部分だけを取り出す前処理。ここでデータを削減しないと処理速度が上がらない。</span></span>
-<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a><span class="in">    x=x.loc[(x['0']&lt;0.01),['1']]</span></span>
-<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a><span class="in">    return x    </span></span>
-<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a><span class="in">reader = pd.read_csv(fname,chunksize=100000)</span></span>
-<span id="cb6-117"><a href="#cb6-117" aria-hidden="true" tabindex="-1"></a><span class="in">df04=pd.concat((preprocess(r) for r in reader),ignore_index=True)</span></span>
-<span id="cb6-118"><a href="#cb6-118" aria-hidden="true" tabindex="-1"></a><span class="in">df04.to_csv('pandas_chunk_14gb_to_extract.csv')</span></span>
-<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a><span class="in">t2 = time.time()</span></span>
-<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a><span class="in">elapsed_time = round((t2-t1),1)</span></span>
-<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a><span class="in">print(f"Elapsed time：{elapsed_time} s")</span></span>
-<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a><span class="in"># coding: utf-8</span></span>
+<span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a><span class="in"># 130秒でできた</span></span>
+<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a><span class="in">import time</span></span>
+<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a><span class="in">t1 = time.time() </span></span>
+<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-117"><a href="#cb6-117" aria-hidden="true" tabindex="-1"></a><span class="in">import pandas as pd</span></span>
+<span id="cb6-118"><a href="#cb6-118" aria-hidden="true" tabindex="-1"></a><span class="in">fname = '../../big_csv/14gb_csv_sample.csv'</span></span>
+<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a><span class="in">def preprocess(x): #必要な部分だけを取り出す前処理。ここでデータを削減しないと処理速度が上がらない。</span></span>
+<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a><span class="in">    x=x.loc[(x['0']&lt;0.01),['1']]</span></span>
+<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a><span class="in">    return x    </span></span>
+<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a><span class="in">reader = pd.read_csv(fname,chunksize=100000)</span></span>
+<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a><span class="in">df04=pd.concat((preprocess(r) for r in reader),ignore_index=True)</span></span>
+<span id="cb6-124"><a href="#cb6-124" aria-hidden="true" tabindex="-1"></a><span class="in">df04.to_csv('pandas_chunk_14gb_to_extract.csv')</span></span>
+<span id="cb6-125"><a href="#cb6-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a><span class="in">t2 = time.time()</span></span>
+<span id="cb6-127"><a href="#cb6-127" aria-hidden="true" tabindex="-1"></a><span class="in">elapsed_time = round((t2-t1),1)</span></span>
+<span id="cb6-128"><a href="#cb6-128" aria-hidden="true" tabindex="-1"></a><span class="in">print(f"Elapsed time：{elapsed_time} s")</span></span>
+<span id="cb6-129"><a href="#cb6-129" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">
-        <ul class="footer-items list-unstyled">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
     <li class="nav-item">
- CC by 4.0 Nobukuni Hyakutake
+ © 2023 NO PORTION OF THIS SITE MAY BE USED FOR TRAINING A MACHINELEARNING MODEL (INCLUDING LLMS) WITHOUT THE EXPRESS WRITTEN CONSENT OF THE AUTHOR.
   </li>  
 </ul>
-      </div>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

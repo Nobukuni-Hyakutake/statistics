@@ -1,0 +1,41 @@
+---
+title: "集合"
+author: "Nobukuni Hyakutake"
+date: "2024-05-13"
+date-format: "iso"
+categories: [Mathematics]
+image: "field_mustard.jpeg"
+---
+
+![](field_mustard.jpeg)
+
+# 集合
+
+## 集合とその元
+
+### 定義
+
+数学的対象の集まりをひとつの対象とみて、これを集合(set)という。そして、集合を構成する個々のものをその集合の元(ゲン)または要素という。$A$が集合であり、$x$がその元のとき、$x$は$A$に属するといい、
+
+$$
+x \in A
+$$
+
+または
+
+$$ 
+A \ni x 
+$$
+
+とかく。$x$が$A$に属さないことを$x \notin A$とかく。
+
+# 参考文献
+
+- [数学の基礎 集合・数・位相 基礎数学14](https://www.utp.or.jp/book/b302226.html)
+- [ 改訂9版 LaTeX美文書作成入門](https://direct.gihyo.jp/view/item/000000003233)
+
+# R version
+
+```{r}
+R.version.string
+```

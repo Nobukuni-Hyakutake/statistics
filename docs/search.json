@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Top",
     "section": "",
-    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2023-11-30\n\n\nサンプルサイズ\n\n\nR\n\n\n\n\n\n\n\n2023-11-29\n\n\n数式のLaTeX記法\n\n\nLATEX\n\n\n\n\n\n\n\n2023-11-22\n\n\n比率の検定\n\n\nR\n\n\n\n\n\n\n\n2023-10-13\n\n\n二乗平均平方誤差\n\n\nPython\n\n\n\n\n\n\n\n2023-10-08\n\n\n散布図と周辺分布\n\n\nR\n\n\n\n\n\n\n\n2023-10-06\n\n\nPython基本\n\n\nPython\n\n\n\n\n\n\n\n2023-02-23\n\n\n相関係数\n\n\nR\n\n\n\n\n\n\n\n2023-02-22\n\n\nグラフ\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
+    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2024-05-13\n\n\n集合\n\n\nMathematics\n\n\n\n\n\n\n\n2023-11-30\n\n\nサンプルサイズ\n\n\nR\n\n\n\n\n\n\n\n2023-11-29\n\n\n数式のLaTeX記法\n\n\nLATEX\n\n\n\n\n\n\n\n2023-11-22\n\n\n比率の検定\n\n\nR\n\n\n\n\n\n\n\n2023-10-13\n\n\n二乗平均平方誤差\n\n\nPython\n\n\n\n\n\n\n\n2023-10-08\n\n\n散布図と周辺分布\n\n\nR\n\n\n\n\n\n\n\n2023-10-06\n\n\nPython基本\n\n\nPython\n\n\n\n\n\n\n\n2023-02-23\n\n\n相関係数\n\n\nR\n\n\n\n\n\n\n\n2023-02-22\n\n\nグラフ\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR,Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews,code,analysis,R,Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -121,16 +121,16 @@
   {
     "objectID": "memo.html",
     "href": "memo.html",
-    "title": "統計学の勉強ノート",
+    "title": "",
     "section": "",
-    "text": "Rによるやさしい統計学 (Kindle) ## docsフォルダにRenderしたいとき\n\n_quarto.yamlに下記の通り設定する\nRender to docs\n\n\n\nhttps://www.r-bloggers.com/2023/01/combining-r-and-python-with-reticulate-and-quarto/\n\n\n\n投稿の仕方の参考になりそう。\nhttps://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/\n\n\n\nMarkdownに数式を挿入する方法\nLaTeX/Mathematics\nMathematics in R Markdown\n\n\n\nlibrary(rmarkdown)\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"html_document\")\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"md_document\")\n\n\n\n下記に記載(Private repository)\nhttps://github.com/Nobukuni-Hyakutake/hon/blob/main/quarto/memo.md\n\n\n\n_quarto.ymlに下記を加えると右側にページ内の目次がでる。\nformat:\n  html:\n    toc: true\n\n\n\nquarto render index.qmd --to docx  \n\n\n\n下記のHelpのように、クリックするとさらに選択肢が出てくるようにする\n\n  navbar:\n    background: light\n    logo: quarto.png\n    logo-alt: \"Quarto logo.\"\n    title: false\n    collapse-below: lg\n    left:\n      - text: \"Overview\"\n        href: index.qmd\n      - text: \"Get Started\"\n        href: docs/get-started/index.qmd\n      - text: \"Guide\"\n        href: docs/guide/index.qmd\n      - text: Extensions\n        href: docs/extensions/index.qmd\n      - text: \"Reference\"\n        href: docs/reference/index.qmd\n      - text: \"Gallery\"\n        href: docs/gallery/index.qmd\n      - text: \"Blog\"\n        href: docs/blog/index.qmd\n      - text: \"Help\"\n        menu:\n          - text: \"Report a Bug\"\n            icon: \"bug\"\n            href: \"https://github.com/quarto-dev/quarto-cli/issues\"\n          - text: \"Ask a Question\"\n            icon: \"chat-right-text\"\n            href: \"https://github.com/quarto-dev/quarto-cli/discussions\"\n          - text: \"FAQ\"\n            icon: \"question-circle\"\n            href: docs/faq/index.qmd\n\n\n\n# coding: utf-8\n# 130秒でできた\nimport time\nt1 = time.time() \n\nimport pandas as pd\nfname = '../../big_csv/14gb_csv_sample.csv'\ndef preprocess(x): #必要な部分だけを取り出す前処理。ここでデータを削減しないと処理速度が上がらない。\n    x=x.loc[(x['0']<0.01),['1']]\n    return x    \nreader = pd.read_csv(fname,chunksize=100000)\ndf04=pd.concat((preprocess(r) for r in reader),ignore_index=True)\ndf04.to_csv('pandas_chunk_14gb_to_extract.csv')\n\nt2 = time.time()\nelapsed_time = round((t2-t1),1)\nprint(f\"Elapsed time：{elapsed_time} s\")"
+    "text": "Code"
   },
   {
     "objectID": "memo.html#combining-r-and-python-with-reticulate-and-quarto",
     "href": "memo.html#combining-r-and-python-with-reticulate-and-quarto",
-    "title": "blog",
-    "section": "Combining R and Python with {reticulate} and Quarto",
-    "text": "Combining R and Python with {reticulate} and Quarto\nhttps://www.r-bloggers.com/2023/01/combining-r-and-python-with-reticulate-and-quarto/"
+    "title": "",
+    "section": "1.3 Combining R and Python with {reticulate} and Quarto",
+    "text": "1.3 Combining R and Python with {reticulate} and Quarto\nhttps://www.r-bloggers.com/2023/01/combining-r-and-python-with-reticulate-and-quarto/"
   },
   {
     "objectID": "posts/standard_deviation/index.html",
@@ -177,9 +177,9 @@
   {
     "objectID": "memo.html#a-quarto-tip-a-day",
     "href": "memo.html#a-quarto-tip-a-day",
-    "title": "blog",
-    "section": "A Quarto tip a day",
-    "text": "A Quarto tip a day\n投稿の仕方の参考になりそう。\nhttps://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/"
+    "title": "",
+    "section": "1.4 A Quarto tip a day",
+    "text": "1.4 A Quarto tip a day\n投稿の仕方の参考になりそう。\nhttps://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/"
   },
   {
     "objectID": "posts/post-with-code/index.html#r-version",
@@ -684,5 +684,103 @@
     "title": "サンプルサイズ",
     "section": "2 サンプルサイズの計算",
     "text": "2 サンプルサイズの計算\n\n2.1 割合の差の検定(カイ2乗検定)\n\\[\nn=\\frac{\\{Z(\\alpha/2)\\sqrt{2\\overline{p}(1-\\overline{p})}+Z(\\beta)\\sqrt{p_0(1-p_0)+p_1(1-p_1)}\\}^2}{d^2}\n\\]\n\\[\n\\overline{p}=(p_0+p_1)/2\n\\]\n\n2.1.1 第一群の母比率𝑝0=100E-6、第二群の母比率𝑝1=500E-6、第一の過誤𝛼=0.05、検出力0.8としたときのサンプルサイズ\n\nalpha &lt;- 0.05\np0 &lt;- 100E-6\np1 &lt;- 500E-6\npower&lt;-0.8\nbeta&lt;-1-power\nphat&lt;-(p0+p1)/2\n((-qnorm(alpha/2)*sqrt(2*phat*(1-phat))+(-qnorm(beta)*sqrt(p0*(1-p0)+p1*(1-p1))))^2)/((p1-p0)^2)\n\n[1] 29423.29\n\n\n\n\n\n2.2 対応のないt検定のときのサンプルサイズ\n下記で計算する\n\\[\nn=\\frac{2\\sigma^2\\{Z(\\alpha/2)+Z(\\beta)\\}^2}{d^2}\n\\]\n\n2.2.1 標準偏差0.05, 検出すべき差を0.01,検出力0.8、\\(\\alpha\\)を両側5%、検出力\\(1-\\beta\\)を80%とした場合\n\npower&lt;-0.8\nalpha &lt;- 0.05\ndelta &lt;- 0.01\nsd &lt;- 0.05\n(2*(sd^2)*(-qnorm(alpha/2)+(-qnorm(1-power)))^2)/(delta^2)\n\n[1] 392.444\n\n\n\n\n\n2.3 対応のあるt検定のときのサンプルサイズ\n下記で計算する\n\\[\nn=\\frac{\\sigma^2\\{Z(\\alpha/2)+Z(\\beta)\\}^2}{d^2}\n\\]\n\n2.3.1 標準偏差0.05, 検出すべき差を0.01,検出力0.8、\\(\\alpha\\)を両側5%、検出力\\(1-\\beta\\)を80%とした場合\n\npower&lt;-0.8\nalpha &lt;- 0.05\ndelta &lt;- 0.01\nsd &lt;- 0.05\n((sd^2)*(-qnorm(alpha/2)+(-qnorm(1-0.8)))^2)/(delta^2)\n\n[1] 196.222"
+  },
+  {
+    "objectID": "posts/set/index.html#集合",
+    "href": "posts/set/index.html#集合",
+    "title": "集合",
+    "section": "1 集合",
+    "text": "1 集合\n\n1.1 定義\n数学的対象の集まりをひとつの対象とみて、これを集合(set)という。そして、集合を構成する個々のものをその集合の元(ゲン)または要素という。\\(A\\)が集合であり、\\(x\\)がその元のとき、\\(x\\)は\\(A\\)に属するといい、\n\\[\nx \\in A\n\\]\nまたは\n\\[\nA \\ni x\n\\]\nとかく。\\(x\\)が\\(A\\)に属さないことを\\(x \\notin A\\)とかく。"
+  },
+  {
+    "objectID": "posts/set/index.html#参考文献",
+    "href": "posts/set/index.html#参考文献",
+    "title": "集合",
+    "section": "2 参考文献",
+    "text": "2 参考文献\n\n数学の基礎 集合・数・位相 基礎数学14\n改訂9版 LaTeX美文書作成入門"
+  },
+  {
+    "objectID": "posts/set/index.html#r-version",
+    "href": "posts/set/index.html#r-version",
+    "title": "集合",
+    "section": "3 R version",
+    "text": "3 R version\n\nR.version.string\n\n[1] \"R version 4.3.2 (2023-10-31)\""
+  },
+  {
+    "objectID": "memo.html#macでrstudio-日本語入力のイライラを解決する方法",
+    "href": "memo.html#macでrstudio-日本語入力のイライラを解決する方法",
+    "title": "",
+    "section": "1.1 MacでRStudio 日本語入力のイライラを解決する方法",
+    "text": "1.1 MacでRStudio 日本語入力のイライラを解決する方法\nまずダミーのファイルを一つ作って、その後、作業したいファイルを編集すれば、ストレスなく日本語入力できるようになります。\nhttps://walkintheforest.net/rstudio-editor-japanese/"
+  },
+  {
+    "objectID": "memo.html#参考文献",
+    "href": "memo.html#参考文献",
+    "title": "",
+    "section": "1.2 参考文献",
+    "text": "1.2 参考文献\n\nRによるやさしい統計学 (Kindle) ## docsフォルダにRenderしたいとき\n\n_quarto.yamlに下記の通り設定する\nRender to docs"
+  },
+  {
+    "objectID": "memo.html#how-to-write-mathematics",
+    "href": "memo.html#how-to-write-mathematics",
+    "title": "",
+    "section": "1.5 How to write mathematics",
+    "text": "1.5 How to write mathematics\nMarkdownに数式を挿入する方法\nLaTeX/Mathematics\nMathematics in R Markdown"
+  },
+  {
+    "objectID": "memo.html#htmlとmarkdownの両方に出力する方法",
+    "href": "memo.html#htmlとmarkdownの両方に出力する方法",
+    "title": "",
+    "section": "1.6 htmlとmarkdownの両方に出力する方法",
+    "text": "1.6 htmlとmarkdownの両方に出力する方法\nlibrary(rmarkdown)\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"html_document\")\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"md_document\")"
+  },
+  {
+    "objectID": "memo.html#google-analytics設定",
+    "href": "memo.html#google-analytics設定",
+    "title": "",
+    "section": "1.7 Google analytics設定",
+    "text": "1.7 Google analytics設定\n下記に記載(Private repository)\nhttps://github.com/Nobukuni-Hyakutake/hon/blob/main/quarto/memo.md"
+  },
+  {
+    "objectID": "memo.html#右側の目次",
+    "href": "memo.html#右側の目次",
+    "title": "",
+    "section": "1.8 右側の目次",
+    "text": "1.8 右側の目次\n_quarto.ymlに下記を加えると右側にページ内の目次がでる。\nformat:\n  html:\n    toc: true"
+  },
+  {
+    "objectID": "memo.html#wordファイルに出力する方法",
+    "href": "memo.html#wordファイルに出力する方法",
+    "title": "",
+    "section": "1.9 Wordファイルに出力する方法",
+    "text": "1.9 Wordファイルに出力する方法\nquarto render index.qmd --to docx"
+  },
+  {
+    "objectID": "memo.html#上部のナビゲージョンバーを入れ子にしたいとき",
+    "href": "memo.html#上部のナビゲージョンバーを入れ子にしたいとき",
+    "title": "",
+    "section": "1.10 上部のナビゲージョンバーを入れ子にしたいとき",
+    "text": "1.10 上部のナビゲージョンバーを入れ子にしたいとき\n下記のHelpのように、クリックするとさらに選択肢が出てくるようにする\n\n  navbar:\n    background: light\n    logo: quarto.png\n    logo-alt: \"Quarto logo.\"\n    title: false\n    collapse-below: lg\n    left:\n      - text: \"Overview\"\n        href: index.qmd\n      - text: \"Get Started\"\n        href: docs/get-started/index.qmd\n      - text: \"Guide\"\n        href: docs/guide/index.qmd\n      - text: Extensions\n        href: docs/extensions/index.qmd\n      - text: \"Reference\"\n        href: docs/reference/index.qmd\n      - text: \"Gallery\"\n        href: docs/gallery/index.qmd\n      - text: \"Blog\"\n        href: docs/blog/index.qmd\n      - text: \"Help\"\n        menu:\n          - text: \"Report a Bug\"\n            icon: \"bug\"\n            href: \"https://github.com/quarto-dev/quarto-cli/issues\"\n          - text: \"Ask a Question\"\n            icon: \"chat-right-text\"\n            href: \"https://github.com/quarto-dev/quarto-cli/discussions\"\n          - text: \"FAQ\"\n            icon: \"question-circle\"\n            href: docs/faq/index.qmd"
+  },
+  {
+    "objectID": "memo.html#python-list結合",
+    "href": "memo.html#python-list結合",
+    "title": "",
+    "section": "1.11 python list結合",
+    "text": "1.11 python list結合\n# coding: utf-8\n# 130秒でできた\nimport time\nt1 = time.time() \n\nimport pandas as pd\nfname = '../../big_csv/14gb_csv_sample.csv'\ndef preprocess(x): #必要な部分だけを取り出す前処理。ここでデータを削減しないと処理速度が上がらない。\n    x=x.loc[(x['0']&lt;0.01),['1']]\n    return x    \nreader = pd.read_csv(fname,chunksize=100000)\ndf04=pd.concat((preprocess(r) for r in reader),ignore_index=True)\ndf04.to_csv('pandas_chunk_14gb_to_extract.csv')\n\nt2 = time.time()\nelapsed_time = round((t2-t1),1)\nprint(f\"Elapsed time：{elapsed_time} s\")"
+  },
+  {
+    "objectID": "posts/set/index.html",
+    "href": "posts/set/index.html",
+    "title": "集合",
+    "section": "",
+    "text": "1 集合\n\n1.0.1 定義\n数学的対象の集まりをひとつの対象とみて、これを集合(set)という。そして、集合を構成する個々のものをその集合の元(ゲン)または要素という。\\(A\\)が集合であり、\\(x\\)がその元のとき、\\(x\\)は\\(A\\)に属するといい、\n\\[\nx \\in A\n\\]\nまたは\n\\[\nA \\ni x\n\\]\nとかく。\\(x\\)が\\(A\\)に属さないことを\\(x \\notin A\\)とかく。\n\n\n\n2 参考文献\n\n数学の基礎 集合・数・位相 基礎数学14\n改訂9版 LaTeX美文書作成入門\n\n\n\n3 R version\n\nR.version.string\n\n[1] \"R version 4.3.2 (2023-10-31)\""
+  },
+  {
+    "objectID": "posts/set/index.html#集合とその元",
+    "href": "posts/set/index.html#集合とその元",
+    "title": "集合",
+    "section": "1.1 集合とその元",
+    "text": "1.1 集合とその元\n\n1.1.1 定義\n数学的対象の集まりをひとつの対象とみて、これを集合(set)という。そして、集合を構成する個々のものをその集合の元(ゲン)または要素という。\\(A\\)が集合であり、\\(x\\)がその元のとき、\\(x\\)は\\(A\\)に属するといい、\n\\[\nx \\in A\n\\]\nまたは\n\\[\nA \\ni x\n\\]\nとかく。\\(x\\)が\\(A\\)に属さないことを\\(x \\notin A\\)とかく。"
   }
 ]
