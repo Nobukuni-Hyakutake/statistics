@@ -1,0 +1,56 @@
+---
+title: "微分積分"
+author: "Nobukuni Hyakutake"
+date: "2024-05-22"
+date-format: "iso"
+categories: [Mathematics]
+image: "field_mustard.jpeg"
+---
+
+![](field_mustard.jpeg)
+
+# 基本
+
+## 数直線
+
+数直線上に有理数、無理数をプロットする。
+
+```{r}
+library(tidyverse)
+library(ggrepel)
+g_width <- 100
+g_height <- 100 * 2 / (1 + sqrt(5))
+d01 <- read_csv("
+              point,value
+              1,0
+              2,1
+              3,2
+              4,3
+              5,-1
+              6,-2
+              7,-3
+              ", show_col_types = FALSE)
+d01$label <- as.character(d01$value)
+d02 <- c(1 / 2, -3 / 2, sqrt(2), pi, -sqrt(3))
+d03 <- tibble(
+  point = seq(8, 12),
+  value = d02,
+  label = c("frac(1,2)", "-frac(3,2)", "sqrt(2)", "pi", "-sqrt(3)")
+) #?plotmath で文法は調べられる
+d04 <- bind_rows(d01, d03)
+ggplot(d04, aes(value, 1, label = label)) +
+  geom_pointrange(aes(xmin = -4, xmax = 4)) +
+  geom_point() +
+  geom_label_repel(parse = TRUE)
+```
+
+
+# 参考文献
+
+- [理工系の数学入門シリーズ 新装版 微分積分](https://www.iwanami.co.jp/book/b482316.html)
+
+# R version
+
+```{r}
+R.version.string
+```

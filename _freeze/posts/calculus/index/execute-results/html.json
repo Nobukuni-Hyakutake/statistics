@@ -1,0 +1,17 @@
+{
+  "hash": "150f7961a728c1c72a77bb66c8e58864",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"微分積分\"\nauthor: \"Nobukuni Hyakutake\"\ndate: \"2024-05-22\"\ndate-format: \"iso\"\ncategories: [Mathematics]\nimage: \"field_mustard.jpeg\"\n---\n\n\n![](field_mustard.jpeg)\n\n# 基本\n\n## 数直線\n\n数直線上に有理数、無理数をプロットする。\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\nlibrary(ggrepel)\ng_width <- 100\ng_height <- 100 * 2 / (1 + sqrt(5))\nd01 <- read_csv(\"\n              point,value\n              1,0\n              2,1\n              3,2\n              4,3\n              5,-1\n              6,-2\n              7,-3\n              \", show_col_types = FALSE)\nd01$label <- as.character(d01$value)\nd02 <- c(1 / 2, -3 / 2, sqrt(2), pi, -sqrt(3))\nd03 <- tibble(\n  point = seq(8, 12),\n  value = d02,\n  label = c(\"frac(1,2)\", \"-frac(3,2)\", \"sqrt(2)\", \"pi\", \"-sqrt(3)\")\n) #?plotmath で文法は調べられる\nd04 <- bind_rows(d01, d03)\nggplot(d04, aes(value, 1, label = label)) +\n  geom_pointrange(aes(xmin = -4, xmax = 4)) +\n  geom_point() +\n  geom_label_repel(parse = TRUE)\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n\n\n\n# 参考文献\n\n- [理工系の数学入門シリーズ 新装版 微分積分](https://www.iwanami.co.jp/book/b482316.html)\n\n# R version\n\n\n::: {.cell}\n\n```{.r .cell-code}\nR.version.string\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"R version 4.4.0 (2024-04-24)\"\n```\n\n\n:::\n:::",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

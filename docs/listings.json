@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/calculus/index.html",
       "/posts/set/index.html",
       "/posts/sample_size/index.html",
       "/posts/mathematical_symbols/index.html",
