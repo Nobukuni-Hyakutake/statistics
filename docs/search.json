@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Top",
     "section": "",
-    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2024-05-22\n\n\n微分積分\n\n\nMathematics\n\n\n\n\n\n\n\n2024-05-13\n\n\n集合\n\n\nMathematics\n\n\n\n\n\n\n\n2023-11-30\n\n\nサンプルサイズ\n\n\nR\n\n\n\n\n\n\n\n2023-11-29\n\n\n数式のLaTeX記法\n\n\nLATEX\n\n\n\n\n\n\n\n2023-11-22\n\n\n比率の検定\n\n\nR\n\n\n\n\n\n\n\n2023-10-13\n\n\n二乗平均平方誤差\n\n\nPython\n\n\n\n\n\n\n\n2023-10-08\n\n\n散布図と周辺分布\n\n\nR\n\n\n\n\n\n\n\n2023-10-06\n\n\nPython基本\n\n\nPython\n\n\n\n\n\n\n\n2023-02-23\n\n\n相関係数\n\n\nR\n\n\n\n\n\n\n\n2023-02-22\n\n\nグラフ\n\n\nR, Python\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR, Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews, code, analysis, R, Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\nNo matching items"
+    "text": "右側のCategoriesをクリックすると、該当する記事に絞られます。\nFilterに文字を入力すると、その文字を含む記事に絞られます。\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\n\n\n\n2025-02-21\n\n\n予測区間\n\n\nPython\n\n\n\n\n\n\n\n2024-05-22\n\n\n微分積分\n\n\nMathematics\n\n\n\n\n\n\n\n2024-05-13\n\n\n集合\n\n\nMathematics\n\n\n\n\n\n\n\n2023-11-30\n\n\nサンプルサイズ\n\n\nR\n\n\n\n\n\n\n\n2023-11-29\n\n\n数式のLaTeX記法\n\n\nLATEX\n\n\n\n\n\n\n\n2023-11-22\n\n\n比率の検定\n\n\nR\n\n\n\n\n\n\n\n2023-10-13\n\n\n二乗平均平方誤差\n\n\nPython\n\n\n\n\n\n\n\n2023-10-08\n\n\n散布図と周辺分布\n\n\nR\n\n\n\n\n\n\n\n2023-10-06\n\n\nPython基本\n\n\nPython\n\n\n\n\n\n\n\n2023-02-23\n\n\n相関係数\n\n\nR\n\n\n\n\n\n\n\n2023-02-22\n\n\nグラフ\n\n\nR, Python\n\n\n\n\n\n\n\n2023-02-20\n\n\nワイブル分布の確率密度関数への近似\n\n\nR, Python\n\n\n\n\n\n\n\n2023-02-10\n\n\n統計学基礎\n\n\nSTATISTICS\n\n\n\n\n\n\n\n2023-01-30\n\n\nRを電卓として使う\n\n\nR\n\n\n\n\n\n\n\n2023-01-27\n\n\nPythonを電卓として使う\n\n\nPython\n\n\n\n\n\n\n\n2023-01-25\n\n\nコード入りの投稿サンプル\n\n\nnews, code, analysis, R, Python\n\n\n\n\n\n\n\n2023-01-20\n\n\nようこそ\n\n\nnews\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -789,5 +789,19 @@
     "title": "微分積分",
     "section": "1.1 数直線",
     "text": "1.1 数直線\n数直線上に有理数、無理数をプロットする。\n\nlibrary(tidyverse)\nlibrary(ggrepel)\ng_width &lt;- 100\ng_height &lt;- 100 * 2 / (1 + sqrt(5))\nd01 &lt;- read_csv(\"\n              point,value\n              1,0\n              2,1\n              3,2\n              4,3\n              5,-1\n              6,-2\n              7,-3\n              \", show_col_types = FALSE)\nd01$label &lt;- as.character(d01$value)\nd02 &lt;- c(1 / 2, -3 / 2, sqrt(2), pi, -sqrt(3))\nd03 &lt;- tibble(\n  point = seq(8, 12),\n  value = d02,\n  label = c(\"frac(1,2)\", \"-frac(3,2)\", \"sqrt(2)\", \"pi\", \"-sqrt(3)\")\n) #?plotmath で文法は調べられる\nd04 &lt;- bind_rows(d01, d03)\nggplot(d04, aes(value, 1, label = label)) +\n  geom_pointrange(aes(xmin = -4, xmax = 4)) +\n  geom_point() +\n  geom_label_repel(parse = TRUE)"
+  },
+  {
+    "objectID": "posts/prediction_intervals/index.html#予測区間",
+    "href": "posts/prediction_intervals/index.html#予測区間",
+    "title": "予測区間",
+    "section": "1 予測区間",
+    "text": "1 予測区間\n\nimport seaborn as sns\nimport statsmodels.api as sm\n# assume X and y are the input and output variables\nX=[2,3,4,5,6]\ny=[6,8,10,11,12]\n#X = sm.add_constant(X)\nmodel = sm.OLS(y, X).fit()\ny_pred = model.predict(X)\n#y_pred_lower, y_pred_upper = model.get_prediction(X).summary_frame(alpha=0.05)\ny_pred\n\narray([ 4.51111111,  6.76666667,  9.02222222, 11.27777778, 13.53333333])\n\n\n\nmodel.get_prediction(X).summary_frame(alpha=0.05)\n\n\n\n\n\n\n\n\n\nmean\nmean_se\nmean_ci_lower\nmean_ci_upper\nobs_ci_lower\nobs_ci_upper\n\n\n\n\n0\n4.511111\n0.281311\n3.730067\n5.292155\n0.724859\n8.297363\n\n\n1\n6.766667\n0.421966\n5.595100\n7.938233\n2.881021\n10.652312\n\n\n2\n9.022222\n0.562622\n7.460134\n10.584311\n5.001551\n13.042893\n\n\n3\n11.277778\n0.703277\n9.325167\n13.230388\n7.089895\n15.465661\n\n\n4\n13.533333\n0.843933\n11.190201\n15.876466\n9.149734\n17.916933"
+  },
+  {
+    "objectID": "posts/prediction_intervals/index.html#python-version",
+    "href": "posts/prediction_intervals/index.html#python-version",
+    "title": "予測区間",
+    "section": "2 Python version",
+    "text": "2 Python version\n\nimport platform\n\"Python version \"+platform.python_version()\n\n'Python version 3.12.3'"
   }
 ]

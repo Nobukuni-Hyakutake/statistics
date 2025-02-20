@@ -1,0 +1,37 @@
+---
+title: "予測区間"
+author: "Nobukuni Hyakutake"
+date: "2025-02-21"
+date-format: "iso"
+categories: [Python]
+image: "mountain3.jpeg"
+---
+
+![](mountain3.jpeg)
+
+## 予測区間
+
+```{python}
+import seaborn as sns
+import statsmodels.api as sm
+# assume X and y are the input and output variables
+X=[2,3,4,5,6]
+y=[6,8,10,11,12]
+#X = sm.add_constant(X)
+model = sm.OLS(y, X).fit()
+y_pred = model.predict(X)
+#y_pred_lower, y_pred_upper = model.get_prediction(X).summary_frame(alpha=0.05)
+y_pred
+```
+
+
+```{python}
+model.get_prediction(X).summary_frame(alpha=0.05)
+```
+
+## Python version
+
+```{python}
+import platform
+"Python version "+platform.python_version()
+```

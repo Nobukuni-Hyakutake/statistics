@@ -10,7 +10,181 @@
 <atom:link href="https://nobukuni-hyakutake.github.io/statistics/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.4.554</generator>
-<lastBuildDate>Tue, 21 May 2024 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 20 Feb 2025 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>予測区間</title>
+  <dc:creator>Nobukuni Hyakutake</dc:creator>
+  <link>https://nobukuni-hyakutake.github.io/statistics/posts/prediction_intervals/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/prediction_intervals/mountain3.jpeg" class="img-fluid"></p>
+<section id="予測区間" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="予測区間"><span class="header-section-number">1</span> 予測区間</h2>
+<div id="739e2543" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> seaborn <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> sns</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> statsmodels.api <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> sm</span>
+<span id="cb1-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># assume X and y are the input and output variables</span></span>
+<span id="cb1-4">X<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>]</span>
+<span id="cb1-5">y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">11</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span>]</span>
+<span id="cb1-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#X = sm.add_constant(X)</span></span>
+<span id="cb1-7">model <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> sm.OLS(y, X).fit()</span>
+<span id="cb1-8">y_pred <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> model.predict(X)</span>
+<span id="cb1-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#y_pred_lower, y_pred_upper = model.get_prediction(X).summary_frame(alpha=0.05)</span></span>
+<span id="cb1-10">y_pred</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>array([ 4.51111111,  6.76666667,  9.02222222, 11.27777778, 13.53333333])</code></pre>
+</div>
+</div>
+<div id="fd862f76" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">model.get_prediction(X).summary_frame(alpha<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mean</th>
+<th data-quarto-table-cell-role="th">mean_se</th>
+<th data-quarto-table-cell-role="th">mean_ci_lower</th>
+<th data-quarto-table-cell-role="th">mean_ci_upper</th>
+<th data-quarto-table-cell-role="th">obs_ci_lower</th>
+<th data-quarto-table-cell-role="th">obs_ci_upper</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>4.511111</td>
+<td>0.281311</td>
+<td>3.730067</td>
+<td>5.292155</td>
+<td>0.724859</td>
+<td>8.297363</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>6.766667</td>
+<td>0.421966</td>
+<td>5.595100</td>
+<td>7.938233</td>
+<td>2.881021</td>
+<td>10.652312</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>9.022222</td>
+<td>0.562622</td>
+<td>7.460134</td>
+<td>10.584311</td>
+<td>5.001551</td>
+<td>13.042893</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>11.277778</td>
+<td>0.703277</td>
+<td>9.325167</td>
+<td>13.230388</td>
+<td>7.089895</td>
+<td>15.465661</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>13.533333</td>
+<td>0.843933</td>
+<td>11.190201</td>
+<td>15.876466</td>
+<td>9.149734</td>
+<td>17.916933</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="python-version" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="python-version"><span class="header-section-number">2</span> Python version</h2>
+<div id="d5f4ed7a" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> platform</span>
+<span id="cb4-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"Python version "</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>platform.python_version()</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>'Python version 3.12.3'</code></pre>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>Python</category>
+  <guid>https://nobukuni-hyakutake.github.io/statistics/posts/prediction_intervals/</guid>
+  <pubDate>Thu, 20 Feb 2025 15:00:00 GMT</pubDate>
+  <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/prediction_intervals/mountain3.jpeg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>微分積分</title>
   <dc:creator>Nobukuni Hyakutake</dc:creator>
