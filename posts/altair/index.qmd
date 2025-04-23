@@ -1,0 +1,149 @@
+---
+title: "Altair"
+author: "Nobukuni Hyakutake"
+date: "2025-04-24"
+date-format: "iso"
+categories: [Python]
+image: "field_mustard.jpeg"
+---
+
+![](field_mustard.jpeg)
+
+## 散布図
+
+```{python}
+# import altair with an abbreviated alias
+import altair as alt
+
+# load a sample dataset as a pandas DataFrame
+from vega_datasets import data
+cars = data.cars()
+cars
+```
+
+
+```{python}
+# make the chart
+alt.Chart(cars).mark_point().encode(
+    x='Horsepower',
+    y='Miles_per_Gallon',
+    color='Origin',
+).interactive()
+```
+
+```{python}
+# make the chart
+alt.Chart(cars).mark_point().encode(
+    x='Horsepower',
+    y='Miles_per_Gallon',
+    color='Origin',
+)
+```
+
+## ヒストグラム
+
+### Movies
+
+```{python}
+import altair as alt
+from vega_datasets import data
+
+source = data.movies.url
+source
+```
+
+
+```{python}
+alt.Chart(source).mark_bar().encode(
+    alt.X("IMDB_Rating:Q", bin=True),
+    y='count()',
+)
+```
+
+### Penguins-Adelie
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+df<-penguins |> drop_na()
+write.csv(df,"penguins.csv",row.names = FALSE,na="")
+```
+
+```{python}
+import polars as pl
+import math
+penguins=pl.read_csv("penguins.csv")
+penguins
+```
+```{python}
+penguins_adelie=penguins.filter(pl.col("species")=="Adelie")
+penguins_adelie
+```
+```{python}
+g_width=100
+g_height=g_width*2/(1+math.sqrt(5))
+chart=alt.Chart(penguins_adelie).mark_bar().encode(
+    alt.X("bill_length_mm", bin=True),
+    y='count()',
+).properties(
+    width=g_width,
+    height=g_height)
+chart
+chart.save('penguins_adelie.png', ppi=200)
+```
+
+保存したファイルを表示
+
+![](penguins_adelie.png)
+
+### Penguins-Facet by species
+
+```{python}
+penguins=penguins.with_columns(pl.lit(48).alias("a"))
+chart1=alt.Chart(penguins).mark_bar().encode(
+    alt.X("bill_length_mm").bin(),
+    y="count()",
+    row="species"
+).properties(
+    width=g_width*1.5,
+    height=g_height*1.5)
+chart1
+chart1.save('penguins_facet.png', ppi=200)
+```
+
+保存したファイルを表示
+
+![](penguins_facet.png)
+
+```{python}
+chart1=alt.Chart().mark_bar().encode(
+    alt.X("bill_length_mm").bin(),
+    y="count()",
+).properties(
+    width=g_width*1.5,
+    height=g_height*1.5)
+chart2=alt.Chart().mark_rule().encode(
+  x="a"
+)
+chart=(chart1+chart2).facet(row="species",data=penguins)
+chart
+chart.save('penguins_facet_vline.png', ppi=200)
+```
+
+保存したファイルを表示
+
+![](penguins_facet_vline.png)
+
+## 参考文献
+
+- [Simple Histogram](https://altair-viz.github.io/gallery/simple_histogram.html)
+- [Faceted Histogram](https://altair-viz.github.io/gallery/distributions_faceted_histogram.html)
+- [Saving Altair Charts](https://altair-viz.github.io/user_guide/saving_charts.html)
+- [add vertical line faceted chart](https://github.com/vega/altair/issues/1124#issuecomment-417712132)
+
+## Python version
+
+```{python}
+import platform
+"Python version "+platform.python_version()
+```

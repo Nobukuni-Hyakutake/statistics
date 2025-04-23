@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/altair/index.html",
       "/posts/prediction_intervals/index.html",
       "/posts/calculus/index.html",
       "/posts/set/index.html",
