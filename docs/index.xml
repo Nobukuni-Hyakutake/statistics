@@ -10,7 +10,147 @@
 <atom:link href="https://nobukuni-hyakutake.github.io/statistics/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.4.554</generator>
-<lastBuildDate>Wed, 23 Apr 2025 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 24 Apr 2025 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>Plotly</title>
+  <dc:creator>Nobukuni Hyakutake</dc:creator>
+  <link>https://nobukuni-hyakutake.github.io/statistics/posts/plotly/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/plotly/field_mustard.jpeg" class="img-fluid"></p>
+<section id="ヒストグラム" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="ヒストグラム"><span class="header-section-number">1</span> ヒストグラム</h2>
+<div id="2bff048e" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> polars <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pl</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> plotly.express <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> px</span>
+<span id="cb1-4"></span>
+<span id="cb1-5">n <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1000000</span></span>
+<span id="cb1-6">s <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.normal(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, n)</span>
+<span id="cb1-7">h <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.normal(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, n)</span>
+<span id="cb1-8">df <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pl.DataFrame({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"value"</span>: s, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"h"</span>: h}).with_columns(</span>
+<span id="cb1-9">    pl.when(pl.col(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"h"</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)</span>
+<span id="cb1-10">    .then(pl.lit(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"high"</span>))</span>
+<span id="cb1-11">    .otherwise(pl.lit(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"low"</span>))</span>
+<span id="cb1-12">    .alias(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"high_low"</span>),</span>
+<span id="cb1-13">    pl.lit(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>).alias(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"a"</span>),</span>
+<span id="cb1-14">).to_pandas()</span>
+<span id="cb1-15"></span>
+<span id="cb1-16">fig<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>px.histogram(df,x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"value"</span>,nbins<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">32</span>,facet_row<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"high_low"</span>)</span>
+<span id="cb1-17">fig.add_vline(x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>)</span>
+<span id="cb1-18">fig.write_image(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"altair_histogram_trial18.png"</span>)</span></code></pre></div>
+</div>
+<p>保存したファイルを表示する</p>
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/plotly/altair_histogram_trial18.png" class="img-fluid"></p>
+</section>
+<section id="参考文献" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">2</span> 参考文献</h2>
+<ul>
+<li><a href="https://plotly.com/python/histograms/">Plotly - Histograms in Python</a></li>
+<li><a href="https://plotly.com/python/facet-plots/">Plotly - Facet and Trellis Plots in Python</a></li>
+</ul>
+</section>
+<section id="python-version" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="python-version"><span class="header-section-number">3</span> Python version</h2>
+<div id="789a3cdf" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> platform</span>
+<span id="cb2-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"Python version "</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>platform.python_version()</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>'Python version 3.12.3'</code></pre>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>Python</category>
+  <guid>https://nobukuni-hyakutake.github.io/statistics/posts/plotly/</guid>
+  <pubDate>Thu, 24 Apr 2025 15:00:00 GMT</pubDate>
+  <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/plotly/field_mustard.jpeg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Altair</title>
   <dc:creator>Nobukuni Hyakutake</dc:creator>

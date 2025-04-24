@@ -1,0 +1,49 @@
+---
+title: "Plotly"
+author: "Nobukuni Hyakutake"
+date: "2025-04-25"
+date-format: "iso"
+categories: [Python]
+image: "field_mustard.jpeg"
+---
+
+![](field_mustard.jpeg)
+
+## ヒストグラム
+
+```{python}
+import polars as pl
+import numpy as np
+import plotly.express as px
+
+n = 1000000
+s = np.random.normal(0, 1, n)
+h = np.random.normal(0, 1, n)
+df = pl.DataFrame({"value": s, "h": h}).with_columns(
+    pl.when(pl.col("h") > 0)
+    .then(pl.lit("high"))
+    .otherwise(pl.lit("low"))
+    .alias("high_low"),
+    pl.lit(0.5).alias("a"),
+).to_pandas()
+
+fig=px.histogram(df,x="value",nbins=32,facet_row="high_low")
+fig.add_vline(x=0.5)
+fig.write_image("altair_histogram_trial18.png")
+```
+
+保存したファイルを表示する
+
+![](altair_histogram_trial18.png)
+
+## 参考文献
+
+- [Plotly - Histograms in Python](https://plotly.com/python/histograms/)
+- [Plotly - Facet and Trellis Plots in Python](https://plotly.com/python/facet-plots/)
+
+## Python version
+
+```{python}
+import platform
+"Python version "+platform.python_version()
+```

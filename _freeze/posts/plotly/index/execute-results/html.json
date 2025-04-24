@@ -1,0 +1,12 @@
+{
+  "hash": "5e22cb51cda920582fd7d3b2655e1b08",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Plotly\"\nauthor: \"Nobukuni Hyakutake\"\ndate: \"2025-04-25\"\ndate-format: \"iso\"\ncategories: [Python]\nimage: \"field_mustard.jpeg\"\n---\n\n![](field_mustard.jpeg)\n\n## ヒストグラム\n\n::: {#2bff048e .cell execution_count=1}\n``` {.python .cell-code}\nimport polars as pl\nimport numpy as np\nimport plotly.express as px\n\nn = 1000000\ns = np.random.normal(0, 1, n)\nh = np.random.normal(0, 1, n)\ndf = pl.DataFrame({\"value\": s, \"h\": h}).with_columns(\n    pl.when(pl.col(\"h\") > 0)\n    .then(pl.lit(\"high\"))\n    .otherwise(pl.lit(\"low\"))\n    .alias(\"high_low\"),\n    pl.lit(0.5).alias(\"a\"),\n).to_pandas()\n\nfig=px.histogram(df,x=\"value\",nbins=32,facet_row=\"high_low\")\nfig.add_vline(x=0.5)\nfig.write_image(\"altair_histogram_trial18.png\")\n```\n:::\n\n\n保存したファイルを表示する\n\n![](altair_histogram_trial18.png)\n\n## 参考文献\n\n- [Plotly - Histograms in Python](https://plotly.com/python/histograms/)\n- [Plotly - Facet and Trellis Plots in Python](https://plotly.com/python/facet-plots/)\n\n## Python version\n\n::: {#789a3cdf .cell execution_count=2}\n``` {.python .cell-code}\nimport platform\n\"Python version \"+platform.python_version()\n```\n\n::: {.cell-output .cell-output-display execution_count=4}\n```\n'Python version 3.12.3'\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
