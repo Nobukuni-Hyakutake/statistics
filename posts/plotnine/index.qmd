@@ -54,7 +54,7 @@ ggplot(penguins_adelie,aes(bill_length_mm))+
 
 shinyにするときはこちら
 
-
+https://github.com/Nobukuni-Hyakutake/statistics/blob/4c0aae8a08947b15ebcf071ef4036014a212248b/basic-app-plot2/app.py
 
 ## Python version
 

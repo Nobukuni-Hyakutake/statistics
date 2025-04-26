@@ -872,7 +872,7 @@
     "href": "posts/plotnine/index.html#rの場合",
     "title": "plotnine",
     "section": "2 Rの場合",
-    "text": "2 Rの場合\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\npenguins_adelie&lt;-penguins |&gt; \n  filter(species==\"Adelie\",!is.na(bill_length_mm))\npenguins_adelie\n\n# A tibble: 151 × 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           36.7          19.3               193        3450\n 5 Adelie  Torgersen           39.3          20.6               190        3650\n 6 Adelie  Torgersen           38.9          17.8               181        3625\n 7 Adelie  Torgersen           39.2          19.6               195        4675\n 8 Adelie  Torgersen           34.1          18.1               193        3475\n 9 Adelie  Torgersen           42            20.2               190        4250\n10 Adelie  Torgersen           37.8          17.1               186        3300\n# ℹ 141 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\n\nggplot(penguins_adelie,aes(bill_length_mm))+\n  geom_histogram(binwidth = 2.5)"
+    "text": "2 Rの場合\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\npenguins_adelie&lt;-penguins |&gt; \n  filter(species==\"Adelie\",!is.na(bill_length_mm))\npenguins_adelie\n\n# A tibble: 151 × 8\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           36.7          19.3               193        3450\n 5 Adelie  Torgersen           39.3          20.6               190        3650\n 6 Adelie  Torgersen           38.9          17.8               181        3625\n 7 Adelie  Torgersen           39.2          19.6               195        4675\n 8 Adelie  Torgersen           34.1          18.1               193        3475\n 9 Adelie  Torgersen           42            20.2               190        4250\n10 Adelie  Torgersen           37.8          17.1               186        3300\n# ℹ 141 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\n\nggplot(penguins_adelie,aes(bill_length_mm))+\n  geom_histogram(binwidth = 2.5)\n\n\n\n\n\n\n\n\nshinyにするときはこちら\nhttps://github.com/Nobukuni-Hyakutake/statistics/blob/4c0aae8a08947b15ebcf071ef4036014a212248b/basic-app-plot2/app.py"
   },
   {
     "objectID": "posts/plotnine/index.html#参考文献",
@@ -885,7 +885,7 @@
     "objectID": "posts/plotnine/index.html#python-version",
     "href": "posts/plotnine/index.html#python-version",
     "title": "plotnine",
-    "section": "4 Python version",
-    "text": "4 Python version\n\nimport platform\n\"Python version \"+platform.python_version()\n\n'Python version 3.12.3'"
+    "section": "3 Python version",
+    "text": "3 Python version\n\nimport platform\n\"Python version \"+platform.python_version()\n\n'Python version 3.12.3'"
   }
 ]
