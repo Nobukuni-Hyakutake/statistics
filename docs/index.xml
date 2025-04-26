@@ -10,7 +10,239 @@
 <atom:link href="https://nobukuni-hyakutake.github.io/statistics/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.4.554</generator>
-<lastBuildDate>Thu, 24 Apr 2025 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 26 Apr 2025 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>plotnine</title>
+  <dc:creator>Nobukuni Hyakutake</dc:creator>
+  <link>https://nobukuni-hyakutake.github.io/statistics/posts/plotnine/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/plotnine/field_mustard.jpeg" class="img-fluid"></p>
+<section id="ヒストグラム" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="ヒストグラム"><span class="header-section-number">1</span> ヒストグラム</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> plotnine <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span></span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> palmerpenguins <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> load_penguins</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> math</span>
+<span id="cb1-4"></span>
+<span id="cb1-5">penguins <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> load_penguins()</span>
+<span id="cb1-6">penguins</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       species     island  bill_length_mm  ...  body_mass_g     sex  year
+0       Adelie  Torgersen            39.1  ...       3750.0    male  2007
+1       Adelie  Torgersen            39.5  ...       3800.0  female  2007
+2       Adelie  Torgersen            40.3  ...       3250.0  female  2007
+3       Adelie  Torgersen             NaN  ...          NaN     NaN  2007
+4       Adelie  Torgersen            36.7  ...       3450.0  female  2007
+..         ...        ...             ...  ...          ...     ...   ...
+339  Chinstrap      Dream            55.8  ...       4000.0    male  2009
+340  Chinstrap      Dream            43.5  ...       3400.0  female  2009
+341  Chinstrap      Dream            49.6  ...       3775.0    male  2009
+342  Chinstrap      Dream            50.8  ...       4100.0    male  2009
+343  Chinstrap      Dream            50.2  ...       3775.0  female  2009
+
+[344 rows x 8 columns]</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">penguins_adelie<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>penguins.dropna(subset<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"bill_length_mm"</span>).loc[penguins[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"species"</span>]<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Adelie"</span>]</span>
+<span id="cb3-2">penguins_adelie</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    species     island  bill_length_mm  ...  body_mass_g     sex  year
+0    Adelie  Torgersen            39.1  ...       3750.0    male  2007
+1    Adelie  Torgersen            39.5  ...       3800.0  female  2007
+2    Adelie  Torgersen            40.3  ...       3250.0  female  2007
+4    Adelie  Torgersen            36.7  ...       3450.0  female  2007
+5    Adelie  Torgersen            39.3  ...       3650.0    male  2007
+..      ...        ...             ...  ...          ...     ...   ...
+147  Adelie      Dream            36.6  ...       3475.0  female  2009
+148  Adelie      Dream            36.0  ...       3450.0  female  2009
+149  Adelie      Dream            37.8  ...       3750.0    male  2009
+150  Adelie      Dream            36.0  ...       3700.0  female  2009
+151  Adelie      Dream            41.5  ...       4000.0    male  2009
+
+[151 rows x 8 columns]</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">g<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(</span>
+<span id="cb5-2">  ggplot(penguins_adelie,aes(x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"bill_length_mm"</span>))</span>
+<span id="cb5-3">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>geom_histogram(binwidth<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2.5</span>)</span>
+<span id="cb5-4">)</span>
+<span id="cb5-5">g.save(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"histogram.png"</span>,width<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>,height<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>math.sqrt(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>)),units<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"mm"</span>)</span></code></pre></div>
+</div>
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/plotnine/histogram.png" class="img-fluid"></p>
+</section>
+<section id="rの場合" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="rの場合"><span class="header-section-number">2</span> Rの場合</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(tidyverse)</span>
+<span id="cb6-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(palmerpenguins)</span>
+<span id="cb6-3"></span>
+<span id="cb6-4">penguins_adelie<span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span>penguins <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb6-5">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(species<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Adelie"</span>,<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">is.na</span>(bill_length_mm))</span>
+<span id="cb6-6">penguins_adelie</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 151 × 8
+   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+ 1 Adelie  Torgersen           39.1          18.7               181        3750
+ 2 Adelie  Torgersen           39.5          17.4               186        3800
+ 3 Adelie  Torgersen           40.3          18                 195        3250
+ 4 Adelie  Torgersen           36.7          19.3               193        3450
+ 5 Adelie  Torgersen           39.3          20.6               190        3650
+ 6 Adelie  Torgersen           38.9          17.8               181        3625
+ 7 Adelie  Torgersen           39.2          19.6               195        4675
+ 8 Adelie  Torgersen           34.1          18.1               193        3475
+ 9 Adelie  Torgersen           42            20.2               190        4250
+10 Adelie  Torgersen           37.8          17.1               186        3300
+# ℹ 141 more rows
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(penguins_adelie,<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(bill_length_mm))<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb8-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_histogram</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">binwidth =</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2.5</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/plotnine/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="参考文献" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">3</span> 参考文献</h2>
+<ul>
+<li>[</li>
+</ul>
+</section>
+<section id="python-version" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="python-version"><span class="header-section-number">4</span> Python version</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> platform</span>
+<span id="cb9-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"Python version "</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>platform.python_version()</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'Python version 3.12.3'</code></pre>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>Python</category>
+  <guid>https://nobukuni-hyakutake.github.io/statistics/posts/plotnine/</guid>
+  <pubDate>Sat, 26 Apr 2025 15:00:00 GMT</pubDate>
+  <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/plotnine/field_mustard.jpeg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Plotly</title>
   <dc:creator>Nobukuni Hyakutake</dc:creator>

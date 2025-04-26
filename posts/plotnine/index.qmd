@@ -1,0 +1,64 @@
+---
+title: "plotnine"
+author: "Nobukuni Hyakutake"
+date: "2025-04-27"
+date-format: "iso"
+categories: [Python]
+image: "field_mustard.jpeg"
+---
+
+![](field_mustard.jpeg)
+
+## ヒストグラム
+
+```{python}
+from plotnine import *
+from palmerpenguins import load_penguins
+import math
+
+penguins = load_penguins()
+penguins
+```
+
+```{python}
+penguins_adelie=penguins.dropna(subset="bill_length_mm").loc[penguins["species"]=="Adelie"]
+penguins_adelie
+```
+
+```{python}
+g=(
+  ggplot(penguins_adelie,aes(x="bill_length_mm"))
+  +geom_histogram(binwidth=2.5)
+)
+g.save("histogram.png",width=100,height=100*2/(1+math.sqrt(5)),units="mm")
+```
+![](histogram.png)
+
+## Rの場合
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+
+penguins_adelie<-penguins |> 
+  filter(species=="Adelie",!is.na(bill_length_mm))
+penguins_adelie
+```
+
+
+```{r}
+ggplot(penguins_adelie,aes(bill_length_mm))+
+  geom_histogram(binwidth = 2.5)
+
+```
+
+shinyにするときはこちら
+
+
+
+## Python version
+
+```{python}
+import platform
+"Python version "+platform.python_version()
+```
