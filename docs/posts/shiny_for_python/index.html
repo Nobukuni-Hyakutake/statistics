@@ -213,7 +213,7 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 <section id="ペンギンのヒストグラムのダッシュボード" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="ペンギンのヒストグラムのダッシュボード"><span class="header-section-number">1</span> ペンギンのヒストグラムのダッシュボード</h2>
 <p>下記のコードを<code>app.py</code>として保存する。</p>
-<div id="c232ae21" class="cell" data-execution_count="1">
+<div id="31737760" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> ggplot, aes, geom_histogram, geom_vline</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> faicons <span class="im">import</span> icon_svg</span>
@@ -265,10 +265,10 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> ui.layout_columns():</span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> ui.card(full_screen<span class="op">=</span><span class="va">True</span>):</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>        ui.card_header(<span class="st">"Bill length and depth"</span>)</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>        ui.card_header(<span class="st">"Bill length"</span>)</span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>        <span class="at">@render.plot</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> length_depth():</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> length():</span>
 <span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> (</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>                ggplot(filtered_df(), aes(x<span class="op">=</span><span class="st">"bill_length_mm"</span>))</span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>                <span class="op">+</span> geom_histogram()</span>
@@ -289,6 +289,8 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 <p>下記を実行するとブラウザで下図のようなダッシュボードが出てくる。</p>
 <pre><code>python3 -m shiny run --launch-browser app.py</code></pre>
 <p><img src="histogram_shiny.png" class="img-fluid"></p>
+<p>app.pyのファイルは下記</p>
+<p>https://github.com/Nobukuni-Hyakutake/statistics/blob/724a2344982aa25408accf4f82373388a0298972/trial/shiny_dashboard_02/app.py</p>
 </section>
 <section id="参考文献" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">2</span> 参考文献</h2>
@@ -298,7 +300,7 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 </section>
 <section id="python-version" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="python-version"><span class="header-section-number">3</span> Python version</h2>
-<div id="5ccaba33" class="cell" data-execution_count="2">
+<div id="d3c9b1e4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> platform</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">"Python version "</span><span class="op">+</span>platform.python_version()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
@@ -832,10 +834,10 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 <span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> ui.layout_columns():</span>
 <span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> ui.card(full_screen<span class="op">=</span><span class="va">True</span>):</span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>        ui.card_header(<span class="st">"Bill length and depth"</span>)</span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>        ui.card_header(<span class="st">"Bill length"</span>)</span>
 <span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>        <span class="at">@render.plot</span></span>
-<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> length_depth():</span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> length():</span>
 <span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> (</span>
 <span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>                ggplot(filtered_df(), aes(x<span class="op">=</span><span class="st">"bill_length_mm"</span>))</span>
 <span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>                <span class="op">+</span> geom_histogram()</span>
@@ -863,16 +865,20 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 <span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a><span class="al">![](histogram_shiny.png)</span></span>
 <span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a><span class="fu">## 参考文献</span></span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a>app.pyのファイルは下記</span>
 <span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Shiny &gt; Install, create, &amp; run</span><span class="co">](https://shiny.posit.co/py/docs/install-create-run.html)</span></span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a>https://github.com/Nobukuni-Hyakutake/statistics/blob/724a2344982aa25408accf4f82373388a0298972/trial/shiny_dashboard_02/app.py</span>
 <span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a><span class="fu">## Python version</span></span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a><span class="fu">## 参考文献</span></span>
 <span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> platform</span>
-<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a><span class="co">"Python version "</span><span class="op">+</span>platform.python_version()</span>
-<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Shiny &gt; Install, create, &amp; run</span><span class="co">](https://shiny.posit.co/py/docs/install-create-run.html)</span></span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a><span class="fu">## Python version</span></span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> platform</span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a><span class="co">"Python version "</span><span class="op">+</span>platform.python_version()</span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -25,7 +25,7 @@
 <section id="ペンギンのヒストグラムのダッシュボード" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="ペンギンのヒストグラムのダッシュボード"><span class="header-section-number">1</span> ペンギンのヒストグラムのダッシュボード</h2>
 <p>下記のコードを<code>app.py</code>として保存する。</p>
-<div id="c232ae21" class="cell" data-execution_count="1">
+<div id="31737760" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> pathlib <span class="im" style="color: #00769E;
@@ -256,7 +256,7 @@ background-color: null;
 font-style: inherit;">True</span>):</span>
 <span id="cb1-52">        ui.card_header(<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"Bill length and depth"</span>)</span>
+font-style: inherit;">"Bill length"</span>)</span>
 <span id="cb1-53"></span>
 <span id="cb1-54">        <span class="at" style="color: #657422;
 background-color: null;
@@ -264,7 +264,7 @@ font-style: inherit;">@render.plot</span></span>
 <span id="cb1-55">        <span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
-font-style: inherit;">def</span> length_depth():</span>
+font-style: inherit;">def</span> length():</span>
 <span id="cb1-56">            <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -328,6 +328,8 @@ font-style: inherit;">return</span> filt_df</span></code></pre></div>
 <p>下記を実行するとブラウザで下図のようなダッシュボードが出てくる。</p>
 <pre><code>python3 -m shiny run --launch-browser app.py</code></pre>
 <p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/shiny_for_python/histogram_shiny.png" class="img-fluid"></p>
+<p>app.pyのファイルは下記</p>
+<p>https://github.com/Nobukuni-Hyakutake/statistics/blob/724a2344982aa25408accf4f82373388a0298972/trial/shiny_dashboard_02/app.py</p>
 </section>
 <section id="参考文献" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">2</span> 参考文献</h2>
@@ -337,7 +339,7 @@ font-style: inherit;">return</span> filt_df</span></code></pre></div>
 </section>
 <section id="python-version" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="python-version"><span class="header-section-number">3</span> Python version</h2>
-<div id="5ccaba33" class="cell" data-execution_count="2">
+<div id="d3c9b1e4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> platform</span>

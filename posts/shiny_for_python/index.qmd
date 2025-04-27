@@ -68,10 +68,10 @@ with ui.layout_column_wrap(fill=False):
 
 with ui.layout_columns():
     with ui.card(full_screen=True):
-        ui.card_header("Bill length and depth")
+        ui.card_header("Bill length")
 
         @render.plot
-        def length_depth():
+        def length():
             return (
                 ggplot(filtered_df(), aes(x="bill_length_mm"))
                 + geom_histogram()
@@ -98,6 +98,10 @@ python3 -m shiny run --launch-browser app.py
 ```
 
 ![](histogram_shiny.png)
+
+app.pyのファイルは下記
+
+https://github.com/Nobukuni-Hyakutake/statistics/blob/724a2344982aa25408accf4f82373388a0298972/trial/shiny_dashboard_02/app.py
 
 ## 参考文献
 

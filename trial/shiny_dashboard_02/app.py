@@ -1,4 +1,5 @@
 # https://shiny.posit.co/py/docs/overview.html#templates
+
 from pathlib import Path
 from plotnine import ggplot, aes, geom_histogram, geom_vline
 from faicons import icon_svg
@@ -50,10 +51,10 @@ with ui.layout_column_wrap(fill=False):
 
 with ui.layout_columns():
     with ui.card(full_screen=True):
-        ui.card_header("Bill length and depth")
+        ui.card_header("Bill length")
 
         @render.plot
-        def length_depth():
+        def length():
             return (
                 ggplot(filtered_df(), aes(x="bill_length_mm"))
                 + geom_histogram()
