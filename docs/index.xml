@@ -22,8 +22,8 @@
 
 
 <p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/plotnine/field_mustard.jpeg" class="img-fluid"></p>
-<section id="ヒストグラム" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="ヒストグラム"><span class="header-section-number">1</span> ヒストグラム</h2>
+<section id="ヒストグラムpython-plotnine" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="ヒストグラムpython-plotnine"><span class="header-section-number">1</span> ヒストグラム(python plotnine)</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
@@ -140,9 +140,11 @@ background-color: null;
 font-style: inherit;">"mm"</span>)</span></code></pre></div>
 </div>
 <p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/plotnine/histogram.png" class="img-fluid"></p>
+<p>shiny for pythonにするときはこちら</p>
+<p>https://github.com/Nobukuni-Hyakutake/statistics/blob/4c0aae8a08947b15ebcf071ef4036014a212248b/basic-app-plot2/app.py</p>
 </section>
-<section id="rの場合" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="rの場合"><span class="header-section-number">2</span> Rの場合</h2>
+<section id="ヒストグラムr-ggplot" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="ヒストグラムr-ggplot"><span class="header-section-number">2</span> ヒストグラム(R ggplot)</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="fu" style="color: #4758AB;
 background-color: null;
@@ -209,8 +211,6 @@ font-style: inherit;">2.5</span>)</span></code></pre></div>
 </div>
 </div>
 </div>
-<p>shinyにするときはこちら</p>
-<p>https://github.com/Nobukuni-Hyakutake/statistics/blob/4c0aae8a08947b15ebcf071ef4036014a212248b/basic-app-plot2/app.py</p>
 </section>
 <section id="python-version" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="python-version"><span class="header-section-number">3</span> Python version</h2>

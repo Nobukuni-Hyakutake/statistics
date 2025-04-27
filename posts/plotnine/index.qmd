@@ -9,7 +9,7 @@ image: "field_mustard.jpeg"
 
 ![](field_mustard.jpeg)
 
-## ヒストグラム
+## ヒストグラム(python plotnine)
 
 ```{python}
 from plotnine import *
@@ -34,7 +34,12 @@ g.save("histogram.png",width=100,height=100*2/(1+math.sqrt(5)),units="mm")
 ```
 ![](histogram.png)
 
-## Rの場合
+shiny for pythonにするときはこちら
+
+https://github.com/Nobukuni-Hyakutake/statistics/blob/4c0aae8a08947b15ebcf071ef4036014a212248b/basic-app-plot2/app.py
+
+
+## ヒストグラム(R ggplot)
 
 ```{r}
 library(tidyverse)
@@ -52,9 +57,6 @@ ggplot(penguins_adelie,aes(bill_length_mm))+
 
 ```
 
-shinyにするときはこちら
-
-https://github.com/Nobukuni-Hyakutake/statistics/blob/4c0aae8a08947b15ebcf071ef4036014a212248b/basic-app-plot2/app.py
 
 ## Python version
 
