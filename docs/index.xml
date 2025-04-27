@@ -22,10 +22,10 @@
 
 
 <p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/shiny_for_python/field_mustard.jpeg" class="img-fluid"></p>
-<section id="ペンギンのヒストグラムのダッシュボード" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="ペンギンのヒストグラムのダッシュボード"><span class="header-section-number">1</span> ペンギンのヒストグラムのダッシュボード</h2>
-<p>下記のコードを<code>app.py</code>として保存する。</p>
-<div id="31737760" class="cell" data-execution_count="1">
+<section id="ペンギンのヒストグラムのダッシュボードをshiny-for-pythonでつくる" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="ペンギンのヒストグラムのダッシュボードをshiny-for-pythonでつくる"><span class="header-section-number">1</span> ペンギンのヒストグラムのダッシュボードをShiny for Pythonでつくる</h2>
+<p>下記のコードを<a href="https://github.com/Nobukuni-Hyakutake/statistics/blob/main/trial/shiny_dashboard_02/app.py">app.py</a>として保存する。</p>
+<div id="c61dc6ba" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> pathlib <span class="im" style="color: #00769E;
@@ -325,30 +325,165 @@ background-color: null;
 font-weight: bold;
 font-style: inherit;">return</span> filt_df</span></code></pre></div>
 </div>
-<p>下記を実行するとブラウザで下図のようなダッシュボードが出てくる。</p>
-<pre><code>python3 -m shiny run --launch-browser app.py</code></pre>
+<p>下記をターミナル/コマンドプロンプトで実行するとブラウザで下図のようなダッシュボードが出てくる。</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">python3</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-m</span> shiny run <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--launch-browser</span> app.py</span></code></pre></div>
 <p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/shiny_for_python/histogram_shiny.png" class="img-fluid"></p>
-<p>app.pyのファイルは下記</p>
-<p>https://github.com/Nobukuni-Hyakutake/statistics/blob/724a2344982aa25408accf4f82373388a0298972/trial/shiny_dashboard_02/app.py</p>
 </section>
-<section id="参考文献" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">2</span> 参考文献</h2>
-<ul>
-<li><a href="https://shiny.posit.co/py/docs/install-create-run.html">Shiny &gt; Install, create, &amp; run</a></li>
-</ul>
-</section>
-<section id="python-version" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="python-version"><span class="header-section-number">3</span> Python version</h2>
-<div id="d3c9b1e4" class="cell" data-execution_count="2">
+<section id="shinyを実行ファイル化するmac-os" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="shinyを実行ファイル化するmac-os"><span class="header-section-number">2</span> shinyを実行ファイル化する(Mac OS)</h2>
+<p>下記のコードを<a href="https://github.com/Nobukuni-Hyakutake/statistics/blob/main/trial/shiny_dashboard_02/file1.py">file1.py</a>として保存する。</p>
+<div id="1b6497bb" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
 background-color: null;
+font-style: inherit;">from</span> shiny <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> App, render, ui</span>
+<span id="cb3-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> shiny._main <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> run_app</span>
+<span id="cb3-3"></span>
+<span id="cb3-4">app_ui <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> ui.page_fluid(</span>
+<span id="cb3-5">    ui.h2(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Hello Shiny!"</span>),</span>
+<span id="cb3-6">    ui.input_slider(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"n"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"N"</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>),</span>
+<span id="cb3-7">    ui.output_text_verbatim(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"txt"</span>),</span>
+<span id="cb3-8">)</span>
+<span id="cb3-9"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> server(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">input</span>, output, session):</span>
+<span id="cb3-10">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">@output</span></span>
+<span id="cb3-11">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">@render.text</span></span>
+<span id="cb3-12">    <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> txt():</span>
+<span id="cb3-13">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"n*2 is </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">input</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>n() <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span></span>
+<span id="cb3-14">app <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> App(app_ui, server)</span>
+<span id="cb3-15">run_app(app)</span></code></pre></div>
+</div>
+<p>Macのターミナルでfile1.pyがあるフォルダにカレントディレクトリを移動してから下記を実行する</p>
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">python3.13</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-m</span> venv .venv</span>
+<span id="cb4-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">source</span> .venv/bin/activate</span>
+<span id="cb4-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">pip</span> install pyinstaller shiny</span>
+<span id="cb4-4"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">pyinstaller</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-F</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--collect-all</span> shiny <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--name</span> file1_app file1.py</span></code></pre></div>
+<p>しばらく待つとdist/file1_appが作成されるのでダブルクリックして実行する。するとターミナルの新しい画面が立ち上がり、下記のように表示されるので<code>http://127.0.0.1:8000</code>の部分をコピーしブラウザのアドレス欄に貼り付ける。</p>
+<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">INFO:</span>     Started server process <span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">[</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">12432</span><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">]</span></span>
+<span id="cb5-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">INFO:</span>     Waiting for application startup.</span>
+<span id="cb5-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">INFO:</span>     Application startup complete.</span>
+<span id="cb5-4"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">INFO:</span>     Uvicorn running on http://127.0.0.1:8000 <span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">(</span><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">Press</span> CTRL+C to quit<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">)</span></span></code></pre></div>
+<p>下図の画面が出てアプリの起動が完了。</p>
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/shiny_for_python/file1_app.png" class="img-fluid"></p>
+<p>アプリの終了時はブラウザを閉じ、ターミナルでCtrl+Cを押してから閉じる。</p>
+</section>
+<section id="参考文献" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">3</span> 参考文献</h2>
+<ul>
+<li><a href="https://shiny.posit.co/py/docs/install-create-run.html">Shiny &gt; Install, create, &amp; run</a></li>
+<li><a href="https://stackoverflow.com/questions/73257387/how-to-un-pyinstaller-converted-python-app-with-shiny-for-python">How to un pyinstaller converted python app with Shiny for Python</a></li>
+<li><a href="https://qiita.com/mizu4my/items/5aff60c7eed4e2cc6c18">【Pyinstaller】MacOS用、Windows用のexeをそれぞれ作成する失敗しない方法</a></li>
+<li><a href="https://github.com/quarto-dev/quarto-web/blob/main/docs/publishing/github-pages.qmd">Quarto - GitHub Pages</a></li>
+</ul>
+</section>
+<section id="python-version" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="python-version"><span class="header-section-number">4</span> Python version</h2>
+<div id="25b38724" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="im" style="color: #00769E;
+background-color: null;
 font-style: inherit;">import</span> platform</span>
-<span id="cb3-2"><span class="co" style="color: #5E5E5E;
+<span id="cb6-2"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">"Python version "</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span>platform.python_version()</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>'Python version 3.13.3'</code></pre>
 </div>
 </div>
