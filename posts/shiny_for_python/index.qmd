@@ -103,6 +103,53 @@ app.pyのファイルは下記
 
 https://github.com/Nobukuni-Hyakutake/statistics/blob/724a2344982aa25408accf4f82373388a0298972/trial/shiny_dashboard_02/app.py
 
+## shinyを実行ファイル化する(Mac OS)
+
+下記のコードを`file1.py`として保存する。
+
+```{python}
+#| eval: false
+from shiny import App, render, ui
+from shiny._main import run_app
+
+app_ui = ui.page_fluid(
+    ui.h2("Hello Shiny!"),
+    ui.input_slider("n", "N", 0, 100, 20),
+    ui.output_text_verbatim("txt"),
+)
+def server(input, output, session):
+    @output
+    @render.text
+    def txt():
+        return f"n*2 is {input.n() * 2}"
+app = App(app_ui, server)
+run_app(app)
+```
+
+ターミナルでこのファイルがあるフォルダにカレントディレクトリを移動してから下記を実行する
+
+```
+python3.13 -m venv .venv
+source .venv/bin/activate
+pip install pyinstaller shiny
+pyinstaller -F --collect-all shiny --name file1_app file1.py
+```
+
+しばらく待つとdist/file1_appが作成されるのでダブルクリックして実行する。するとターミナルの新しい画面が立ち上がり、下記のように表示されるので`http://127.0.0.1:8000`の部分をコピーしブラウザのアドレス欄に貼り付ける。
+
+```
+INFO:     Started server process [12432]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+```
+
+下図の画面が出てアプリの起動が完了。
+
+![](file1_app.png)
+
+アプリの終了時はブラウザを閉じ、ターミナルでCtrl+Cを押してから閉じる。
+
 ## 参考文献
 
 - [Shiny > Install, create, & run](https://shiny.posit.co/py/docs/install-create-run.html)

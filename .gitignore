@@ -4,3 +4,6 @@
 .Ruserdata
 /.quarto/
 .pper
+/trial/shiny_dashboard_02/dist/
+/trial/shiny_dashboard_02/build/
+trial/shiny_dashboard_02/file1_app.spec
