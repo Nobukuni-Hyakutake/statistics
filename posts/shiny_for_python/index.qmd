@@ -12,7 +12,7 @@ jupyter: python313
 
 ## ペンギンのヒストグラムのダッシュボードをShiny for Pythonでつくる
 
-下記のコードを[app.py](https://github.com/Nobukuni-Hyakutake/statistics/blob/main/trial/shiny_dashboard_02/app.py)として保存する。
+下記の[Shiny Express](https://shiny.posit.co/py/api/express/)のコードを[app.py](https://github.com/Nobukuni-Hyakutake/statistics/blob/main/trial/shiny_dashboard_02/app.py)として保存する。
 
 ```{python}
 #| eval: false
@@ -101,7 +101,7 @@ python3 -m shiny run --launch-browser app.py
 
 ## shinyを実行ファイル化する(Mac OS)
 
-下記のコードを[file1.py](https://github.com/Nobukuni-Hyakutake/statistics/blob/main/trial/shiny_dashboard_02/file1.py)として保存する。
+下記の[Shiny Core](https://shiny.posit.co/py/api/core/)のコードを[file1.py](https://github.com/Nobukuni-Hyakutake/statistics/blob/main/trial/shiny_dashboard_02/file1.py)として保存する。
 
 ```{python}
 #| eval: false
@@ -145,6 +145,8 @@ INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 ![](file1_app.png)
 
 アプリの終了時はブラウザを閉じ、ターミナルでCtrl+Cを押してから閉じる。
+
+なお[Shiny Express](https://shiny.posit.co/py/api/express/)のコードから実行ファイルをつくる方法があるのかは不明。
 
 ## 参考文献
 
