@@ -1,10 +1,11 @@
 # 下記のエラーが出て保存できない
-#ValueError: Vega to PNG conversion failed:
-#SVG data parsing failed cause nodes limit reached
+# ValueError: Vega to PNG conversion failed:
+# SVG data parsing failed cause nodes limit reached
 
 import polars as pl
 import numpy as np
 import altair as alt
+
 alt.data_transformers.enable("vegafusion")
 alt.data_transformers.disable_max_rows()
 

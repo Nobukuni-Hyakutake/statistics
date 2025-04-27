@@ -4,8 +4,9 @@ from shiny.express import input, render, ui
 
 ui.input_slider("n", "Number of bins", 0, 100, 20)
 
-@render.plot(alt="A histogram")  
-def plot():  
+
+@render.plot(alt="A histogram")
+def plot():
     df = load_penguins()
     mass = df["body_mass_g"]
 
@@ -15,5 +16,4 @@ def plot():
     ax.set_xlabel("Mass (g)")
     ax.set_ylabel("Density")
 
-    return fig  
-  
+    return fig
