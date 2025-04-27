@@ -1,0 +1,12 @@
+---
+title: "Untitled"
+jupyter: python313
+---
+
+
+## Python version
+
+```{python}
+import platform
+"Python version "+platform.python_version()
+```

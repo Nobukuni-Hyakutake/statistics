@@ -9,6 +9,7 @@ https://walkintheforest.net/rstudio-editor-japanese/
 ## 参考文献
 
 - Rによるやさしい統計学 (Kindle)
+
 ## docsフォルダにRenderしたいとき
 
 _quarto.yamlに下記の通り設定する
@@ -39,6 +40,35 @@ https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/
 library(rmarkdown)
 rmarkdown::render("statistics_01.Rmd",output_format = "html_document")
 rmarkdown::render("statistics_01.Rmd",output_format = "md_document")
+```
+
+## PythonでRenderボタンを押してもエラーで止まる時
+
+### カーネル
+
+カーネルがなければ下記に従い作成する
+
+https://qiita.com/SaitoTsutomu/items/a3d27a2de1ff3e762771
+
+トップでjupyterのカーネルを指定する。ここではpython313としている。
+
+```
+(posts/shiny_for_python/index.qmd)
+---
+title: "Shiny for Python"
+author: "Nobukuni Hyakutake"
+date: "2025-04-27"
+date-format: "iso"
+categories: [Python]
+image: "field_mustard.jpeg"
+jupyter: python313
+---
+```
+
+### 下記のコマンドでRenderする
+
+```
+quarto render posts/shiny_for_python/index.qmd --to html
 ```
 
 ## Google analytics設定

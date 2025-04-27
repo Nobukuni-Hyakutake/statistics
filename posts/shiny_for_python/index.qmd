@@ -1,4 +1,22 @@
-# https://shiny.posit.co/py/docs/overview.html#templates
+---
+title: "Shiny for Python"
+author: "Nobukuni Hyakutake"
+date: "2025-04-27"
+date-format: "iso"
+categories: [Python]
+image: "field_mustard.jpeg"
+jupyter: python313
+---
+
+![](field_mustard.jpeg)
+
+## ペンギンのヒストグラムのダッシュボード
+
+下記のコードを`app.py`として保存する。
+
+```{python}
+#| eval: false
+
 from pathlib import Path
 from plotnine import ggplot, aes, geom_histogram, geom_vline
 from faicons import icon_svg
@@ -70,3 +88,24 @@ def filtered_df():
     filt_df = df[df["species"].isin(input.species())]
     filt_df = filt_df[filt_df["island"].isin(input.island())]
     return filt_df
+
+```
+
+下記を実行するとブラウザで下図のようなダッシュボードが出てくる。
+
+```
+python3 -m shiny run --launch-browser app.py
+```
+
+![](histogram_shiny.png)
+
+## 参考文献
+
+- [Shiny > Install, create, & run](https://shiny.posit.co/py/docs/install-create-run.html)
+
+## Python version
+
+```{python}
+import platform
+"Python version "+platform.python_version()
+```

@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/shiny_for_python/index.html",
       "/posts/plotnine/index.html",
       "/posts/plotly/index.html",
       "/posts/altair/index.html",
