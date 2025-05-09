@@ -214,7 +214,7 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 <section id="ペンギンのヒストグラムのダッシュボードをshiny-for-pythonでつくる" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="ペンギンのヒストグラムのダッシュボードをshiny-for-pythonでつくる"><span class="header-section-number">1</span> ペンギンのヒストグラムのダッシュボードをShiny for Pythonでつくる</h2>
 <p>下記の<a href="https://shiny.posit.co/py/api/express/">Shiny Express</a>のコードを<a href="https://github.com/Nobukuni-Hyakutake/statistics/blob/main/trial/shiny_dashboard_02/app.py">app.py</a>として保存する。</p>
-<div id="133fa37a" class="cell" data-execution_count="1">
+<div id="9bf03c42" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> ggplot, aes, geom_histogram, geom_vline</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> faicons <span class="im">import</span> icon_svg</span>
@@ -294,7 +294,7 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 <section id="shinyを実行ファイル化するmac-os" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="shinyを実行ファイル化するmac-os"><span class="header-section-number">2</span> shinyを実行ファイル化する(Mac OS)</h2>
 <p>下記の<a href="https://shiny.posit.co/py/api/core/">Shiny Core</a>のコードを<a href="https://github.com/Nobukuni-Hyakutake/statistics/blob/main/trial/shiny_dashboard_02/file1.py">file1.py</a>として保存する。</p>
-<div id="0eee6a25" class="cell" data-execution_count="2">
+<div id="46063572" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> shiny <span class="im">import</span> App, render, ui</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> shiny._main <span class="im">import</span> run_app</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -324,6 +324,7 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 <p>下図の画面が出てアプリの起動が完了。</p>
 <p><img src="file1_app.png" class="img-fluid"></p>
 <p>アプリの終了時はブラウザを閉じ、ターミナルでCtrl+Cを押してから閉じる。</p>
+<p><code>run_app(app)</code>のところを<code>run_app(app,launch_browser=True)</code>にすればdist/file1_appをダブルクリックするだけで自動でブラウザが立ち上がるのかもしれない。時間があるときにやってみる。</p>
 <p>なお<a href="https://shiny.posit.co/py/api/express/">Shiny Express</a>のコードから実行ファイルをつくる方法があるのかは不明。</p>
 </section>
 <section id="参考文献" class="level2" data-number="3">
@@ -337,7 +338,7 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 </section>
 <section id="python-version" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="python-version"><span class="header-section-number">4</span> Python version</h2>
-<div id="9995055e" class="cell" data-execution_count="3">
+<div id="ee2b78da" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> platform</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">"Python version "</span><span class="op">+</span>platform.python_version()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
@@ -949,21 +950,23 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 <span id="cb8-150"><a href="#cb8-150" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-151"><a href="#cb8-151" aria-hidden="true" tabindex="-1"></a>アプリの終了時はブラウザを閉じ、ターミナルでCtrl+Cを押してから閉じる。</span>
 <span id="cb8-152"><a href="#cb8-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-153"><a href="#cb8-153" aria-hidden="true" tabindex="-1"></a>なお<span class="co">[</span><span class="ot">Shiny Express</span><span class="co">](https://shiny.posit.co/py/api/express/)</span>のコードから実行ファイルをつくる方法があるのかは不明。</span>
+<span id="cb8-153"><a href="#cb8-153" aria-hidden="true" tabindex="-1"></a><span class="in">`run_app(app)`</span>のところを<span class="in">`run_app(app,launch_browser=True)`</span>にすればdist/file1_appをダブルクリックするだけで自動でブラウザが立ち上がるのかもしれない。時間があるときにやってみる。</span>
 <span id="cb8-154"><a href="#cb8-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-155"><a href="#cb8-155" aria-hidden="true" tabindex="-1"></a><span class="fu">## 参考文献</span></span>
+<span id="cb8-155"><a href="#cb8-155" aria-hidden="true" tabindex="-1"></a>なお<span class="co">[</span><span class="ot">Shiny Express</span><span class="co">](https://shiny.posit.co/py/api/express/)</span>のコードから実行ファイルをつくる方法があるのかは不明。</span>
 <span id="cb8-156"><a href="#cb8-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-157"><a href="#cb8-157" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Shiny &gt; Install, create, &amp; run</span><span class="co">](https://shiny.posit.co/py/docs/install-create-run.html)</span></span>
-<span id="cb8-158"><a href="#cb8-158" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">How to un pyinstaller converted python app with Shiny for Python</span><span class="co">](https://stackoverflow.com/questions/73257387/how-to-un-pyinstaller-converted-python-app-with-shiny-for-python)</span></span>
-<span id="cb8-159"><a href="#cb8-159" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">【Pyinstaller】MacOS用、Windows用のexeをそれぞれ作成する失敗しない方法</span><span class="co">](https://qiita.com/mizu4my/items/5aff60c7eed4e2cc6c18)</span></span>
-<span id="cb8-160"><a href="#cb8-160" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Quarto - GitHub Pages</span><span class="co">](https://github.com/quarto-dev/quarto-web/blob/main/docs/publishing/github-pages.qmd)</span></span>
-<span id="cb8-161"><a href="#cb8-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-162"><a href="#cb8-162" aria-hidden="true" tabindex="-1"></a><span class="fu">## Python version</span></span>
+<span id="cb8-157"><a href="#cb8-157" aria-hidden="true" tabindex="-1"></a><span class="fu">## 参考文献</span></span>
+<span id="cb8-158"><a href="#cb8-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-159"><a href="#cb8-159" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Shiny &gt; Install, create, &amp; run</span><span class="co">](https://shiny.posit.co/py/docs/install-create-run.html)</span></span>
+<span id="cb8-160"><a href="#cb8-160" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">How to un pyinstaller converted python app with Shiny for Python</span><span class="co">](https://stackoverflow.com/questions/73257387/how-to-un-pyinstaller-converted-python-app-with-shiny-for-python)</span></span>
+<span id="cb8-161"><a href="#cb8-161" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">【Pyinstaller】MacOS用、Windows用のexeをそれぞれ作成する失敗しない方法</span><span class="co">](https://qiita.com/mizu4my/items/5aff60c7eed4e2cc6c18)</span></span>
+<span id="cb8-162"><a href="#cb8-162" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Quarto - GitHub Pages</span><span class="co">](https://github.com/quarto-dev/quarto-web/blob/main/docs/publishing/github-pages.qmd)</span></span>
 <span id="cb8-163"><a href="#cb8-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-166"><a href="#cb8-166" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb8-167"><a href="#cb8-167" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> platform</span>
-<span id="cb8-168"><a href="#cb8-168" aria-hidden="true" tabindex="-1"></a><span class="co">"Python version "</span><span class="op">+</span>platform.python_version()</span>
-<span id="cb8-169"><a href="#cb8-169" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-164"><a href="#cb8-164" aria-hidden="true" tabindex="-1"></a><span class="fu">## Python version</span></span>
+<span id="cb8-165"><a href="#cb8-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-168"><a href="#cb8-168" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb8-169"><a href="#cb8-169" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> platform</span>
+<span id="cb8-170"><a href="#cb8-170" aria-hidden="true" tabindex="-1"></a><span class="co">"Python version "</span><span class="op">+</span>platform.python_version()</span>
+<span id="cb8-171"><a href="#cb8-171" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -129,8 +129,8 @@
     "objectID": "memo.html#combining-r-and-python-with-reticulate-and-quarto",
     "href": "memo.html#combining-r-and-python-with-reticulate-and-quarto",
     "title": "",
-    "section": "1.3 Combining R and Python with {reticulate} and Quarto",
-    "text": "1.3 Combining R and Python with {reticulate} and Quarto\nhttps://www.r-bloggers.com/2023/01/combining-r-and-python-with-reticulate-and-quarto/"
+    "section": "1.4 Combining R and Python with {reticulate} and Quarto",
+    "text": "1.4 Combining R and Python with {reticulate} and Quarto\nhttps://www.r-bloggers.com/2023/01/combining-r-and-python-with-reticulate-and-quarto/"
   },
   {
     "objectID": "posts/standard_deviation/index.html",
@@ -178,8 +178,8 @@
     "objectID": "memo.html#a-quarto-tip-a-day",
     "href": "memo.html#a-quarto-tip-a-day",
     "title": "",
-    "section": "1.4 A Quarto tip a day",
-    "text": "1.4 A Quarto tip a day\n投稿の仕方の参考になりそう。\nhttps://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/"
+    "section": "1.5 A Quarto tip a day",
+    "text": "1.5 A Quarto tip a day\n投稿の仕方の参考になりそう。\nhttps://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/"
   },
   {
     "objectID": "posts/post-with-code/index.html#r-version",
@@ -718,56 +718,56 @@
     "href": "memo.html#参考文献",
     "title": "",
     "section": "1.2 参考文献",
-    "text": "1.2 参考文献\n\nRによるやさしい統計学 (Kindle) ## docsフォルダにRenderしたいとき\n\n_quarto.yamlに下記の通り設定する\nRender to docs"
+    "text": "1.2 参考文献\n\nRによるやさしい統計学 (Kindle)"
   },
   {
     "objectID": "memo.html#how-to-write-mathematics",
     "href": "memo.html#how-to-write-mathematics",
     "title": "",
-    "section": "1.5 How to write mathematics",
-    "text": "1.5 How to write mathematics\nMarkdownに数式を挿入する方法\nLaTeX/Mathematics\nMathematics in R Markdown"
+    "section": "1.6 How to write mathematics",
+    "text": "1.6 How to write mathematics\nMarkdownに数式を挿入する方法\nLaTeX/Mathematics\nMathematics in R Markdown"
   },
   {
     "objectID": "memo.html#htmlとmarkdownの両方に出力する方法",
     "href": "memo.html#htmlとmarkdownの両方に出力する方法",
     "title": "",
-    "section": "1.6 htmlとmarkdownの両方に出力する方法",
-    "text": "1.6 htmlとmarkdownの両方に出力する方法\nlibrary(rmarkdown)\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"html_document\")\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"md_document\")"
+    "section": "1.7 htmlとmarkdownの両方に出力する方法",
+    "text": "1.7 htmlとmarkdownの両方に出力する方法\nlibrary(rmarkdown)\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"html_document\")\nrmarkdown::render(\"statistics_01.Rmd\",output_format = \"md_document\")"
   },
   {
     "objectID": "memo.html#google-analytics設定",
     "href": "memo.html#google-analytics設定",
     "title": "",
-    "section": "1.7 Google analytics設定",
-    "text": "1.7 Google analytics設定\n下記に記載(Private repository)\nhttps://github.com/Nobukuni-Hyakutake/hon/blob/main/quarto/memo.md"
+    "section": "1.9 Google analytics設定",
+    "text": "1.9 Google analytics設定\n下記に記載(Private repository)\nhttps://github.com/Nobukuni-Hyakutake/hon/blob/main/quarto/memo.md"
   },
   {
     "objectID": "memo.html#右側の目次",
     "href": "memo.html#右側の目次",
     "title": "",
-    "section": "1.8 右側の目次",
-    "text": "1.8 右側の目次\n_quarto.ymlに下記を加えると右側にページ内の目次がでる。\nformat:\n  html:\n    toc: true"
+    "section": "1.10 右側の目次",
+    "text": "1.10 右側の目次\n_quarto.ymlに下記を加えると右側にページ内の目次がでる。\nformat:\n  html:\n    toc: true"
   },
   {
     "objectID": "memo.html#wordファイルに出力する方法",
     "href": "memo.html#wordファイルに出力する方法",
     "title": "",
-    "section": "1.9 Wordファイルに出力する方法",
-    "text": "1.9 Wordファイルに出力する方法\nquarto render index.qmd --to docx"
+    "section": "1.11 Wordファイルに出力する方法",
+    "text": "1.11 Wordファイルに出力する方法\nquarto render index.qmd --to docx"
   },
   {
     "objectID": "memo.html#上部のナビゲージョンバーを入れ子にしたいとき",
     "href": "memo.html#上部のナビゲージョンバーを入れ子にしたいとき",
     "title": "",
-    "section": "1.10 上部のナビゲージョンバーを入れ子にしたいとき",
-    "text": "1.10 上部のナビゲージョンバーを入れ子にしたいとき\n下記のHelpのように、クリックするとさらに選択肢が出てくるようにする\n\n  navbar:\n    background: light\n    logo: quarto.png\n    logo-alt: \"Quarto logo.\"\n    title: false\n    collapse-below: lg\n    left:\n      - text: \"Overview\"\n        href: index.qmd\n      - text: \"Get Started\"\n        href: docs/get-started/index.qmd\n      - text: \"Guide\"\n        href: docs/guide/index.qmd\n      - text: Extensions\n        href: docs/extensions/index.qmd\n      - text: \"Reference\"\n        href: docs/reference/index.qmd\n      - text: \"Gallery\"\n        href: docs/gallery/index.qmd\n      - text: \"Blog\"\n        href: docs/blog/index.qmd\n      - text: \"Help\"\n        menu:\n          - text: \"Report a Bug\"\n            icon: \"bug\"\n            href: \"https://github.com/quarto-dev/quarto-cli/issues\"\n          - text: \"Ask a Question\"\n            icon: \"chat-right-text\"\n            href: \"https://github.com/quarto-dev/quarto-cli/discussions\"\n          - text: \"FAQ\"\n            icon: \"question-circle\"\n            href: docs/faq/index.qmd"
+    "section": "1.12 上部のナビゲージョンバーを入れ子にしたいとき",
+    "text": "1.12 上部のナビゲージョンバーを入れ子にしたいとき\n下記のHelpのように、クリックするとさらに選択肢が出てくるようにする\n\n  navbar:\n    background: light\n    logo: quarto.png\n    logo-alt: \"Quarto logo.\"\n    title: false\n    collapse-below: lg\n    left:\n      - text: \"Overview\"\n        href: index.qmd\n      - text: \"Get Started\"\n        href: docs/get-started/index.qmd\n      - text: \"Guide\"\n        href: docs/guide/index.qmd\n      - text: Extensions\n        href: docs/extensions/index.qmd\n      - text: \"Reference\"\n        href: docs/reference/index.qmd\n      - text: \"Gallery\"\n        href: docs/gallery/index.qmd\n      - text: \"Blog\"\n        href: docs/blog/index.qmd\n      - text: \"Help\"\n        menu:\n          - text: \"Report a Bug\"\n            icon: \"bug\"\n            href: \"https://github.com/quarto-dev/quarto-cli/issues\"\n          - text: \"Ask a Question\"\n            icon: \"chat-right-text\"\n            href: \"https://github.com/quarto-dev/quarto-cli/discussions\"\n          - text: \"FAQ\"\n            icon: \"question-circle\"\n            href: docs/faq/index.qmd"
   },
   {
     "objectID": "memo.html#python-list結合",
     "href": "memo.html#python-list結合",
     "title": "",
-    "section": "1.11 python list結合",
-    "text": "1.11 python list結合\n# coding: utf-8\n# 130秒でできた\nimport time\nt1 = time.time() \n\nimport pandas as pd\nfname = '../../big_csv/14gb_csv_sample.csv'\ndef preprocess(x): #必要な部分だけを取り出す前処理。ここでデータを削減しないと処理速度が上がらない。\n    x=x.loc[(x['0']&lt;0.01),['1']]\n    return x    \nreader = pd.read_csv(fname,chunksize=100000)\ndf04=pd.concat((preprocess(r) for r in reader),ignore_index=True)\ndf04.to_csv('pandas_chunk_14gb_to_extract.csv')\n\nt2 = time.time()\nelapsed_time = round((t2-t1),1)\nprint(f\"Elapsed time：{elapsed_time} s\")"
+    "section": "1.13 python list結合",
+    "text": "1.13 python list結合\n# coding: utf-8\n# 130秒でできた\nimport time\nt1 = time.time() \n\nimport pandas as pd\nfname = '../../big_csv/14gb_csv_sample.csv'\ndef preprocess(x): #必要な部分だけを取り出す前処理。ここでデータを削減しないと処理速度が上がらない。\n    x=x.loc[(x['0']&lt;0.01),['1']]\n    return x    \nreader = pd.read_csv(fname,chunksize=100000)\ndf04=pd.concat((preprocess(r) for r in reader),ignore_index=True)\ndf04.to_csv('pandas_chunk_14gb_to_extract.csv')\n\nt2 = time.time()\nelapsed_time = round((t2-t1),1)\nprint(f\"Elapsed time：{elapsed_time} s\")"
   },
   {
     "objectID": "posts/set/index.html",
@@ -949,6 +949,20 @@
     "href": "posts/shiny_for_python/index.html#shinyを実行ファイル化するmac-os",
     "title": "Shiny for Python",
     "section": "2 shinyを実行ファイル化する(Mac OS)",
-    "text": "2 shinyを実行ファイル化する(Mac OS)\n下記のShiny Coreのコードをfile1.pyとして保存する。\n\nfrom shiny import App, render, ui\nfrom shiny._main import run_app\n\napp_ui = ui.page_fluid(\n    ui.h2(\"Hello Shiny!\"),\n    ui.input_slider(\"n\", \"N\", 0, 100, 20),\n    ui.output_text_verbatim(\"txt\"),\n)\ndef server(input, output, session):\n    @output\n    @render.text\n    def txt():\n        return f\"n*2 is {input.n() * 2}\"\napp = App(app_ui, server)\nrun_app(app)\n\nMacのターミナルでfile1.pyがあるフォルダにカレントディレクトリを移動してから下記を実行する\npython3.13 -m venv .venv\nsource .venv/bin/activate\npip install pyinstaller shiny\npyinstaller -F --collect-all shiny --name file1_app file1.py\nしばらく待つとdist/file1_appが作成されるのでダブルクリックして実行する。するとターミナルの新しい画面が立ち上がり、下記のように表示されるのでhttp://127.0.0.1:8000の部分をコピーしブラウザのアドレス欄に貼り付ける。\nINFO:     Started server process [12432]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)\n下図の画面が出てアプリの起動が完了。\n\nアプリの終了時はブラウザを閉じ、ターミナルでCtrl+Cを押してから閉じる。\nなおShiny Expressのコードから実行ファイルをつくる方法があるのかは不明。"
+    "text": "2 shinyを実行ファイル化する(Mac OS)\n下記のShiny Coreのコードをfile1.pyとして保存する。\n\nfrom shiny import App, render, ui\nfrom shiny._main import run_app\n\napp_ui = ui.page_fluid(\n    ui.h2(\"Hello Shiny!\"),\n    ui.input_slider(\"n\", \"N\", 0, 100, 20),\n    ui.output_text_verbatim(\"txt\"),\n)\ndef server(input, output, session):\n    @output\n    @render.text\n    def txt():\n        return f\"n*2 is {input.n() * 2}\"\napp = App(app_ui, server)\nrun_app(app)\n\nMacのターミナルでfile1.pyがあるフォルダにカレントディレクトリを移動してから下記を実行する\npython3.13 -m venv .venv\nsource .venv/bin/activate\npip install pyinstaller shiny\npyinstaller -F --collect-all shiny --name file1_app file1.py\nしばらく待つとdist/file1_appが作成されるのでダブルクリックして実行する。するとターミナルの新しい画面が立ち上がり、下記のように表示されるのでhttp://127.0.0.1:8000の部分をコピーしブラウザのアドレス欄に貼り付ける。\nINFO:     Started server process [12432]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)\n下図の画面が出てアプリの起動が完了。\n\nアプリの終了時はブラウザを閉じ、ターミナルでCtrl+Cを押してから閉じる。\nrun_app(app)のところをrun_app(app,launch_browser=True)にすればdist/file1_appをダブルクリックするだけで自動でブラウザが立ち上がるのかもしれない。時間があるときにやってみる。\nなおShiny Expressのコードから実行ファイルをつくる方法があるのかは不明。"
+  },
+  {
+    "objectID": "memo.html#docsフォルダにrenderしたいとき",
+    "href": "memo.html#docsフォルダにrenderしたいとき",
+    "title": "",
+    "section": "1.3 docsフォルダにRenderしたいとき",
+    "text": "1.3 docsフォルダにRenderしたいとき\n_quarto.yamlに下記の通り設定する\nRender to docs"
+  },
+  {
+    "objectID": "memo.html#pythonでrenderボタンを押してもエラーで止まる時",
+    "href": "memo.html#pythonでrenderボタンを押してもエラーで止まる時",
+    "title": "",
+    "section": "1.8 PythonでRenderボタンを押してもエラーで止まる時",
+    "text": "1.8 PythonでRenderボタンを押してもエラーで止まる時\n\n1.8.1 カーネル\nカーネルがなければ下記に従い作成する\nhttps://qiita.com/SaitoTsutomu/items/a3d27a2de1ff3e762771\nトップでjupyterのカーネルを指定する。ここではpython313としている。\n(posts/shiny_for_python/index.qmd)\n---\ntitle: \"Shiny for Python\"\nauthor: \"Nobukuni Hyakutake\"\ndate: \"2025-04-27\"\ndate-format: \"iso\"\ncategories: [Python]\nimage: \"field_mustard.jpeg\"\njupyter: python313\n---\n\n\n1.8.2 下記のコマンドでRenderする\nquarto render posts/shiny_for_python/index.qmd --to html"
   }
 ]

@@ -25,7 +25,7 @@
 <section id="ペンギンのヒストグラムのダッシュボードをshiny-for-pythonでつくる" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="ペンギンのヒストグラムのダッシュボードをshiny-for-pythonでつくる"><span class="header-section-number">1</span> ペンギンのヒストグラムのダッシュボードをShiny for Pythonでつくる</h2>
 <p>下記の<a href="https://shiny.posit.co/py/api/express/">Shiny Express</a>のコードを<a href="https://github.com/Nobukuni-Hyakutake/statistics/blob/main/trial/shiny_dashboard_02/app.py">app.py</a>として保存する。</p>
-<div id="133fa37a" class="cell" data-execution_count="1">
+<div id="9bf03c42" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> pathlib <span class="im" style="color: #00769E;
@@ -338,7 +338,7 @@ font-style: inherit;">--launch-browser</span> app.py</span></code></pre></div>
 <section id="shinyを実行ファイル化するmac-os" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="shinyを実行ファイル化するmac-os"><span class="header-section-number">2</span> shinyを実行ファイル化する(Mac OS)</h2>
 <p>下記の<a href="https://shiny.posit.co/py/api/core/">Shiny Core</a>のコードを<a href="https://github.com/Nobukuni-Hyakutake/statistics/blob/main/trial/shiny_dashboard_02/file1.py">file1.py</a>として保存する。</p>
-<div id="0eee6a25" class="cell" data-execution_count="2">
+<div id="46063572" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> shiny <span class="im" style="color: #00769E;
@@ -462,6 +462,7 @@ font-style: inherit;">)</span></span></code></pre></div>
 <p>下図の画面が出てアプリの起動が完了。</p>
 <p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/shiny_for_python/file1_app.png" class="img-fluid"></p>
 <p>アプリの終了時はブラウザを閉じ、ターミナルでCtrl+Cを押してから閉じる。</p>
+<p><code>run_app(app)</code>のところを<code>run_app(app,launch_browser=True)</code>にすればdist/file1_appをダブルクリックするだけで自動でブラウザが立ち上がるのかもしれない。時間があるときにやってみる。</p>
 <p>なお<a href="https://shiny.posit.co/py/api/express/">Shiny Express</a>のコードから実行ファイルをつくる方法があるのかは不明。</p>
 </section>
 <section id="参考文献" class="level2" data-number="3">
@@ -475,7 +476,7 @@ font-style: inherit;">)</span></span></code></pre></div>
 </section>
 <section id="python-version" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="python-version"><span class="header-section-number">4</span> Python version</h2>
-<div id="9995055e" class="cell" data-execution_count="3">
+<div id="ee2b78da" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> platform</span>

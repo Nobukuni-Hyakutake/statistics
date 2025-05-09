@@ -146,6 +146,8 @@ INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 
 アプリの終了時はブラウザを閉じ、ターミナルでCtrl+Cを押してから閉じる。
 
+`run_app(app)`のところを`run_app(app,launch_browser=True)`にすればdist/file1_appをダブルクリックするだけで自動でブラウザが立ち上がるのかもしれない。時間があるときにやってみる。
+
 なお[Shiny Express](https://shiny.posit.co/py/api/express/)のコードから実行ファイルをつくる方法があるのかは不明。
 
 ## 参考文献
