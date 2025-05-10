@@ -12,4 +12,4 @@ def server(input, output, session):
     def txt():
         return f"n*2 is {input.n() * 2}"
 app = App(app_ui, server)
-run_app(app)
+run_app(app,launch_browser=True)

@@ -119,7 +119,7 @@ def server(input, output, session):
     def txt():
         return f"n*2 is {input.n() * 2}"
 app = App(app_ui, server)
-run_app(app)
+run_app(app,launch_browser=True)
 ```
 
 Macのターミナルでfile1.pyがあるフォルダにカレントディレクトリを移動してから下記を実行する
@@ -128,25 +128,14 @@ Macのターミナルでfile1.pyがあるフォルダにカレントディレク
 python3.13 -m venv .venv
 source .venv/bin/activate
 pip install pyinstaller shiny
-pyinstaller -F --collect-all shiny --name file1_app file1.py
+pyinstaller -F --collect-all shiny --name file1_app2 file1.py
 ```
 
-しばらく待つとdist/file1_appが作成されるのでダブルクリックして実行する。するとターミナルの新しい画面が立ち上がり、下記のように表示されるので`http://127.0.0.1:8000`の部分をコピーしブラウザのアドレス欄に貼り付ける。
-
-```bash
-INFO:     Started server process [12432]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-```
-
-下図の画面が出てアプリの起動が完了。
+しばらく待つとdist/file1_app2が作成されるのでダブルクリックして実行する。すると下図の画面が出てアプリの起動が完了。
 
 ![](file1_app.png)
 
 アプリの終了時はブラウザを閉じ、ターミナルでCtrl+Cを押してから閉じる。
-
-`run_app(app)`のところを`run_app(app,launch_browser=True)`にすればdist/file1_appをダブルクリックするだけで自動でブラウザが立ち上がるのかもしれない。時間があるときにやってみる。
 
 なお[Shiny Express](https://shiny.posit.co/py/api/express/)のコードから実行ファイルをつくる方法があるのかは不明。
 
