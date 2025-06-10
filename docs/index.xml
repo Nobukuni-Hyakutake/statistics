@@ -10,7 +10,701 @@
 <atom:link href="https://nobukuni-hyakutake.github.io/statistics/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.7.29</generator>
-<lastBuildDate>Sat, 26 Apr 2025 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 10 Jun 2025 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>比率の推定・検定</title>
+  <dc:creator>Nobukuni Hyakutake</dc:creator>
+  <link>https://nobukuni-hyakutake.github.io/statistics/posts/proportion/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/proportion/field_mustard.jpeg" class="img-fluid"></p>
+<section id="母集団比率の区間推定" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="母集団比率の区間推定"><span class="header-section-number">1</span> 母集団比率の区間推定</h2>
+<p><img src="https://latex.codecogs.com/png.latex?%5Chat%7Bp%7D=0">の場合</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(tidyverse)</span>
+<span id="cb1-2"></span>
+<span id="cb1-3">nmax <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">300</span></span>
+<span id="cb1-4">alpha <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span></span>
+<span id="cb1-5"></span>
+<span id="cb1-6">df_n <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tibble</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">n =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">seq</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, nmax))</span>
+<span id="cb1-7"></span>
+<span id="cb1-8">df0 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> df_n <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb1-9">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">p2 =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qf</span>(alpha, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> n, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">lower.tail =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> (n <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qf</span>(alpha, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span></span>
+<span id="cb1-10">                                                                  n, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">lower.tail =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>)))</span>
+<span id="cb1-11"></span>
+<span id="cb1-12"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(df0, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> n, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> p2)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb1-13">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_point</span>()</span></code></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/proportion/index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><img src="https://latex.codecogs.com/png.latex?%5Chat%7Bp%7D%E2%89%A00">の場合</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">x <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span id="cb2-2">df2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> df_n <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb2-4">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">F1 =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qf</span>(alpha<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> (n <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> x <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> x, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">lower.tail =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>),</span>
+<span id="cb2-5">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">F2 =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qf</span>(alpha<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> (x <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>), <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> (n <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> x), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">lower.tail =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>),</span>
+<span id="cb2-6">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">p1 =</span> x <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> ((n <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> x <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> F1 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> x),</span>
+<span id="cb2-7">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">p2 =</span> (x <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> F2 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> ((x <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> F2 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> (n <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> x))</span>
+<span id="cb2-8">  )</span>
+<span id="cb2-9"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(df2, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> n, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> p2)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb2-10">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_point</span>()</span></code></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/proportion/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="比率の検定" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="比率の検定"><span class="header-section-number">2</span> 比率の検定</h2>
+<ul>
+<li><img src="https://latex.codecogs.com/png.latex?H_0:p=p_0,H_1:p%3Ep_0">の場合</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">pmax <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.95</span></span>
+<span id="cb3-2">df_p <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tibble</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">p =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">seq</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, pmax, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.01</span>))</span>
+<span id="cb3-3">df1 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">cross_join</span>(df_n, df_p)</span>
+<span id="cb3-4"></span>
+<span id="cb3-5">x <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span id="cb3-6">df3 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> df1 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-7">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb3-8">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">c =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> (n <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> x <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>),</span>
+<span id="cb3-9">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">d =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> x,</span>
+<span id="cb3-10">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">f2 =</span> d <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> (<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> p) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> (c <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> p),</span>
+<span id="cb3-11">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">F2 =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qf</span>(alpha, c, d, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">lower.tail =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>),</span>
+<span id="cb3-12">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">significant =</span> (f2 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;=</span> F2)</span>
+<span id="cb3-13">  )</span>
+<span id="cb3-14"></span>
+<span id="cb3-15"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(df3, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> n, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> p, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">colour =</span> significant)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb3-16">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_point</span>()</span></code></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/proportion/index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><img src="https://latex.codecogs.com/png.latex?H_0:p=p_0,H_1:p%E2%89%A0p_0">の場合</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">x <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span id="cb4-2">df4 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> df1 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb4-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb4-4">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">a =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> (x <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>),</span>
+<span id="cb4-5">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">b =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> (n <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> x),</span>
+<span id="cb4-6">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">f1 =</span> b <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> p <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> (a <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> (<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> p)),</span>
+<span id="cb4-7">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">c =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> (n <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> x <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>),</span>
+<span id="cb4-8">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">d =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> x,</span>
+<span id="cb4-9">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">f2 =</span> d <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> (<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> p) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> (c <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> p),</span>
+<span id="cb4-10">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">F1 =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qf</span>(alpha <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, a, b, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">lower.tail =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>),</span>
+<span id="cb4-11">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">F2 =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qf</span>(alpha <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, c, d, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">lower.tail =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>),</span>
+<span id="cb4-12">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">significant =</span> (f1 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;=</span> F1) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|</span> (f2 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;=</span> F2)</span>
+<span id="cb4-13">  )</span>
+<span id="cb4-14"></span>
+<span id="cb4-15"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(df4, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> n, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> p, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">colour =</span> significant)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb4-16">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_point</span>()</span></code></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/proportion/index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><img src="https://latex.codecogs.com/png.latex?H_0:p=p_0,H_1:p%3Cp_0">の場合</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">alpha <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span>
+<span id="cb5-2">x <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span id="cb5-3">df5 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> df1 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb5-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb5-5">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">a =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> (x <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>),</span>
+<span id="cb5-6">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">b =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> (n <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> x),</span>
+<span id="cb5-7">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">f1 =</span> b <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> p <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> (a <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> (<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> p)),</span>
+<span id="cb5-8">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">F1 =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">qf</span>(alpha, a, b, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">lower.tail =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>),</span>
+<span id="cb5-9">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">significant =</span> (f1 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;=</span> F1)</span>
+<span id="cb5-10">  )</span>
+<span id="cb5-11"></span>
+<span id="cb5-12"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(df5, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> n, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> p, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">colour =</span> significant)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb5-13">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_point</span>()</span></code></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/proportion/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>上記の境界線を計算して<img src="https://latex.codecogs.com/png.latex?%5Chat%7Bp%7D%E2%89%A00">の場合の信頼区間上限と比較する</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">df6 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> df5 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb6-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!</span>significant) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb6-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(n) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb6-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summarise</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">pmax =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">max</span>(p))</span>
+<span id="cb6-5"></span>
+<span id="cb6-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(df6, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> n, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> pmax)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb6-7">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_point</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">colour=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"black"</span>)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb6-8">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_point</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">data=</span>df2,<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x=</span>n,<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y=</span>p2),<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">colour=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"red"</span>,<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">alpha=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://nobukuni-hyakutake.github.io/statistics/posts/proportion/index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>概ね一致している。</p>
+</section>
+<section id="参考文献" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="参考文献"><span class="header-section-number">3</span> 参考文献</h2>
+<ul>
+<li><a href="https://www.asakura.co.jp/detail.php?book_code=12182&amp;srsltid=AfmBOoo-9U66C-D7qSWWIgn5pQ5pqxlJUky1PhdgrE9eHjM07pfxxnQR">統計解析ハンドブック 普及版</a></li>
+</ul>
+</section>
+<section id="r" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="r"><span class="header-section-number">4</span> R</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">R.version.string</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "R version 4.4.0 (2024-04-24)"</code></pre>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>Python</category>
+  <guid>https://nobukuni-hyakutake.github.io/statistics/posts/proportion/</guid>
+  <pubDate>Tue, 10 Jun 2025 15:00:00 GMT</pubDate>
+  <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/proportion/field_mustard.jpeg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Shiny for Python</title>
   <dc:creator>Nobukuni Hyakutake</dc:creator>
@@ -7543,253 +8237,6 @@ font-style: inherit;">+</span>platform.python_version()</span></code></pre></div
   <guid>https://nobukuni-hyakutake.github.io/statistics/posts/calculator/</guid>
   <pubDate>Thu, 26 Jan 2023 15:00:00 GMT</pubDate>
   <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/calculator/calc.jpeg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>コード入りの投稿サンプル</title>
-  <dc:creator>Nobukuni Hyakutake</dc:creator>
-  <link>https://nobukuni-hyakutake.github.io/statistics/posts/post-with-code/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>This is a post with executable code.</p>
-<section id="r-1" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> R-1</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">library</span>(reticulate)</span>
-<span id="cb1-2"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">library</span>(knitr)</span>
-<span id="cb1-3"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">library</span>(tidyverse)</span>
-<span id="cb1-4">a<span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">runif</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span>)</span>
-<span id="cb1-5">a<span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">round</span>(a,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>)</span>
-<span id="cb1-6"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">print</span>(a)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.02 0.51 0.00</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">b<span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Hello, "</span></span></code></pre></div>
-</div>
-</section>
-<section id="python" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Python</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> np</span>
-<span id="cb4-2">c<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"World!"</span></span>
-<span id="cb4-3">d<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>r.b<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span>c</span>
-<span id="cb4-4"><span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">print</span>(d)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hello, World!</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">e<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>np.sin(<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1.5</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">12</span></span></code></pre></div>
-</div>
-</section>
-<section id="r-2" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> R-2</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">f<span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span>py<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>e<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span></span>
-<span id="cb7-2"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">print</span>(f)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.98998</code></pre>
-</div>
-</div>
-</section>
-<section id="変数をループで解析して出す" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> 変数をループで解析して出す</h1>
-<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">analy_titlle <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"analy_a"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"analy_b"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"analy_c"</span>)</span>
-<span id="cb9-2"></span>
-<span id="cb9-3"><span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">for</span>(i <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">in</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">length</span>(analy_titlle)){</span>
-<span id="cb9-4">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">cat</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">paste</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">\n</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">##"</span>,  analy_titlle[i], <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">\n</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>))</span>
-<span id="cb9-5">  </span>
-<span id="cb9-6">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">cat</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">str_c</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"i= "</span>,i, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">\n</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>))</span>
-<span id="cb9-7">  </span>
-<span id="cb9-8">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">hist</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">rnorm</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100</span>,<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">mean =</span> i<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span>))</span>
-<span id="cb9-9">  </span>
-<span id="cb9-10">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">cat</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">\n</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>)</span>
-<span id="cb9-11">}</span></code></pre></div>
-<section id="analy_a" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="analy_a"><span class="header-section-number">4.1</span> analy_a</h2>
-<p>i= 1 ::: {.cell-output-display} <img src="https://nobukuni-hyakutake.github.io/statistics/posts/post-with-code/index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"> :::</p>
-</section>
-<section id="analy_b" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="analy_b"><span class="header-section-number">4.2</span> analy_b</h2>
-<p>i= 2 ::: {.cell-output-display} <img src="https://nobukuni-hyakutake.github.io/statistics/posts/post-with-code/index_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid" width="672"> :::</p>
-</section>
-<section id="analy_c" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="analy_c"><span class="header-section-number">4.3</span> analy_c</h2>
-<p>i= 3 ::: {.cell-output-display} <img src="https://nobukuni-hyakutake.github.io/statistics/posts/post-with-code/index_files/figure-html/unnamed-chunk-4-3.png" class="img-fluid" width="672"> :::</p>
-</section>
-</section>
-<section id="r-version" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> R version</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1">R.version.string</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "R version 4.2.2 (2022-10-31)"</code></pre>
-</div>
-</div>
-</section>
-<section id="python-version" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Python version</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> platform</span>
-<span id="cb12-2"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">"Python version "</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span>platform.python_version()</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>'Python version 3.10.7'</code></pre>
-</div>
-</div>
-</section>
-<section id="citation" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Citation</h1>
-<ul>
-<li>R Core Team (2022). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL <a href="https://www.R-project.org/">https://www.R-project.org/</a></li>
-</ul>
-<iframe width="300" height="30" src="https://nobukuni-hyakutake.github.io/see_you_again.html" title="Quarto Documentation"></iframe>
-
-
-<!-- -->
-
-</section>
-
- ]]></description>
-  <category>news</category>
-  <category>code</category>
-  <category>analysis</category>
-  <category>R</category>
-  <category>Python</category>
-  <guid>https://nobukuni-hyakutake.github.io/statistics/posts/post-with-code/</guid>
-  <pubDate>Tue, 24 Jan 2023 15:00:00 GMT</pubDate>
-  <media:content url="https://nobukuni-hyakutake.github.io/statistics/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/proportion/index.html",
       "/posts/shiny_for_python/index.html",
       "/posts/plotnine/index.html",
       "/posts/plotly/index.html",

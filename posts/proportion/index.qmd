@@ -16,32 +16,30 @@ $\hat{p}=0$の場合
 ```{r}
 library(tidyverse)
 
-nmax <- 100
-pmax<-0.95
-alpha<-0.05
+nmax <- 300
+alpha <- 0.05
 
-df_n <- tibble(n = seq(2,nmax))
-df_p<-tibble(p=seq(0,pmax,0.01))
+df_n <- tibble(n = seq(2, nmax))
 
-df1<-cross_join(df_n,df_p)
+df0 <- df_n |>
+  mutate(p2 = qf(alpha, 2, 2 * n, lower.tail = FALSE) / (n + qf(alpha, 2, 2 *
+                                                                  n, lower.tail = FALSE)))
 
-df0<-df_n |> 
-  mutate(p2=qf(alpha,2,2*n,lower.tail = FALSE)/(n+qf(alpha,2,2*n,lower.tail = FALSE)))
-
-ggplot(df0,aes(x=n,y=p2))+
+ggplot(df0, aes(x = n, y = p2)) +
   geom_point()
-
 ```
 $\hat{p}≠0$の場合
 
 ```{r}
-x<-1
-df2<-df1 |> 
-  mutate(F1=qf(alpha/2,2*(n-x+1),2*x,lower.tail = FALSE),
-         F2=qf(alpha/2,2*(x+1),2*(n-x),lower.tail = FALSE),
-         p1=x/((n-x+1)*F1+x),
-         p2=(x+1)*F2/((x+1)*F2+(n-x)))
-ggplot(df2,aes(x=n,y=p2))+
+x <- 1
+df2 <- df_n |>
+  mutate(
+    F1 = qf(alpha/2, 2 * (n - x + 1), 2 * x, lower.tail = FALSE),
+    F2 = qf(alpha/2, 2 * (x + 1), 2 * (n - x), lower.tail = FALSE),
+    p1 = x / ((n - x + 1) * F1 + x),
+    p2 = (x + 1) * F2 / ((x + 1) * F2 + (n - x))
+  )
+ggplot(df2, aes(x = n, y = p2)) +
   geom_point()
 ```
 
@@ -51,15 +49,21 @@ ggplot(df2,aes(x=n,y=p2))+
 - $H_0:p=p_0,H_1:p>p_0$の場合
 
 ```{r}
-x<-1
-df3<-df1 |> 
-  mutate(c=2*(n-x+1),
-         d=2*x,
-         f2=d*(1-p)/(c*p),
-         F2=qf(alpha,c,d,lower.tail = FALSE),
-         significant=(f2>=F2))
+pmax <- 0.95
+df_p <- tibble(p = seq(0, pmax, 0.01))
+df1 <- cross_join(df_n, df_p)
 
-ggplot(df3,aes(x=n,y=p,colour = significant))+
+x <- 1
+df3 <- df1 |>
+  mutate(
+    c = 2 * (n - x + 1),
+    d = 2 * x,
+    f2 = d * (1 - p) / (c * p),
+    F2 = qf(alpha, c, d, lower.tail = FALSE),
+    significant = (f2 >= F2)
+  )
+
+ggplot(df3, aes(x = n, y = p, colour = significant)) +
   geom_point()
 ```
 
@@ -67,19 +71,21 @@ ggplot(df3,aes(x=n,y=p,colour = significant))+
 - $H_0:p=p_0,H_1:p≠p_0$の場合
 
 ```{r}
-x<-1
-df4<-df1 |> 
-  mutate(a=2*(x+1),
-         b=2*(n-x),
-         f1=b*p/(a*(1-p)),
-         c=2*(n-x+1),
-         d=2*x,
-         f2=d*(1-p)/(c*p),
-         F1=qf(alpha/2,a,b,lower.tail = FALSE),
-         F2=qf(alpha/2,c,d,lower.tail=FALSE),
-         significant=(f1>=F1)|(f2>=F2))
+x <- 1
+df4 <- df1 |>
+  mutate(
+    a = 2 * (x + 1),
+    b = 2 * (n - x),
+    f1 = b * p / (a * (1 - p)),
+    c = 2 * (n - x + 1),
+    d = 2 * x,
+    f2 = d * (1 - p) / (c * p),
+    F1 = qf(alpha / 2, a, b, lower.tail = FALSE),
+    F2 = qf(alpha / 2, c, d, lower.tail = FALSE),
+    significant = (f1 >= F1) | (f2 >= F2)
+  )
 
-ggplot(df4,aes(x=n,y=p,colour = significant))+
+ggplot(df4, aes(x = n, y = p, colour = significant)) +
   geom_point()
 ```
 
@@ -87,26 +93,34 @@ ggplot(df4,aes(x=n,y=p,colour = significant))+
 - $H_0:p=p_0,H_1:p<p_0$の場合
 
 ```{r}
-x<-1
-df5<-df1 |> 
-  mutate(a=2*(x+1),
-         b=2*(n-x),
-         f1=b*p/(a*(1-p)),
-         F1=qf(alpha,a,b,lower.tail = FALSE),
-         significant=(f1>=F1))
+alpha <- 0.05/2
+x <- 1
+df5 <- df1 |>
+  mutate(
+    a = 2 * (x + 1),
+    b = 2 * (n - x),
+    f1 = b * p / (a * (1 - p)),
+    F1 = qf(alpha, a, b, lower.tail = FALSE),
+    significant = (f1 >= F1)
+  )
 
-ggplot(df5,aes(x=n,y=p,colour = significant))+
+ggplot(df5, aes(x = n, y = p, colour = significant)) +
   geom_point()
 ```
-上記の境界線を計算
+上記の境界線を計算して$\hat{p}≠0$の場合の信頼区間上限と比較する
 
 ```{r}
-df6<-df5 |> 
-  filter(!significant) |> 
-  group_by(n) |> 
-  summarise(pmax=max(p))
+df6 <- df5 |>
+  filter(!significant) |>
+  group_by(n) |>
+  summarise(pmax = max(p))
+
+ggplot(df6, aes(x = n, y = pmax)) +
+  geom_point(colour="black")+
+  geom_point(data=df2,aes(x=n,y=p2),colour="red",alpha=0.5)
 ```
 
+概ね一致している。
 
 ## 参考文献
 
