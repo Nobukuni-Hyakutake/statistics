@@ -1,0 +1,21 @@
+---
+title: "distribution"
+author: "Nobukuni Hyakutake"
+date: "2025-09-06"
+date-format: "iso"
+categories: [Python]
+image: "field_mustard.jpeg"
+---
+
+![](field_mustard.jpeg)
+
+## 次に書く構想
+
+正規分布、t分布、F分布、カイ二乗分布のR、Python、Excelのコード・式を比較まとめ
+
+## Python version
+
+```{python}
+import platform
+"Python version "+platform.python_version()
+```
