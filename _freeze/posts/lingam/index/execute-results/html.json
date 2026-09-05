@@ -1,0 +1,12 @@
+{
+  "hash": "c91394443e974d3463a7c8eae49ec61b",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"lingam\"\nauthor: \"Nobukuni Hyakutake\"\ndate: \"2026-09-05\"\ndate-format: \"iso\"\ncategories: [Python]\nimage: \"field_mustard.jpeg\"\n---\n\n![](field_mustard.jpeg)\n\n## Lingam\n\n::: {#4cdb7076 .cell execution_count=1}\n``` {.python .cell-code}\nimport lingam\nfrom lingam.utils import make_dot\nimport numpy as np\nimport pandas as pd\n\n# 再現性のためのシード設定\nnp.random.seed(42)\nn_samples = 1000\n\n# 1. ノイズ（非ガウス分布）の生成\ne1 = np.random.uniform(-1, 1, n_samples)\ne2 = np.random.uniform(-1, 1, n_samples)\ne3 = np.random.uniform(-1, 1, n_samples)\n\n# 2. 因果構造の定義 (X1 -> X2, X1 -> X3, X2 -> X3)\nx1 = e1\nx2 = 2.0 * x1 + e2\nx3 = 0.5 * x1 - 1.5 * x2 + e3\n\ndf = pd.DataFrame({\"X1\": x1, \"X2\": x2, \"X3\": x3})\n\n# LiNGAMの実行\nmodel = lingam.DirectLiNGAM()\nmodel.fit(df)\n\n# ★修正ポイント: df.columns を .tolist() でリスト化して渡します\ndot = make_dot(model.adjacency_matrix_, labels=df.columns.tolist())\n\n# 画像として保存（カレントディレクトリに causal_graph.png が生成されます）\ndot.render(\"causal_graph\", format=\"png\")\nprint(\"正常にグラフ画像が出力されました！\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n正常にグラフ画像が出力されました！\n```\n:::\n:::\n\n\n![](causal_graph.png)\n\n## Python version\n\n::: {#aa59cdff .cell execution_count=2}\n``` {.python .cell-code}\nimport platform\n\"Python version \"+platform.python_version()\n```\n\n::: {.cell-output .cell-output-display execution_count=2}\n```\n'Python version 3.11.9'\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Top – 統計学の勉強ノート</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -74,10 +77,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d24c3880db9ce3ca4ea2d5bb002bea1f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6388ad00bb6ecaefa25b9a98db1edf18.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -145,7 +148,7 @@ gtag('config', 'G-7CEVE5761Z', { 'anonymize_ip': true});
 </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -158,7 +161,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -236,7 +239,7 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(22)</span></div><div class="category" data-category="YW5hbHlzaXM=">analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y29kZQ==">code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TEFURVg=">LATEX <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TWF0aGVtYXRpY3M=">Mathematics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(12)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(8)</span></div><div class="category" data-category="U1RBVElTVElDUw==">STATISTICS <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(24)</span></div><div class="category" data-category="YW5hbHlzaXM=">analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y29kZQ==">code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TEFURVg=">LATEX <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TWF0aGVtYXRpY3M=">Mathematics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(14)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(8)</span></div><div class="category" data-category="U1RBVElTVElDUw==">STATISTICS <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -301,7 +304,39 @@ Categories
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-categories="UHl0aG9u" data-listing-date-sort="1749567600000" data-listing-file-modified-sort="1749590812170" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="521" data-listing-title-sort="比率の推定・検定" data-listing-filename-sort="index.qmd">
+<tr data-index="0" data-categories="UHl0aG9u" data-listing-date-sort="1788534000000" data-listing-file-modified-sort="1788589303947" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="84" data-listing-title-sort="lingam" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-image"><img loading="lazy" src="./posts/lingam/field_mustard.jpeg" style="height: 40px;"></span>
+</td>
+<td>
+<span class="listing-date">2026-09-05</span>
+</td>
+<td>
+<a href="./posts/lingam/index.html" class="title listing-title">lingam</a>
+</td>
+<td>
+<span class="listing-categories">Python</span>
+</td>
+
+</tr>
+
+<tr data-index="1" data-categories="UHl0aG9u" data-listing-date-sort="1757084400000" data-listing-file-modified-sort="1788588340540" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="distribution" data-listing-filename-sort="index.qmd">
+<td>
+<span class="listing-image"><img loading="lazy" src="./posts/distribution/field_mustard.jpeg" style="height: 40px;"></span>
+</td>
+<td>
+<span class="listing-date">2025-09-06</span>
+</td>
+<td>
+<a href="./posts/distribution/index.html" class="title listing-title">distribution</a>
+</td>
+<td>
+<span class="listing-categories">Python</span>
+</td>
+
+</tr>
+
+<tr data-index="2" data-categories="UHl0aG9u" data-listing-date-sort="1749567600000" data-listing-file-modified-sort="1788588340555" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="521" data-listing-title-sort="比率の推定・検定" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./posts/proportion/field_mustard.jpeg" style="height: 40px;"></span>
 </td>
@@ -317,7 +352,7 @@ Categories
 
 </tr>
 
-<tr data-index="1" data-categories="UHl0aG9u" data-listing-date-sort="1745679600000" data-listing-file-modified-sort="1746921150182" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="575" data-listing-title-sort="Shiny for Python" data-listing-filename-sort="index.qmd">
+<tr data-index="3" data-categories="UHl0aG9u" data-listing-date-sort="1745679600000" data-listing-file-modified-sort="1788588340567" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="575" data-listing-title-sort="Shiny for Python" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./posts/shiny_for_python/field_mustard.jpeg" style="height: 40px;"></span>
 </td>
@@ -333,7 +368,7 @@ Categories
 
 </tr>
 
-<tr data-index="2" data-categories="UHl0aG9u" data-listing-date-sort="1745679600000" data-listing-file-modified-sort="1745712389166" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="31" data-listing-title-sort="plotnine" data-listing-filename-sort="index.qmd">
+<tr data-index="4" data-categories="UHl0aG9u" data-listing-date-sort="1745679600000" data-listing-file-modified-sort="1788588340550" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="31" data-listing-title-sort="plotnine" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./posts/plotnine/field_mustard.jpeg" style="height: 40px;"></span>
 </td>
@@ -349,7 +384,7 @@ Categories
 
 </tr>
 
-<tr data-index="3" data-categories="UHl0aG9u" data-listing-date-sort="1745506800000" data-listing-file-modified-sort="1745529620612" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="66" data-listing-title-sort="Plotly" data-listing-filename-sort="index.qmd">
+<tr data-index="5" data-categories="UHl0aG9u" data-listing-date-sort="1745506800000" data-listing-file-modified-sort="1788588340548" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="66" data-listing-title-sort="Plotly" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./posts/plotly/field_mustard.jpeg" style="height: 40px;"></span>
 </td>
@@ -365,7 +400,7 @@ Categories
 
 </tr>
 
-<tr data-index="4" data-categories="UHl0aG9u" data-listing-date-sort="1745420400000" data-listing-file-modified-sort="1745443075625" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="160" data-listing-title-sort="Altair" data-listing-filename-sort="index.qmd">
+<tr data-index="6" data-categories="UHl0aG9u" data-listing-date-sort="1745420400000" data-listing-file-modified-sort="1788588340533" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="160" data-listing-title-sort="Altair" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./posts/altair/field_mustard.jpeg" style="height: 40px;"></span>
 </td>
@@ -381,7 +416,7 @@ Categories
 
 </tr>
 
-<tr data-index="5" data-categories="UHl0aG9u" data-listing-date-sort="1740063600000" data-listing-file-modified-sort="1740087345912" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="予測区間" data-listing-filename-sort="index.qmd">
+<tr data-index="7" data-categories="UHl0aG9u" data-listing-date-sort="1740063600000" data-listing-file-modified-sort="1788588340551" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="予測区間" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./posts/prediction_intervals/mountain3.jpeg" style="height: 40px;"></span>
 </td>
@@ -397,7 +432,7 @@ Categories
 
 </tr>
 
-<tr data-index="6" data-categories="TWF0aGVtYXRpY3M=" data-listing-date-sort="1716303600000" data-listing-file-modified-sort="1716324519386" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="206" data-listing-title-sort="微分積分" data-listing-filename-sort="index.qmd">
+<tr data-index="8" data-categories="TWF0aGVtYXRpY3M=" data-listing-date-sort="1716303600000" data-listing-file-modified-sort="1788588340539" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="206" data-listing-title-sort="微分積分" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./posts/calculus/field_mustard.jpeg" style="height: 40px;"></span>
 </td>
@@ -413,7 +448,7 @@ Categories
 
 </tr>
 
-<tr data-index="7" data-categories="TWF0aGVtYXRpY3M=" data-listing-date-sort="1715526000000" data-listing-file-modified-sort="1715592826816" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="20" data-listing-title-sort="集合" data-listing-filename-sort="index.qmd">
+<tr data-index="9" data-categories="TWF0aGVtYXRpY3M=" data-listing-date-sort="1715526000000" data-listing-file-modified-sort="1788588340563" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="20" data-listing-title-sort="集合" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./posts/set/field_mustard.jpeg" style="height: 40px;"></span>
 </td>
@@ -429,7 +464,7 @@ Categories
 
 </tr>
 
-<tr data-index="8" data-categories="Ug==" data-listing-date-sort="1701270000000" data-listing-file-modified-sort="1701314678310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="259" data-listing-title-sort="サンプルサイズ" data-listing-filename-sort="index.qmd">
+<tr data-index="10" data-categories="Ug==" data-listing-date-sort="1701270000000" data-listing-file-modified-sort="1788588340561" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="259" data-listing-title-sort="サンプルサイズ" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./posts/sample_size/lake.jpeg" style="height: 40px;"></span>
 </td>
@@ -445,7 +480,7 @@ Categories
 
 </tr>
 
-<tr data-index="9" data-categories="TEFURVg=" data-listing-date-sort="1701183600000" data-listing-file-modified-sort="1702144964446" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="642" data-listing-title-sort="数式のLaTeX記法" data-listing-filename-sort="index.qmd">
+<tr data-index="11" data-categories="TEFURVg=" data-listing-date-sort="1701183600000" data-listing-file-modified-sort="1788588340545" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="642" data-listing-title-sort="数式のLaTeX記法" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./posts/mathematical_symbols/tree.jpeg" style="height: 40px;"></span>
 </td>
@@ -461,7 +496,7 @@ Categories
 
 </tr>
 
-<tr data-index="10" data-categories="Ug==" data-listing-date-sort="1700578800000" data-listing-file-modified-sort="1700600585719" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="39" data-listing-title-sort="比率の検定" data-listing-filename-sort="index.qmd">
+<tr data-index="12" data-categories="Ug==" data-listing-date-sort="1700578800000" data-listing-file-modified-sort="1788588340556" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="39" data-listing-title-sort="比率の検定" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./posts/proportions_test/river.jpeg" style="height: 40px;"></span>
 </td>
@@ -477,7 +512,7 @@ Categories
 
 </tr>
 
-<tr data-index="11" data-categories="UHl0aG9u" data-listing-date-sort="1697122800000" data-listing-file-modified-sort="1699563829021" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="46" data-listing-title-sort="二乗平均平方誤差" data-listing-filename-sort="index.qmd">
+<tr data-index="13" data-categories="UHl0aG9u" data-listing-date-sort="1697122800000" data-listing-file-modified-sort="1788588340558" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="46" data-listing-title-sort="二乗平均平方誤差" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./posts/rmse/mountain3.jpeg" style="height: 40px;"></span>
 </td>
@@ -493,7 +528,7 @@ Categories
 
 </tr>
 
-<tr data-index="12" data-categories="Ug==" data-listing-date-sort="1696690800000" data-listing-file-modified-sort="1696743344987" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="42" data-listing-title-sort="散布図と周辺分布" data-listing-filename-sort="index.qmd">
+<tr data-index="14" data-categories="Ug==" data-listing-date-sort="1696690800000" data-listing-file-modified-sort="1788588340542" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="42" data-listing-title-sort="散布図と周辺分布" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./posts/joint_distribution/river.jpeg" style="height: 40px;"></span>
 </td>
@@ -509,7 +544,7 @@ Categories
 
 </tr>
 
-<tr data-index="13" data-categories="UHl0aG9u" data-listing-date-sort="1696518000000" data-listing-file-modified-sort="1696539782719" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="22" data-listing-title-sort="Python基本" data-listing-filename-sort="index.qmd">
+<tr data-index="15" data-categories="UHl0aG9u" data-listing-date-sort="1696518000000" data-listing-file-modified-sort="1788588340536" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="22" data-listing-title-sort="Python基本" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./posts/basic/mountain2.jpeg" style="height: 40px;"></span>
 </td>
@@ -525,9 +560,9 @@ Categories
 
 </tr>
 
-<tr data-index="14" data-categories="Ug==" data-listing-date-sort="1677078000000" data-listing-file-modified-sort="1677100839757" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="12" data-listing-title-sort="相関係数" data-listing-filename-sort="index.qmd">
+<tr data-index="16" data-categories="Ug==" data-listing-date-sort="1677078000000" data-listing-file-modified-sort="1788588340539" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="12" data-listing-title-sort="相関係数" data-listing-filename-sort="index.qmd">
 <td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/correlations/sea.jpeg" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
+<span class="listing-image"><p class="card-img-top"><img loading='lazy' src="posts/correlations/sea.jpeg" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
 </td>
 <td>
 <span class="listing-date">2023-02-23</span>
@@ -541,9 +576,9 @@ Categories
 
 </tr>
 
-<tr data-index="15" data-categories="UiUyQ1B5dGhvbg==" data-listing-date-sort="1676991600000" data-listing-file-modified-sort="1678656692986" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="59" data-listing-title-sort="グラフ" data-listing-filename-sort="index.qmd">
+<tr data-index="17" data-categories="UiUyQ1B5dGhvbg==" data-listing-date-sort="1676991600000" data-listing-file-modified-sort="1788588340541" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="59" data-listing-title-sort="グラフ" data-listing-filename-sort="index.qmd">
 <td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/graph/mountain.jpeg" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
+<span class="listing-image"><p class="card-img-top"><img loading='lazy' src="posts/graph/mountain.jpeg" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
 </td>
 <td>
 <span class="listing-date">2023-02-22</span>
@@ -557,9 +592,9 @@ Categories
 
 </tr>
 
-<tr data-index="16" data-categories="UiUyQ1B5dGhvbg==" data-listing-date-sort="1676818800000" data-listing-file-modified-sort="1677057280514" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="315" data-listing-title-sort="ワイブル分布の確率密度関数への近似" data-listing-filename-sort="index.qmd">
+<tr data-index="18" data-categories="UiUyQ1B5dGhvbg==" data-listing-date-sort="1676818800000" data-listing-file-modified-sort="1788588340571" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="315" data-listing-title-sort="ワイブル分布の確率密度関数への近似" data-listing-filename-sort="index.qmd">
 <td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/survival/aqua.jpeg" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
+<span class="listing-image"><p class="card-img-top"><img loading='lazy' src="posts/survival/aqua.jpeg" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
 </td>
 <td>
 <span class="listing-date">2023-02-20</span>
@@ -573,7 +608,7 @@ Categories
 
 </tr>
 
-<tr data-index="17" data-categories="U1RBVElTVElDUw==" data-listing-date-sort="1675954800000" data-listing-file-modified-sort="1676153204666" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="68" data-listing-title-sort="統計学基礎" data-listing-filename-sort="index.qmd">
+<tr data-index="19" data-categories="U1RBVElTVElDUw==" data-listing-date-sort="1675954800000" data-listing-file-modified-sort="1788588340569" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="68" data-listing-title-sort="統計学基礎" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./posts/standard_deviation/sd.png" style="height: 40px;"></span>
 </td>
@@ -589,7 +624,7 @@ Categories
 
 </tr>
 
-<tr data-index="18" data-categories="Ug==" data-listing-date-sort="1675004400000" data-listing-file-modified-sort="1675630773084" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="76" data-listing-title-sort="Rを電卓として使う" data-listing-filename-sort="index.qmd">
+<tr data-index="20" data-categories="Ug==" data-listing-date-sort="1675004400000" data-listing-file-modified-sort="1788588340538" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="76" data-listing-title-sort="Rを電卓として使う" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./posts/calculator_R/calc.jpeg" style="height: 40px;"></span>
 </td>
@@ -605,7 +640,7 @@ Categories
 
 </tr>
 
-<tr data-index="19" data-categories="UHl0aG9u" data-listing-date-sort="1674745200000" data-listing-file-modified-sort="1674764539483" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="18" data-listing-title-sort="Pythonを電卓として使う" data-listing-filename-sort="index.qmd">
+<tr data-index="21" data-categories="UHl0aG9u" data-listing-date-sort="1674745200000" data-listing-file-modified-sort="1788588340537" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="18" data-listing-title-sort="Pythonを電卓として使う" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./posts/calculator/calc.jpeg" style="height: 40px;"></span>
 </td>
@@ -621,7 +656,7 @@ Categories
 
 </tr>
 
-<tr data-index="20" data-categories="bmV3cyUyQ2NvZGUlMkNhbmFseXNpcyUyQ1IlMkNQeXRob24=" data-listing-date-sort="1674572400000" data-listing-file-modified-sort="1677284607214" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="77" data-listing-title-sort="コード入りの投稿サンプル" data-listing-filename-sort="index.qmd">
+<tr data-index="22" data-categories="bmV3cyUyQ2NvZGUlMkNhbmFseXNpcyUyQ1IlMkNQeXRob24=" data-listing-date-sort="1674572400000" data-listing-file-modified-sort="1788588340551" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="77" data-listing-title-sort="コード入りの投稿サンプル" data-listing-filename-sort="index.qmd">
 <td>
 <span class="listing-image"><img loading="lazy" src="./posts/post-with-code/image.jpg" style="height: 40px;"></span>
 </td>
@@ -637,9 +672,9 @@ Categories
 
 </tr>
 
-<tr data-index="21" data-categories="bmV3cw==" data-listing-date-sort="1674140400000" data-listing-file-modified-sort="1674765044417" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="ようこそ" data-listing-filename-sort="index.qmd">
+<tr data-index="23" data-categories="bmV3cw==" data-listing-date-sort="1674140400000" data-listing-file-modified-sort="1788588340595" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="ようこそ" data-listing-filename-sort="index.qmd">
 <td>
-<span class="listing-image"><p class="card-img-top"><img src="posts/welcome/thumbnail.jpg" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
+<span class="listing-image"><p class="card-img-top"><img loading='lazy' src="posts/welcome/thumbnail.jpg" style="height: 40px;"  class="thumbnail-image card-img"/></p></span>
 </td>
 <td>
 <span class="listing-date">2023-01-20</span>
@@ -708,13 +743,14 @@ Categories
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1107,7 +1143,7 @@ Categories
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Top"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  type: table</span></span>
@@ -1124,7 +1160,7 @@ Categories
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>右側のCategoriesをクリックすると、該当する記事に絞られます。</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Filterに文字を入力すると、その文字を含む記事に絞られます。</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Filterに文字を入力すると、その文字を含む記事に絞られます。</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

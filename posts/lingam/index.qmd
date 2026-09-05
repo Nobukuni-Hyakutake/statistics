@@ -1,0 +1,55 @@
+---
+title: "lingam"
+author: "Nobukuni Hyakutake"
+date: "2026-09-05"
+date-format: "iso"
+categories: [Python]
+image: "field_mustard.jpeg"
+---
+
+![](field_mustard.jpeg)
+
+## Lingam
+
+```{python}
+import lingam
+from lingam.utils import make_dot
+import numpy as np
+import pandas as pd
+
+# 再現性のためのシード設定
+np.random.seed(42)
+n_samples = 1000
+
+# 1. ノイズ（非ガウス分布）の生成
+e1 = np.random.uniform(-1, 1, n_samples)
+e2 = np.random.uniform(-1, 1, n_samples)
+e3 = np.random.uniform(-1, 1, n_samples)
+
+# 2. 因果構造の定義 (X1 -> X2, X1 -> X3, X2 -> X3)
+x1 = e1
+x2 = 2.0 * x1 + e2
+x3 = 0.5 * x1 - 1.5 * x2 + e3
+
+df = pd.DataFrame({"X1": x1, "X2": x2, "X3": x3})
+
+# LiNGAMの実行
+model = lingam.DirectLiNGAM()
+model.fit(df)
+
+# ★修正ポイント: df.columns を .tolist() でリスト化して渡します
+dot = make_dot(model.adjacency_matrix_, labels=df.columns.tolist())
+
+# 画像として保存（カレントディレクトリに causal_graph.png が生成されます）
+dot.render("causal_graph", format="png")
+print("正常にグラフ画像が出力されました！")
+```
+
+![](causal_graph.png)
+
+## Python version
+
+```{python}
+import platform
+"Python version "+platform.python_version()
+```

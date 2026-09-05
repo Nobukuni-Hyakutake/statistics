@@ -1,0 +1,12 @@
+{
+  "hash": "c991e8a073d28a55a33ebb7f1e0d8694",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"distribution\"\nauthor: \"Nobukuni Hyakutake\"\ndate: \"2025-09-06\"\ndate-format: \"iso\"\ncategories: [Python]\nimage: \"field_mustard.jpeg\"\n---\n\n![](field_mustard.jpeg)\n\n## 次に書く構想\n\n正規分布、t分布、F分布、カイ二乗分布のR、Python、Excelのコード・式を比較まとめ\n\n## Python version\n\n::: {#cfdf323e .cell execution_count=1}\n``` {.python .cell-code}\nimport platform\n\"Python version \"+platform.python_version()\n```\n\n::: {.cell-output .cell-output-display execution_count=1}\n```\n'Python version 3.11.9'\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
