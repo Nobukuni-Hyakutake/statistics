@@ -1,0 +1,15 @@
+digraph {
+	X1
+	X2
+	X3
+	X4
+	X5
+	X6
+	X1 -> X2 [label=3.99]
+	X1 -> X3 [label=0.50]
+	X2 -> X3 [label=-1.51]
+	X5 -> X6 [label=0.83]
+	{
+		rank=same
+	}
+}
